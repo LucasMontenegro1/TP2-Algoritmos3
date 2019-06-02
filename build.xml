@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- WARNING: Eclipse auto-generated file.
-              Any modifications will be overwritten.
-              To include a user specific buildfile here, simply create one in the same
-              directory with the processing instruction <?eclipse.ant.import?>
-              as the first entry and export the buildfile again. --><project basedir="." default="build" name="TP2">
+	<project basedir="." default="compile" name="TP2">
     <property environment="env"/>
     <property name="junit.output.dir" value="junit"/>
     <property name="debuglevel" value="source,lines,vars"/>
@@ -33,8 +29,6 @@
         <mkdir dir="bin"/>
         <copy includeemptydirs="false" todir="bin">
             <fileset dir="src">
-                <exclude name="**/*.launch"/>
-                <exclude name="**/*.xtend"/>
                 <exclude name="**/*.java"/>
             </fileset>
         </copy>
@@ -43,7 +37,7 @@
         <delete dir="bin"/>
     </target>
     <target depends="clean" name="cleanall"/>
-    <target depends="build-subprojects,build-project" name="build"/>
+    <target depends="build-subprojects,build-project" name="compile"/>
     <target name="build-subprojects"/>
     <target depends="init" name="build-project">
         <echo message="${ant.project.name}: ${ant.file}"/>
@@ -53,7 +47,7 @@
         </javac>
     </target>
     <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
-    <target name="HerramientasTest">
+    <target name="run">
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
