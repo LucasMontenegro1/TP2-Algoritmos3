@@ -8,7 +8,7 @@
 	<property name="reports.dir" location="${build}/reports" />
 	<property name="reports.xml.dir" location="${reports.dir}/junit-xml" />
 	<property name="reports.html.dir" location="${reports.dir}/junit-html" />
-	<property name="src.dir" location="TP2/src" />
+	<property name="src.dir" location="src" />
 	<property name="coverage.xml.dir" location="${reports.dir}/cobertura-xml" />
 	<property name="coverage.summaryxml.dir" location="${reports.dir}/cobertura-summary-xml" />
 	<property name="coverage.html.dir" location="${reports.dir}/cobertura-html" />
@@ -53,13 +53,13 @@
 	</target>
 
 	<target name="compilar.aplicacion" depends="setup, resolve">
-		<javac srcdir="TP2/src" destdir="${build}" includeantruntime="false" debug="yes" target="1.8">
+		<javac srcdir="src" destdir="${build}" includeantruntime="false" debug="yes" target="1.8">
 			<classpath refid="classpath" />
 		</javac>
 	</target>
 
 	<target name="compilar.tests" depends="instrumentar.aplicacion">
-		<javac srcdir="TP2/test" destdir="${build}/tests" includeantruntime="false" debug="yes" target="1.8">
+		<javac srcdir="test" destdir="${build}/tests" includeantruntime="false" debug="yes" target="1.8">
 			<classpath refid="classpath" />
 		</javac>
 	</target>
@@ -147,7 +147,7 @@
 
 
     <target name="compilar.paquete" depends="test">
-		<javac srcdir="TP2/src" destdir="${build}/classes" debug="no">
+		<javac srcdir="src" destdir="${build}/classes" debug="no">
 		</javac>
 	</target>
 
@@ -192,7 +192,7 @@
 			<ruleset>imports</ruleset>
 			<formatter type="html" toFile="${reports.dir}/pmd.html" linkPrefix="http://pmd.sourceforge.net/xref/" toConsole="true"/>
             <formatter type="xml" toFile="${reports.dir}/pmd.xml" linkPrefix="http://pmd.sourceforge.net/xref/" toConsole="false"/>
-			<fileset dir="TP2/src">
+			<fileset dir="src">
 				<include name="**/*.java" />
 			</fileset>
 		</pmd>
@@ -200,7 +200,7 @@
 
 
 		<target name="empaquetar.con.imagenes" depends="compilar.paquete">
-			<copydir src="TP2/src/gui/imagess"
+			<copydir src="src/gui/imagess"
 				dest="${build}/classes/gui/imagess"
 				includes="**/*.png"/>
 		<jar destfile="${build}/dist/algo3.jar" basedir="${build}/classes"/>
