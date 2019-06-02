@@ -6,4 +6,8 @@ public class Herramienta {
 	public int getDurabilidad() {
 		return this.durabilidad;
 	}
+	
+	public int getFuerza() {
+		return this.fuerza;
+	}
 }
