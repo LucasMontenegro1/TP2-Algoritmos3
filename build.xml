@@ -59,7 +59,7 @@
 	</target>
 
 	<target name="compilar.tests" depends="instrumentar.aplicacion">
-		<javac srcdir="test" destdir="${build}/tests" includeantruntime="false" debug="yes" target="1.8">
+		<javac srcdir="TP2/test" destdir="${build}/tests" includeantruntime="false" debug="yes" target="1.8">
 			<classpath refid="classpath" />
 		</javac>
 	</target>
@@ -147,7 +147,7 @@
 
 
     <target name="compilar.paquete" depends="test">
-		<javac srcdir="src" destdir="${build}/classes" debug="no">
+		<javac srcdir="TP2/src" destdir="${build}/classes" debug="no">
 		</javac>
 	</target>
 
@@ -192,7 +192,7 @@
 			<ruleset>imports</ruleset>
 			<formatter type="html" toFile="${reports.dir}/pmd.html" linkPrefix="http://pmd.sourceforge.net/xref/" toConsole="true"/>
             <formatter type="xml" toFile="${reports.dir}/pmd.xml" linkPrefix="http://pmd.sourceforge.net/xref/" toConsole="false"/>
-			<fileset dir="src">
+			<fileset dir="TP2/src">
 				<include name="**/*.java" />
 			</fileset>
 		</pmd>
@@ -200,7 +200,7 @@
 
 
 		<target name="empaquetar.con.imagenes" depends="compilar.paquete">
-			<copydir src="src/gui/imagess"
+			<copydir src="TP2/src/gui/imagess"
 				dest="${build}/classes/gui/imagess"
 				includes="**/*.png"/>
 		<jar destfile="${build}/dist/algo3.jar" basedir="${build}/classes"/>
