@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/LucasMontenegro1/TP2-Algoritmos3.png?branch=master)](https://travis-ci.org/LucasMontenegro1/TP2-Algoritmos3)
+
+
 # TP2-Algoritmos3
 
 
