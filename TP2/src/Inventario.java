@@ -9,6 +9,6 @@ public class Inventario {
 	public void usarElementoSeleccionado() {
 		elementoSeleccionado.usar();
 	}
-	
+	 
 	
 }
