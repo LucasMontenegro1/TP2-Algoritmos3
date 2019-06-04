@@ -1,13 +1,18 @@
 
-public interface Desgastable {
+public abstract class Desgastable {
+	
+	public int durabilidad;
+	public int fuerza;
 
-	public int reducirDurabilidad(int durabilidad, int fuerza);
+	public abstract void reducirDurabilidad();
 
-	public void usarContra(Piedra unMaterial, int fuerza);
+	public abstract void usarContra(Piedra piedra);
 
-	public void usarContra(Metal unMaterial, int fuerza);
+	public abstract void usarContra(Metal metal);
 
-	public void usarContra(Madera unMaterial, int fuerza);
+	public abstract void usarContra(Madera madera);
+	
+	public abstract void usarContra(Diamante diamante);
 
 
 	

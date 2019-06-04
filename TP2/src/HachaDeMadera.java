@@ -1,18 +1,26 @@
 
-public class HachaDeMadera implements Desgastable {
+public class HachaDeMadera extends Desgastable {
 	
+	HachaDeMadera(){
+		durabilidad = 100;
+		fuerza = 2;
+	}
 	
-	@Override
-	public int reducirDurabilidad(int durabilidad,int fuerza) {
-		durabilidad -= fuerza;
-		return durabilidad;
-		
+	public void reducirDurabilidad() {
+		durabilidad -= fuerza;		
 	}
 
-	public void usarContra(Madera madera,int fuerza) {
+	public void usarContra(Madera madera) {
 		madera.recibirDanio(fuerza);
 	}
+	
+	public void usarContra(Metal metal) {
+	}
+	
+	public void usarContra(Piedra piedra) {
+	}
 
-
+	public void usarContra(Diamante diamante) {
+	}
 
 }

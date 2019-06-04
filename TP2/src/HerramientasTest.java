@@ -298,7 +298,7 @@ class HerramientasTest{
 		int durabilidad = pico.getDurabilidad();
 		int fuerza = pico.getFuerza();
 
-		pico.usar(metal);
+		pico.usar(metal);		
 
 		assert pico.getDurabilidad() == (int)(durabilidad - fuerza/1.5);
 
@@ -334,7 +334,7 @@ class HerramientasTest{
 		
 		assert picoFino.getDurabilidad() == (int)(durabilidad - durabilidad * 0.1);
 	}
-	/*
+	
 	@Test
 	void testPicoFinoSeUsaContraMadera(){
 		Madera madera = new Madera();
@@ -343,20 +343,20 @@ class HerramientasTest{
 		
 		picoFino.usar(madera);
 		
-		assert picoFino.getDurabilidad() == durabilidad;
+		assert picoFino.getDurabilidad() == (durabilidad - durabilidad * 0.1);
 		
 		// No pasa xq hay q ver como gasta
 	}
 	
 	@Test
 	void testPicoFinoSeUsaContraMetal(){
-		Metal mmetal = new Metal();
+		Metal metal = new Metal();
 		PicoFino picoFino = new PicoFino();
 		int durabilidad = picoFino.getDurabilidad();
 		
-		picoFino.usar(metal);
+		picoFino.usar(metal);		
 		
-		assert picoFino.getDurabilidad() == durabilidad;
+		assert picoFino.getDurabilidad() == (durabilidad - durabilidad * 0.1);
 		
 		// No pasa xq hay q ver como gasta
 	}
@@ -369,10 +369,10 @@ class HerramientasTest{
 		
 		picoFino.usar(piedra);
 		
-		assert picoFino.getDurabilidad() == durabilidad;
+		assert picoFino.getDurabilidad() == (durabilidad - durabilidad * 0.1);
 		
 		// No pasa xq hay q ver como gasta
-	}*/
+	}
 
 
 }

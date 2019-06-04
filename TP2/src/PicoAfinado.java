@@ -1,14 +1,15 @@
 
-public class PicoDeMadera extends Desgastable {
+public class PicoAfinado extends Desgastable {
 
-	PicoDeMadera(){
-		durabilidad = 100;
-		fuerza = 2;
+	
+	PicoAfinado(){
+		durabilidad = 1000;
+		fuerza = 20;
 	}
 	
 	@Override
 	public void reducirDurabilidad() {
-		durabilidad -= fuerza;		
+		durabilidad -= durabilidad * 0.1;		
 	}
 
 	public void usarContra(Madera madera) {
@@ -18,18 +19,17 @@ public class PicoDeMadera extends Desgastable {
 	}
 	
 	public void usarContra(Piedra piedra) {
-		piedra.recibirDanio(fuerza);
 	}
 	
 	public void usarContra(Diamante diamante) {
+		diamante.recibirDanio(fuerza);
 	}
-	
-	
-	/*@Override
+	/*
+	@Override
 	public int reducirDurabilidad(int durabilidad, int fuerza) {
-		durabilidad -= fuerza;
+		durabilidad -= durabilidad * 0.1;
 		return durabilidad;
-	}*/
-
+	}	
+	*/
 
 }
