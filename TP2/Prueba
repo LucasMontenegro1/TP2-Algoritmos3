@@ -8,3 +8,20 @@ prueba marcos xdd
 
 
 holis
+
+pusheo para probar travis
+
+prueba travis 2
+
+prueba travis 3
+
+aaaaa
+
+PROBANDO MARCOS
+
+language: java
+jdk:
+  - oraclejdk8
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)

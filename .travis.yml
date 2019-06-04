@@ -5,10 +5,12 @@ jdk:
 install: ant
 script: ant test
 
+
 notifications:
  email:
     recipients:
       - aguscambiano@gmail.com
+      - ivan.soriano@live.com.ar
     on_failure: always
     on_success: always
 
