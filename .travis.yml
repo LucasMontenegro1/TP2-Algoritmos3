@@ -9,7 +9,6 @@ script: ant test
 notifications:
  email:
     recipients:
-      - aguscambiano@gmail.com
-      - ivan.soriano@live.com.ar
+      - marcosrolando.mr@gmail.com
     on_success: always
 
