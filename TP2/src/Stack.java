@@ -1,14 +1,19 @@
 
 public class Stack {
 
+	private static int capacidadStack=64;
 	
-	
-	//Me confundi y mezcle cosas de Jugador y stack, 
-	//hoy a la vuelta o mañana lo arreglo
-	
-	private static int cantidadDeStacks=28;
-	
-	private Equipable inventario[]= new Equipable[cantidadDeStacks];
-	private Equipable elementoEquipado;
+	int cantidadMaximaElementos=capacidadStack;
+	int cantidadActualElementos=0;
 
+	Equipable elementoGuardado;
+	
+	public void agregarElementos(int cantidad){
+		
+	}
+	
+	public void quitarElementos(int cantidad) {
+		
+	}
+	
 }
