@@ -1,5 +1,5 @@
 
-public class HachaDeMadera extends Desgastable {
+public class HachaDeMadera implements Desgastable {
 	
 	
 	@Override
@@ -8,5 +8,11 @@ public class HachaDeMadera extends Desgastable {
 		return durabilidad;
 		
 	}
+
+	public void usarContra(Madera madera,int fuerza) {
+		madera.recibirDanio(fuerza);
+	}
+
+
 
 }

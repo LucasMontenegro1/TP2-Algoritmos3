@@ -1,5 +1,5 @@
 
-public class PicoDePiedra extends Desgastable {
+public class PicoDePiedra implements Desgastable {
 
 	
 	@Override
@@ -8,5 +8,7 @@ public class PicoDePiedra extends Desgastable {
 		return (int) (durabilidad-fuerza/1.5);
 		
 	}
+
+
 	
 }

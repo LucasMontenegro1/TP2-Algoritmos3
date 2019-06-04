@@ -1,5 +1,5 @@
 
-public class PicoDeMetal extends Desgastable {
+public class PicoDeMetal implements Desgastable {
 	int usos;
 	
 	public PicoDeMetal() {
@@ -14,4 +14,6 @@ public class PicoDeMetal extends Desgastable {
 		else return durabilidad;
 		
 	}
+
+
 }

@@ -1,9 +1,14 @@
 
-public class Desgastable {
+public interface Desgastable {
 
-	public int reducirDurabilidad(int durabilidad, int fuerza) {
+	public int reducirDurabilidad(int durabilidad, int fuerza);
 
-		return 0;
-	}
+	public void usarContra(Piedra unMaterial, int fuerza);
+
+	public void usarContra(Metal unMaterial, int fuerza);
+
+	public void usarContra(Madera unMaterial, int fuerza);
+
+
 	
 }
