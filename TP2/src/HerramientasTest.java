@@ -50,19 +50,10 @@ class HerramientasTest{
 		assert picoFino.getDurabilidad()==1000;
 		assert picoFino.getFuerza()==20;
 
-	}
+		
+		}
 
-	
-	
-	
-	
-	
-	//PRUEBAS DE HACHA
-	
-	
-	
-	
-	
+
 	@Test
 	void testHachaDeMaderaSeUsaContraMadera() {
 		Madera madera = new Madera();
@@ -218,7 +209,7 @@ class HerramientasTest{
 
 		pico.usar(madera);
 
-		assert pico.getDurabilidad() == (durabilidad - fuerza/1.5);
+		assert pico.getDurabilidad() == (int)(durabilidad - fuerza/1.5);
 
 	}
 
@@ -228,7 +219,7 @@ class HerramientasTest{
 		Metal metal = new Metal();
 		Pico pico = new Pico(metal);
 		int durabilidad = pico.getDurabilidad();
-		int fuerza = pico.getFuerza();
+	
 
 		for (int i = 0; i < 9; i++) {
 			pico.usar(madera);
@@ -263,7 +254,7 @@ class HerramientasTest{
 
 		pico.usar(piedra);
 
-		assert pico.getDurabilidad() == (durabilidad - fuerza/1.5);
+		assert pico.getDurabilidad() == (int)(durabilidad - fuerza/1.5);
 
 	}
 
@@ -273,7 +264,7 @@ class HerramientasTest{
 		Metal metal = new Metal();
 		Pico pico = new Pico(metal);
 		int durabilidad = pico.getDurabilidad();
-		int fuerza = pico.getFuerza();
+		
 
 		for (int i = 0; i < 9; i++) {
 			pico.usar(piedra);
@@ -309,7 +300,7 @@ class HerramientasTest{
 
 		pico.usar(metal);
 
-		assert pico.getDurabilidad() == (durabilidad - fuerza/1.5);
+		assert pico.getDurabilidad() == (int)(durabilidad - fuerza/1.5);
 
 	}
 
@@ -318,7 +309,7 @@ class HerramientasTest{
 		Metal metal = new Metal();
 		Pico pico = new Pico(metal);
 		int durabilidad = pico.getDurabilidad();
-		int fuerza = pico.getFuerza();
+		
 
 		for (int i = 0; i < 9; i++) {
 			pico.usar(metal);

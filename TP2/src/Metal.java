@@ -1,7 +1,7 @@
 
-public class Metal implements Material {
+public class Metal extends Material {
 	
-	int durabilidad;
+	
 	
 	
 	Metal(){
