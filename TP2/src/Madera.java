@@ -1,10 +1,8 @@
 
 public class Madera extends Material {
-	
-	
-	
+		
 	Madera(){
-		durabilidad=20;
+		durabilidad=10;
 	}
 	
 	
