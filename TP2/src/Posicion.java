@@ -7,8 +7,8 @@ public class Posicion {
 	//tambien que esta clase sea privada de jugador, pero no se
 	//si esta bien)
 	
-	private int x=0;
-	private int y=0;
+	private int x = 0;
+	private int y = 0;
 	
 	
 	Posicion(){
@@ -16,16 +16,16 @@ public class Posicion {
 	}
 	
 	Posicion(int x, int y){
-		this.x=x;
-		this.y=y;
+		this.x = x;
+		this.y = y;
 	}
 	
 	public void irHaciaAdelante(int desplazamiento){
-		this.x+=desplazamiento;
+		this.x += desplazamiento;
 	}
 	
 	public void irHaciaDerecha(int desplazamiento) {
-		this.y+=desplazamiento;
+		this.y += desplazamiento;
 	}
 	
 }

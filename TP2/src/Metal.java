@@ -1,10 +1,7 @@
 
 public class Metal extends Material {
-	
-	
-	
-	
+		
 	Metal(){
-		durabilidad=50;
+		durabilidad = 50;
 	}	
 }

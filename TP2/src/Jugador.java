@@ -3,8 +3,8 @@ public class Jugador {
 
 	
 	
-	private Posicion posicion=new Posicion();
-	private Inventario inventario=new Inventario();
+	private Posicion posicion = new Posicion();
+	private Inventario inventario = new Inventario();
 	
 	
 	

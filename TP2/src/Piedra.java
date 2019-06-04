@@ -4,6 +4,4 @@ public class Piedra extends Material {
 		durabilidad = 30;
 	}
 	
-	
-	
 }

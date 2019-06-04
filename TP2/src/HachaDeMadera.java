@@ -4,7 +4,7 @@ public class HachaDeMadera implements Desgastable {
 	
 	@Override
 	public int reducirDurabilidad(int durabilidad,int fuerza) {
-		durabilidad-= fuerza;
+		durabilidad -= fuerza;
 		return durabilidad;
 		
 	}

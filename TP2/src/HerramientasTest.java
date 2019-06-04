@@ -374,47 +374,5 @@ class HerramientasTest{
 		// No pasa xq hay q ver como gasta
 	}*/
 
-	
-	//PRUEBAS DE MATERIAL
-	
-	
-	/*@Test
-	void testMaderaSeGolpeaConUnHachaDeMadera() {
-		Madera madera = new Madera();
-		Hacha hacha = new Hacha(madera);
-		int durabilidad = madera.getDurabilidad();
-
-		hacha.usar(madera);
-
-		assert madera.getDurabilidad() == (durabilidad - fuerza);
-		
-		//No pasa xq hay que hacer que se gaste el material
-	}*/
-	
-	@Test
-	void PiedraSeGolpeaConUnHacha() {
-		Piedra piedra = new Piedra();
-		Hacha hacha = new Hacha(piedra);
-		
-		int durabilidad = piedra.getDurabilidad();
-		
-		hacha.usar(piedra);
-		
-		assert piedra.getDurabilidad() == durabilidad;		
-	}
-	
-	@Test
-	void MetalSeGolpeaConUnPicoDeMadera() {
-		Metal metal = new Metal();
-		Madera madera = new Madera();
-		Pico pico = new Pico(madera);
-		
-		int durabilidad = metal.getDurabilidad();
-		
-		pico.usar(metal);
-		
-		assert metal.getDurabilidad() == durabilidad;
-	}
-
 
 }

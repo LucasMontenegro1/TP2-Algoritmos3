@@ -15,22 +15,22 @@ public class Herramienta implements Equipable{
 	}
 	
 	public void usar(Madera unMaterial) {
-		durabilidad=estado.reducirDurabilidad(durabilidad, fuerza);
+		durabilidad = estado.reducirDurabilidad(durabilidad, fuerza);
 		//estado.usarContra(unMaterial,this.fuerza);
 	}
 	
 	public void usar(Metal unMaterial) {
-		durabilidad=estado.reducirDurabilidad(durabilidad, fuerza);
+		durabilidad = estado.reducirDurabilidad(durabilidad, fuerza);
 		//estado.usarContra(unMaterial,this.fuerza);
 	}
 	
 	public void usar(Piedra unMaterial) {
-		durabilidad=estado.reducirDurabilidad(durabilidad, fuerza);
+		durabilidad = estado.reducirDurabilidad(durabilidad, fuerza);
 		//estado.usarContra(unMaterial,this.fuerza);
 	}
 	
 	public void usar(Diamante unMaterial) {
-		durabilidad=estado.reducirDurabilidad(durabilidad, fuerza);
+		durabilidad = estado.reducirDurabilidad(durabilidad, fuerza);
 		//estado.usarContra(unMaterial,this.fuerza);
 	}
 }

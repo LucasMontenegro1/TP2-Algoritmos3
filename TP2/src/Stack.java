@@ -1,10 +1,10 @@
 
 public class Stack {
 
-	private static int capacidadStack=64;
+	private static int capacidadStack = 64;
 	
-	int cantidadMaximaElementos=capacidadStack;
-	int cantidadActualElementos=0;
+	int cantidadMaximaElementos = capacidadStack;
+	int cantidadActualElementos = 0;
 
 	Equipable elementoGuardado;
 	

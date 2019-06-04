@@ -1,4 +1,5 @@
 
+
 public class Diamante extends Material{
 
 	Diamante(){

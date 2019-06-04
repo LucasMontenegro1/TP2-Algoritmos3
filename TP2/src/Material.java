@@ -7,6 +7,6 @@ public class Material implements Equipable  {
 	}
 	
 	public void recibirDanio(int danio) {
-		durabilidad-=danio;
+		durabilidad -= danio;
 	}
 }
