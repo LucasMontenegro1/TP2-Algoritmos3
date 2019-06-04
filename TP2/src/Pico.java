@@ -10,14 +10,18 @@ public class Pico extends Herramienta {
 	 }
 	 
 	 Pico(Piedra piedra) {
+		 
+		 estado= new PicoDePiedra();
+		 
 		 this.durabilidad = 200;
 		 this.fuerza = 4;
+		 
 	}
 
 	 Pico(Metal metal) {
 
 		estado=new PicoDeMetal();
-
+		
 		 this.durabilidad = 400;
 		 this.fuerza = 12;
 

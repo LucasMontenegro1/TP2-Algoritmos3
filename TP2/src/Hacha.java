@@ -10,6 +10,7 @@ public class Hacha extends Herramienta {
 	}
 
 	Hacha(Piedra piedra) {
+		this.estado=new HachaDePiedra();
 		this.durabilidad = 200;
 		this.fuerza = 5;
 	}
