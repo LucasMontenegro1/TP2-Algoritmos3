@@ -10,5 +10,5 @@ public class Inventario {
 		elementoSeleccionado.usar();
 	}
 	 
-	
+	 
 }
