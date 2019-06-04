@@ -2,7 +2,8 @@
 public class picoFino extends Herramienta {
 	
 	picoFino(){
-		estado=new picoAfinado();
+		this.durabilidad=1000;
+		this.fuerza=20;
 	}
 	
 }

@@ -1,5 +1,5 @@
-public class Piedra implements Material {
-	int durabilidad;
+public class Piedra extends Material {
+	
 	
 	
 	Piedra(){

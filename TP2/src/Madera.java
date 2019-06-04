@@ -1,6 +1,6 @@
 
-public class Madera implements Material {
-	int durabilidad;
+public class Madera extends Material {
+	
 	
 	
 	Madera(){

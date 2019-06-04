@@ -1,14 +1,10 @@
 
 public class PicoDeMadera extends Desgastable {
-	
-	PicoDeMadera(){
-		this.durabilidad=100;
-		this.fuerza=2;
-	}
+
 	
 	@Override
-	public void usar() {
+	public int reducirDurabilidad(int durabilidad, int fuerza) {
 		durabilidad-= fuerza;
-		
+		return durabilidad;
 	}
 }

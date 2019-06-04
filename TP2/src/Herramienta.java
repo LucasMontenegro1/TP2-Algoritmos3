@@ -1,20 +1,20 @@
 
-<<<<<<< HEAD
-public class Herramienta {
-	
-	protected Desgastable estado;
-	
-=======
+
 public class Herramienta implements Equipable{
 	protected int durabilidad; //vida de la herramienta
 	protected int fuerza; //si le pega a algo, cuanto le desgasta
->>>>>>> 2f7a4d78b1a0ecc2362681e4eafc4aea94a673fd
+	protected Desgastable estado;
+	
 	
 	public int getDurabilidad() {
-		return this.estado.getDurabilidad();
+		return this.durabilidad;
 	}
 	
 	public int getFuerza() {
-		return this.estado.getFuerza();
+		return this.fuerza;
+	}
+	
+	public void usar(Material unMaterial) {
+		durabilidad=estado.reducirDurabilidad(durabilidad, fuerza);
 	}
 }
