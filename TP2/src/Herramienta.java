@@ -1,13 +1,14 @@
 
 public class Herramienta {
-	protected int durabilidad; //vida de la herramienta
-	protected int fuerza; //si le pega a algo, cuanto le desgasta
+	
+	protected Desgastable estado;
+	
 	
 	public int getDurabilidad() {
-		return this.durabilidad;
+		return this.estado.getDurabilidad();
 	}
 	
 	public int getFuerza() {
-		return this.fuerza;
+		return this.estado.getFuerza();
 	}
 }

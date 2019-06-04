@@ -50,8 +50,19 @@ class HerramientasTest{
 		assert picoFino.getDurabilidad()==1000;
 		assert picoFino.getFuerza()==20;
 		
-	}
-	
-	
+		}
+
+	@Test 
+	void testHachaDeMaderaSeUsaContraMadera() {
+		Madera madera = new Madera();
+		Hacha hacha = new Hacha(madera);
+		int durabilidad = hacha.getDurabilidad();
+		int fuerza=hacha.getFuerza();
+		
+		hacha.usar(madera);
+		assert hacha.getDurabilidad() == (durabilidad - fuerza);
+
+		}
+		
 	
 }

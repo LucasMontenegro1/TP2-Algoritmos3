@@ -1,17 +1,20 @@
 
 public class Hacha extends Herramienta {
+	
 
 	Hacha(Madera madera){
-		this.durabilidad=100;
-		this.fuerza=2;
+		this.estado=new HachaDeMadera();
 		
 	}
 
 	 Hacha(Metal metal) {
-		 this.durabilidad=400;
-		 this.fuerza=10;
-		 //Holissss
+		this.estado=new HachaDeMetal();
 	}
+	 
+	 public void usar(Madera madera){
+		 estado.usar();
+	 }
+	
 	
 	
 }
