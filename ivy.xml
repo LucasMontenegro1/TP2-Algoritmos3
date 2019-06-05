@@ -1,4 +1,7 @@
 <ivy-module version="2.0">
+    
+    before_install: cd TP2
+    
     <info organisation="org.apache" module="tp-final-algo3"/>
     
      <configurations>
