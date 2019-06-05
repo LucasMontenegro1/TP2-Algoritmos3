@@ -10,17 +10,10 @@
     <dependencies>
         
         <dependency org="org.mockito" name="mockito-all" rev="1.9.0" conf="build->default"/>
-        <dependency org="junit" name="junit" rev="4.11" conf="build->default"/>
+        <dependency org="junit" name="junit" rev="5.4.0" conf="build->default"/>
         <dependency org="net.sourceforge.cobertura" name="cobertura" rev="2.1.1" conf="build->default"/>
         
         <dependency org="pmd" name="pmd" rev="4.3" conf="analysis->default"/>
-        
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>5.0.0-M5</version>
-            <scope>test</scope>
-        </dependency>
         
         <!--
          
