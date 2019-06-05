@@ -4,7 +4,7 @@ import org.junit.Test;
 public class MaterialesTests {
 	
 	@Test
-	public void testHachaDeMaderaSeUsaContraMadera() {
+	public void testMaderaSeGolpeaConUnHachaDeMaderaYDisminuyeLaDurabilidadDeLaMadera() {
 		Madera madera = new Madera();
 		Hacha hacha = new Hacha(madera);
 		int durabilidadMaterial = madera.getDurabilidad();
@@ -17,7 +17,7 @@ public class MaterialesTests {
 
 	
 	@Test
-	public void PiedraSeGolpeaConUnHachaDePiedra() {
+	public void testPiedraSeGolpeaConUnHachaDePiedraYNoSeDisminuyeLaDurabilidadDeLaPiedra() {
 		Piedra piedra = new Piedra();
 		Hacha hacha = new Hacha(piedra);
 		
@@ -30,7 +30,7 @@ public class MaterialesTests {
 	
 	
 	@Test
-	public void PiedraSeGolpeaConUnHachaDeMadera() {
+	public void testPiedraSeGolpeaConUnHachaDeMaderaYNoSeDisminuyeLaDurabilidadDeLaPiedra() {
 		Piedra piedra = new Piedra();
 		Hacha hacha = new Hacha(new Madera());
 		
@@ -44,7 +44,7 @@ public class MaterialesTests {
 	
 	
 	@Test
-	public void PiedraSeGolpeaConUnHachaDeMetal() {
+	public void testPiedraSeGolpeaConUnHachaDeMetalYNoSeDisminuyeLaDurabilidadDeLaPiedra() {
 		Piedra piedra = new Piedra();
 		Hacha hacha = new Hacha(new Metal());
 		
@@ -57,7 +57,7 @@ public class MaterialesTests {
 	
 	
 	@Test
-	public void MetalSeGolpeaConUnPicoDeMadera() {
+	public void testMetalSeGolpeaConUnPicoDeMaderaYDisminuyeLaDurabilidadDelMetal() {
 		Metal metal = new Metal();
 		Madera madera = new Madera();
 		Pico pico = new Pico(madera);
