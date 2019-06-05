@@ -11,7 +11,7 @@ public class JugadorTest {
 		Material madera = new Madera();
 		
 		//ver como se va usar el elemento seleccionado
-		//para terminar la prueba
+		//para terminar la prueba  
 		
 	}
 
