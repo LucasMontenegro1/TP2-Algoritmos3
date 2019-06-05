@@ -13,7 +13,7 @@ public class MaterialesTests {
 		hacha.usar(madera);
 		assert madera.getDurabilidad() == (durabilidad-fuerzaHacha);
 
-	}
+	} 
 
 	
 	@Test
