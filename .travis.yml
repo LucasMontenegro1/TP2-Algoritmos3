@@ -9,6 +9,6 @@ script: ant test
 notifications:
  email:
     recipients:
-      - marcosrolando.mr@gmail.com
+      - aguscambiano@gmail.com
     on_success: always
 
