@@ -33,4 +33,12 @@ public class Herramienta implements Equipable{
 		estado.reducirDurabilidad();
 		estado.usarContra(unMaterial);
 	}
+	
+	//FIJARSE QUE HACER CON ESTE METODO, SE AGREGO 
+		//PARA VER SI ANDA TRAVIS
+	public void usar(){
+
+	}
+	
+	
 }
