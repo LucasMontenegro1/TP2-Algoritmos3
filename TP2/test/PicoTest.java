@@ -228,7 +228,7 @@ public class PicoTest {
 		
 		picoFino.usar(diamante);
 		
-		assert picoFino.getDurabilidad() == (int)(durabilidadHerramienta - durabilidadHerramienta * 0.1);
+		assert picoFino.getDurabilidad() == (durabilidadHerramienta - durabilidadHerramienta * 0.1);
 	}
 	
 	@Test
@@ -239,7 +239,7 @@ public class PicoTest {
 		
 		picoFino.usar(madera);
 		
-		assert picoFino.getDurabilidad() == (durabilidadHerramienta - durabilidadHerramienta * 0.1);
+		assert picoFino.getDurabilidad() == durabilidadHerramienta;
 		
 	}
 	
@@ -251,7 +251,7 @@ public class PicoTest {
 		
 		picoFino.usar(metal);		
 		
-		assert picoFino.getDurabilidad() == (durabilidadHerramienta - durabilidadHerramienta * 0.1);
+		assert picoFino.getDurabilidad() == durabilidadHerramienta;
 		
 	}
 	
@@ -263,7 +263,7 @@ public class PicoTest {
 		
 		picoFino.usar(piedra);
 		
-		assert picoFino.getDurabilidad() == (durabilidadHerramienta - durabilidadHerramienta * 0.1);
+		assert picoFino.getDurabilidad() == durabilidadHerramienta;
 
 	}
 
