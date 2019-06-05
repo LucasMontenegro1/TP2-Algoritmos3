@@ -17,7 +17,7 @@ public class MaterialesTests {
 
 	
 	@Test
-	public void PiedraSeGolpeaConUnHacha() {
+	public void PiedraSeGolpeaConUnHachaDePiedra() {
 		Piedra piedra = new Piedra();
 		Hacha hacha = new Hacha(piedra);
 		
@@ -27,6 +27,34 @@ public class MaterialesTests {
 		
 		assert piedra.getDurabilidad() == durabilidad;		
 	}
+	
+	
+	@Test
+	public void PiedraSeGolpeaConUnHachaDeMadera() {
+		Piedra piedra = new Piedra();
+		Hacha hacha = new Hacha(new Madera());
+		
+		int durabilidad = piedra.getDurabilidad();
+		
+		hacha.usar(piedra);
+		
+		assert piedra.getDurabilidad() == durabilidad;		
+	}
+	
+	
+	
+	@Test
+	public void PiedraSeGolpeaConUnHachaDeMetal() {
+		Piedra piedra = new Piedra();
+		Hacha hacha = new Hacha(new Metal());
+		
+		int durabilidad = piedra.getDurabilidad();
+		
+		hacha.usar(piedra);
+		
+		assert piedra.getDurabilidad() == durabilidad;		
+	}
+	
 	
 	@Test
 	public void MetalSeGolpeaConUnPicoDeMadera() {
