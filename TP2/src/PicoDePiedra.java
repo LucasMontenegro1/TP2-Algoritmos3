@@ -10,7 +10,7 @@ public class PicoDePiedra extends Desgastable {
 	}
 
 	public void usarContra(Madera madera) {
-		reducirDurabilidad();
+		//reducirDurabilidad();
 	}
 	
 	public void usarContra(Metal metal) {
