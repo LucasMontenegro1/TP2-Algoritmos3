@@ -29,12 +29,13 @@ public class PicoTest {
 
 	@Test
 	public void testSeCreaPicoFino() {
-		Herramienta picoFino = new PicoFino();
+		Piedra piedra = new Piedra();
+		Metal metal = new Metal();
+		Pico picoFino = new Pico(piedra, metal);
 
 		assert picoFino.getDurabilidad() == 1000;
 		assert picoFino.getFuerza() == 20;
 
-		
 	}
 	
 
@@ -222,8 +223,10 @@ public class PicoTest {
 
 	@Test
 	public void testPicoFinoSeUsaContraDiamante(){
+		Metal metal = new Metal();
+		Piedra piedra = new Piedra();
 		Diamante diamante = new Diamante();
-		PicoFino picoFino = new PicoFino();
+		Pico picoFino = new Pico(piedra, metal);
 		int durabilidadHerramienta = picoFino.getDurabilidad();
 		
 		picoFino.usar(diamante);
@@ -233,8 +236,10 @@ public class PicoTest {
 	
 	@Test
 	public void testPicoFinoSeUsaContraMadera(){
+		Metal metal = new Metal();
+		Piedra piedra = new Piedra();
 		Madera madera = new Madera();
-		PicoFino picoFino = new PicoFino();
+		Pico picoFino = new Pico(piedra, metal);
 		int durabilidadHerramienta = picoFino.getDurabilidad();
 		
 		picoFino.usar(madera);
@@ -246,7 +251,8 @@ public class PicoTest {
 	@Test
 	public void testPicoFinoSeUsaContraMetal(){
 		Metal metal = new Metal();
-		PicoFino picoFino = new PicoFino();
+		Piedra piedra = new Piedra();
+		Pico picoFino = new Pico(piedra, metal);
 		int durabilidadHerramienta = picoFino.getDurabilidad();
 		
 		picoFino.usar(metal);		
@@ -257,8 +263,9 @@ public class PicoTest {
 	
 	@Test
 	public void testPicoFinoSeUsaContraPiedra(){
+		Metal metal = new Metal();
 		Piedra piedra = new Piedra();
-		PicoFino picoFino = new PicoFino();
+		Pico picoFino = new Pico(piedra, metal);
 		int durabilidadHerramienta = picoFino.getDurabilidad();
 		
 		picoFino.usar(piedra);

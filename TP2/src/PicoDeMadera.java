@@ -11,16 +11,20 @@ public class PicoDeMadera extends Desgastable {
 	}
 
 	public void usarContra(Madera madera) {
+		reducirDurabilidad();
 	}
 	
 	public void usarContra(Metal metal) {
+		reducirDurabilidad();
 	}
 	
 	public void usarContra(Piedra piedra) {
+		reducirDurabilidad();
 		piedra.recibirDanio(fuerza);
 	}
 	
 	public void usarContra(Diamante diamante) {
+		reducirDurabilidad();
 	}
 	
 	

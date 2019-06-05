@@ -12,5 +12,8 @@ public class Pico extends Herramienta {
 		estado = new PicoDeMetal();
 	}
 	 
+	Pico(Piedra piedra, Metal metal) {
+		estado = new PicoAfinado();
+	}
 
 }

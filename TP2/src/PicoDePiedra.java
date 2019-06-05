@@ -5,31 +5,27 @@ public class PicoDePiedra extends Desgastable {
 		fuerza = 4;
 	}
 	
-	@Override
 	public void reducirDurabilidad() {
 		durabilidad -= (fuerza/1.5);		
 	}
 
 	public void usarContra(Madera madera) {
+		reducirDurabilidad();
 	}
 	
 	public void usarContra(Metal metal) {
+		reducirDurabilidad();
 		metal.recibirDanio(fuerza);
 	}
 	
 	public void usarContra(Piedra piedra) {
+		reducirDurabilidad();
 		piedra.recibirDanio(fuerza);
 	}
 	
 	public void usarContra(Diamante diamante) {
+		reducirDurabilidad();
 	}
-	/*@Override
-	public int reducirDurabilidad(int durabilidad,int fuerza) {
-		
-		return (int) (durabilidad-fuerza/1.5);
-		
-	}*/
-
 
 	
 }

@@ -3,7 +3,7 @@ public abstract class Desgastable {
 	public int durabilidad;
 	public int fuerza;
 
-	public abstract void reducirDurabilidad();
+	protected abstract void reducirDurabilidad();
 
 	public abstract void usarContra(Piedra piedra);
 

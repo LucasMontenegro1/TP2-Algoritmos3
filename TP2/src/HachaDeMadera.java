@@ -5,21 +5,25 @@ public class HachaDeMadera extends Desgastable {
 		fuerza = 2;
 	}
 	
-	public void reducirDurabilidad() {
+	protected void reducirDurabilidad() {
 		durabilidad -= fuerza;		
 	}
 
 	public void usarContra(Madera madera) {
+		reducirDurabilidad();
 		madera.recibirDanio(fuerza);
 	}
 	
 	public void usarContra(Metal metal) {
+		reducirDurabilidad();
 	}
 	
 	public void usarContra(Piedra piedra) {
+		reducirDurabilidad();
 	}
 
 	public void usarContra(Diamante diamante) {
+		reducirDurabilidad();
 	}
 
 }

@@ -8,7 +8,7 @@ public class PicoAfinado extends Desgastable {
 	
 	@Override
 	public void reducirDurabilidad() {
-		durabilidad -= durabilidad * 0.1;		
+		durabilidad -= durabilidad * 0.1;
 	}
 
 	public void usarContra(Madera madera) {
@@ -21,6 +21,7 @@ public class PicoAfinado extends Desgastable {
 	}
 	
 	public void usarContra(Diamante diamante) {
+		reducirDurabilidad();
 		diamante.recibirDanio(fuerza);
 	}
 	/*
