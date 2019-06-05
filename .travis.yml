@@ -10,6 +10,8 @@ script: ant test
 notifications:
  email:
     recipients:
+      - marcosrolando.mr@gmail.com
       - ivan.soriano@live.com.ar
     on_success: always
+    on_failure: always
 
