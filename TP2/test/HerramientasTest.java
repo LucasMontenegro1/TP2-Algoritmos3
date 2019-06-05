@@ -1,6 +1,6 @@
 import org.junit.Test;
 
-class HerramientasTest{
+public class HerramientasTest{
 
 	@Test
 	void testSeCreaUnHachaDeMadera() {
