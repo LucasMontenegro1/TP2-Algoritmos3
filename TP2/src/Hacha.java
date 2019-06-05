@@ -1,4 +1,3 @@
-
 public class Hacha extends Herramienta {
 
 	Hacha(Madera madera) {

@@ -1,4 +1,3 @@
-
 public class PicoDeMetal extends Desgastable {
 	int usos;
 	

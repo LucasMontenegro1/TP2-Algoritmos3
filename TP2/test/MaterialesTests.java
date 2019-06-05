@@ -7,11 +7,11 @@ public class MaterialesTests {
 	public void testHachaDeMaderaSeUsaContraMadera() {
 		Madera madera = new Madera();
 		Hacha hacha = new Hacha(madera);
-		int durabilidad = madera.getDurabilidad();
-		int fuerzaHacha = hacha.getFuerza();
+		int durabilidadMaterial = madera.getDurabilidad();
+		int fuerzaHerramienta = hacha.getFuerza();
 
 		hacha.usar(madera);
-		assert madera.getDurabilidad() == (durabilidad-fuerzaHacha);
+		assert madera.getDurabilidad() == (durabilidadMaterial - fuerzaHerramienta);
 
 	} 
 
@@ -21,11 +21,11 @@ public class MaterialesTests {
 		Piedra piedra = new Piedra();
 		Hacha hacha = new Hacha(piedra);
 		
-		int durabilidad = piedra.getDurabilidad();
+		int durabilidadMaterial = piedra.getDurabilidad();
 		
 		hacha.usar(piedra);
 		
-		assert piedra.getDurabilidad() == durabilidad;		
+		assert piedra.getDurabilidad() == durabilidadMaterial;		
 	}
 	
 	
@@ -34,11 +34,11 @@ public class MaterialesTests {
 		Piedra piedra = new Piedra();
 		Hacha hacha = new Hacha(new Madera());
 		
-		int durabilidad = piedra.getDurabilidad();
+		int durabilidadMaterial = piedra.getDurabilidad();
 		
 		hacha.usar(piedra);
 		
-		assert piedra.getDurabilidad() == durabilidad;		
+		assert piedra.getDurabilidad() == durabilidadMaterial;		
 	}
 	
 	
@@ -48,11 +48,11 @@ public class MaterialesTests {
 		Piedra piedra = new Piedra();
 		Hacha hacha = new Hacha(new Metal());
 		
-		int durabilidad = piedra.getDurabilidad();
+		int durabilidadMaterial = piedra.getDurabilidad();
 		
 		hacha.usar(piedra);
 		
-		assert piedra.getDurabilidad() == durabilidad;		
+		assert piedra.getDurabilidad() == durabilidadMaterial;		
 	}
 	
 	
@@ -62,10 +62,10 @@ public class MaterialesTests {
 		Madera madera = new Madera();
 		Pico pico = new Pico(madera);
 		
-		int durabilidad = metal.getDurabilidad();
+		int durabilidadMaterial = metal.getDurabilidad();
 		
 		pico.usar(metal);
 		
-		assert metal.getDurabilidad() == durabilidad;
+		assert metal.getDurabilidad() == durabilidadMaterial;
 	}
 }

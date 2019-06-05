@@ -1,4 +1,3 @@
-
 public abstract class Desgastable {
 	
 	public int durabilidad;

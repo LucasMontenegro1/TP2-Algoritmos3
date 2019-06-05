@@ -1,4 +1,3 @@
-
 public class PicoDePiedra extends Desgastable {
 
 	PicoDePiedra(){

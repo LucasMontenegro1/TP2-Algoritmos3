@@ -6,7 +6,10 @@ public class Jugador {
 	private Posicion posicion = new Posicion();
 	private Inventario inventario = new Inventario();
 	
-	
+	Jugador(){
+		Madera madera = new Madera();
+		Hacha hacha = new Hacha(madera);
+	}
 	
 	
 	//Hay que ver cómo van a usarse las herramientas

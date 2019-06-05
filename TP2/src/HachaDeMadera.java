@@ -1,4 +1,3 @@
-
 public class HachaDeMadera extends Desgastable {
 	
 	HachaDeMadera(){

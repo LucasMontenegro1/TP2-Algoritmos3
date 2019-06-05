@@ -1,4 +1,3 @@
-
 public class Pico extends Herramienta {
 	 
 	Pico(Madera madera){		
