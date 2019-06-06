@@ -6,10 +6,10 @@ public class JugadorTest {
 	public void testSeEmpiezaConHacha() {
 
 		Jugador jugador = new Jugador();
-		Material madera = new Madera();
+		Madera madera = new Madera();
+		Herramienta hacha = new Hacha(madera);
 		
-		//ver como se va usar el elemento seleccionado
-		//para terminar la prueba  
+		assert jugador.inventario.elementosGuardados[0].getClass() == hacha.getClass();
 		
 	}
 
