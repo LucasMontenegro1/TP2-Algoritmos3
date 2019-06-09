@@ -18,4 +18,10 @@ public class Jugador {
 	public void usarElementoSeleccionado() {
 		inventario.usarElementoSeleccionado();
 	}
+	
+	
+	public Inventario getInventario(){
+		return this.inventario;
+	}
+	
 }
