@@ -1,8 +1,8 @@
 
 public class Inventario {
 
-	private static int cantidadDeStacks = 28;
-	private Paquete elementosGuardados[] = new Paquete[cantidadDeStacks];
+	private static int cantidadDePaquetes = 28;
+	private Paquete elementosGuardados[] = new Paquete[cantidadDePaquetes];
 	private Equipable elementoSeleccionado;
 
 	
