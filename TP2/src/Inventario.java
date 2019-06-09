@@ -7,21 +7,19 @@ public class Inventario {
 
 
     Inventario(){
-        Madera madera = new Madera();
-        getElementosGuardados()[0].setElementoGuardado(new Hacha(madera));
-        elementoSeleccionado = getElementosGuardados()[0].getElementoGuardado();
+        for(int i = 0; i < cantidadDePaquetes; i++) {
+        	elementosGuardados[i] = new Paquete();
+        }
+    	elementosGuardados[0].setElementoGuardado(new Hacha(new Madera()));
+        elementoSeleccionado = elementosGuardados[0].getElementoGuardado();
     }
 
     public void usarElementoSeleccionado() {
         elementoSeleccionado.usar();
     }
 
-    public Paquete[] getElementosGuardados() {
-        return elementosGuardados;
-    }
-
-    public void setElementosGuardados(Paquete elementosGuardados[]) {
-        this.elementosGuardados = elementosGuardados;
+    public Paquete getElementosGuardados(int posicion) {
+        return elementosGuardados[posicion];
     }
 
 

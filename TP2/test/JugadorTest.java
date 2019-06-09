@@ -6,10 +6,9 @@ public class JugadorTest {
 	public void testSeEmpiezaConHacha() {
 
 		Jugador jugador = new Jugador();
-		Madera madera = new Madera();
-		Paquete paquete = new Paquete();
+		Hacha hacha = new Hacha(new Madera());
 		
-		assert jugador.getInventario().getElementosGuardados()[0].getElementoGuardado().getClass() == paquete.getClass();	
+		assert jugador.getInventario().getElementosGuardados(0).getElementoGuardado().getClass() == hacha.getClass();	//HAY QUE CHEQUEAR QUE ES UN HACHA CON EL COMPORTAMIENTO
 	}
 
 }
