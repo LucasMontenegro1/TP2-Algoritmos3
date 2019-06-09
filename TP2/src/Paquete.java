@@ -10,10 +10,22 @@ public class Paquete {
 	
 	public void agregarElementos(int cantidad){
 		
+		
+		
 	}
 	
 	public void quitarElementos(int cantidad) {
 		
+	}
+
+	
+	public Equipable getGlementoGuadrado() {
+		return this.elementoGuardado;
+	}
+	
+	
+	public void setGlementoGuadrado(Equipable elemento) {
+		this.elementoGuardado = elemento;
 	}
 	
 }
