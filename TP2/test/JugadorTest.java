@@ -7,10 +7,9 @@ public class JugadorTest {
 
 		Jugador jugador = new Jugador();
 		Madera madera = new Madera();
-		Paquete paquete[] = new Paquete[1];
+		Paquete paquete = new Paquete();
 		
-		assert jugador.inventario.elementosGuardados[0].getClass() == paquete[0].getClass();
-		
+		assert jugador.inventario.elementosGuardados[0].getClass() == paquete.getClass();	
 	}
 
 }
