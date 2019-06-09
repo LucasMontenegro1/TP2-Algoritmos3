@@ -1,5 +1,5 @@
 
-public class Stack {
+public class Paquete {
 
 	private static int capacidadStack = 64;
 	
