@@ -2,7 +2,7 @@
 public class Inventario {
 
 	private static int cantidadDeStacks = 28;
-	public Paquete elementosGuardados[] = new Paquete[cantidadDeStacks];
+	private Paquete elementosGuardados[] = new Paquete[cantidadDeStacks];
 	private Equipable elementoSeleccionado;
 
 	

@@ -4,7 +4,7 @@ public class Jugador {
 	
 	
 	private Posicion posicion = new Posicion();
-	public Inventario inventario = new Inventario();
+	private Inventario inventario = new Inventario();
 	
 	Jugador(){
 		Madera madera = new Madera();
