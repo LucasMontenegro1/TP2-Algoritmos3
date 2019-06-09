@@ -8,8 +8,8 @@ public class Inventario {
 	
 	Inventario(){
 		Madera madera = new Madera();
-		elementosGuardados[0].setGlementoGuadrado(new Hacha(madera));
-		elementoSeleccionado=elementosGuardados[0].getGlementoGuadrado();
+		elementosGuardados[0].setElementoGuardado(new Hacha(madera));
+		elementoSeleccionado=elementosGuardados[0].getElementoGuardado();
 	}
 	
 	public void usarElementoSeleccionado() {

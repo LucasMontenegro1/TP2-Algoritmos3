@@ -19,12 +19,12 @@ public class Paquete {
 	}
 
 	
-	public Equipable getGlementoGuadrado() {
+	public Equipable getElementoGuardado() {
 		return this.elementoGuardado;
 	}
 	
 	
-	public void setGlementoGuadrado(Equipable elemento) {
+	public void setElementoGuardado(Equipable elemento) {
 		this.elementoGuardado = elemento;
 	}
 	
