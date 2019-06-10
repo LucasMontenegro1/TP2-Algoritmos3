@@ -18,8 +18,8 @@ public class Inventario {
         elementoSeleccionado.usar();
     }
 
-    public Paquete getElementosGuardados(int posicion) {
-        return elementosGuardados[posicion];
+    public Paquete[] getElementosGuardados() {
+        return elementosGuardados;
     }
 
 

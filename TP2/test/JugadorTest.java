@@ -8,7 +8,7 @@ public class JugadorTest {
 		Jugador jugador = new Jugador();
 		Hacha hacha = new Hacha(new Madera());
 		
-		assert jugador.getInventario().getElementosGuardados(0).getElementoGuardado().getClass() == hacha.getClass();	//HAY QUE CHEQUEAR QUE ES UN HACHA CON EL COMPORTAMIENTO
+		assert jugador.getInventario().getElementosGuardados()[0].getElementoGuardado().getClass() == hacha.getClass();	//HAY QUE CHEQUEAR QUE ES UN HACHA CON EL COMPORTAMIENTO
 	}
 
 }
