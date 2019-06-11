@@ -1,10 +1,13 @@
 package Jugador;
 
-public class Jugador {
+import mapa.*;
+
+
+public class Jugador implements Alocable{
 
 	
 	
-	private Posicion posicion = new Posicion();
+	//private Posicion posicion = new Posicion();
 	private Inventario inventario = new Inventario();
 	
 	

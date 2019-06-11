@@ -1,8 +1,9 @@
 package Materiales;
 
 import Herramientas.Desgastable;
+import mapa.*;
 
-public abstract class Material implements Desgastable {
+public abstract class Material implements Desgastable, Alocable  {
 	protected int durabilidad;
 	
 	public void recibirDanio(int fuerza) {
@@ -14,6 +15,7 @@ public abstract class Material implements Desgastable {
 		return durabilidad;
 	}
 	
+
 	
 	
 	@Override
