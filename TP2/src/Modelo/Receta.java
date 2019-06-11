@@ -16,7 +16,7 @@ public class Receta {
 	//Representa el codigo necesario para construir la herramienta
 	//clave: posicion de 1 a 9 en la region de construccion
 	//dato: material de esa posicion
-	private TreeMap<Integer, Material> codigoDeCrafteo = new TreeMap<>();
+	private CodigoDeCrafteo codigoDeCrafteo = new CodigoDeCrafteo();
 
 	
 	public Receta(Herramienta herramienta){
@@ -27,11 +27,11 @@ public class Receta {
 	//VER SI HAY QUE AGREGAR CHEQUEO DE QUE LA POSICION SEA UN NUMERO
 	//DE 1 A 9
 	public void agregarMaterial(int posicion, Material material) {
-		codigoDeCrafteo.put(posicion, material);
+		codigoDeCrafteo.agregarMaterial(posicion, material);
 	}
 	
 	
-	private boolean codigoEsValido(TreeMap<Integer, Material> codigoDeCrafteo) {
+	private boolean codigoEsValido(CodigoDeCrafteo codigoDeCrafteo) {
 		return this.codigoDeCrafteo.equals(codigoDeCrafteo);
 	}
 	
@@ -45,7 +45,7 @@ public class Receta {
 	//VER SI HAY Q HACER UNA CLASE CODIGO, PARA NO PASAR EL TREEMAP DIRECTAMENTE
 	//Y DAR IDEA DE LA IMPLEMENTACION, EL PROBLEMA CON ESO ES QUE SE TIENE UNA 
 	//CLASE QUE SOLO GUARDA DATOS
-	public Herramienta obtenerHerramienta(TreeMap<Integer, Material> codigoDeCrafteo) {
+	public Herramienta obtenerHerramienta(CodigoDeCrafteo codigoDeCrafteo) {
 		
 		if(codigoEsValido(codigoDeCrafteo)) {
 			return herramientaRepresentada;
