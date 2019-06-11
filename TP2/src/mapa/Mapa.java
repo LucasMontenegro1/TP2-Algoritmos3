@@ -8,6 +8,8 @@ public class Mapa {
 	protected Casillero casilleros[][] = new Casillero[9][13];
 	private int filaInicialJugador = 7;
 	private int columnaInicialJugador = 7;
+	private int filasMapa = 9;
+	private int columnasMapa = 13;
 	
 	public Mapa(){
 		for(int i = 0; i < 9; i++) {
@@ -60,7 +62,7 @@ public class Mapa {
 	}
 
 	private boolean estaDentro(int i, int j) {
-		if(i<0 || i> 9 || j<0 || j>13 ) {
+		if(i < 0 || i > filasMapa || j < 0 || j > columnasMapa ) {
 			return false;
 		}
 		return true;

@@ -16,14 +16,17 @@ public class PicoFino extends Herramienta {
 
 	@Override
 	public void usar(Madera madera) {
+		madera.recibirDanio(fuerza);
 	}
 
 	@Override
 	public void usar(Metal metal) {
+		metal.recibirDanio(fuerza);
 	}
 
 	@Override
 	public void usar(Piedra piedra) {
+		piedra.recibirDanio(fuerza);
 	}
 
 	@Override
