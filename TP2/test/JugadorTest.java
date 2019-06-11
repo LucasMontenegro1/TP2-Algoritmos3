@@ -82,6 +82,26 @@ public class JugadorTest {
 		
 	}
 	
+	@Test
+	public void jugadorSeMueveAPosicionInvalidaOcupada() {
+		Mapa mapa= new Mapa();
+		Jugador jugador=(Jugador)mapa.getOcupante(7, 7);
+		
+		jugador.MoverIzquierda(mapa);
+		jugador.MoverIzquierda(mapa);
+		jugador.MoverIzquierda(mapa);
+		jugador.MoverIzquierda(mapa);
+		jugador.MoverIzquierda(mapa);
+		jugador.MoverAdelante(mapa);
+		jugador.MoverAdelante(mapa);
+
+		
+		assert jugador.MoverIzquierda(mapa)==false;
+		
+		
+		
+	}
+	
 	
 	
 	
