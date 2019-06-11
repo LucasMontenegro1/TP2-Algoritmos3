@@ -3,6 +3,7 @@ package Modelo;
 
 //import java.util.SortedMap;
 import java.util.TreeMap;
+import java.util.Map;
 
 import Herramientas.Herramienta;
 import Materiales.Material;
@@ -21,8 +22,14 @@ public class Receta {
 		}
 		
 		
+		for(Map.Entry<Integer, Material> entry : codigoDeCrafteo.entrySet()) {
+			  int posicion = entry.getKey();
+			  Material material = entry.getValue();
+		}
 		
 		
+		
+		return true;
 		
 	}
 	
