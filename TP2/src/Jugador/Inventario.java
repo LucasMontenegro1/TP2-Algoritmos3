@@ -1,7 +1,8 @@
-package Modelo;
+package Jugador;
 
 import Herramientas.Hacha;
 import Materiales.Madera;
+import Modelo.Equipable;
 
 public class Inventario {
 

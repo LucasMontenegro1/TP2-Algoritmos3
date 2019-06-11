@@ -1,4 +1,6 @@
-package Modelo;
+package Jugador;
+
+import Modelo.Equipable;
 
 public class Paquete {
 

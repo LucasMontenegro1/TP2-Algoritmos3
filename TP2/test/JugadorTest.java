@@ -1,8 +1,8 @@
 import org.junit.Test;
 
 import Herramientas.Hacha;
+import Jugador.Jugador;
 import Materiales.Madera;
-import Modelo.Jugador;
 
 
 public class JugadorTest {
