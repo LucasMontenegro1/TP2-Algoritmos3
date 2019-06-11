@@ -1,6 +1,6 @@
 package mapa;
 
-import Materiales.*;
+import Materiales.*; 
 import Jugador.*;
 
 public class Mapa {
@@ -45,6 +45,25 @@ public class Mapa {
 	
 	public Alocable getOcupante(int i, int j) {
 		return casilleros[i][j].getOcupante();
+	}
+
+	public boolean cambiarPosicion(int X, int Y, int i, int j) {
+		if(estaDentro(i,j) && casilleros[i][j].getOcupante()==null) {
+			Alocable cambiable=casilleros[X][Y].getOcupante();
+			casilleros[X][Y]=new Casillero();
+			casilleros[i][j]= new Casillero((Jugador) cambiable);
+			return true;
+		}
+		
+		return false;
+		
+	}
+
+	private boolean estaDentro(int i, int j) {
+		if(i<0 || i> 9 || j<0 || j>13 ) {
+			return false;
+		}
+		return true;
 	}
 	
 }
