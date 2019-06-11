@@ -1,25 +1,29 @@
 package Herramientas;
 
-import Materiales.Madera;
-import Materiales.Metal;
-import Materiales.Piedra;
+import Materiales.*;
 
-public class Pico extends Herramienta {
-	 
-	public Pico(Madera madera){		
-		 estado = new PicoDeMadera();
-	 }
-	 
-	public Pico(Piedra piedra) {		 
-		 estado = new PicoDePiedra();	 
+public abstract class Pico extends Herramienta {
+	
+	@Override
+	public abstract void desgastar();
+
+	@Override
+	public void usar(Madera madera) {
+		this.desgastar();
 	}
 
-	public Pico(Metal metal) {
-		estado = new PicoDeMetal();
+	@Override
+	public void usar(Piedra piedra) {
+		this.desgastar();
+		piedra.recibirDanio(fuerza);
 	}
-	 
-	public Pico(Piedra piedra, Metal metal) {
-		estado = new PicoAfinado();
+	
+	@Override
+	public abstract void usar(Metal metal);
+	
+	
+	@Override
+	public  void usar(Diamante diamante) {
+		this.desgastar();
 	}
-
 }

@@ -1,9 +1,12 @@
 package Materiales;
 
 
-public class Diamante extends Material{
 
+public class Diamante extends Material {
+	
 	public Diamante(){
-		durabilidad = 100;
+		this.durabilidad=100;
 	}
+	
+	
 }

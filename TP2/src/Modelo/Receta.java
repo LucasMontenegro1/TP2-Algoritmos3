@@ -13,7 +13,7 @@ public class Receta {
 	private Herramienta herramientaRepresentada;
 	private TreeMap<Integer, Material> codigoDeCrafteo = new TreeMap<>();
 
-	public bool codigoEsValido(TreeMap<Integer, Material> codigoDeCrafteo) {
+	public boolean codigoEsValido(TreeMap<Integer, Material> codigoDeCrafteo) {
 		
 		
 		if(this.codigoDeCrafteo.size() != codigoDeCrafteo.size()) {

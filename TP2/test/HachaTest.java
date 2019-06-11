@@ -1,19 +1,15 @@
-import org.junit.Test;
 
-import Herramientas.Hacha;
-import Herramientas.Herramienta;
-import Materiales.Diamante;
-import Materiales.Madera;
-import Materiales.Metal;
-import Materiales.Piedra;
 
+import org.junit.Test; 
+
+import Herramientas.*;
+import Materiales.*;
 
 public class HachaTest {
 
 	@Test
 	public void testSeCreaUnHachaDeMadera() {
-		Madera madera = new Madera();
-		Herramienta hacha = new Hacha(madera);
+		Herramienta hacha = new HachaDeMadera();
 
 
 		assert hacha.getDurabilidad() == 100;
@@ -23,8 +19,8 @@ public class HachaTest {
 	
 	@Test
 	public void testSeCreaHachaDeMetal() {
-		Metal metal = new Metal();
-		Herramienta hacha = new Hacha(metal);
+
+		Herramienta hacha = new HachaDeMetal();
 
 
 		assert hacha.getDurabilidad() == 400;
@@ -34,7 +30,7 @@ public class HachaTest {
 	@Test
 	public void testHachaDeMaderaSeUsaContraMadera() {
 		Madera madera = new Madera();
-		Hacha hacha = new Hacha(madera);
+		Hacha hacha = new HachaDeMadera();
 		int durabilidadHerramientaHerramienta = hacha.getDurabilidad();
 		int fuerza = hacha.getFuerza();
 
@@ -48,8 +44,7 @@ public class HachaTest {
 	@Test
 	public void testHachaDePiedraSeUsaContraMadera() {
 		Madera madera = new Madera();
-		Piedra piedra = new Piedra();
-		Hacha hacha = new Hacha(piedra);
+		Hacha hacha = new HachaDePiedra();
 		int durabilidadHerramientaHerramienta = hacha.getDurabilidad();
 		int fuerza = hacha.getFuerza();
 
@@ -62,8 +57,7 @@ public class HachaTest {
 	@Test
 	public void testHachaDeMetalSeUsaContraMadera() {
 		Madera madera = new Madera();
-		Metal metal = new Metal();
-		Hacha hacha = new Hacha(metal);
+		Hacha hacha = new HachaDeMetal();
 		int durabilidadHerramientaHerramienta = hacha.getDurabilidad();
 		int fuerza = hacha.getFuerza();
 
@@ -75,9 +69,8 @@ public class HachaTest {
 
 	@Test
 	public void testHachaDeMaderaSeUsaContraPiedra() {
-		Madera madera = new Madera();
 		Piedra piedra = new Piedra();
-		Hacha hacha = new Hacha(madera);
+		Hacha hacha = new HachaDeMadera();
 		int durabilidadHerramienta = hacha.getDurabilidad();
 		int fuerza = hacha.getFuerza();
 
@@ -90,7 +83,7 @@ public class HachaTest {
 	@Test
 	public void testHachaDePiedraSeUsaContraPiedra() {
 		Piedra piedra = new Piedra();
-		Hacha hacha = new Hacha(piedra);
+		Hacha hacha = new HachaDePiedra();
 		int durabilidadHerramienta = hacha.getDurabilidad();
 		int fuerza = hacha.getFuerza();
 
@@ -103,8 +96,7 @@ public class HachaTest {
 	@Test
 	public void testHachaDeMetalSeUsaContraPiedra() {
 		Piedra piedra = new Piedra();
-		Metal metal = new Metal();
-		Hacha hacha = new Hacha(metal);
+		Hacha hacha = new HachaDeMetal();
 		int durabilidadHerramienta = hacha.getDurabilidad();
 		int fuerza = hacha.getFuerza();
 
@@ -116,9 +108,9 @@ public class HachaTest {
 
 	@Test
 	public void testHachaDeMaderaSeUsaContraMetal() {
-		Madera madera = new Madera();
+
 		Metal metal = new Metal();
-		Hacha hacha = new Hacha(madera);
+		Hacha hacha = new HachaDeMadera();
 		int durabilidadHerramienta = hacha.getDurabilidad();
 		int fuerza = hacha.getFuerza();
 
@@ -130,9 +122,9 @@ public class HachaTest {
 
 	@Test
 	public void testHachaDePiedraSeUsaContraMetal() {
-		Piedra piedra = new Piedra();
+	
 		Metal metal = new Metal();
-		Hacha hacha = new Hacha(piedra);
+		Hacha hacha = new HachaDePiedra();
 		int durabilidadHerramienta = hacha.getDurabilidad();
 		int fuerza = hacha.getFuerza();
 
@@ -145,7 +137,7 @@ public class HachaTest {
 	@Test
 	public void testHachaDeMetalSeUsaContraMetal() {
 		Metal metal = new Metal();
-		Hacha hacha = new Hacha(metal);
+		Hacha hacha = new HachaDeMetal();
 		int durabilidadHerramienta = hacha.getDurabilidad();
 		int fuerza = hacha.getFuerza();
 
@@ -157,9 +149,9 @@ public class HachaTest {
 	
 	@Test
 	public void testHachaDeMaderaSeUsaContraDiamante() {
-		Madera madera = new Madera();
+
 		Diamante diamante = new Diamante();
-		Hacha hacha = new Hacha(madera);
+		Hacha hacha = new HachaDeMadera();
 		int durabilidadHerramienta = hacha.getDurabilidad();
 		int fuerza = hacha.getFuerza();
 
@@ -171,9 +163,9 @@ public class HachaTest {
 	
 	@Test
 	public void testHachaDePiedraSeUsaContraDiamante() {
-		Piedra piedra = new Piedra();
+	
 		Diamante diamante = new Diamante();
-		Hacha hacha = new Hacha(piedra);
+		Hacha hacha = new HachaDePiedra();
 		int durabilidadHerramienta = hacha.getDurabilidad();
 		int fuerza = hacha.getFuerza();
 
@@ -185,9 +177,8 @@ public class HachaTest {
 	
 	@Test
 	public void testHachaDeMetalSeUsaContraDiamante() {
-		Metal metal = new Metal();
 		Diamante diamante = new Diamante();
-		Hacha hacha = new Hacha(metal);
+		Hacha hacha = new HachaDeMetal();
 		int durabilidadHerramienta = hacha.getDurabilidad();
 		int fuerza = hacha.getFuerza();
 

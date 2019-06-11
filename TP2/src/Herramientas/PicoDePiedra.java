@@ -1,38 +1,26 @@
 package Herramientas;
 
-import Materiales.Diamante;
-import Materiales.Madera;
 import Materiales.Metal;
-import Materiales.Piedra;
 
-public class PicoDePiedra extends Desgastable {
-
-	PicoDePiedra(){
+public class PicoDePiedra extends Pico {
+	
+	public PicoDePiedra(){
 		durabilidad = 200;
 		fuerza = 4;
 	}
 	
-	public void reducirDurabilidad() {
-		durabilidad -= (fuerza/1.5);		
+
+	@Override
+	public void desgastar() {
+		durabilidad -= (fuerza/1.5);
 	}
 
-	public void usarContra(Madera madera) {
-		reducirDurabilidad();
-	}
-	
-	public void usarContra(Metal metal) {
-		reducirDurabilidad();
+	@Override
+	public void usar(Metal metal) {
+		this.desgastar();
 		metal.recibirDanio(fuerza);
 	}
-	
-	public void usarContra(Piedra piedra) {
-		reducirDurabilidad();
-		piedra.recibirDanio(fuerza);
-	}
-	
-	public void usarContra(Diamante diamante) {
-		reducirDurabilidad();
-	}
 
-	
+
+
 }
