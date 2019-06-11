@@ -1,3 +1,10 @@
+package Herramientas;
+
+import Materiales.Diamante;
+import Materiales.Madera;
+import Materiales.Metal;
+import Materiales.Piedra;
+
 public abstract class Desgastable {
 	
 	public int durabilidad;

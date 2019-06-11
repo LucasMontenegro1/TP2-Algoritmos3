@@ -1,7 +1,9 @@
+package Materiales;
+
 
 public class Metal extends Material {
 		
-	Metal(){
+	public Metal(){
 		durabilidad = 50;
 	}	
 }

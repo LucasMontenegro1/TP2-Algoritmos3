@@ -1,3 +1,11 @@
+package Herramientas;
+
+import Materiales.Diamante;
+import Materiales.Madera;
+import Materiales.Metal;
+import Materiales.Piedra;
+import Modelo.Equipable;
+
 public abstract class Herramienta implements Equipable{
 	//protected int durabilidad; //vida de la herramienta
 	//protected int fuerza; //si le pega a algo, cuanto le desgasta

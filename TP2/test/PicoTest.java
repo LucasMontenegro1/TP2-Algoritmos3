@@ -1,5 +1,12 @@
 import org.junit.Test;
 
+import Herramientas.Herramienta;
+import Herramientas.Pico;
+import Materiales.Diamante;
+import Materiales.Madera;
+import Materiales.Metal;
+import Materiales.Piedra;
+
 public class PicoTest {
 
 	@Test

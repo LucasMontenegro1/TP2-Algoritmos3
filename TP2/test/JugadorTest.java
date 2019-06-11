@@ -1,5 +1,10 @@
 import org.junit.Test;
 
+import Herramientas.Hacha;
+import Materiales.Madera;
+import Modelo.Jugador;
+
+
 public class JugadorTest {
 
 	@Test

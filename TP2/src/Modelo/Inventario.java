@@ -1,3 +1,7 @@
+package Modelo;
+
+import Herramientas.Hacha;
+import Materiales.Madera;
 
 public class Inventario {
 

@@ -1,5 +1,12 @@
 import org.junit.Test;
 
+import Herramientas.Hacha;
+import Herramientas.Pico;
+import Materiales.Madera;
+import Materiales.Metal;
+import Materiales.Piedra;
+
+
 
 public class MaterialesTests {
 	

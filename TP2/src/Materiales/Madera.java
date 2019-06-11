@@ -1,7 +1,8 @@
+package Materiales;
 
 public class Madera extends Material {
 		
-	Madera(){
+	public Madera(){
 		durabilidad = 10;
 	}
 	

@@ -1,13 +1,20 @@
-public class HachaDeMetal extends Desgastable {
-	
-	HachaDeMetal(){
-		durabilidad = 400;
-		fuerza = 10;
+package Herramientas;
+
+import Materiales.Diamante;
+import Materiales.Madera;
+import Materiales.Metal;
+import Materiales.Piedra;
+
+public class HachaDePiedra extends Desgastable {
+
+	HachaDePiedra(){
+		durabilidad = 200;
+		fuerza = 5;
 	}
 	
 	@Override
 	public void reducirDurabilidad() {
-		durabilidad -= (int)(fuerza/2);		
+		durabilidad -= fuerza;		
 	}
 
 	public void usarContra(Madera madera) {
@@ -30,9 +37,10 @@ public class HachaDeMetal extends Desgastable {
 	
 	
 	
+	
 	/*public int reducirDurabilidad(int durabilidad,int fuerza){
-		return (durabilidad - fuerza/2);
+		return (durabilidad - fuerza);
 	}*/
 
-
+	
 }

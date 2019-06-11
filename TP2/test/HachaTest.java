@@ -1,6 +1,12 @@
-import static org.junit.Assert.*;
-
 import org.junit.Test;
+
+import Herramientas.Hacha;
+import Herramientas.Herramienta;
+import Materiales.Diamante;
+import Materiales.Madera;
+import Materiales.Metal;
+import Materiales.Piedra;
+
 
 public class HachaTest {
 

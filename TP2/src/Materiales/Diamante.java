@@ -1,8 +1,9 @@
+package Materiales;
 
 
 public class Diamante extends Material{
 
-	Diamante(){
+	public Diamante(){
 		durabilidad = 100;
 	}
 }
