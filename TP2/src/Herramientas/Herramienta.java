@@ -16,7 +16,9 @@ public abstract class Herramienta implements Desgastable {
 	public abstract void usar(Metal metal);
 	public abstract void usar(Piedra piedra);
 	public abstract void usar(Diamante diamante);
-
+	public abstract Herramienta clonar();
+	
+	
 	public int getFuerza() {
 		return fuerza;
 	}

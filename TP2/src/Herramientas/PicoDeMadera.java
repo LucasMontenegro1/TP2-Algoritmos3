@@ -21,5 +21,10 @@ public class PicoDeMadera extends Pico {
 
 	}
 
+	
+	@Override
+	public Herramienta clonar() {
+		return new PicoDeMadera();
+	}
 
 }

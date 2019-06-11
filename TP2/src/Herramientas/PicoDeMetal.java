@@ -25,5 +25,10 @@ public class PicoDeMetal extends Pico {
 		metal.recibirDanio(fuerza);
 	}
 
+	
+	@Override
+	public Herramienta clonar() {
+		return new PicoDeMetal();
+	}
 
 }

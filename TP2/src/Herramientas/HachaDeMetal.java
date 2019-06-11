@@ -15,4 +15,9 @@ public class HachaDeMetal extends Hacha {
 	}
 
 
+	@Override
+	public Herramienta clonar() {
+		return new HachaDeMetal();
+	}
+	
 }

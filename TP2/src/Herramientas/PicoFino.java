@@ -32,4 +32,10 @@ public class PicoFino extends Herramienta {
 		diamante.recibirDanio(fuerza);
 	}
 
+	
+	@Override
+	public Herramienta clonar() {
+		return new PicoFino();
+	}
+	
 }

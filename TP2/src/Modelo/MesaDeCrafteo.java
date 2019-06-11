@@ -7,6 +7,7 @@ import java.util.List;
 import Herramientas.HachaDeMadera;
 import Herramientas.HachaDeMetal;
 import Herramientas.HachaDePiedra;
+import Herramientas.Herramienta;
 import Herramientas.PicoDeMadera;
 import Herramientas.PicoDeMetal;
 import Herramientas.PicoDePiedra;
@@ -123,6 +124,28 @@ public class MesaDeCrafteo {
 	
 	public void agregarReceta(Receta receta) {
 		crafteos.add(receta);
+	}
+	
+	
+	public Herramienta craftear(CodigoDeCrafteo codigoDeCrafteo) {
+		
+		Herramienta herramienta = null;
+		
+		int i=0;
+		while ((herramienta==null)&&(i<crafteos.size())) {
+			herramienta = crafteos.get(i).obtenerHerramienta(codigoDeCrafteo);	
+			i++;
+		}
+		
+		
+		if (herramienta==null) {
+			throw new CodigoDeCrafteoInexistenteException("El codigo de crafteo insertado no se encuentra en la mesa de crafteo");
+		}
+		
+		
+		//VER SI ESTA BIEN HACER ESTE LLAMADO PARA TENER UNA COPIA DE LA HERRAMIENTA
+		return herramienta.clonar();
+		
 	}
 	
 	
