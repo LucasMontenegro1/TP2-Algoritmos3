@@ -12,7 +12,7 @@ public class JugadorTest {
 		Mapa mapa= new Mapa();
 		Jugador jugador=(Jugador)mapa.getOcupante(7, 7);
 		
-		jugador.MoverAdelante(mapa);
+		jugador.moverAdelante(mapa);
 		
 		assert mapa.getOcupante(7, 7)==null;
 		
@@ -25,7 +25,7 @@ public class JugadorTest {
 		Mapa mapa= new Mapa();
 		Jugador jugador=(Jugador)mapa.getOcupante(7, 7);
 		
-		assert jugador.MoverAdelante(mapa)==true;
+		assert jugador.moverAdelante(mapa)==true;
 		
 		
 	}
@@ -36,7 +36,7 @@ public class JugadorTest {
 		Mapa mapa= new Mapa();
 		Jugador jugador=(Jugador)mapa.getOcupante(7, 7);
 		
-		assert jugador.MoverAtras(mapa)==true;
+		assert jugador.moverAtras(mapa)==true;
 		
 		
 	}
@@ -47,7 +47,7 @@ public class JugadorTest {
 		Mapa mapa= new Mapa();
 		Jugador jugador=(Jugador)mapa.getOcupante(7, 7);
 		
-		assert jugador.MoverDerecha(mapa)==true;
+		assert jugador.moverDerecha(mapa)==true;
 		
 	}
 	
@@ -57,7 +57,7 @@ public class JugadorTest {
 		Mapa mapa= new Mapa();
 		Jugador jugador=(Jugador)mapa.getOcupante(7, 7);
 		
-		assert jugador.MoverIzquierda(mapa)==true;
+		assert jugador.moverIzquierda(mapa)==true;
 		
 		
 	}
@@ -68,15 +68,15 @@ public class JugadorTest {
 		Mapa mapa= new Mapa();
 		Jugador jugador=(Jugador)mapa.getOcupante(7, 7);
 		
-		jugador.MoverIzquierda(mapa);
-		jugador.MoverIzquierda(mapa);
-		jugador.MoverIzquierda(mapa);
-		jugador.MoverIzquierda(mapa);
-		jugador.MoverIzquierda(mapa);
-		jugador.MoverIzquierda(mapa);
-		jugador.MoverIzquierda(mapa);
+		jugador.moverIzquierda(mapa);
+		jugador.moverIzquierda(mapa);
+		jugador.moverIzquierda(mapa);
+		jugador.moverIzquierda(mapa);
+		jugador.moverIzquierda(mapa);
+		jugador.moverIzquierda(mapa);
+		jugador.moverIzquierda(mapa);
 		
-		assert jugador.MoverIzquierda(mapa)==false;
+		assert jugador.moverIzquierda(mapa)==false;
 		
 		
 		
@@ -87,16 +87,16 @@ public class JugadorTest {
 		Mapa mapa= new Mapa();
 		Jugador jugador=(Jugador)mapa.getOcupante(7, 7);
 		
-		jugador.MoverIzquierda(mapa);
-		jugador.MoverIzquierda(mapa);
-		jugador.MoverIzquierda(mapa);
-		jugador.MoverIzquierda(mapa);
-		jugador.MoverIzquierda(mapa);
-		jugador.MoverAdelante(mapa);
-		jugador.MoverAdelante(mapa);
+		jugador.moverIzquierda(mapa);
+		jugador.moverIzquierda(mapa);
+		jugador.moverIzquierda(mapa);
+		jugador.moverIzquierda(mapa);
+		jugador.moverIzquierda(mapa);
+		jugador.moverAdelante(mapa);
+		jugador.moverAdelante(mapa);
 
 		
-		assert jugador.MoverIzquierda(mapa)==false;
+		assert jugador.moverIzquierda(mapa)==false;
 		
 		
 		

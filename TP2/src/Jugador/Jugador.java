@@ -24,7 +24,7 @@ public class Jugador implements Alocable{
 		inventario.usarElementoSeleccionado();
 	}
 	
-	public boolean MoverAdelante(Mapa Mapa){
+	public boolean moverAdelante(Mapa Mapa){
 		if(Mapa.cambiarPosicion(posicionX,posicionY,posicionX,posicionY+1)){
 			this.posicionY+=1;
 			return true;
@@ -32,7 +32,7 @@ public class Jugador implements Alocable{
 		return false;
 	}
 	
-	public boolean MoverAtras(Mapa Mapa){
+	public boolean moverAtras(Mapa Mapa){
 		if(Mapa.cambiarPosicion(posicionX,posicionY,posicionX,posicionY-1)){
 			this.posicionY-=1;
 			return true;
@@ -40,7 +40,7 @@ public class Jugador implements Alocable{
 		return false;
 	}
 	
-	public boolean MoverDerecha(Mapa Mapa){
+	public boolean moverDerecha(Mapa Mapa){
 		if(Mapa.cambiarPosicion(posicionX,posicionY,posicionX+1,posicionY)){
 			this.posicionX+=1;
 			return true;
@@ -48,7 +48,7 @@ public class Jugador implements Alocable{
 		return false;
 	}
 	
-	public boolean MoverIzquierda(Mapa Mapa){
+	public boolean moverIzquierda(Mapa Mapa){
 		if(Mapa.cambiarPosicion(posicionX,posicionY,posicionX-1,posicionY+1)){
 			this.posicionX-=1;
 			return true;
