@@ -24,32 +24,32 @@ public class Jugador implements Alocable{
 		inventario.usarElementoSeleccionado();
 	}
 	
-	public boolean moverAdelante(Mapa Mapa){
-		if(Mapa.cambiarPosicion(posicionX,posicionY,posicionX,posicionY+1)){
+	public boolean moverAdelante(){
+		if(mapa.cambiarPosicion(posicionX,posicionY,posicionX,posicionY+1)){
 			this.posicionY+=1;
 			return true;
 		}
 		return false;
 	}
 	
-	public boolean moverAtras(Mapa Mapa){
-		if(Mapa.cambiarPosicion(posicionX,posicionY,posicionX,posicionY-1)){
+	public boolean moverAtras(){
+		if(mapa.cambiarPosicion(posicionX,posicionY,posicionX,posicionY-1)){
 			this.posicionY-=1;
 			return true;
 		}
 		return false;
 	}
 	
-	public boolean moverDerecha(Mapa Mapa){
-		if(Mapa.cambiarPosicion(posicionX,posicionY,posicionX+1,posicionY)){
+	public boolean moverDerecha(){
+		if(mapa.cambiarPosicion(posicionX,posicionY,posicionX+1,posicionY)){
 			this.posicionX+=1;
 			return true;
 		}
 		return false;
 	}
 	
-	public boolean moverIzquierda(Mapa Mapa){
-		if(Mapa.cambiarPosicion(posicionX,posicionY,posicionX-1,posicionY+1)){
+	public boolean moverIzquierda(){
+		if(mapa.cambiarPosicion(posicionX,posicionY,posicionX-1,posicionY+1)){
 			this.posicionX-=1;
 			return true;
 		}

@@ -12,7 +12,7 @@ public class JugadorTest {
 		Mapa mapa= new Mapa();
 		Jugador jugador=(Jugador)mapa.getOcupante(7, 7);
 		
-		jugador.moverAdelante(mapa);
+		jugador.moverAdelante();
 		
 		assert mapa.getOcupante(7, 7)==null;
 		
@@ -25,7 +25,7 @@ public class JugadorTest {
 		Mapa mapa= new Mapa();
 		Jugador jugador=(Jugador)mapa.getOcupante(7, 7);
 		
-		assert jugador.moverAdelante(mapa)==true;
+		assert jugador.moverAdelante()==true;
 		
 		
 	}
@@ -36,7 +36,7 @@ public class JugadorTest {
 		Mapa mapa= new Mapa();
 		Jugador jugador=(Jugador)mapa.getOcupante(7, 7);
 		
-		assert jugador.moverAtras(mapa)==true;
+		assert jugador.moverAtras()==true;
 		
 		
 	}
@@ -47,7 +47,7 @@ public class JugadorTest {
 		Mapa mapa= new Mapa();
 		Jugador jugador=(Jugador)mapa.getOcupante(7, 7);
 		
-		assert jugador.moverDerecha(mapa)==true;
+		assert jugador.moverDerecha()==true;
 		
 	}
 	
@@ -57,7 +57,7 @@ public class JugadorTest {
 		Mapa mapa= new Mapa();
 		Jugador jugador=(Jugador)mapa.getOcupante(7, 7);
 		
-		assert jugador.moverIzquierda(mapa)==true;
+		assert jugador.moverIzquierda()==true;
 		
 		
 	}
@@ -68,15 +68,15 @@ public class JugadorTest {
 		Mapa mapa= new Mapa();
 		Jugador jugador=(Jugador)mapa.getOcupante(7, 7);
 		
-		jugador.moverIzquierda(mapa);
-		jugador.moverIzquierda(mapa);
-		jugador.moverIzquierda(mapa);
-		jugador.moverIzquierda(mapa);
-		jugador.moverIzquierda(mapa);
-		jugador.moverIzquierda(mapa);
-		jugador.moverIzquierda(mapa);
+		jugador.moverIzquierda();
+		jugador.moverIzquierda();
+		jugador.moverIzquierda();
+		jugador.moverIzquierda();
+		jugador.moverIzquierda();
+		jugador.moverIzquierda();
+		jugador.moverIzquierda();
 		
-		assert jugador.moverIzquierda(mapa)==false;
+		assert jugador.moverIzquierda()==false;
 		
 		
 		
@@ -87,16 +87,16 @@ public class JugadorTest {
 		Mapa mapa= new Mapa();
 		Jugador jugador=(Jugador)mapa.getOcupante(7, 7);
 		
-		jugador.moverIzquierda(mapa);
-		jugador.moverIzquierda(mapa);
-		jugador.moverIzquierda(mapa);
-		jugador.moverIzquierda(mapa);
-		jugador.moverIzquierda(mapa);
-		jugador.moverAdelante(mapa);
-		jugador.moverAdelante(mapa);
+		jugador.moverIzquierda();
+		jugador.moverIzquierda();
+		jugador.moverIzquierda();
+		jugador.moverIzquierda();
+		jugador.moverIzquierda();
+		jugador.moverAdelante();
+		jugador.moverAdelante();
 
 		
-		assert jugador.moverIzquierda(mapa)==false;
+		assert jugador.moverIzquierda()==false;
 		
 		
 		
