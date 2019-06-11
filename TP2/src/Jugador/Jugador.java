@@ -10,6 +10,11 @@ public class Jugador implements Alocable{
 	
 	//private Posicion posicion = new Posicion();
 	private Inventario inventario = new Inventario();
+	private Mapa mapa;
+	
+	public Jugador(Mapa mapa) {
+		this.mapa = mapa;
+	}
 	
 	
 	//Hay que ver como van a usarse las herramientas

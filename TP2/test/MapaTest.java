@@ -25,6 +25,7 @@ public class MapaTest {
 				}				
 			}
 		}
+		
 		assert cantidadMaderas >= 20;
 	}
 	
@@ -79,7 +80,7 @@ public class MapaTest {
 	@Test
 	public void testSeCreaMapaYSeVerificaQueExistaExactamenteUnJugador() { 
 		Mapa mapa = new Mapa();
-		Jugador jugador = new Jugador();
+		Jugador jugador = new Jugador(mapa);
 		int cantidadJugadores = 0;
 		
 		for(int i = 0; i < 9; i++) {
@@ -90,6 +91,91 @@ public class MapaTest {
 			}
 		}
 		assert cantidadJugadores == 1;
+	}
+	
+	@Test
+	public void testSeEliminaUnaMaderaYSeVerificaQueElEspacioQuedeVacio() {
+		Mapa mapa = new Mapa();
+		Madera madera = new Madera();
+		int filaMadera = -1; //inicializo los valores porque sino java no me deja y no lo hago en 0 para que la prueba 
+							//no pase en el caso de que no hubiese material buscado en el mapa
+		int columnaMadera = -1;
+		
+		for(int i = 0; i < 9; i++) {
+			for(int j = 0; j < 13; j++) {
+				if(mapa.getOcupante(i, j) != null && mapa.getOcupante(i, j).getClass() == madera.getClass()) {
+					filaMadera = i;
+					columnaMadera = j;
+					break;
+				}				
+			}
+		}
+		
+		mapa.eliminarMaterial(filaMadera, columnaMadera);
+		assert mapa.getOcupante(filaMadera, columnaMadera) == null;
+	}
+	
+	@Test 
+	public void testSeEliminaUnaPiedraYSeVerificaQueElEspacioQuedeVacio() {
+		Mapa mapa = new Mapa();
+		Piedra piedra = new Piedra();
+		int filaPiedra = -1; 
+		int columnaPiedra = -1;
+		
+		for(int i = 0; i < 9; i++) {
+			for(int j = 0; j < 13; j++) {
+				if(mapa.getOcupante(i, j) != null && mapa.getOcupante(i, j).getClass() == piedra.getClass()) {
+					filaPiedra = i;
+					columnaPiedra = j;
+					break;
+				}				
+			}
+		}
+		
+		mapa.eliminarMaterial(filaPiedra, columnaPiedra);
+		assert mapa.getOcupante(filaPiedra, columnaPiedra) == null;
+	}
+	
+	@Test 
+	public void testSeEliminaUnMetalYSeVerificaQueElEspacioQuedeVacio() {
+		Mapa mapa = new Mapa();
+		Metal metal= new Metal();
+		int filaMetal = -1; 
+		int columnaMetal = -1;
+		
+		for(int i = 0; i < 9; i++) {
+			for(int j = 0; j < 13; j++) {
+				if(mapa.getOcupante(i, j) != null && mapa.getOcupante(i, j).getClass() == metal.getClass()) {
+					filaMetal = i;
+					columnaMetal = j;
+					break;
+				}				
+			}
+		}
+		
+		mapa.eliminarMaterial(filaMetal, columnaMetal);
+		assert mapa.getOcupante(filaMetal, columnaMetal) == null;
+	}
+	
+	@Test 
+	public void testSeEliminaUnDiamanteYSeVerificaQueElEspacioQuedeVacio() {
+		Mapa mapa = new Mapa();
+		Diamante diamante= new Diamante();
+		int filaDiamante = -1; 
+		int columnaDiamante = -1;
+		
+		for(int i = 0; i < 9; i++) {
+			for(int j = 0; j < 13; j++) {
+				if(mapa.getOcupante(i, j) != null && mapa.getOcupante(i, j).getClass() == diamante.getClass()) {
+					filaDiamante = i;
+					columnaDiamante = j;
+					break;
+				}				
+			}
+		}
+		
+		mapa.eliminarMaterial(filaDiamante, columnaDiamante);
+		assert mapa.getOcupante(filaDiamante, columnaDiamante) == null;
 	}
 
 

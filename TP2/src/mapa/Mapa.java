@@ -40,7 +40,7 @@ public class Mapa {
 			}
 		}
 		
-		casilleros[filaInicialJugador][columnaInicialJugador] = new Casillero(new Jugador());// jugador
+		casilleros[filaInicialJugador][columnaInicialJugador] = new Casillero(new Jugador(this));// jugador
 	}
 	
 	public Alocable getOcupante(int i, int j) {
@@ -64,6 +64,10 @@ public class Mapa {
 			return false;
 		}
 		return true;
+	}
+	
+	public void eliminarMaterial(int fila, int columna) {
+		casilleros[fila][columna] = new Casillero();
 	}
 	
 }
