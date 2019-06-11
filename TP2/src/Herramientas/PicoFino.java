@@ -2,33 +2,34 @@ package Herramientas;
 
 import Materiales.*;
 
-public abstract class Hacha extends Herramienta{
+public class PicoFino extends Herramienta {
 	
+	public PicoFino(){
+		durabilidad = 1000;
+		fuerza = 20;
+	}
+
 	@Override
-	public abstract void desgastar();
+	public void desgastar() {
+		durabilidad -= durabilidad * 0.1;
+	}
 
 	@Override
 	public void usar(Madera madera) {
-		madera.recibirDanio(fuerza);
-		this.desgastar();
 	}
-	
+
 	@Override
 	public void usar(Metal metal) {
-		this.desgastar();
 	}
 
 	@Override
 	public void usar(Piedra piedra) {
-		this.desgastar();
-		
 	}
-	
+
 	@Override
 	public void usar(Diamante diamante) {
 		this.desgastar();
-		
+		diamante.recibirDanio(fuerza);
 	}
-	
 
 }

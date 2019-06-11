@@ -1,6 +1,7 @@
 package Jugador;
 
-import Modelo.Equipable;
+import Herramientas.Desgastable;
+
 
 public class Paquete {
 
@@ -9,7 +10,7 @@ public class Paquete {
 	int cantidadMaximaElementos = capacidadStack;
 	int cantidadActualElementos = 0;
 
-	Equipable elementoGuardado;
+	Desgastable elementoGuardado;
 	
 	public void agregarElementos(int cantidad){
 		
@@ -22,12 +23,12 @@ public class Paquete {
 	}
 
 	
-	public Equipable getElementoGuardado() {
+	public Desgastable getElementoGuardado() {
 		return this.elementoGuardado;
 	}
 	
 	
-	public void setElementoGuardado(Equipable elemento) {
+	public void setElementoGuardado(Desgastable elemento) {
 		this.elementoGuardado = elemento;
 	}
 	

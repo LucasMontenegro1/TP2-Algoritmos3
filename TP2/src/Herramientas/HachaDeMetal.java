@@ -1,45 +1,18 @@
 package Herramientas;
 
-import Materiales.Diamante;
-import Materiales.Madera;
-import Materiales.Metal;
-import Materiales.Piedra;
 
-public class HachaDeMetal extends Desgastable {
+public class HachaDeMetal extends Hacha {
 	
-	HachaDeMetal(){
+	
+	public HachaDeMetal(){
 		durabilidad = 400;
 		fuerza = 10;
 	}
-	
-	@Override
-	public void reducirDurabilidad() {
-		durabilidad -= (int)(fuerza/2);		
-	}
 
-	public void usarContra(Madera madera) {
-		reducirDurabilidad();
-		madera.recibirDanio(fuerza);
+	@Override
+	public void desgastar() {
+		durabilidad -= (int)(fuerza/2);
 	}
-	
-	public void usarContra(Metal metal) {
-		reducirDurabilidad();
-	}
-	
-	public void usarContra(Piedra piedra) {
-		reducirDurabilidad();
-	}
-	
-	public void usarContra(Diamante diamante) {
-		reducirDurabilidad();
-	}
-	
-	
-	
-	
-	/*public int reducirDurabilidad(int durabilidad,int fuerza){
-		return (durabilidad - fuerza/2);
-	}*/
 
 
 }

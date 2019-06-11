@@ -1,29 +1,16 @@
 package Materiales;
 
-import Modelo.Equipable;
+import Herramientas.Desgastable;
 
-public class Material implements Equipable  {
-	protected int durabilidad;
+public abstract class Material implements Desgastable {
+	int durabilidad;
 	
+	public void recibirDanio(int fuerza) {
+		this.durabilidad-=fuerza;
+	}
+	
+	@Override
 	public int getDurabilidad() {
-		return this.durabilidad;
+		return durabilidad;
 	}
-	
-	public void recibirDanio(int danio) {
-		durabilidad -= danio;
-	}
-	
-	
-	public boolean sonIguales(Material material) {
-		
-		return this.durabilidad==material.durabilidad;
-		
-	}
-	
-	//FIJARSE QUE HACER CON ESTE METODO, SE AGREGO 
-	//PARA VER SI ANDA EL TRAVIS
-	public void usar(){
-		
-	}
-	
 }

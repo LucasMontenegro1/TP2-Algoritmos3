@@ -1,45 +1,24 @@
 package Herramientas;
 
-import Materiales.Diamante;
-import Materiales.Madera;
-import Materiales.Metal;
-import Materiales.Piedra;
-import Modelo.Equipable;
+import Materiales.*;
 
-public abstract class Herramienta implements Equipable{
-	//protected int durabilidad; //vida de la herramienta
-	//protected int fuerza; //si le pega a algo, cuanto le desgasta
-	protected Desgastable estado;
+public abstract class Herramienta implements Desgastable {
+	int durabilidad;
+	int fuerza;
 	
-	
-	public int getDurabilidad() {
-		return estado.durabilidad;
+	public int getDurabilidad(){
+		return this.durabilidad;
 	}
 	
+	public abstract void desgastar();
+	
+	public abstract void usar(Madera madera);
+	public abstract void usar(Metal metal);
+	public abstract void usar(Piedra piedra);
+	public abstract void usar(Diamante diamante);
+
 	public int getFuerza() {
-		return estado.fuerza;
-	}
-	
-	public void usar(Madera unMaterial) {
-		estado.usarContra(unMaterial);
-	}
-	
-	public void usar(Metal unMaterial) {
-		estado.usarContra(unMaterial);
-	}
-	
-	public void usar(Piedra unMaterial) {
-		estado.usarContra(unMaterial);
-	}
-	
-	public void usar(Diamante unMaterial) {
-		estado.usarContra(unMaterial);
-	}
-	
-	//FIJARSE QUE HACER CON ESTE METODO, SE AGREGO 
-		//PARA VER SI ANDA TRAVIS
-	public void usar(){
-
+		return fuerza;
 	}
 	
 	
