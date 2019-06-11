@@ -8,7 +8,7 @@ public class JugadorTest {
 	
 	
 	@Test 
-	public void jugadorSeCompruebaQueSeMueve() {
+	public void testJugadorSeCompruebaQueSeMueve() {
 		Mapa mapa= new Mapa();
 		Jugador jugador=(Jugador)mapa.getOcupante(7, 7);
 		
@@ -21,7 +21,7 @@ public class JugadorTest {
 	
 
 	@Test
-	public void jugadorSeMueveAHaciaAdelante() {
+	public void testJugadorSeMueveAHaciaAdelante() {
 		Mapa mapa= new Mapa();
 		Jugador jugador=(Jugador)mapa.getOcupante(7, 7);
 		
@@ -32,7 +32,7 @@ public class JugadorTest {
 
 	
 	@Test
-	public void jugadorSeMueveAHaciaAtras() {
+	public void testJugadorSeMueveAHaciaAtras() {
 		Mapa mapa= new Mapa();
 		Jugador jugador=(Jugador)mapa.getOcupante(7, 7);
 		
@@ -43,7 +43,7 @@ public class JugadorTest {
 	
 	
 	@Test
-	public void jugadorSeMueveAHaciaLaDerecha() {
+	public void testJugadorSeMueveAHaciaLaDerecha() {
 		Mapa mapa= new Mapa();
 		Jugador jugador=(Jugador)mapa.getOcupante(7, 7);
 		
@@ -53,7 +53,7 @@ public class JugadorTest {
 	
 	
 	@Test
-	public void jugadorSeMueveAHaciaIzquierda() {
+	public void testJugadorSeMueveAHaciaIzquierda() {
 		Mapa mapa= new Mapa();
 		Jugador jugador=(Jugador)mapa.getOcupante(7, 7);
 		
@@ -64,7 +64,7 @@ public class JugadorTest {
 	
 	
 	@Test
-	public void jugadorSeMueveAPosicionInvalida() {
+	public void testJugadorSeMueveAPosicionInvalida() {
 		Mapa mapa= new Mapa();
 		Jugador jugador=(Jugador)mapa.getOcupante(7, 7);
 		
@@ -83,7 +83,7 @@ public class JugadorTest {
 	}
 	
 	@Test
-	public void jugadorSeMueveAPosicionInvalidaOcupada() {
+	public void testJugadorSeMueveAPosicionInvalidaOcupada() {
 		Mapa mapa= new Mapa();
 		Jugador jugador=(Jugador)mapa.getOcupante(7, 7);
 		
