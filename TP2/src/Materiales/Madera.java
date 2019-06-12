@@ -1,5 +1,6 @@
 package Materiales;
 
+import Herramientas.Herramienta;
 
 public class Madera extends Material {
 	
@@ -7,5 +8,11 @@ public class Madera extends Material {
 		durabilidad=10;
 	}
 	
+	
+	@Override
+	public void DecimeQuienSos(Herramienta herramienta) {
+		herramienta.usar(this);
+		
+	}
 
 }

@@ -71,5 +71,28 @@ public class MaterialesTest {
 		
 		assert metal.getDurabilidad() == durabilidadMaterial;
 	}
+	
+	@Test 
+	public void testMaterialMaderaSeUsaConHachaDeMadera() {
+		Material material= new Madera();
+		Hacha hacha= new HachaDeMadera();
+		
+		int durabilidadMaterial = material.getDurabilidad();
+		int fuerzaHerramienta = hacha.getFuerza();
+		
+		hacha.usar(material);
+		
+		
+		assert material.getDurabilidad() == (durabilidadMaterial - fuerzaHerramienta);
+		
+		
+		
+		
+		
+	}
+	
+	
+	
+	
 }
 

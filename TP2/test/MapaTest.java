@@ -2,6 +2,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import Herramientas.HachaDeMadera;
 import Materiales.*;
 import mapa.Mapa;
 import Jugador.*;
@@ -177,6 +178,26 @@ public class MapaTest {
 		mapa.eliminarMaterial(filaDiamante, columnaDiamante);
 		assert mapa.getOcupante(filaDiamante, columnaDiamante) == null;
 	}
+	
+	@Test 
+	public void testHachaDeMaderaSeUsaContraMaderaDelMapa() {
+		Mapa mapa = new Mapa();
+		HachaDeMadera hacha = new HachaDeMadera();
+		
+		Material material= (Material) mapa.getOcupante(4, 1);
+		
+		int durabilidadMaterial = material.getDurabilidad();
+		int fuerzaHerramienta = hacha.getFuerza();
+		
+		
+		hacha.usar(material);
+		
+		assert material.getDurabilidad() == (durabilidadMaterial - fuerzaHerramienta);
+		
+		
+	}
+	
+	
 
 
 }

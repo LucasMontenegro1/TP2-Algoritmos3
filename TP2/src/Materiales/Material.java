@@ -1,6 +1,7 @@
 package Materiales;
 
 import Herramientas.Desgastable;
+import Herramientas.Herramienta;
 import mapa.*;
 
 public abstract class Material implements Desgastable, Alocable  {
@@ -33,7 +34,9 @@ public abstract class Material implements Desgastable, Alocable  {
 	    
 	    return (material.durabilidad== this.durabilidad); 
 
-	} 
+	}
+
+	public abstract void DecimeQuienSos(Herramienta herramienta); 
 	
 	
 }
