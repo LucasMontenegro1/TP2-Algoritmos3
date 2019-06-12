@@ -57,7 +57,7 @@ public class HachaTest {
 
 	@Test
 	public void testHachaDeMetalSeUsaContraMadera() {
-		Madera madera = new Madera();
+		Madera madera = new Madera(new Mapa(), new Posicion(0,0));
 		Hacha hacha = new HachaDeMetal();
 		int durabilidadHerramientaHerramienta = hacha.getDurabilidad();
 		int fuerza = hacha.getFuerza();

@@ -113,6 +113,23 @@ public class JugadorTest {
 		jugador.seleccionarSiguienteHerramienta();
 	}
 	
+	@Test
+	public void testJugadorRompeUnaMaderaConUnHachaDeMaderaYLaMaderaSeEliminaDelMapa() {
+		Mapa mapa = new Mapa();
+		Jugador jugador = (Jugador)mapa.getOcupante(7, 7);
+		
+		jugador.moverIzquierda();
+		jugador.golpearIzquierda();
+		
+		assert mapa.getOcupante(7, 5).getClass() == Madera.class;
+		jugador.golpearIzquierda();
+		jugador.golpearIzquierda();
+		jugador.golpearIzquierda();
+		assert mapa.getOcupante(7, 5).getClass() == Madera.class;
+		jugador.golpearIzquierda();
+		assert mapa.getOcupante(7, 5).getClass() == Pasto.class;
+	}
+	
 	
 	
 	

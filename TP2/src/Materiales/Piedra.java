@@ -1,11 +1,18 @@
 package Materiales;
 
-import Herramientas.Herramienta;
+import Herramientas.*;
+import mapa.*;
 
 public class Piedra extends Material {
 	
 	public Piedra(){
 		this.durabilidad=30;
+	}
+	
+	public Piedra(Mapa mapa, Posicion posicion) {
+		this.durabilidad=30;
+		this.mapa = mapa;
+		posicionMaterial = posicion;
 	}
 	
 	@Override

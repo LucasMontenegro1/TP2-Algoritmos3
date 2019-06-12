@@ -9,6 +9,8 @@ import Materiales.Metal;
 import Materiales.Piedra;
 import Modelo.CodigoDeCrafteo;
 import Modelo.MesaDeCrafteo;
+import mapa.Mapa;
+import mapa.Posicion;
 
 
 public class MesaDeCrafteoTest {
@@ -64,7 +66,7 @@ public class MesaDeCrafteoTest {
 	public void testSeCrafteaUnHachaDeMetal() {
 		MesaDeCrafteo mesa = new MesaDeCrafteo();
 		CodigoDeCrafteo codigoHachaDeMetal = new CodigoDeCrafteo();
-		Madera madera = new Madera();
+		Madera madera = new Madera(new Mapa(), new Posicion(0,0));
 		Metal metal = new Metal();
 
 		int durabilidadInicialMadera = madera.getDurabilidad();

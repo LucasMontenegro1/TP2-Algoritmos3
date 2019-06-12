@@ -1,15 +1,27 @@
 package Materiales;
 
-import Herramientas.Desgastable;
-import Herramientas.Herramienta;
+import Herramientas.*;
 import mapa.*;
 
 public abstract class Material implements Desgastable, Alocable  {
 	protected int durabilidad;
+	protected Mapa mapa;
+	protected Posicion posicionMaterial;
+	
 	
 	public void recibirDanio(int fuerza) {
 		this.durabilidad-=fuerza;
+		verificarEstado();
 	}
+	
+	
+	private void verificarEstado() {
+		if(durabilidad <= 0) {
+			mapa.eliminarMaterial(posicionMaterial.getFila(), posicionMaterial.getColumna());
+		}
+	}
+	
+	
 	
 	@Override
 	public int getDurabilidad() {

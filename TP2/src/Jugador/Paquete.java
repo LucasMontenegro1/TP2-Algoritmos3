@@ -15,7 +15,6 @@ public class Paquete {
 	public void agregarElementos(int cantidad){
 		
 		
-		
 	}
 	
 	public void quitarElementos(int cantidad) {

@@ -3,6 +3,7 @@ import org.junit.Test;
 
 import Herramientas.*;
 import Materiales.*;
+import mapa.*;
 
 public class PicoTest {
 
@@ -109,7 +110,7 @@ public class PicoTest {
 
 	@Test
 	public void testPicoDeMetalSeUsaContraPiedraYSeRompeAlDecimoUso() {
-		Piedra piedra = new Piedra();
+		Piedra piedra = new Piedra(new Mapa(), new Posicion(0,0));
 		Pico pico = new PicoDeMetal();
 		int durabilidadHerramienta = pico.getDurabilidad();
 		
@@ -151,7 +152,7 @@ public class PicoTest {
 
 	@Test
 	public void testPicoDeMetalSeUsaContraMetalYSeRompeAlDecimoUso() {
-		Metal metal = new Metal();
+		Metal metal = new Metal(new Mapa(), new Posicion(0,0));
 		Pico pico = new PicoDeMetal();
 		int durabilidadHerramienta = pico.getDurabilidad();
 		
@@ -226,7 +227,7 @@ public class PicoTest {
 	
 	@Test
 	public void testPicoFinoSeUsaContraMadera(){
-		Madera madera = new Madera();
+		Madera madera = new Madera(new Mapa(), new Posicion(0,0));
 		PicoFino picoFino = new PicoFino();
 		int durabilidadHerramienta = picoFino.getDurabilidad();
 		

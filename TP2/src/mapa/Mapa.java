@@ -20,29 +20,30 @@ public class Mapa {
 		
 		for(int i = 1; i < 3; i++) {
 			for(int j = 1; j < 3; j++) {
-				casilleros[i][j] = new Casillero(new Metal());// metal
+				casilleros[i][j] = new Casillero(new Metal(this, new Posicion(i,j)));// metal
 			}
 		}
 		
 		for(int i = 4; i < 8; i++) {
 			for(int j = 1; j < 6; j++) {
-				casilleros[i][j] = new Casillero(new Madera());// madera
+				casilleros[i][j] = new Casillero(new Madera(this, new Posicion(i,j)));// madera
 			}
 		}
 		
 		for(int i = 1; i < 3; i++) {
 			for(int j = 5; j < 7; j++) {
-				casilleros[i][j] = new Casillero(new Diamante());// diamante
+				casilleros[i][j] = new Casillero(new Diamante(this, new Posicion(i,j)));// diamante
 			}
 		}
 		
 		for(int i = 1; i < 5; i++) {
 			for(int j = 9; j < 12; j++) {
-				casilleros[i][j] = new Casillero(new Piedra());// piedra
+				casilleros[i][j] = new Casillero(new Piedra(this, new Posicion(i,j)));// piedra
 			}
 		}
 		
-		casilleros[filaInicialJugador][columnaInicialJugador] = new Casillero(new Jugador(this), new Posicion(filaInicialJugador, columnaInicialJugador));// jugador
+		Posicion posicionInicialJugador = new Posicion(filaInicialJugador, columnaInicialJugador);
+		casilleros[filaInicialJugador][columnaInicialJugador] = new Casillero(new Jugador(this), posicionInicialJugador);// jugador
 	}
 	
 	public Alocable getOcupante(int i, int j) {
