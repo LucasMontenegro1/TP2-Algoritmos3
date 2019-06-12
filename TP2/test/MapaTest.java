@@ -90,6 +90,7 @@ public class MapaTest {
 				}				
 			}
 		}
+		
 		assert cantidadJugadores == 1;
 	}
 	
