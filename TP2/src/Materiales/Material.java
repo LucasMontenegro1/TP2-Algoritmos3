@@ -1,6 +1,7 @@
 package Materiales;
 
 import Herramientas.*;
+import Jugador.Inventario;
 import mapa.*;
 
 public abstract class Material implements Desgastable, Alocable  {
@@ -9,26 +10,19 @@ public abstract class Material implements Desgastable, Alocable  {
 	protected Posicion posicionMaterial;
 	
 	
-	public void recibirDanio(int fuerza) {
+	public void recibirDanio(int fuerza, Inventario inventario) {
 		this.durabilidad-=fuerza;
-		verificarEstado();
+		verificarEstado(inventario);
 	}
 	
 	
-	private void verificarEstado() {
-		if(durabilidad <= 0) {
-			mapa.eliminarMaterial(posicionMaterial.getFila(), posicionMaterial.getColumna());
-		}
-	}
-	
+	public abstract void verificarEstado(Inventario inventario);
 	
 	
 	@Override
 	public int getDurabilidad() {
 		return durabilidad;
 	}
-	
-
 	
 	
 	@Override
@@ -48,7 +42,7 @@ public abstract class Material implements Desgastable, Alocable  {
 
 	}
 
-	public abstract void decimeQuienSos(Herramienta herramienta); //ESTO SIRVE PARA PASAR DE ALOCABLE AL MATERIAL QUE ALOCABLE SEA, SINO NO TENGO NI PUTA IDEA COMO HACER XDDDD
+	public abstract void decimeQuienSos(Herramienta herramienta, Inventario inventario); //ESTO SIRVE PARA PASAR DE ALOCABLE AL MATERIAL QUE ALOCABLE SEA, SINO NO TENGO NI PUTA IDEA COMO HACER XDDDD
 	
 	
 }

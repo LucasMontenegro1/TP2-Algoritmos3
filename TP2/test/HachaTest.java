@@ -3,6 +3,7 @@
 import org.junit.Test; 
 
 import Herramientas.*;
+import Jugador.Inventario;
 import Materiales.*;
 
 import mapa.*;
@@ -36,7 +37,7 @@ public class HachaTest {
 		int durabilidadHerramientaHerramienta = hacha.getDurabilidad();
 		int fuerza = hacha.getFuerza();
 
-		hacha.usar(madera);
+		hacha.usar(madera, new Inventario());
 
 		assert hacha.getDurabilidad() == (durabilidadHerramientaHerramienta - fuerza);
 
@@ -49,7 +50,7 @@ public class HachaTest {
 		int durabilidadHerramientaHerramienta = hacha.getDurabilidad();
 		int fuerza = hacha.getFuerza();
 
-		hacha.usar(madera);
+		hacha.usar(madera, new Inventario());
 
 		assert hacha.getDurabilidad() == (durabilidadHerramientaHerramienta - fuerza);
 
@@ -62,7 +63,7 @@ public class HachaTest {
 		int durabilidadHerramientaHerramienta = hacha.getDurabilidad();
 		int fuerza = hacha.getFuerza();
 
-		hacha.usar(madera);
+		hacha.usar(madera, new Inventario());
 
 		assert hacha.getDurabilidad() == (durabilidadHerramientaHerramienta - fuerza/2);
 
@@ -75,7 +76,7 @@ public class HachaTest {
 		int durabilidadHerramienta = hacha.getDurabilidad();
 		int fuerza = hacha.getFuerza();
 
-		hacha.usar(piedra);
+		hacha.usar(piedra, new Inventario());
 
 		assert hacha.getDurabilidad() == (durabilidadHerramienta - fuerza);
 
@@ -88,7 +89,7 @@ public class HachaTest {
 		int durabilidadHerramienta = hacha.getDurabilidad();
 		int fuerza = hacha.getFuerza();
 
-		hacha.usar(piedra);
+		hacha.usar(piedra, new Inventario());
 
 		assert hacha.getDurabilidad() == (durabilidadHerramienta - fuerza);
 
@@ -101,7 +102,7 @@ public class HachaTest {
 		int durabilidadHerramienta = hacha.getDurabilidad();
 		int fuerza = hacha.getFuerza();
 
-		hacha.usar(piedra);
+		hacha.usar(piedra, new Inventario());
 
 		assert hacha.getDurabilidad() == (durabilidadHerramienta - fuerza/2);
 
@@ -115,7 +116,7 @@ public class HachaTest {
 		int durabilidadHerramienta = hacha.getDurabilidad();
 		int fuerza = hacha.getFuerza();
 
-		hacha.usar(metal);
+		hacha.usar(metal, new Inventario());
 
 		assert hacha.getDurabilidad() == (durabilidadHerramienta - fuerza);
 
@@ -129,7 +130,7 @@ public class HachaTest {
 		int durabilidadHerramienta = hacha.getDurabilidad();
 		int fuerza = hacha.getFuerza();
 
-		hacha.usar(metal);
+		hacha.usar(metal, new Inventario());
 
 		assert hacha.getDurabilidad() == (durabilidadHerramienta - fuerza);
 
@@ -142,7 +143,7 @@ public class HachaTest {
 		int durabilidadHerramienta = hacha.getDurabilidad();
 		int fuerza = hacha.getFuerza();
 
-		hacha.usar(metal);
+		hacha.usar(metal, new Inventario());
 
 		assert hacha.getDurabilidad() == (durabilidadHerramienta - fuerza/2);
 
@@ -156,7 +157,7 @@ public class HachaTest {
 		int durabilidadHerramienta = hacha.getDurabilidad();
 		int fuerza = hacha.getFuerza();
 
-		hacha.usar(diamante);
+		hacha.usar(diamante, new Inventario());
 
 		assert hacha.getDurabilidad() == (durabilidadHerramienta - fuerza);
 
@@ -170,7 +171,7 @@ public class HachaTest {
 		int durabilidadHerramienta = hacha.getDurabilidad();
 		int fuerza = hacha.getFuerza();
 
-		hacha.usar(diamante);
+		hacha.usar(diamante, new Inventario());
 
 		assert hacha.getDurabilidad() == (durabilidadHerramienta - fuerza);
 
@@ -183,7 +184,7 @@ public class HachaTest {
 		int durabilidadHerramienta = hacha.getDurabilidad();
 		int fuerza = hacha.getFuerza();
 
-		hacha.usar(diamante);
+		hacha.usar(diamante, new Inventario());
 
 		assert hacha.getDurabilidad() == (durabilidadHerramienta - fuerza/2);
 

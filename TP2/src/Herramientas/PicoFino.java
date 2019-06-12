@@ -1,5 +1,6 @@
 package Herramientas;
 
+import Jugador.Inventario;
 import Materiales.*;
 
 public class PicoFino extends Herramienta {
@@ -15,28 +16,28 @@ public class PicoFino extends Herramienta {
 	}
 
 	@Override
-	public void usar(Madera madera) {
-		madera.recibirDanio(fuerza);
+	public void usar(Madera madera, Inventario inventario) {
+		madera.recibirDanio(fuerza, inventario);
 	}
 
 	@Override
-	public void usar(Metal metal) {
-		metal.recibirDanio(fuerza);
+	public void usar(Metal metal, Inventario inventario) {
+		metal.recibirDanio(fuerza, inventario);
 	}
 
 	@Override
-	public void usar(Piedra piedra) {
-		piedra.recibirDanio(fuerza);
+	public void usar(Piedra piedra, Inventario inventario) {
+		piedra.recibirDanio(fuerza, inventario);
 	}
 
 	@Override
-	public void usar(Diamante diamante) {
+	public void usar(Diamante diamante, Inventario inventario) {
 		this.desgastar();
-		diamante.recibirDanio(fuerza);
+		diamante.recibirDanio(fuerza, inventario);
 	}
 	
 	@Override
-	public void usar(Pasto pasto) {
+	public void usar(Pasto pasto, Inventario inventario) {
 		
 	}
 

@@ -1,6 +1,7 @@
 package Materiales;
 
 import Herramientas.Herramienta;
+import Jugador.Inventario;
 import mapa.*;
 
 public class Madera extends Material {
@@ -15,10 +16,17 @@ public class Madera extends Material {
 		posicionMaterial = posicion;
 	}
 	
+	public void verificarEstado(Inventario inventario) {
+		if(durabilidad <= 0) {
+			inventario.agregarMaterial(this);
+			mapa.eliminarMaterial(posicionMaterial.getFila(), posicionMaterial.getColumna());
+		}
+	}
+	
 	
 	@Override
-	public void decimeQuienSos(Herramienta herramienta) {
-		herramienta.usar(this);
+	public void decimeQuienSos(Herramienta herramienta, Inventario inventario) {
+		herramienta.usar(this, inventario);
 		
 	}
 

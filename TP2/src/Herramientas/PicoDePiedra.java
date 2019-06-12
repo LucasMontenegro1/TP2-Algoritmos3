@@ -1,5 +1,6 @@
 package Herramientas;
 
+import Jugador.Inventario;
 import Materiales.Metal;
 
 public class PicoDePiedra extends Pico {
@@ -16,9 +17,9 @@ public class PicoDePiedra extends Pico {
 	}
 
 	@Override
-	public void usar(Metal metal) {
+	public void usar(Metal metal, Inventario inventario) {
 		this.desgastar();
-		metal.recibirDanio(fuerza);
+		metal.recibirDanio(fuerza, inventario);
 	}
 
 	@Override

@@ -1,6 +1,7 @@
 import org.junit.Test;
 
 import Herramientas.*;
+import Jugador.Inventario;
 import Materiales.*;
 
 
@@ -14,7 +15,7 @@ public class MaterialesTest {
 		int durabilidadMaterial = madera.getDurabilidad();
 		int fuerzaHerramienta = hacha.getFuerza();
 
-		hacha.usar(madera);
+		hacha.usar(madera, new Inventario());
 		assert madera.getDurabilidad() == (durabilidadMaterial - fuerzaHerramienta);
 
 	} 
@@ -27,7 +28,7 @@ public class MaterialesTest {
 		
 		int durabilidadMaterial = piedra.getDurabilidad();
 		
-		hacha.usar(piedra);
+		hacha.usar(piedra, new Inventario());
 		
 		assert piedra.getDurabilidad() == durabilidadMaterial;		
 	}
@@ -40,7 +41,7 @@ public class MaterialesTest {
 		
 		int durabilidadMaterial = piedra.getDurabilidad();
 		
-		hacha.usar(piedra);
+		hacha.usar(piedra, new Inventario());
 		
 		assert piedra.getDurabilidad() == durabilidadMaterial;		
 	}
@@ -54,7 +55,7 @@ public class MaterialesTest {
 		
 		int durabilidadMaterial = piedra.getDurabilidad();
 		
-		hacha.usar(piedra);
+		hacha.usar(piedra, new Inventario());
 		
 		assert piedra.getDurabilidad() == durabilidadMaterial;		
 	}
@@ -67,7 +68,7 @@ public class MaterialesTest {
 		
 		int durabilidadMaterial = metal.getDurabilidad();
 		
-		pico.usar(metal);
+		pico.usar(metal, new Inventario());
 		
 		assert metal.getDurabilidad() == durabilidadMaterial;
 	}
@@ -80,7 +81,7 @@ public class MaterialesTest {
 		int durabilidadMaterial = material.getDurabilidad();
 		int fuerzaHerramienta = hacha.getFuerza();
 		
-		hacha.usar(material);
+		hacha.usar(material, new Inventario());
 		
 		
 		assert material.getDurabilidad() == (durabilidadMaterial - fuerzaHerramienta);

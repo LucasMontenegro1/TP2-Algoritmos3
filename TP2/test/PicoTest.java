@@ -4,6 +4,7 @@ import org.junit.Test;
 import Herramientas.*;
 import Materiales.*;
 import mapa.*;
+import Jugador.*;
 
 public class PicoTest {
 
@@ -45,7 +46,7 @@ public class PicoTest {
 		int durabilidadHerramienta = pico.getDurabilidad();
 		int fuerza = pico.getFuerza();
 
-		pico.usar(madera);
+		pico.usar(madera, new Inventario());
 
 		assert pico.getDurabilidad() == (durabilidadHerramienta - fuerza);
 
@@ -59,7 +60,7 @@ public class PicoTest {
 		int durabilidadHerramienta = pico.getDurabilidad();
 		int fuerza = pico.getFuerza();
 
-		pico.usar(madera);
+		pico.usar(madera, new Inventario());
 
 		assert pico.getDurabilidad() == (int)(durabilidadHerramienta - fuerza/1.5);
 
@@ -73,11 +74,11 @@ public class PicoTest {
 	
 
 		for (int i = 0; i < 9; i++) {
-			pico.usar(madera);
+			pico.usar(madera, new Inventario());
 		}
 
 		assert pico.getDurabilidad() == durabilidadHerramienta;
-		pico.usar(madera);
+		pico.usar(madera, new Inventario());
 		assert pico.getDurabilidad() == 0;
 
 	}
@@ -89,7 +90,7 @@ public class PicoTest {
 		int durabilidadHerramienta = pico.getDurabilidad();
 		int fuerza = pico.getFuerza();
 
-		pico.usar(piedra);
+		pico.usar(piedra, new Inventario());
 
 		assert pico.getDurabilidad() == (durabilidadHerramienta - fuerza);
 
@@ -102,7 +103,7 @@ public class PicoTest {
 		int durabilidadHerramienta = pico.getDurabilidad();
 		int fuerza = pico.getFuerza();
 
-		pico.usar(piedra);
+		pico.usar(piedra, new Inventario());
 
 		assert pico.getDurabilidad() == (int)(durabilidadHerramienta - fuerza/1.5);
 
@@ -116,11 +117,11 @@ public class PicoTest {
 		
 
 		for (int i = 0; i < 9; i++) {
-			pico.usar(piedra);
+			pico.usar(piedra, new Inventario());
 		}
 
 		assert pico.getDurabilidad() == durabilidadHerramienta;
-		pico.usar(piedra);
+		pico.usar(piedra, new Inventario());
 		assert pico.getDurabilidad() == 0;
 
 	}
@@ -131,7 +132,7 @@ public class PicoTest {
 		Pico pico = new PicoDeMadera();
 		int durabilidadHerramienta = pico.getDurabilidad();
 		int fuerza = pico.getFuerza();
-		pico.usar(metal);
+		pico.usar(metal, new Inventario());
 
 		assert pico.getDurabilidad() == (durabilidadHerramienta - fuerza);
 
@@ -144,7 +145,7 @@ public class PicoTest {
 		int durabilidadHerramienta = pico.getDurabilidad();
 		int fuerza = pico.getFuerza();
 
-		pico.usar(metal);		
+		pico.usar(metal, new Inventario());		
 
 		assert pico.getDurabilidad() == (int)(durabilidadHerramienta - fuerza/1.5);
 
@@ -158,11 +159,11 @@ public class PicoTest {
 		
 
 		for (int i = 0; i < 9; i++) {
-			pico.usar(metal);
+			pico.usar(metal, new Inventario());
 		}
 
 		assert pico.getDurabilidad() == durabilidadHerramienta;
-		pico.usar(metal);
+		pico.usar(metal, new Inventario());
 		assert pico.getDurabilidad() == 0;
 
 	}
@@ -173,7 +174,7 @@ public class PicoTest {
 		Pico pico = new PicoDeMadera();
 		int durabilidadHerramienta = pico.getDurabilidad();
 		int fuerza = pico.getFuerza();
-		pico.usar(diamante);
+		pico.usar(diamante, new Inventario());
 
 		assert pico.getDurabilidad() == (durabilidadHerramienta - fuerza);
 
@@ -187,7 +188,7 @@ public class PicoTest {
 		int durabilidadHerramienta = pico.getDurabilidad();
 		int fuerza = pico.getFuerza();
 
-		pico.usar(diamante);		
+		pico.usar(diamante, new Inventario());		
 
 		assert pico.getDurabilidad() == (int)(durabilidadHerramienta - fuerza/1.5);
 
@@ -202,11 +203,11 @@ public class PicoTest {
 		
 
 		for (int i = 0; i < 9; i++) {
-			pico.usar(diamante);
+			pico.usar(diamante, new Inventario());
 		}
 
 		assert pico.getDurabilidad() == durabilidadHerramienta;
-		pico.usar(diamante);
+		pico.usar(diamante, new Inventario());
 		assert pico.getDurabilidad() == 0;
 
 	}
@@ -220,7 +221,7 @@ public class PicoTest {
 		PicoFino picoFino = new PicoFino();
 		int durabilidadHerramienta = picoFino.getDurabilidad();
 		
-		picoFino.usar(diamante);
+		picoFino.usar(diamante, new Inventario());
 		
 		assert picoFino.getDurabilidad() == (durabilidadHerramienta - durabilidadHerramienta * 0.1);
 	}
@@ -231,7 +232,7 @@ public class PicoTest {
 		PicoFino picoFino = new PicoFino();
 		int durabilidadHerramienta = picoFino.getDurabilidad();
 		
-		picoFino.usar(madera);
+		picoFino.usar(madera, new Inventario());
 		
 		assert picoFino.getDurabilidad() == durabilidadHerramienta;
 		
@@ -243,7 +244,7 @@ public class PicoTest {
 		PicoFino picoFino = new PicoFino();
 		int durabilidadHerramienta = picoFino.getDurabilidad();
 		
-		picoFino.usar(metal);		
+		picoFino.usar(metal, new Inventario());		
 		
 		assert picoFino.getDurabilidad() == durabilidadHerramienta;
 		
@@ -256,7 +257,7 @@ public class PicoTest {
 		PicoFino picoFino = new PicoFino();
 		int durabilidadHerramienta = picoFino.getDurabilidad();
 		
-		picoFino.usar(piedra);
+		picoFino.usar(piedra, new Inventario());
 		
 		assert picoFino.getDurabilidad() == durabilidadHerramienta;
 

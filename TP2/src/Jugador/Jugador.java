@@ -42,7 +42,7 @@ public class Jugador implements Alocable{
 		Material material = (Material) mapa.getOcupante(x-1, y);
 		Herramienta herramienta = inventario.getHerramientaSeleccionada();
 		
-		herramienta.usar(material);
+		herramienta.usar(material, inventario);
 		
 	}
 	
@@ -52,7 +52,7 @@ public class Jugador implements Alocable{
 		Material material = (Material) mapa.getOcupante(x+1, y);
 		Herramienta herramienta = inventario.getHerramientaSeleccionada();
 		
-		herramienta.usar(material);
+		herramienta.usar(material, inventario);
 		
 	}
 	
@@ -62,7 +62,7 @@ public class Jugador implements Alocable{
 		Material material = (Material) mapa.getOcupante(x, y+1);
 		Herramienta herramienta = inventario.getHerramientaSeleccionada();
 		
-		herramienta.usar(material);
+		herramienta.usar(material, inventario);
 		
 	}
 	
@@ -72,7 +72,7 @@ public class Jugador implements Alocable{
 		Material material = (Material) mapa.getOcupante(x, y-1);
 		Herramienta herramienta = inventario.getHerramientaSeleccionada();
 		
-		herramienta.usar(material);
+		herramienta.usar(material, inventario);
 		
 	}
 	

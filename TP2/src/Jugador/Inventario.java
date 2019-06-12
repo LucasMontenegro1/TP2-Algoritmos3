@@ -1,6 +1,7 @@
 package Jugador;
 
 import Herramientas.*;
+import Materiales.*;
 
 
 public class Inventario {
@@ -11,12 +12,48 @@ public class Inventario {
     private int posicionHerramientaSeleccionada = 0;
 
 
-    Inventario(){
+    public Inventario(){
         for(int i = 0; i < cantidadDePaquetes; i++) {
         	elementosGuardados[i] = new Paquete();
         }
     	elementosGuardados[0].setElementoGuardado(new HachaDeMadera());
         herramientaSeleccionada = (Herramienta)elementosGuardados[0].getElementoGuardado();
+    }
+    
+    public void agregarMaterial(Madera madera) {
+    	for(int i = 0; i < cantidadDePaquetes; i++) {
+    		if(elementosGuardados[i].lugarLibre() || elementosGuardados[i].esMismoTipo(madera)) {
+    			elementosGuardados[i].setElementoGuardado(madera);
+    			break;
+    		}
+    	}
+    }
+    
+    public void agregarMaterial(Piedra piedra) {
+    	for(int i = 0; i < cantidadDePaquetes; i++) {
+    		if(elementosGuardados[i].lugarLibre() || elementosGuardados[i].esMismoTipo(piedra)) {
+    			elementosGuardados[i].setElementoGuardado(piedra);
+    			break;
+    		}
+    	}
+    }
+    
+    public void agregarMaterial(Metal metal) {
+    	for(int i = 0; i < cantidadDePaquetes; i++) {
+    		if(elementosGuardados[i].lugarLibre() || elementosGuardados[i].esMismoTipo(metal)) {
+    			elementosGuardados[i].setElementoGuardado(metal);
+    			break;
+    		}
+    	}
+    }
+    
+    public void agregarMaterial(Diamante diamante) {
+    	for(int i = 0; i < cantidadDePaquetes; i++) {
+    		if(elementosGuardados[i].lugarLibre() || elementosGuardados[i].esMismoTipo(diamante)) {
+    			elementosGuardados[i].setElementoGuardado(diamante);
+    			break;
+    		}
+    	}
     }
 
     public Herramienta getHerramientaSeleccionada() {

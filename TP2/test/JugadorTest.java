@@ -1,6 +1,6 @@
 import org.junit.Test;
 
-import Jugador.Jugador;
+import Jugador.*;
 import mapa.Mapa;
 import Materiales.*;
 import Herramientas.*;
@@ -130,6 +130,22 @@ public class JugadorTest {
 		assert mapa.getOcupante(7, 5).getClass() == Pasto.class;
 	}
 	
+	@Test
+	public void testJugadorRompeUnaMaderaYSeAgregaASuInventario() {
+		Mapa mapa = new Mapa();
+		Jugador jugador = (Jugador)mapa.getOcupante(7, 7);
+		Inventario inventario = jugador.getInventario();
+		
+		jugador.moverIzquierda();
+		jugador.golpearIzquierda();
+
+		jugador.golpearIzquierda();
+		jugador.golpearIzquierda();
+		jugador.golpearIzquierda();
+		assert inventario.getElementosGuardados()[1].getElementoGuardado() == null;
+		jugador.golpearIzquierda();
+		assert inventario.getElementosGuardados()[1].getElementoGuardado().getClass() == Madera.class;
+	}
 	
 	
 	

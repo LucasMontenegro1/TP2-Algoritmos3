@@ -1,6 +1,7 @@
 package Jugador;
 
 import Herramientas.*;
+import Materiales.*;
 
 
 public class Paquete {
@@ -10,29 +11,47 @@ public class Paquete {
 	int cantidadMaximaElementos = capacidadStack;
 	int cantidadActualElementos = 0;
 
-	Desgastable elementoGuardado;
+	Desgastable elementoGuardado[] = new Desgastable[64];
 	
-	public void agregarElementos(int cantidad){
-		
-		
-	}
-	
-	public void quitarElementos(int cantidad) {
-		
-	}
 
+	public boolean lugarLibre() {
+		return elementoGuardado[0] == null;
+	}
+	
+	public boolean esMismoTipo(Madera madera) {
+		return elementoGuardado[0].getClass() == madera.getClass()
+				 && cantidadActualElementos < capacidadStack - 1;
+	}
+	
+	public boolean esMismoTipo(Piedra piedra) {
+		return elementoGuardado[0].getClass() == piedra.getClass()
+				 && cantidadActualElementos < capacidadStack - 1;
+	}
+	
+	public boolean esMismoTipo(Metal metal) {
+		return elementoGuardado[0].getClass() == metal.getClass()
+				 && cantidadActualElementos < capacidadStack - 1;
+	}
+	
+	public boolean esMismoTipo(Diamante diamante) {
+		return elementoGuardado[0].getClass() == diamante.getClass()
+				 && cantidadActualElementos < capacidadStack - 1;
+	}
+	
+	
 	
 	public Desgastable getElementoGuardado() {
-		return this.elementoGuardado;
+		return this.elementoGuardado[0];
 	}
 	
 	public boolean esUnaHerramienta() {
-		return elementoGuardado != null && (Herramienta.class).isAssignableFrom(elementoGuardado.getClass());
+		return elementoGuardado[0] != null && (Herramienta.class).isAssignableFrom(elementoGuardado[0].getClass());
 	}
 	
 	
 	public void setElementoGuardado(Desgastable elemento) {
-		this.elementoGuardado = elemento;
+		this.elementoGuardado[cantidadActualElementos] = elemento;
+		cantidadActualElementos++;
 	}
 	
 }

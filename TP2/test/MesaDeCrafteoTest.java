@@ -3,6 +3,7 @@ import org.junit.Test;
 
 import Herramientas.HachaDeMadera;
 import Herramientas.Herramienta;
+import Jugador.Inventario;
 import Materiales.Diamante;
 import Materiales.Madera;
 import Materiales.Metal;
@@ -31,7 +32,7 @@ public class MesaDeCrafteoTest {
 		
 		Herramienta herramienta= mesa.craftear(codigoHachaDeMadera);
 		
-		herramienta.usar(madera);
+		herramienta.usar(madera, new Inventario());
 		
 		assert madera.getDurabilidad() == durabilidadInicial - herramienta.getFuerza();	
 		
@@ -55,7 +56,7 @@ public class MesaDeCrafteoTest {
 		
 		Herramienta herramienta= mesa.craftear(codigoHachaDePiedra);
 		
-		herramienta.usar(madera);
+		herramienta.usar(madera, new Inventario());
 		
 		assert madera.getDurabilidad() == durabilidadInicial - herramienta.getFuerza();	
 		
@@ -80,7 +81,7 @@ public class MesaDeCrafteoTest {
 		Herramienta herramienta= mesa.craftear(codigoHachaDeMetal);
 		//int durabilidadInicialHacha = herramienta.getDurabilidad();
 		
-		herramienta.usar(madera);
+		herramienta.usar(madera, new Inventario());
 		
 		assert madera.getDurabilidad() == durabilidadInicialMadera - herramienta.getFuerza();
 		
@@ -111,8 +112,8 @@ public class MesaDeCrafteoTest {
 		
 		Herramienta herramienta= mesa.craftear(codigoPicoDeMadera);
 		
-		herramienta.usar(piedra);
-		herramienta.usar(metal);
+		herramienta.usar(piedra, new Inventario());
+		herramienta.usar(metal, new Inventario());
 		
 		assert piedra.getDurabilidad() == durabilidadInicialPiedra - herramienta.getFuerza();
 		assert metal.getDurabilidad() == durabilidadInicialMetal;
@@ -143,9 +144,9 @@ public class MesaDeCrafteoTest {
 		
 		Herramienta herramienta= mesa.craftear(codigoPicoDePiedra);
 		
-		herramienta.usar(piedra);
-		herramienta.usar(metal);
-		herramienta.usar(diamante);
+		herramienta.usar(piedra, new Inventario());
+		herramienta.usar(metal, new Inventario());
+		herramienta.usar(diamante, new Inventario());
 		
 		assert piedra.getDurabilidad() == durabilidadInicialPiedra - herramienta.getFuerza();
 		assert metal.getDurabilidad() == durabilidadInicialMetal - herramienta.getFuerza();
@@ -183,9 +184,9 @@ public class MesaDeCrafteoTest {
 		
 		Herramienta herramienta= mesa.craftear(codigoPicoDeMetal);
 		
-		herramienta.usar(piedra);
-		herramienta.usar(metal);
-		herramienta.usar(diamante);
+		herramienta.usar(piedra, new Inventario());
+		herramienta.usar(metal, new Inventario());
+		herramienta.usar(diamante, new Inventario());
 		
 		assert piedra.getDurabilidad() == durabilidadInicialPiedra - herramienta.getFuerza();
 		assert metal.getDurabilidad() == durabilidadInicialMetal - herramienta.getFuerza();
@@ -221,9 +222,9 @@ public class MesaDeCrafteoTest {
 		
 		Herramienta herramienta= mesa.craftear(codigoPicoFino);
 		
-		herramienta.usar(piedra);
-		herramienta.usar(metal);
-		herramienta.usar(diamante);
+		herramienta.usar(piedra, new Inventario());
+		herramienta.usar(metal, new Inventario());
+		herramienta.usar(diamante, new Inventario());
 		
 		assert piedra.getDurabilidad() == durabilidadInicialPiedra - herramienta.getFuerza();
 		assert metal.getDurabilidad() == durabilidadInicialMetal - herramienta.getFuerza();

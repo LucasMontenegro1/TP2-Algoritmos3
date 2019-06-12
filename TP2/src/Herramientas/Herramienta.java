@@ -1,6 +1,7 @@
 package Herramientas;
 
 import Materiales.*;
+import Jugador.*;
 
 public abstract class Herramienta implements Desgastable {
 	int durabilidad;
@@ -12,15 +13,15 @@ public abstract class Herramienta implements Desgastable {
 	
 	public abstract void desgastar();
 	
-	public abstract void usar(Madera madera);
-	public abstract void usar(Metal metal);
-	public abstract void usar(Piedra piedra);
-	public abstract void usar(Diamante diamante);
-	public abstract void usar(Pasto pasto);
+	public abstract void usar(Madera madera, Inventario inventario);
+	public abstract void usar(Metal metal, Inventario inventario);
+	public abstract void usar(Piedra piedra, Inventario inventario);
+	public abstract void usar(Diamante diamante, Inventario inventario);
+	public abstract void usar(Pasto pasto, Inventario inventario);
 
 	
-	public void usar(Material material) {
-		material.decimeQuienSos(this);
+	public void usar(Material material, Inventario inventario) {
+		material.decimeQuienSos(this, inventario);
 	}
 	
 	public abstract Herramienta clonar();

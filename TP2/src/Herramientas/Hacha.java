@@ -1,5 +1,6 @@
 package Herramientas;
 
+import Jugador.Inventario;
 import Materiales.*;
 
 public abstract class Hacha extends Herramienta{
@@ -8,30 +9,30 @@ public abstract class Hacha extends Herramienta{
 	public abstract void desgastar();
 
 	@Override
-	public void usar(Madera madera) {
-		madera.recibirDanio(fuerza);
+	public void usar(Madera madera, Inventario inventario) {
+		madera.recibirDanio(fuerza, inventario);
 		this.desgastar();
 	}
 	
 	@Override
-	public void usar(Metal metal) {
+	public void usar(Metal metal, Inventario inventario) {
 		this.desgastar();
 	}
 
 	@Override
-	public void usar(Piedra piedra) {
+	public void usar(Piedra piedra, Inventario inventario) {
 		this.desgastar();
 		
 	}
 	
 	@Override
-	public void usar(Diamante diamante) {
+	public void usar(Diamante diamante, Inventario inventario) {
 		this.desgastar();
 		
 	}
 	
 	@Override
-	public void usar(Pasto pasto) {
+	public void usar(Pasto pasto, Inventario inventario) {
 		
 	}
 	
