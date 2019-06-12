@@ -29,13 +29,13 @@ public class Casillero {
 	}
 	
 	public Casillero() {
-		ocupante = null;
+		ocupante = new Pasto();
 	}
 	
 	
 	
 	public boolean estaLibre() {
-		return ocupante == null;
+		return ocupante.getClass() == (new Pasto()).getClass();
 	}
 	
 	public Alocable getOcupante() {

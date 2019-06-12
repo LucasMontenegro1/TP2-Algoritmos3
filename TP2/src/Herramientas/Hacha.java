@@ -30,5 +30,10 @@ public abstract class Hacha extends Herramienta{
 		
 	}
 	
+	@Override
+	public void usar(Pasto pasto) {
+		
+	}
+	
 
 }

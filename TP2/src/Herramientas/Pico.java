@@ -26,4 +26,9 @@ public abstract class Pico extends Herramienta {
 	public  void usar(Diamante diamante) {
 		this.desgastar();
 	}
+	
+	@Override
+	public void usar(Pasto pasto) {
+		
+	}
 }

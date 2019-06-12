@@ -1,6 +1,8 @@
 package Jugador;
 
 import mapa.*;
+import Herramientas.*;
+import Materiales.*;
 
 
 public class Jugador implements Alocable{
@@ -34,15 +36,44 @@ public class Jugador implements Alocable{
 	}
 	
 	
-	/*
 	public void golpearArriba() {
-		mapa.getOcupante(i, j)
+		int x = posicionJugador.getFila();
+		int y = posicionJugador.getColumna();
+		Material material = (Material) mapa.getOcupante(x-1, y);
+		Herramienta herramienta = inventario.getHerramientaSeleccionada();
+		
+		herramienta.usar(material);
+		
 	}
-	*/
 	
+	public void golpearAbajo() {
+		int x = posicionJugador.getFila();
+		int y = posicionJugador.getColumna();
+		Material material = (Material) mapa.getOcupante(x+1, y);
+		Herramienta herramienta = inventario.getHerramientaSeleccionada();
+		
+		herramienta.usar(material);
+		
+	}
 	
-	public void usarElementoSeleccionado() {
-		inventario.usarElementoSeleccionado();
+	public void golpearDerecha() {
+		int x = posicionJugador.getFila();
+		int y = posicionJugador.getColumna();
+		Material material = (Material) mapa.getOcupante(x, y+1);
+		Herramienta herramienta = inventario.getHerramientaSeleccionada();
+		
+		herramienta.usar(material);
+		
+	}
+	
+	public void golpearIzquierda() {
+		int x = posicionJugador.getFila();
+		int y = posicionJugador.getColumna();
+		Material material = (Material) mapa.getOcupante(x, y-1);
+		Herramienta herramienta = inventario.getHerramientaSeleccionada();
+		
+		herramienta.usar(material);
+		
 	}
 	
 	

@@ -2,6 +2,8 @@ import org.junit.Test;
 
 import Jugador.Jugador;
 import mapa.Mapa;
+import Materiales.*;
+import Herramientas.*;
 
 public class JugadorTest {
 	
@@ -14,7 +16,7 @@ public class JugadorTest {
 		
 		jugador.moverArriba();
 		
-		assert mapa.getOcupante(7, 7) == null;
+		assert mapa.getOcupante(7, 7).getClass() == (new Pasto()).getClass();
 		assert mapa.getOcupante(6, 7) == jugador;
 		
 	}
@@ -27,7 +29,7 @@ public class JugadorTest {
 		
 		jugador.moverAbajo();
 		
-		assert mapa.getOcupante(7, 7) == null;
+		assert mapa.getOcupante(7, 7).getClass() == (new Pasto()).getClass();
 		assert mapa.getOcupante(8, 7) == jugador;
 		
 	}
@@ -40,7 +42,7 @@ public class JugadorTest {
 		
 		jugador.moverDerecha();
 		
-		assert mapa.getOcupante(7, 7) == null;
+		assert mapa.getOcupante(7, 7).getClass() == (new Pasto()).getClass();
 		assert mapa.getOcupante(7, 8) == jugador;
 	}
 	
@@ -52,7 +54,7 @@ public class JugadorTest {
 		
 		jugador.moverIzquierda();
 		
-		assert mapa.getOcupante(7, 7) == null;
+		assert mapa.getOcupante(7, 7).getClass() == (new Pasto()).getClass();
 		assert mapa.getOcupante(7, 6) == jugador;
 		
 	}
@@ -84,6 +86,26 @@ public class JugadorTest {
 		
 	}
 	
+	@Test
+	public void testJugadorGolpeaMaterialDelCasilleroSuperiorYEsMadera() {
+		Mapa mapa = new Mapa();
+		Jugador jugador = (Jugador) mapa.getOcupante(7, 7);
+		Material madera = (Material) mapa.getOcupante(7, 5);
+		HachaDeMadera hacha = new HachaDeMadera();
+		int durabilidadMaterial = madera.getDurabilidad();
+		int fuerzaHerramienta = hacha.getFuerza();
+		
+		jugador.moverAbajo();
+		jugador.moverIzquierda();
+		jugador.moverIzquierda();
+		
+		assert madera.getDurabilidad() == durabilidadMaterial;
+ 		jugador.golpearArriba();
+		assert madera.getDurabilidad() == (durabilidadMaterial - fuerzaHerramienta);
+ 		jugador.golpearArriba();
+		assert madera.getDurabilidad() == (durabilidadMaterial - 2*fuerzaHerramienta);
+
+	}
 	
 	
 	

@@ -2,7 +2,6 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import Herramientas.HachaDeMadera;
 import Materiales.*;
 import mapa.Mapa;
 import Jugador.*;
@@ -21,7 +20,7 @@ public class MapaTest {
 		
 		for(int i = 0; i < 9; i++) {
 			for(int j = 0; j < 13; j++) {
-				if(mapa.getOcupante(i, j) != null && mapa.getOcupante(i, j).getClass() == madera.getClass()) {
+				if(mapa.getOcupante(i, j).getClass() == madera.getClass()) {
 					cantidadMaderas++;
 				}				
 			}
@@ -38,7 +37,7 @@ public class MapaTest {
 		
 		for(int i = 0; i < 9; i++) {
 			for(int j = 0; j < 13; j++) {
-				if(mapa.getOcupante(i, j) != null && mapa.getOcupante(i, j).getClass() == metal.getClass()) {
+				if(mapa.getOcupante(i, j).getClass() == metal.getClass()) {
 					cantidadMetales++;
 				}				
 			}
@@ -54,7 +53,7 @@ public class MapaTest {
 		
 		for(int i = 0; i < 9; i++) {
 			for(int j = 0; j < 13; j++) {
-				if(mapa.getOcupante(i, j) != null && mapa.getOcupante(i, j).getClass() == diamante.getClass()) {
+				if(mapa.getOcupante(i, j).getClass() == diamante.getClass()) {
 					cantidadDiamantes++;
 				}				
 			}
@@ -70,7 +69,7 @@ public class MapaTest {
 		
 		for(int i = 0; i < 9; i++) {
 			for(int j = 0; j < 13; j++) {
-				if(mapa.getOcupante(i, j) != null && mapa.getOcupante(i, j).getClass() == piedra.getClass()) {
+				if(mapa.getOcupante(i, j).getClass() == piedra.getClass()) {
 					cantidadPiedra++;
 				}				
 			}
@@ -86,7 +85,7 @@ public class MapaTest {
 		
 		for(int i = 0; i < 9; i++) {
 			for(int j = 0; j < 13; j++) {
-				if(mapa.getOcupante(i, j) != null && mapa.getOcupante(i, j).getClass() == jugador.getClass()) {
+				if(mapa.getOcupante(i, j).getClass() == jugador.getClass()) {
 					cantidadJugadores++;
 				}				
 			}
@@ -105,7 +104,7 @@ public class MapaTest {
 		
 		for(int i = 0; i < 9; i++) {
 			for(int j = 0; j < 13; j++) {
-				if(mapa.getOcupante(i, j) != null && mapa.getOcupante(i, j).getClass() == madera.getClass()) {
+				if(mapa.getOcupante(i, j).getClass() == madera.getClass()) {
 					filaMadera = i;
 					columnaMadera = j;
 					break;
@@ -114,7 +113,7 @@ public class MapaTest {
 		}
 		
 		mapa.eliminarMaterial(filaMadera, columnaMadera);
-		assert mapa.getOcupante(filaMadera, columnaMadera) == null;
+		assert mapa.getOcupante(filaMadera, columnaMadera).getClass() == (new Pasto()).getClass();
 	}
 	
 	@Test 
@@ -126,7 +125,7 @@ public class MapaTest {
 		
 		for(int i = 0; i < 9; i++) {
 			for(int j = 0; j < 13; j++) {
-				if(mapa.getOcupante(i, j) != null && mapa.getOcupante(i, j).getClass() == piedra.getClass()) {
+				if(mapa.getOcupante(i, j).getClass() == piedra.getClass()) {
 					filaPiedra = i;
 					columnaPiedra = j;
 					break;
@@ -135,7 +134,7 @@ public class MapaTest {
 		}
 		
 		mapa.eliminarMaterial(filaPiedra, columnaPiedra);
-		assert mapa.getOcupante(filaPiedra, columnaPiedra) == null;
+		assert mapa.getOcupante(filaPiedra, columnaPiedra).getClass() == (new Pasto()).getClass();
 	}
 	
 	@Test 
@@ -147,7 +146,7 @@ public class MapaTest {
 		
 		for(int i = 0; i < 9; i++) {
 			for(int j = 0; j < 13; j++) {
-				if(mapa.getOcupante(i, j) != null && mapa.getOcupante(i, j).getClass() == metal.getClass()) {
+				if(mapa.getOcupante(i, j).getClass() == metal.getClass()) {
 					filaMetal = i;
 					columnaMetal = j;
 					break;
@@ -156,7 +155,7 @@ public class MapaTest {
 		}
 		
 		mapa.eliminarMaterial(filaMetal, columnaMetal);
-		assert mapa.getOcupante(filaMetal, columnaMetal) == null;
+		assert mapa.getOcupante(filaMetal, columnaMetal).getClass() == (new Pasto()).getClass();
 	}
 	
 	@Test 
@@ -168,7 +167,7 @@ public class MapaTest {
 		
 		for(int i = 0; i < 9; i++) {
 			for(int j = 0; j < 13; j++) {
-				if(mapa.getOcupante(i, j) != null && mapa.getOcupante(i, j).getClass() == diamante.getClass()) {
+				if(mapa.getOcupante(i, j).getClass() == diamante.getClass()) {
 					filaDiamante = i;
 					columnaDiamante = j;
 					break;
@@ -177,7 +176,7 @@ public class MapaTest {
 		}
 		
 		mapa.eliminarMaterial(filaDiamante, columnaDiamante);
-		assert mapa.getOcupante(filaDiamante, columnaDiamante) == null;
+		assert mapa.getOcupante(filaDiamante, columnaDiamante).getClass() == (new Pasto()).getClass();
 	}
 	
 	

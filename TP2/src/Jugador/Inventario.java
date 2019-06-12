@@ -1,15 +1,13 @@
 package Jugador;
 
-import Herramientas.Desgastable;
-
-import Herramientas.HachaDeMadera;
+import Herramientas.*;
 
 
 public class Inventario {
 
     private static int cantidadDePaquetes = 28;
     private Paquete elementosGuardados[] = new Paquete[cantidadDePaquetes];
-    private Desgastable elementoSeleccionado;
+    private Herramienta herramientaSeleccionada;
 
 
     Inventario(){
@@ -17,11 +15,11 @@ public class Inventario {
         	elementosGuardados[i] = new Paquete();
         }
     	elementosGuardados[0].setElementoGuardado(new HachaDeMadera());
-        elementoSeleccionado = elementosGuardados[0].getElementoGuardado();
+        herramientaSeleccionada = (Herramienta)elementosGuardados[0].getElementoGuardado();
     }
 
-    public void usarElementoSeleccionado() {
-        
+    public Herramienta getHerramientaSeleccionada() {
+        return herramientaSeleccionada;
     }
 
     public Paquete[] getElementosGuardados() {

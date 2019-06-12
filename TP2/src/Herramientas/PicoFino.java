@@ -34,6 +34,11 @@ public class PicoFino extends Herramienta {
 		this.desgastar();
 		diamante.recibirDanio(fuerza);
 	}
+	
+	@Override
+	public void usar(Pasto pasto) {
+		
+	}
 
 	
 	@Override
