@@ -5,100 +5,82 @@ import mapa.Mapa;
 
 public class JugadorTest {
 	
-	
-	
-	@Test 
-	public void testJugadorSeCompruebaQueSeMueve() {
-		Mapa mapa= new Mapa();
-		Jugador jugador=(Jugador)mapa.getOcupante(7, 7);
 		
-		jugador.moverAdelante();
-		
-		assert mapa.getOcupante(7, 7)==null;
-		
-	}
-	
-	
 
 	@Test
-	public void testJugadorSeMueveAHaciaAdelante() {
+	public void testJugadorSeMueveHaciaAdelanteYElCasilleroEstaLibre() {
 		Mapa mapa= new Mapa();
 		Jugador jugador=(Jugador)mapa.getOcupante(7, 7);
 		
-		assert jugador.moverAdelante()==true;
+		jugador.moverArriba();
 		
+		assert mapa.getOcupante(7, 7) == null;
+		assert mapa.getOcupante(6, 7) == jugador;
 		
 	}
 
 	
 	@Test
-	public void testJugadorSeMueveAHaciaAtras() {
+	public void testJugadorSeMueveHaciaAtrasYElCasilleroEstaLibre() {
 		Mapa mapa= new Mapa();
 		Jugador jugador=(Jugador)mapa.getOcupante(7, 7);
 		
-		assert jugador.moverAtras()==true;
+		jugador.moverAbajo();
 		
+		assert mapa.getOcupante(7, 7) == null;
+		assert mapa.getOcupante(8, 7) == jugador;
 		
 	}
 	
 	
 	@Test
-	public void testJugadorSeMueveAHaciaLaDerecha() {
+	public void testJugadorSeMueveHaciaLaDerechaYElCasilleroEstaLibre() {
 		Mapa mapa= new Mapa();
 		Jugador jugador=(Jugador)mapa.getOcupante(7, 7);
 		
-		assert jugador.moverDerecha()==true;
+		jugador.moverDerecha();
+		
+		assert mapa.getOcupante(7, 7) == null;
+		assert mapa.getOcupante(7, 8) == jugador;
+	}
+	
+	
+	@Test
+	public void testJugadorSeMueveHaciaIzquierdaYElCasilleroEstaLibre() {
+		Mapa mapa= new Mapa();
+		Jugador jugador=(Jugador)mapa.getOcupante(7, 7);
+		
+		jugador.moverIzquierda();
+		
+		assert mapa.getOcupante(7, 7) == null;
+		assert mapa.getOcupante(7, 6) == jugador;
 		
 	}
 	
 	
 	@Test
-	public void testJugadorSeMueveAHaciaIzquierda() {
-		Mapa mapa= new Mapa();
-		Jugador jugador=(Jugador)mapa.getOcupante(7, 7);
-		
-		assert jugador.moverIzquierda()==true;
-		
-		
-	}
-	
-	
-	@Test
-	public void testJugadorSeMueveAPosicionInvalida() {
+	public void testJugadorSeMueveAPosicionOcupadaPorUnMaterial() {
 		Mapa mapa= new Mapa();
 		Jugador jugador=(Jugador)mapa.getOcupante(7, 7);
 		
 		jugador.moverIzquierda();
-		jugador.moverIzquierda();
-		jugador.moverIzquierda();
-		jugador.moverIzquierda();
-		jugador.moverIzquierda();
-		jugador.moverIzquierda();
-		jugador.moverIzquierda();
 		
-		assert jugador.moverIzquierda()==false;
-		
-		
-		
+		assert mapa.getOcupante(7, 6) == jugador;
+		jugador.moverIzquierda();
+		assert mapa.getOcupante(7, 6) == jugador;
+		assert mapa.getOcupante(7, 5) != jugador;
+	
 	}
 	
 	@Test
-	public void testJugadorSeMueveAPosicionInvalidaOcupada() {
+	public void testJugadorSeMueveAUnaPosicionFueraDelMapa() {
 		Mapa mapa= new Mapa();
 		Jugador jugador=(Jugador)mapa.getOcupante(7, 7);
 		
-		jugador.moverIzquierda();
-		jugador.moverIzquierda();
-		jugador.moverIzquierda();
-		jugador.moverIzquierda();
-		jugador.moverIzquierda();
-		jugador.moverAdelante();
-		jugador.moverAdelante();
-
-		
-		assert jugador.moverIzquierda()==false;
-		
-		
+		jugador.moverAbajo();
+		assert mapa.getOcupante(8, 7) == jugador;
+		jugador.moverAbajo();
+		assert mapa.getOcupante(8, 7) == jugador;
 		
 	}
 	

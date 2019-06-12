@@ -31,6 +31,12 @@ public class Casillero {
 		ocupante = null;
 	}
 	
+	
+	
+	public boolean estaLibre() {
+		return ocupante == null;
+	}
+	
 	public Alocable getOcupante() {
 		return ocupante;
 	}

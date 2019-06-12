@@ -8,9 +8,26 @@ public class Jugador implements Alocable{
 	//private Posicion posicion = new Posicion();
 	private Inventario inventario = new Inventario();
 	private Mapa mapa;
+	private Posicion posicionJugador = new Posicion(7, 7);
 	
 	public Jugador(Mapa mapa) {
 		this.mapa = mapa;
+	}
+		
+	public void moverArriba() {
+		mapa.desplazarJugadorArriba(posicionJugador);
+	}
+	
+	public void moverAbajo() {
+		mapa.desplazarJugadorAbajo(posicionJugador);
+	}
+	
+	public void moverDerecha() {
+		mapa.desplazarJugadorDerecha(posicionJugador);
+	}
+	
+	public void moverIzquierda() {
+		mapa.desplazarJugadorIzquierda(posicionJugador);
 	}
 	
 	

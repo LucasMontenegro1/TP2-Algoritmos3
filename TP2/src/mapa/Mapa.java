@@ -49,27 +49,67 @@ public class Mapa {
 		return casilleros[i][j].getOcupante();
 	}
 
-	public boolean cambiarPosicion(int X, int Y, int i, int j) {
-		if(estaDentro(i,j) && casilleros[i][j].getOcupante()==null) {
-			Alocable cambiable=casilleros[X][Y].getOcupante();
-			casilleros[X][Y]=new Casillero();
-			casilleros[i][j]= new Casillero((Jugador) cambiable);
-			return true;
-		}
-		
-		return false;
-		
-	}
-
-	private boolean estaDentro(int i, int j) {
-		if(i < 0 || i > filasMapa || j < 0 || j > columnasMapa ) {
-			return false;
-		}
-		return true;
-	}
-	
 	public void eliminarMaterial(int fila, int columna) {
 		casilleros[fila][columna] = new Casillero();
 	}
+
+	
+	
+	private boolean casilleroExiste(int x, int y) {
+		if (x > -1 && x < columnasMapa) {
+			if (y > -1 && y < filasMapa) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
+	public void desplazarJugadorArriba(Posicion posicionJugador) {
+		int x = posicionJugador.getFila();
+		int y = posicionJugador.getColumna();
+		Jugador jugador = (Jugador)casilleros[x][y].getOcupante();
+		
+		if (casilleros[x-1][y].estaLibre() && casilleroExiste(x-1, y)) {
+			casilleros[x][y] = new Casillero();
+			casilleros[x-1][y] = new Casillero(jugador);
+		}
+	}
+	
+	public void desplazarJugadorAbajo(Posicion posicionJugador) {
+		int x = posicionJugador.getFila();
+		int y = posicionJugador.getColumna();
+		Jugador jugador = (Jugador)casilleros[x][y].getOcupante();
+		
+		if (casilleros[x+1][y].estaLibre() && casilleroExiste(x+1, y)) {
+			casilleros[x][y] = new Casillero();
+			casilleros[x+1][y] = new Casillero(jugador);
+		}
+	}
+	
+	public void desplazarJugadorDerecha(Posicion posicionJugador) {
+		int x = posicionJugador.getFila();
+		int y = posicionJugador.getColumna();
+		Jugador jugador = (Jugador)casilleros[x][y].getOcupante();
+		
+		if (casilleros[x][y+1].estaLibre() && casilleroExiste(x, y+1)) {
+			casilleros[x][y] = new Casillero();
+			casilleros[x][y+1] = new Casillero(jugador);
+		}
+	}
+	
+	public void desplazarJugadorIzquierda(Posicion posicionJugador) {
+		int x = posicionJugador.getFila();
+		int y = posicionJugador.getColumna();
+		Jugador jugador = (Jugador)casilleros[x][y].getOcupante();
+		
+		if (casilleros[x][y-1].estaLibre() && casilleroExiste(x, y-1)) {
+			casilleros[x][y] = new Casillero();
+			casilleros[x][y-1] = new Casillero(jugador);
+		}
+
+	}
+	
+	
 	
 }
