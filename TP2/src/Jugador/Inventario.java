@@ -16,7 +16,6 @@ public class Inventario {
         	elementosGuardados[i] = new Paquete();
         }
     	elementosGuardados[0].setElementoGuardado(new HachaDeMadera());
-       	elementosGuardados[1].setElementoGuardado(new PicoDeMetal());
         herramientaSeleccionada = (Herramienta)elementosGuardados[0].getElementoGuardado();
     }
 
@@ -29,11 +28,16 @@ public class Inventario {
     }
     
     public void cambiarHerramientaSeleccionada() {
-    	for(int i = posicionHerramientaSeleccionada + 1; i < cantidadDePaquetes; i++) {
+    	int j = cantidadDePaquetes;
+    	for(int i = posicionHerramientaSeleccionada + 1; i < j; i++) {
     		if(elementosGuardados[i].esUnaHerramienta()) {
     			herramientaSeleccionada = (Herramienta)elementosGuardados[i].getElementoGuardado();
     			posicionHerramientaSeleccionada = i;
     			break;
+    		}
+    		if(i == cantidadDePaquetes) {
+    			i = -1;
+    			j = posicionHerramientaSeleccionada;
     		}
     	}
     }
