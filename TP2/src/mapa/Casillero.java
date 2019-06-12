@@ -23,7 +23,8 @@ public class Casillero {
 		ocupante = diamante;
 	}
 	
-	public Casillero(Jugador jugador) {
+	public Casillero(Jugador jugador, Posicion posicionJugador) {
+		jugador.setPosicion(posicionJugador);
 		ocupante = jugador;
 	}
 	

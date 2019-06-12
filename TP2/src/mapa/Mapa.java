@@ -42,7 +42,7 @@ public class Mapa {
 			}
 		}
 		
-		casilleros[filaInicialJugador][columnaInicialJugador] = new Casillero(new Jugador(this));// jugador
+		casilleros[filaInicialJugador][columnaInicialJugador] = new Casillero(new Jugador(this), new Posicion(filaInicialJugador, columnaInicialJugador));// jugador
 	}
 	
 	public Alocable getOcupante(int i, int j) {
@@ -56,8 +56,8 @@ public class Mapa {
 	
 	
 	private boolean casilleroExiste(int x, int y) {
-		if (x > -1 && x < columnasMapa) {
-			if (y > -1 && y < filasMapa) {
+		if (x > -1 && x < filasMapa) {
+			if (y > -1 && y < columnasMapa) {
 				return true;
 			}
 		}
@@ -70,9 +70,10 @@ public class Mapa {
 		int y = posicionJugador.getColumna();
 		Jugador jugador = (Jugador)casilleros[x][y].getOcupante();
 		
-		if (casilleros[x-1][y].estaLibre() && casilleroExiste(x-1, y)) {
+		if (casilleroExiste(x-1, y) && casilleros[x-1][y].estaLibre()) {
+			Posicion nuevaPosicionJugador = new Posicion(x-1,y);
 			casilleros[x][y] = new Casillero();
-			casilleros[x-1][y] = new Casillero(jugador);
+			casilleros[x-1][y] = new Casillero(jugador, nuevaPosicionJugador);
 		}
 	}
 	
@@ -81,9 +82,10 @@ public class Mapa {
 		int y = posicionJugador.getColumna();
 		Jugador jugador = (Jugador)casilleros[x][y].getOcupante();
 		
-		if (casilleros[x+1][y].estaLibre() && casilleroExiste(x+1, y)) {
+		if (casilleroExiste(x+1, y) && casilleros[x+1][y].estaLibre()) {
+			Posicion nuevaPosicionJugador = new Posicion(x+1,y);
 			casilleros[x][y] = new Casillero();
-			casilleros[x+1][y] = new Casillero(jugador);
+			casilleros[x+1][y] = new Casillero(jugador, nuevaPosicionJugador);
 		}
 	}
 	
@@ -92,9 +94,10 @@ public class Mapa {
 		int y = posicionJugador.getColumna();
 		Jugador jugador = (Jugador)casilleros[x][y].getOcupante();
 		
-		if (casilleros[x][y+1].estaLibre() && casilleroExiste(x, y+1)) {
+		if (casilleroExiste(x, y+1) && casilleros[x][y+1].estaLibre()) {
+			Posicion nuevaPosicionJugador = new Posicion(x,y+1);
 			casilleros[x][y] = new Casillero();
-			casilleros[x][y+1] = new Casillero(jugador);
+			casilleros[x][y+1] = new Casillero(jugador, nuevaPosicionJugador);
 		}
 	}
 	
@@ -103,9 +106,10 @@ public class Mapa {
 		int y = posicionJugador.getColumna();
 		Jugador jugador = (Jugador)casilleros[x][y].getOcupante();
 		
-		if (casilleros[x][y-1].estaLibre() && casilleroExiste(x, y-1)) {
+		if (casilleroExiste(x, y-1) && casilleros[x][y-1].estaLibre()) {
+			Posicion nuevaPosicionJugador = new Posicion(x,y-1);
 			casilleros[x][y] = new Casillero();
-			casilleros[x][y-1] = new Casillero(jugador);
+			casilleros[x][y-1] = new Casillero(jugador, nuevaPosicionJugador);
 		}
 
 	}

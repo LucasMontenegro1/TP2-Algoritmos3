@@ -17,9 +17,10 @@ public abstract class Herramienta implements Desgastable {
 	public abstract void usar(Piedra piedra);
 	public abstract void usar(Diamante diamante);
 	
-	public void usar(Material unMaterial) {
-		unMaterial.DecimeQuienSos(this);
+	public void usar(Material material) {
+		material.decimeQuienSos(this);
 	}
+	
 	public abstract Herramienta clonar();
 	
 	

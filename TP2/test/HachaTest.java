@@ -5,6 +5,8 @@ import org.junit.Test;
 import Herramientas.*;
 import Materiales.*;
 
+import mapa.*;
+
 public class HachaTest {
 
 	@Test
@@ -39,7 +41,6 @@ public class HachaTest {
 		assert hacha.getDurabilidad() == (durabilidadHerramientaHerramienta - fuerza);
 
 	}
-	
 	
 	@Test
 	public void testHachaDePiedraSeUsaContraMadera() {

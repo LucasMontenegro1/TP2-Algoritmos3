@@ -9,7 +9,7 @@ public class Diamante extends Material {
 	}
 
 	@Override
-	public void DecimeQuienSos(Herramienta herramienta) {
+	public void decimeQuienSos(Herramienta herramienta) {
 		herramienta.usar(this);
 		
 	}

@@ -36,7 +36,7 @@ public abstract class Material implements Desgastable, Alocable  {
 
 	}
 
-	public abstract void DecimeQuienSos(Herramienta herramienta); 
+	public abstract void decimeQuienSos(Herramienta herramienta); //ESTO SIRVE PARA PASAR DE ALOCABLE AL MATERIAL QUE ALOCABLE SEA, SINO NO TENGO NI PUTA IDEA COMO HACER XDDDD
 	
 	
 }

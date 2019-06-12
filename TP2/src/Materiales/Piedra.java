@@ -9,7 +9,7 @@ public class Piedra extends Material {
 	}
 	
 	@Override
-	public void DecimeQuienSos(Herramienta herramienta) {
+	public void decimeQuienSos(Herramienta herramienta) {
 		herramienta.usar(this);
 		
 	}
