@@ -17,6 +17,7 @@ public abstract class Herramienta implements Desgastable {
 	public abstract void usar(Piedra piedra);
 	public abstract void usar(Diamante diamante);
 	public abstract void usar(Pasto pasto);
+
 	
 	public void usar(Material material) {
 		material.decimeQuienSos(this);

@@ -1,6 +1,6 @@
 package Jugador;
 
-import Herramientas.Desgastable;
+import Herramientas.*;
 
 
 public class Paquete {
@@ -25,6 +25,10 @@ public class Paquete {
 	
 	public Desgastable getElementoGuardado() {
 		return this.elementoGuardado;
+	}
+	
+	public boolean esUnaHerramienta() {
+		return elementoGuardado != null && (Herramienta.class).isAssignableFrom(elementoGuardado.getClass());
 	}
 	
 	

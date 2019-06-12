@@ -107,6 +107,12 @@ public class JugadorTest {
 
 	}
 	
+	@Test
+	public void testJugadorCambiaSuHerramientaSeleccionada() {
+		Jugador jugador = new Jugador(new Mapa());
+		jugador.seleccionarSiguienteHerramienta();
+	}
+	
 	
 	
 	

@@ -76,6 +76,10 @@ public class Jugador implements Alocable{
 		
 	}
 	
+	public void seleccionarSiguienteHerramienta() {
+		inventario.cambiarHerramientaSeleccionada();
+	}
+	
 	
 	
 	public Inventario getInventario(){

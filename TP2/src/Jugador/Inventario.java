@@ -8,6 +8,7 @@ public class Inventario {
     private static int cantidadDePaquetes = 28;
     private Paquete elementosGuardados[] = new Paquete[cantidadDePaquetes];
     private Herramienta herramientaSeleccionada;
+    private int posicionHerramientaSeleccionada = 0;
 
 
     Inventario(){
@@ -15,6 +16,7 @@ public class Inventario {
         	elementosGuardados[i] = new Paquete();
         }
     	elementosGuardados[0].setElementoGuardado(new HachaDeMadera());
+       	elementosGuardados[1].setElementoGuardado(new PicoDeMetal());
         herramientaSeleccionada = (Herramienta)elementosGuardados[0].getElementoGuardado();
     }
 
@@ -24,6 +26,16 @@ public class Inventario {
 
     public Paquete[] getElementosGuardados() {
         return elementosGuardados;
+    }
+    
+    public void cambiarHerramientaSeleccionada() {
+    	for(int i = posicionHerramientaSeleccionada + 1; i < cantidadDePaquetes; i++) {
+    		if(elementosGuardados[i].esUnaHerramienta()) {
+    			herramientaSeleccionada = (Herramienta)elementosGuardados[i].getElementoGuardado();
+    			posicionHerramientaSeleccionada = i;
+    			break;
+    		}
+    	}
     }
 
 
