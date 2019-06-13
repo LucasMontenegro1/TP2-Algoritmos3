@@ -39,6 +39,30 @@ public class MesaDeCrafteoTest {
 	}
 	
 	
+	public void testSeCrafteaUnHachaDeMaderaPoniendoElCodigoEnOtroOrden() {
+		MesaDeCrafteo mesa = new MesaDeCrafteo();
+		CodigoDeCrafteo codigoHachaDeMadera = new CodigoDeCrafteo();
+		Madera madera = new Madera();
+
+		int durabilidadInicial = madera.getDurabilidad();
+		
+		codigoHachaDeMadera.agregarMaterial(8, madera);
+		codigoHachaDeMadera.agregarMaterial(5, madera);
+		codigoHachaDeMadera.agregarMaterial(2, madera);
+		codigoHachaDeMadera.agregarMaterial(1, madera);
+		codigoHachaDeMadera.agregarMaterial(4, madera);
+		
+		Herramienta herramienta= mesa.craftear(codigoHachaDeMadera);
+		
+		herramienta.usar(madera, new Inventario());
+		
+		assert madera.getDurabilidad() == durabilidadInicial - herramienta.getFuerza();	
+		
+	}
+	
+	
+	
+	
 	@Test
 	public void testSeCrafteaUnHachaDePiedra() {
 		MesaDeCrafteo mesa = new MesaDeCrafteo();
