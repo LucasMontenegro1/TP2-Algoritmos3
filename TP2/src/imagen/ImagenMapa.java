@@ -24,7 +24,7 @@ import javafx.stage.Stage;
                     Image img = new Image("pasto.jpg");
                 	
                 	if(y == 3 && x == 5) {
-                        img = new Image("diamante.jpg");
+                        img = new Image("piedra.jpg");
                 	}
                 	
                     ImageView imagen = new ImageView(img);
