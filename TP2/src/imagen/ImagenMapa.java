@@ -20,24 +20,23 @@ import Materiales.*;
 
             int length = 9;
             int width = 13;
-
             GridPane root = new GridPane();   
 
             for(int y = 0; y < length; y++){
                 for(int x = 0; x < width; x++){
                 	
-                    Image img = new Image("pasto.jpg");
+                    Image img = new Image("pasto.png");
                 	
                 	if(mapa.getOcupante(y, x).getClass() == Madera.class) {
-                        img = new Image("madera.jpg");
+                        img = new Image("madera.png");
                 	} else if(mapa.getOcupante(y, x).getClass() == Piedra.class) {
-                        img = new Image("piedra.jpg");
+                        img = new Image("piedra.png");
                 	} else if(mapa.getOcupante(y, x).getClass() == Metal.class) {
-                        img = new Image("metal.jpg");
+                        img = new Image("metal.png");
                 	} else if(mapa.getOcupante(y, x).getClass() == Diamante.class) {
-                        img = new Image("diamante.jpg");
+                        img = new Image("DiamanteBloque.png");
                 	} else if(mapa.getOcupante(y, x).getClass() == Jugador.class) {
-                        img = new Image("steve.jpg");
+                        img = new Image("Steve.png");
                 	}
                         
                         
@@ -47,7 +46,7 @@ import Materiales.*;
                     
                     imagen.setFitHeight(50);
                     imagen.setFitWidth(50);
-
+                    
 
                     GridPane.setRowIndex(imagen,y);
                     GridPane.setColumnIndex(imagen,x);   
@@ -58,7 +57,7 @@ import Materiales.*;
             }
             
             
-
+            
             Scene scene = new Scene(root, 650, 450);    
             primaryStage.setTitle("Maincraf");
             primaryStage.setScene(scene);
