@@ -60,7 +60,7 @@ import Materiales.*;
             
 
             Scene scene = new Scene(root, 650, 450);    
-            primaryStage.setTitle("Random Binary Matrix (JavaFX)");
+            primaryStage.setTitle("Maincraf");
             primaryStage.setScene(scene);
             primaryStage.show();
         }
