@@ -7,7 +7,10 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
+import junit.framework.Test;
 import mapa.Mapa;
 
 import Jugador.Jugador;
@@ -23,6 +26,7 @@ import Materiales.*;
         public void start(Stage primaryStage) {
         	
         	this.stage = primaryStage;
+        	
         	
         	Button botonMoverArriba = new Button();
         	Button botonMoverAbajo = new Button();
@@ -101,5 +105,16 @@ import Materiales.*;
             stage.setTitle("Maincraf");
             stage.setScene(scene);
             stage.show();
+        }
+        
+        
+        
+        public void ponerMusica() {
+         	String path =Test.class.getResource("").toString();
+        	Media cancion = new Media(path);
+        	MediaPlayer mp= new MediaPlayer(cancion);
+        	mp.play();
+        	
+        	
         }
     }
