@@ -37,8 +37,14 @@ import Materiales.*;
 
             Stage secondaryStage = new Stage();
             
-            BotonMoverHandler botonMoverHandler = new BotonMoverHandler((Jugador)mapa.getOcupante(7, 7), this);
-            botonMoverArriba.setOnAction(botonMoverHandler);
+            BotonMoverArribaHandler botonMoverArribaHandler = new BotonMoverArribaHandler((Jugador)mapa.getOcupante(7, 7), this);
+            BotonMoverAbajoHandler botonMoverAbajoHandler = new BotonMoverAbajoHandler((Jugador)mapa.getOcupante(7, 7), this);
+            BotonMoverDerechaHandler botonMoverDerechaHandler = new BotonMoverDerechaHandler((Jugador)mapa.getOcupante(7, 7), this);
+            BotonMoverIzquierdaHandler botonMoverIzquierdaHandler = new BotonMoverIzquierdaHandler((Jugador)mapa.getOcupante(7, 7), this);
+            botonMoverArriba.setOnAction(botonMoverArribaHandler);
+            botonMoverAbajo.setOnAction(botonMoverAbajoHandler);
+            botonMoverDerecha.setOnAction(botonMoverDerechaHandler);
+            botonMoverIzquierda.setOnAction(botonMoverIzquierdaHandler);
             
             Scene scene = new Scene(botonesMover);
             secondaryStage.setX(1400);
