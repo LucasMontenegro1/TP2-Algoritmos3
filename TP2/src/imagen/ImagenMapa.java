@@ -30,9 +30,9 @@ import Materiales.*;
         	
         	
         	Button botonRomperIzquierda = new Button();
-        	botonRomperIzquierda.setText("Romper a izquierda");
+        	botonRomperIzquierda.setText("Romper Izquierda");
         	Button botonRomperDerecha = new Button();
-        	botonRomperDerecha.setText("Romper a Derecha");
+        	botonRomperDerecha.setText("Romper Derecha");
         	Button botonRomperArriba = new Button();
         	botonRomperArriba.setText("Romper Arriba");
         	Button botonRomperAbajo = new Button();
@@ -55,7 +55,7 @@ import Materiales.*;
             Stage stageRomper = new Stage();
             Scene romper = new Scene(botonesRomper);
             stageRomper.setX(1400);
-            stageRomper.setY(400);
+            stageRomper.setY(200);
             stageRomper.setScene(romper);
             stageRomper.show();
             
@@ -145,11 +145,11 @@ import Materiales.*;
         
         
         public void ponerMusica() {
-         	String path =Test.class.getResource("/arcade.mp3").toString();
+         	String path =Test.class.getResource("/minecraftSong.mp3").toString();
         	Media cancion = new Media(path);
         	MediaPlayer mp= new MediaPlayer(cancion);
         	mp.setStartTime(Duration.seconds(0));
-        	mp.setStopTime(Duration.seconds(10));
+        	mp.setStopTime(Duration.seconds(1800));
         	
         	mp.setOnEndOfMedia(new Runnable() {
                 @Override
