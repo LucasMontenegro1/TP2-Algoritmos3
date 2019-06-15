@@ -10,6 +10,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import junit.framework.Test;
 import mapa.Mapa;
 
@@ -27,6 +28,37 @@ import Materiales.*;
         	
         	this.stage = primaryStage;
         	
+        	
+        	Button botonRomperIzquierda = new Button();
+        	botonRomperIzquierda.setText("Romper a izquierda");
+        	Button botonRomperDerecha = new Button();
+        	botonRomperDerecha.setText("Romper a Derecha");
+        	Button botonRomperArriba = new Button();
+        	botonRomperArriba.setText("Romper Arriba");
+        	Button botonRomperAbajo = new Button();
+        	botonRomperAbajo.setText("Romper Abajo");
+        	
+        	VBox botonesRomper = new VBox(botonRomperIzquierda,botonRomperDerecha,botonRomperAbajo,botonRomperArriba);
+        	
+        	BotonRomperIzquierdaHandler botonRomperIzquierdaHandler = new BotonRomperIzquierdaHandler((Jugador)mapa.getOcupante(7, 7), this);
+        	BotonRomperDerechaHandler botonRomperDerechaHandler = new BotonRomperDerechaHandler((Jugador)mapa.getOcupante(7, 7), this);
+        	BotonRomperArribaHandler botonRomperArribaHandler = new BotonRomperArribaHandler((Jugador)mapa.getOcupante(7, 7), this);
+        	BotonRomperAbajoHandler botonRomperAbajoHandler = new BotonRomperAbajoHandler((Jugador)mapa.getOcupante(7, 7), this);
+        	
+        	
+        	botonRomperIzquierda.setOnAction(botonRomperIzquierdaHandler);
+        	botonRomperDerecha.setOnAction(botonRomperDerechaHandler);
+        	botonRomperAbajo.setOnAction(botonRomperAbajoHandler);
+        	botonRomperArriba.setOnAction(botonRomperArribaHandler);
+        
+        	
+            Stage stageRomper = new Stage();
+            Scene romper = new Scene(botonesRomper);
+            stageRomper.setX(1400);
+            stageRomper.setY(400);
+            stageRomper.setScene(romper);
+            stageRomper.show();
+            
         	
         	Button botonMoverArriba = new Button();
         	Button botonMoverAbajo = new Button();
@@ -116,6 +148,15 @@ import Materiales.*;
          	String path =Test.class.getResource("/arcade.mp3").toString();
         	Media cancion = new Media(path);
         	MediaPlayer mp= new MediaPlayer(cancion);
+        	mp.setStartTime(Duration.seconds(0));
+        	mp.setStopTime(Duration.seconds(10));
+        	
+        	mp.setOnEndOfMedia(new Runnable() {
+                @Override
+                public void run() {
+                    mp.seek(Duration.ZERO);
+                }
+            }); 
         	mp.play();
         	
         	
