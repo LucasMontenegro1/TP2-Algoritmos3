@@ -56,6 +56,9 @@ import Materiales.*;
             secondaryStage.setScene(scene);
             secondaryStage.show();
             
+            
+            ponerMusica();
+            
             imprimirMapa();
         }
 
@@ -110,7 +113,7 @@ import Materiales.*;
         
         
         public void ponerMusica() {
-         	String path =Test.class.getResource("").toString();
+         	String path =Test.class.getResource("/arcade.mp3").toString();
         	Media cancion = new Media(path);
         	MediaPlayer mp= new MediaPlayer(cancion);
         	mp.play();
