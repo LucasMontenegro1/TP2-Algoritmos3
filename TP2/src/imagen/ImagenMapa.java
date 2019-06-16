@@ -1,10 +1,13 @@
 package imagen;
 
-import javafx.application.Application;
+import javafx.application.Application; 
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
@@ -29,28 +32,7 @@ import Materiales.*;
         	this.stage = primaryStage;
         	
         	
-        	Button botonRomperIzquierda = new Button();
-        	botonRomperIzquierda.setText("Romper Izquierda");
-        	Button botonRomperDerecha = new Button();
-        	botonRomperDerecha.setText("Romper Derecha");
-        	Button botonRomperArriba = new Button();
-        	botonRomperArriba.setText("Romper Arriba");
-        	Button botonRomperAbajo = new Button();
-        	botonRomperAbajo.setText("Romper Abajo");
-        	
-        	VBox botonesRomper = new VBox(botonRomperIzquierda,botonRomperDerecha,botonRomperAbajo,botonRomperArriba);
-        	
-        	BotonRomperIzquierdaHandler botonRomperIzquierdaHandler = new BotonRomperIzquierdaHandler((Jugador)mapa.getOcupante(7, 7), this);
-        	BotonRomperDerechaHandler botonRomperDerechaHandler = new BotonRomperDerechaHandler((Jugador)mapa.getOcupante(7, 7), this);
-        	BotonRomperArribaHandler botonRomperArribaHandler = new BotonRomperArribaHandler((Jugador)mapa.getOcupante(7, 7), this);
-        	BotonRomperAbajoHandler botonRomperAbajoHandler = new BotonRomperAbajoHandler((Jugador)mapa.getOcupante(7, 7), this);
-        	
-        	
-        	botonRomperIzquierda.setOnAction(botonRomperIzquierdaHandler);
-        	botonRomperDerecha.setOnAction(botonRomperDerechaHandler);
-        	botonRomperAbajo.setOnAction(botonRomperAbajoHandler);
-        	botonRomperArriba.setOnAction(botonRomperArribaHandler);
-        
+        	VBox botonesRomper = new UseButtonContainers(mapa, this);
         	
             Stage stageRomper = new Stage();
             Scene romper = new Scene(botonesRomper);
@@ -88,6 +70,8 @@ import Materiales.*;
             secondaryStage.setScene(scene);
             secondaryStage.show();
             
+            Jugador jugador= (Jugador)mapa.getOcupante(7, 7);
+    
             
             ponerMusica();
             
@@ -101,8 +85,11 @@ import Materiales.*;
         public void imprimirMapa() {
             int length = 9;
             int width = 13;
+            
+            
             GridPane root = new GridPane();  
-        	
+            
+            
             for(int y = 0; y < length; y++){
                 for(int x = 0; x < width; x++){
                 	
@@ -149,7 +136,7 @@ import Materiales.*;
         	Media cancion = new Media(path);
         	MediaPlayer mp= new MediaPlayer(cancion);
         	mp.setStartTime(Duration.seconds(0));
-        	mp.setStopTime(Duration.seconds(1800));
+        	mp.setStopTime(Duration.seconds(30));
         	
         	mp.setOnEndOfMedia(new Runnable() {
                 @Override
