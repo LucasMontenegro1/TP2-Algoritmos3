@@ -34,6 +34,10 @@ import Materiales.*;
         	
         	VBox botonesRomper = new UseButtonContainers(mapa, this);
         	
+        	
+        	
+       
+        	
             Stage stageRomper = new Stage();
             Scene romper = new Scene(botonesRomper);
             stageRomper.setX(1400);
