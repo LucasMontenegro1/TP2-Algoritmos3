@@ -34,10 +34,6 @@ import Materiales.*;
         	
         	VBox botonesRomper = new UseButtonContainers(mapa, this);
         	
-        	
-        	
-       
-        	
             Stage stageRomper = new Stage();
             Scene romper = new Scene(botonesRomper);
             stageRomper.setX(1400);
@@ -46,35 +42,16 @@ import Materiales.*;
             stageRomper.show();
             
         	
-        	Button botonMoverArriba = new Button();
-        	Button botonMoverAbajo = new Button();
-        	Button botonMoverDerecha = new Button();
-        	Button botonMoverIzquierda = new Button();
-        	botonMoverArriba.setText("Mover Arriba");
-        	botonMoverAbajo.setText("Mover Abajo");
-        	botonMoverDerecha.setText("Mover Derecha");
-        	botonMoverIzquierda.setText("Mover Izquierda");
-        	
-        	VBox botonesMover = new VBox(botonMoverArriba, botonMoverAbajo, botonMoverDerecha, botonMoverIzquierda);
-
             Stage secondaryStage = new Stage();
             
-            BotonMoverArribaHandler botonMoverArribaHandler = new BotonMoverArribaHandler((Jugador)mapa.getOcupante(7, 7), this);
-            BotonMoverAbajoHandler botonMoverAbajoHandler = new BotonMoverAbajoHandler((Jugador)mapa.getOcupante(7, 7), this);
-            BotonMoverDerechaHandler botonMoverDerechaHandler = new BotonMoverDerechaHandler((Jugador)mapa.getOcupante(7, 7), this);
-            BotonMoverIzquierdaHandler botonMoverIzquierdaHandler = new BotonMoverIzquierdaHandler((Jugador)mapa.getOcupante(7, 7), this);
-            botonMoverArriba.setOnAction(botonMoverArribaHandler);
-            botonMoverAbajo.setOnAction(botonMoverAbajoHandler);
-            botonMoverDerecha.setOnAction(botonMoverDerechaHandler);
-            botonMoverIzquierda.setOnAction(botonMoverIzquierdaHandler);
+            
+            VBox botonesMover = new MoveButtonContainers(mapa,this);
             
             Scene scene = new Scene(botonesMover);
             secondaryStage.setX(1400);
             secondaryStage.setY(400);
             secondaryStage.setScene(scene);
-            secondaryStage.show();
-            
-            Jugador jugador= (Jugador)mapa.getOcupante(7, 7);
+            secondaryStage.show(); 
     
             
             ponerMusica();
