@@ -1,15 +1,15 @@
-package imagen;
+package imagenDelJuego;
 
 import Jugador.Jugador;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
-public class BotonMoverArribaHandler implements EventHandler<ActionEvent>{
+public class BotonMoverIzquierdaHandler implements EventHandler<ActionEvent>{
 	
 	private Jugador jugador;
 	private ImagenMapa imagen;
 
-	public BotonMoverArribaHandler(Jugador jugador, ImagenMapa imagen) {
+	public BotonMoverIzquierdaHandler(Jugador jugador, ImagenMapa imagen) {
 		this.jugador = jugador;
 		this.imagen = imagen;
 	}
@@ -17,7 +17,7 @@ public class BotonMoverArribaHandler implements EventHandler<ActionEvent>{
 	@Override
 	public void handle(ActionEvent event) {
 		
-		jugador.moverArriba();
+		jugador.moverIzquierda();
 		imagen.imprimirMapa();
 		
 	}

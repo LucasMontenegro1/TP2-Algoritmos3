@@ -1,13 +1,9 @@
-package imagen;
+package imagenDelJuego;
 
 import javafx.application.Application; 
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
@@ -25,6 +21,7 @@ import Materiales.*;
     	
     	private Stage stage;
     	Mapa mapa = new Mapa();
+    	MediaPlayer mp;
 
         @Override
         public void start(Stage primaryStage) {
@@ -32,7 +29,7 @@ import Materiales.*;
         	this.stage = primaryStage;
         	
         	
-        	VBox botonesRomper = new UseButtonContainers(mapa, this);
+        	VBox botonesRomper = new GolpearButtonContainers(mapa, this);
         	
             Stage stageRomper = new Stage();
             Scene romper = new Scene(botonesRomper);
@@ -45,7 +42,7 @@ import Materiales.*;
             Stage secondaryStage = new Stage();
             
             
-            VBox botonesMover = new MoveButtonContainers(mapa,this);
+            VBox botonesMover = new MoverButtonContainers(mapa,this);
             
             Scene scene = new Scene(botonesMover);
             secondaryStage.setX(1400);
@@ -115,9 +112,9 @@ import Materiales.*;
         public void ponerMusica() {
          	String path =Test.class.getResource("/minecraftSong.mp3").toString();
         	Media cancion = new Media(path);
-        	MediaPlayer mp= new MediaPlayer(cancion);
+        	mp= new MediaPlayer(cancion);
         	mp.setStartTime(Duration.seconds(0));
-        	mp.setStopTime(Duration.seconds(30));
+        	mp.setStopTime(Duration.seconds(1800));
         	
         	mp.setOnEndOfMedia(new Runnable() {
                 @Override

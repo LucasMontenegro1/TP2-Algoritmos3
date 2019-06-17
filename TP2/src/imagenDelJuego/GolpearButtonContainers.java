@@ -1,14 +1,13 @@
-package imagen;
+package imagenDelJuego;
 
 import Jugador.Jugador;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import mapa.Mapa;
-import Materiales.*;
 
-public class UseButtonContainers extends VBox {
+public class GolpearButtonContainers extends VBox {
 	
-	public UseButtonContainers(Mapa mapa,ImagenMapa imagen) {
+	public GolpearButtonContainers(Mapa mapa,ImagenMapa imagen) {
 		
 		Button botonRomperIzquierda = new Button();
     	botonRomperIzquierda.setText("Romper Izquierda");
