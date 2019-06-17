@@ -73,7 +73,7 @@ public class Inventario {
     			posicionHerramientaSeleccionada = i;
     			break;
     		}
-    		if(i == cantidadDePaquetes) {
+    		if(i == cantidadDePaquetes - 1) {
     			i = -1;
     			j = posicionHerramientaSeleccionada;
     		}

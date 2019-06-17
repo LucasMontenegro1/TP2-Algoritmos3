@@ -30,7 +30,7 @@ public class BotonCambiarHerramientaHandler implements EventHandler<ActionEvent>
 		else if(inventario.getHerramientaSeleccionada().getClass()==HachaDeMetal.class) {
 			imagen.setImage(new Image("HachaDeMetal.png"));
 		}
-		}
+	}
 
 	
 }
