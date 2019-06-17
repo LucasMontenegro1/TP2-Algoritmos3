@@ -1,13 +1,19 @@
 package imagenDelJuego;
 
-import javafx.application.Application; 
+import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import junit.framework.Test;
@@ -22,9 +28,15 @@ import Materiales.*;
     	private Stage stage;
     	Mapa mapa = new Mapa();
     	MediaPlayer mp;
+    	public static double width;
+    	public static double heigth;
 
         @Override
         public void start(Stage primaryStage) {
+        	
+        	width = Screen.getPrimary().getVisualBounds().getWidth() * 0.8;
+        	heigth = Screen.getPrimary().getVisualBounds().getHeight() * 0.8;
+        	
         	
         	this.stage = primaryStage;
         	
@@ -49,7 +61,27 @@ import Materiales.*;
             secondaryStage.setY(400);
             secondaryStage.setScene(scene);
             secondaryStage.show(); 
-    
+            
+            Stage intercambiable = new Stage();
+      		Button cambiarHerramientaBoton= new Button();
+        	cambiarHerramientaBoton.setText("Cambiar Herramienta");
+        	Image herramientaInicial = new Image("Hacha.png");
+        	ImageView vistaHerramienta = new ImageView(herramientaInicial);
+        	cambiarHerramientaBoton.setOnAction(new BotonCambiarHerramientaHandler((Jugador)mapa.getOcupante(7, 7),vistaHerramienta));
+        	
+            HBox cambioDeHerramientas = new HBox(cambiarHerramientaBoton);
+            
+           
+            cambioDeHerramientas.getChildren().add(vistaHerramienta);
+            
+            Scene escenaCambio = new Scene(cambioDeHerramientas);
+            intercambiable.setX(1100);
+            intercambiable.setY(600);
+            intercambiable.setScene(escenaCambio);
+            intercambiable.show(); 
+            
+            
+            
             
             ponerMusica();
             
@@ -67,7 +99,7 @@ import Materiales.*;
             
             GridPane root = new GridPane();  
             
-            
+
             for(int y = 0; y < length; y++){
                 for(int x = 0; x < width; x++){
                 	
@@ -100,6 +132,8 @@ import Materiales.*;
                 }
             }
             
+  
+           
             
             Scene scene = new Scene(root, 650, 450); 
             stage.setTitle("Maincraf");
