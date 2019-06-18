@@ -1,6 +1,6 @@
 package imagenDelJuego;
 
-import javafx.application.Application;
+import javafx.application.Application; 
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -18,9 +18,12 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 import junit.framework.Test;
 import mapa.Mapa;
+import javafx.scene.control.Label;
 
 import Jugador.*;
 import Materiales.*;
+
+
 import Herramientas.*;
 
 
@@ -127,6 +130,7 @@ import Herramientas.*;
                         
                         
                     ImageView imagen = new ImageView(img);
+                   
                     
                     imagen.setPreserveRatio(true);
                     
@@ -162,17 +166,33 @@ import Herramientas.*;
             for(int y = 0; y < length; y++){
                 for(int x = 0; x < width; x++){
                 	
-                    Image img = new Image("pasto.png");
+                    Image img = new Image("defaultInventario.png");
                     
                     if((inventario.getElementosGuardados()[z]).getElementoGuardado() == null) {
-                	
-                	} else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == HachaDeMadera.class) {
-                        img = new Image("Hacha.png");
-                	} else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == HachaDeMetal.class) {
-                        img = new Image("HachaDeMetal.png");
-                	} else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == Madera.class) {
-                        img = new Image("madera.png");
-                	}
+
+                    } 	else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == HachaDeMadera.class) {
+                    		img = new Image("Hacha.png");
+                    } 	else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == HachaDeMetal.class) {
+                    		img = new Image("HachaDeMetal.png");
+                    } 	else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == HachaDePiedra.class) {
+                    		img = new Image("HachaDePiedra.png");
+                    }	else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == Piedra.class) {
+                			img = new Image("piedra.png");
+                    }	 else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == Madera.class) {
+                    		img = new Image("madera.png");
+                    } 	else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == Diamante.class){
+                    		img = new Image("diamante.png");
+                    }	else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == Metal.class){
+                    		img = new Image("Metal.png");
+                    }	else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == PicoDePiedra.class){
+                    		img = new Image("PicoDePiedra.png");
+                    }	else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == PicoDeMetal.class){
+                    		img = new Image("PicoDeMetal.png");
+                    }	else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == PicoDeMadera.class){
+                    		img = new Image("PicoDeMadera.png");
+                    }	else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == PicoFino.class){
+                    		img = new Image("PicoFino.png");
+                    }
                         
                     ImageView imagen = new ImageView(img);
                     
@@ -180,8 +200,8 @@ import Herramientas.*;
                     
                     imagen.setFitHeight(50);
                     imagen.setFitWidth(50);
-               
-
+                    
+                   
                     GridPane.setRowIndex(imagen,y);
                     GridPane.setColumnIndex(imagen,x);   
                     root.getChildren().add(imagen);   

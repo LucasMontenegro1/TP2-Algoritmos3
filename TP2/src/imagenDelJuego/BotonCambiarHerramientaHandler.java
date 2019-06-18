@@ -1,7 +1,7 @@
 package imagenDelJuego;
 
-import Herramientas.HachaDeMadera;
-import Herramientas.HachaDeMetal;
+
+import Herramientas.*;
 import Jugador.Inventario;
 import Jugador.Jugador;
 import javafx.event.ActionEvent;
@@ -26,9 +26,18 @@ public class BotonCambiarHerramientaHandler implements EventHandler<ActionEvent>
 		Inventario inventario = jugador.getInventario();
 		if(inventario.getHerramientaSeleccionada().getClass()==HachaDeMadera.class) {
 			imagen.setImage(new Image("Hacha.png"));
-		}
-		else if(inventario.getHerramientaSeleccionada().getClass()==HachaDeMetal.class) {
+		}else if(inventario.getHerramientaSeleccionada().getClass()==HachaDeMetal.class) {
 			imagen.setImage(new Image("HachaDeMetal.png"));
+		}else if(inventario.getHerramientaSeleccionada().getClass()==HachaDePiedra.class) {
+			imagen.setImage(new Image("HachaDePiedra.png"));
+		}else if(inventario.getHerramientaSeleccionada().getClass()==PicoDeMadera.class) {
+			imagen.setImage(new Image("PicoDeMadera.png"));
+		}else if(inventario.getHerramientaSeleccionada().getClass()==PicoDeMetal.class) {
+			imagen.setImage(new Image("PicoDeMetal.png"));
+		}else if(inventario.getHerramientaSeleccionada().getClass()==PicoDePiedra.class) {
+			imagen.setImage(new Image("PicoDePiedra.png"));
+		}else if(inventario.getHerramientaSeleccionada().getClass()==PicoFino.class) {
+			imagen.setImage(new Image("PicoFino.png"));
 		}
 	}
 

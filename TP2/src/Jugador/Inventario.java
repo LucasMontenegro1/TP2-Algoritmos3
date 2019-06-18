@@ -17,7 +17,6 @@ public class Inventario {
         	elementosGuardados[i] = new Paquete();
         }
     	elementosGuardados[0].setElementoGuardado(new HachaDeMadera());
-    	elementosGuardados[1].setElementoGuardado(new HachaDeMetal());
         herramientaSeleccionada = (Herramienta)elementosGuardados[0].getElementoGuardado();
     }
     
