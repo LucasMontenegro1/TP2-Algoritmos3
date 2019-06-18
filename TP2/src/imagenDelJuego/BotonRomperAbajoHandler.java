@@ -17,6 +17,7 @@ public class BotonRomperAbajoHandler implements EventHandler<ActionEvent>{
 	public void handle(ActionEvent arg0) {
 		jugador.golpearAbajo();
 		imagen.imprimirMapa();
+		imagen.imprimirInventario();
 	}
 
 }

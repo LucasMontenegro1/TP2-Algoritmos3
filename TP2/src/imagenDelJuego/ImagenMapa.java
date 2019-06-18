@@ -19,14 +19,17 @@ import javafx.util.Duration;
 import junit.framework.Test;
 import mapa.Mapa;
 
-import Jugador.Jugador;
+import Jugador.*;
 import Materiales.*;
+import Herramientas.*;
 
 
     public class ImagenMapa extends Application {  
     	
     	private Stage stage;
+    	private Stage inventarioStage = new Stage();
     	Mapa mapa = new Mapa();
+    	Inventario inventario = ((Jugador)mapa.getOcupante(7, 7)).getInventario();
     	MediaPlayer mp;
     	public static double width;
     	public static double heigth;
@@ -51,16 +54,16 @@ import Materiales.*;
             stageRomper.show();
             
         	
-            Stage secondaryStage = new Stage();
+            Stage stageMover = new Stage();
             
             
             VBox botonesMover = new MoverButtonContainers(mapa,this);
             
             Scene scene = new Scene(botonesMover);
-            secondaryStage.setX(1400);
-            secondaryStage.setY(400);
-            secondaryStage.setScene(scene);
-            secondaryStage.show(); 
+            stageMover.setX(1400);
+            stageMover.setY(400);
+            stageMover.setScene(scene);
+            stageMover.show(); 
             
             Stage intercambiable = new Stage();
       		Button cambiarHerramientaBoton= new Button();
@@ -75,8 +78,8 @@ import Materiales.*;
             cambioDeHerramientas.getChildren().add(vistaHerramienta);
             
             Scene escenaCambio = new Scene(cambioDeHerramientas);
-            intercambiable.setX(1100);
-            intercambiable.setY(600);
+            intercambiable.setX(320);
+            intercambiable.setY(400);
             intercambiable.setScene(escenaCambio);
             intercambiable.show(); 
             
@@ -86,6 +89,11 @@ import Materiales.*;
             ponerMusica();
             
             imprimirMapa();
+            inventarioStage.setWidth(365);
+            inventarioStage.setHeight(238);
+            inventarioStage.setY(700);
+            inventarioStage.setX(800);
+            imprimirInventario();
         }
 
         public static void main(String[] args) {    
@@ -139,6 +147,52 @@ import Materiales.*;
             stage.setTitle("Maincraf");
             stage.setScene(scene);
             stage.show();
+        }
+        
+        public void imprimirInventario() {
+            int length = 4;
+            int width = 7;
+            
+            
+            GridPane root = new GridPane(); 
+
+            int z = 0;
+            
+
+            for(int y = 0; y < length; y++){
+                for(int x = 0; x < width; x++){
+                	
+                    Image img = new Image("pasto.png");
+                    
+                    if((inventario.getElementosGuardados()[z]).getElementoGuardado() == null) {
+                	
+                	} else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == HachaDeMadera.class) {
+                        img = new Image("Hacha.png");
+                	} else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == HachaDeMetal.class) {
+                        img = new Image("HachaDeMetal.png");
+                	} else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == Madera.class) {
+                        img = new Image("madera.png");
+                	}
+                        
+                    ImageView imagen = new ImageView(img);
+                    
+                    imagen.setPreserveRatio(true);
+                    
+                    imagen.setFitHeight(50);
+                    imagen.setFitWidth(50);
+               
+
+                    GridPane.setRowIndex(imagen,y);
+                    GridPane.setColumnIndex(imagen,x);   
+                    root.getChildren().add(imagen);   
+                    z++;
+                }
+            }
+            
+            Scene scene = new Scene(root, 650, 450); 
+            inventarioStage.setTitle("Inventario");
+            inventarioStage.setScene(scene);
+            inventarioStage.show();
         }
         
         

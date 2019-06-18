@@ -17,6 +17,7 @@ public class BotonRomperDerechaHandler implements EventHandler<ActionEvent>{
 	public void handle(ActionEvent arg0) {
 		jugador.golpearDerecha();
 		imagen.imprimirMapa();
+		imagen.imprimirInventario();
 	}
 
 }
