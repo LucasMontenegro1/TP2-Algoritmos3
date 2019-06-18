@@ -20,6 +20,9 @@ public class PicoDePiedra extends Pico {
 	public void usar(Metal metal, Inventario inventario) {
 		this.desgastar();
 		metal.recibirDanio(fuerza, inventario);
+		if(this.getDurabilidad() <= 0) {
+			inventario.eliminarElemento(this);
+		}
 	}
 
 	@Override

@@ -34,6 +34,9 @@ public class PicoFino extends Herramienta {
 	public void usar(Diamante diamante, Inventario inventario) {
 		this.desgastar();
 		diamante.recibirDanio(fuerza, inventario);
+		if(this.getDurabilidad() <= 0) {
+			inventario.eliminarElemento(this);
+		}
 	}
 	
 	@Override
