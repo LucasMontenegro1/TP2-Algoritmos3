@@ -4,7 +4,7 @@ package Herramientas;
 public class HachaDeMadera extends Hacha {
 	
 	public HachaDeMadera(){
-		durabilidad=100;
+		durabilidad=10;
 		fuerza=2;
 	}
 

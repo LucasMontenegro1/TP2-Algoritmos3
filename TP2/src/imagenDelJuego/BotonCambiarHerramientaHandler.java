@@ -24,6 +24,8 @@ public class BotonCambiarHerramientaHandler implements EventHandler<ActionEvent>
 	public void handle(ActionEvent event) {
 		jugador.seleccionarSiguienteHerramienta();
 		Inventario inventario = jugador.getInventario();
+		
+		
 		if(inventario.getHerramientaSeleccionada().getClass()==HachaDeMadera.class) {
 			imagen.setImage(new Image("Hacha.png"));
 		}else if(inventario.getHerramientaSeleccionada().getClass()==HachaDeMetal.class) {
@@ -38,8 +40,10 @@ public class BotonCambiarHerramientaHandler implements EventHandler<ActionEvent>
 			imagen.setImage(new Image("PicoDePiedra.png"));
 		}else if(inventario.getHerramientaSeleccionada().getClass()==PicoFino.class) {
 			imagen.setImage(new Image("PicoFino.png"));
-		}
+	
+
 	}
 
 	
+	}
 }

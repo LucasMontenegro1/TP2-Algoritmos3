@@ -12,13 +12,25 @@ public class Inventario {
     private int posicionHerramientaSeleccionada = 0;
 
 
+    public void agregarHerramienta(Herramienta herramienta) {
+    	for(int i = 0; i < cantidadDePaquetes; i++) {
+    		if(elementosGuardados[i].lugarLibre()) {
+    			elementosGuardados[i].setElementoGuardado(herramienta);   //Lo declaro aca arriba asi en el constructor ya tiene el hacha de madera
+    			break;
+    		}
+    	}
+    }
+    
     public Inventario(){
         for(int i = 0; i < cantidadDePaquetes; i++) {
         	elementosGuardados[i] = new Paquete();
         }
+
     	elementosGuardados[0].setElementoGuardado(new HachaDeMadera());
         herramientaSeleccionada = (Herramienta)elementosGuardados[0].getElementoGuardado();
     }
+    
+    
     
     public void agregarMaterial(Madera madera) {
     	for(int i = 0; i < cantidadDePaquetes; i++) {
@@ -78,6 +90,17 @@ public class Inventario {
     		}
     	}
     }
+
+	public void eliminarElemento(Desgastable elemento) { //No se si aca va a reconocer a los materiales tambien
+														//si no los reconoce hacer metodo a parte para material y herramienta	
+		for(int i = 0; i < cantidadDePaquetes; i++) {
+    		if(elementosGuardados[i].getElementoGuardado() == elemento) {
+    			elementosGuardados[i].elminarElemento();
+    		}
+    	}	
+		herramientaSeleccionada = null;
+		cambiarHerramientaSeleccionada();
+	}
 
 
 }

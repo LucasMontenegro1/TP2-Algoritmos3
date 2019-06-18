@@ -19,6 +19,9 @@ public class PicoDeMadera extends Pico {
 	@Override
 	public void usar(Metal metal, Inventario inventario) {
 		this.desgastar();
+		if(this.getDurabilidad() <= 0) {
+			inventario.eliminarElemento(this);
+		}
 
 	}
 

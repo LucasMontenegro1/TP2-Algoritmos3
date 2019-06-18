@@ -5,7 +5,7 @@ public class HachaDeMetal extends Hacha {
 	
 	
 	public HachaDeMetal(){
-		durabilidad = 400;
+		durabilidad = 20;
 		fuerza = 10;
 	}
 
