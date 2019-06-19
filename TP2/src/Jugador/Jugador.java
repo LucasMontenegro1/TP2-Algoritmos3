@@ -3,6 +3,7 @@ package Jugador;
 import mapa.*;
 import Herramientas.*;
 import Materiales.*;
+import Modelo.*;
 
 
 public class Jugador implements Alocable{
@@ -10,6 +11,18 @@ public class Jugador implements Alocable{
 	private Inventario inventario = new Inventario();
 	private Mapa mapa;
 	private Posicion posicionJugador;
+	
+	
+	//COSAS QUE AGREGO AGUS
+	private CodigoDeCrafteo sectorDeCrafteo = new CodigoDeCrafteo();
+	private MesaDeCrafteo mesaDeCrafteo = new MesaDeCrafteo();
+	
+	
+	
+	
+	//TERMINAN COSAS QUE AGREGO AGUS
+	
+	
 	
 	public Jugador(Mapa mapa) {
 		this.mapa = mapa;
