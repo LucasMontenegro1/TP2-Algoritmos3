@@ -30,7 +30,6 @@ import Herramientas.*;
     public class ImagenMapa extends Application {  
     	
     	private Stage stage;
-    	private Stage inventarioStage = new Stage();
     	Mapa mapa = new Mapa();
     	Inventario inventario = ((Jugador)mapa.getOcupante(7, 7)).getInventario();
     	MediaPlayer mp;
@@ -69,18 +68,8 @@ import Herramientas.*;
         	cambiarHerramientaBoton.setOnAction(cambiarHerramientaHandler);
         	
             HBox cambioDeHerramientas = new HBox(cambiarHerramientaBoton);
-            
            
             cambioDeHerramientas.getChildren().add(vistaHerramienta);
-            
-        	VBox botonesRomper = new GolpearButtonContainers(mapa, this, cambiarHerramientaHandler);
-        	
-            Stage stageRomper = new Stage();
-            Scene romper = new Scene(botonesRomper);
-            stageRomper.setX(1400);
-            stageRomper.setY(200);
-            stageRomper.setScene(romper);
-            stageRomper.show();
             
             Scene escenaCambio = new Scene(cambioDeHerramientas);
             intercambiable.setX(320);
@@ -88,25 +77,36 @@ import Herramientas.*;
             intercambiable.setScene(escenaCambio);
             intercambiable.show(); 
             
+            
+        	VBox botonesRomper = new GolpearButtonContainers(mapa, this, cambiarHerramientaHandler);
         	
+        	/*
+            Stage stageRomper = new Stage();
+            Scene romper = new Scene(botonesRomper);
+            stageRomper.setX(1400);
+            stageRomper.setY(200);
+            stageRomper.setScene(romper);
+            stageRomper.show();
+            */
+            
+            
             contenedor = new ContenedorPrincipal(mapa);
             MoverPersonajeOnKeyPressHandler posicionamiento= new MoverPersonajeOnKeyPressHandler(contenedor,(Jugador)mapa.getOcupante(7, 7));
-           
+            contenedor.setBotonesRomper(botonesRomper);
+            
             Scene principal = new Scene(contenedor);
             
             principal.setOnKeyPressed(posicionamiento);
             primaryStage.setScene(principal);
+        
             primaryStage.show();
+           
        
             
             ponerMusica();
+          
             
-            
-            inventarioStage.setWidth(365);
-            inventarioStage.setHeight(238);
-            inventarioStage.setY(700);
-            inventarioStage.setX(800);
-            imprimirInventario();
+         
         }
 
         public static void main(String[] args) {    
@@ -118,65 +118,7 @@ import Herramientas.*;
         }
         
         public void imprimirInventario() {
-            int length = 4;
-            int width = 7;
-            
-            
-            GridPane root = new GridPane(); 
-
-            int z = 0;
-            
-
-            for(int y = 0; y < length; y++){
-                for(int x = 0; x < width; x++){
-                	
-                    Image img = new Image("defaultInventario.png");
-                    
-                    if((inventario.getElementosGuardados()[z]).getElementoGuardado() == null) {
-
-                    } 	else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == HachaDeMadera.class) {
-                    		img = new Image("Hacha.png");
-                    } 	else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == HachaDeMetal.class) {
-                    		img = new Image("HachaDeMetal.png");
-                    } 	else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == HachaDePiedra.class) {
-                    		img = new Image("HachaDePiedra.png");
-                    }	else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == Piedra.class) {
-                			img = new Image("piedra.png");
-                    }	 else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == Madera.class) {
-                    		img = new Image("madera.png");
-                    } 	else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == Diamante.class){
-                    		img = new Image("diamante.png");
-                    }	else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == Metal.class){
-                    		img = new Image("Metal.png");
-                    }	else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == PicoDePiedra.class){
-                    		img = new Image("PicoDePiedra.png");
-                    }	else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == PicoDeMetal.class){
-                    		img = new Image("PicoDeMetal.png");
-                    }	else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == PicoDeMadera.class){
-                    		img = new Image("PicoDeMadera.png");
-                    }	else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == PicoFino.class){
-                    		img = new Image("PicoFino.png");
-                    }
-                        
-                    ImageView imagen = new ImageView(img);
-                    
-                    imagen.setPreserveRatio(true);
-                    
-                    imagen.setFitHeight(50);
-                    imagen.setFitWidth(50);
-                    
-                   
-                    GridPane.setRowIndex(imagen,y);
-                    GridPane.setColumnIndex(imagen,x);   
-                    root.getChildren().add(imagen);   
-                    z++;
-                }
-            }
-            
-            Scene scene = new Scene(root, 650, 450); 
-            inventarioStage.setTitle("Inventario");
-            inventarioStage.setScene(scene);
-            inventarioStage.show();
+          contenedor.setInventario();
         }
         
         
