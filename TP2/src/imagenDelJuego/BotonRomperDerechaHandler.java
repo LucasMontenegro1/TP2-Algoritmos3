@@ -8,10 +8,12 @@ import javafx.event.EventHandler;
 public class BotonRomperDerechaHandler implements EventHandler<ActionEvent>{
 	private Jugador jugador;
 	private ImagenMapa imagen;
+	private BotonCambiarHerramientaHandler herramientaHandler;
 
-	public BotonRomperDerechaHandler(Jugador jugador, ImagenMapa imagen) {
+	public BotonRomperDerechaHandler(Jugador jugador, ImagenMapa imagen, BotonCambiarHerramientaHandler herramientaHandler) {
 		this.jugador = jugador;
 		this.imagen = imagen;
+		this.herramientaHandler = herramientaHandler;
 	}
 	
 	@Override
@@ -24,6 +26,7 @@ public class BotonRomperDerechaHandler implements EventHandler<ActionEvent>{
 		}
 		imagen.imprimirMapa();
 		imagen.imprimirInventario();
+		herramientaHandler.actualizarImagenHerramienta(); //esto es para que no se me rompa una herramienta y siga apareciendo la imagen de esa herramienta
 	}
 
 }

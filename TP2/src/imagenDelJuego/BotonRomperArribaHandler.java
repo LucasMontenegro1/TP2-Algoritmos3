@@ -8,10 +8,12 @@ import javafx.event.EventHandler;
 public class BotonRomperArribaHandler implements EventHandler<ActionEvent>{
 	private Jugador jugador;
 	private ImagenMapa imagen;
+	private BotonCambiarHerramientaHandler herramientaHandler;
 
-	public BotonRomperArribaHandler(Jugador jugador, ImagenMapa imagen) {
+	public BotonRomperArribaHandler(Jugador jugador, ImagenMapa imagen, BotonCambiarHerramientaHandler herramientaHandler) {
 		this.jugador = jugador;
 		this.imagen = imagen;
+		this.herramientaHandler = herramientaHandler;
 	}
 	
 	@Override
@@ -25,6 +27,7 @@ public class BotonRomperArribaHandler implements EventHandler<ActionEvent>{
 		
 		imagen.imprimirMapa();
 		imagen.imprimirInventario();
+		herramientaHandler.actualizarImagenHerramienta();
 	}
 
 }

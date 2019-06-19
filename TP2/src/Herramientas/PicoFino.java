@@ -17,17 +17,17 @@ public class PicoFino extends Herramienta {
 
 	@Override
 	public void usar(Madera madera, Inventario inventario) {
-		madera.recibirDanio(fuerza, inventario);
+
 	}
 
 	@Override
 	public void usar(Metal metal, Inventario inventario) {
-		metal.recibirDanio(fuerza, inventario);
+
 	}
 
 	@Override
 	public void usar(Piedra piedra, Inventario inventario) {
-		piedra.recibirDanio(fuerza, inventario);
+
 	}
 
 	@Override

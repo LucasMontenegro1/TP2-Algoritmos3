@@ -46,17 +46,7 @@ import Herramientas.*;
         	
         	this.stage = primaryStage;
         	
-        	
-        	VBox botonesRomper = new GolpearButtonContainers(mapa, this);
-        	
-            Stage stageRomper = new Stage();
-            Scene romper = new Scene(botonesRomper);
-            stageRomper.setX(1400);
-            stageRomper.setY(200);
-            stageRomper.setScene(romper);
-            stageRomper.show();
-            
-        	
+                  	
             Stage stageMover = new Stage();
             
             
@@ -73,12 +63,22 @@ import Herramientas.*;
         	cambiarHerramientaBoton.setText("Cambiar Herramienta");
         	Image herramientaInicial = new Image("Hacha.png");
         	ImageView vistaHerramienta = new ImageView(herramientaInicial);
-        	cambiarHerramientaBoton.setOnAction(new BotonCambiarHerramientaHandler((Jugador)mapa.getOcupante(7, 7),vistaHerramienta));
+        	BotonCambiarHerramientaHandler cambiarHerramientaHandler = new BotonCambiarHerramientaHandler((Jugador)mapa.getOcupante(7, 7),vistaHerramienta);
+        	cambiarHerramientaBoton.setOnAction(cambiarHerramientaHandler);
         	
             HBox cambioDeHerramientas = new HBox(cambiarHerramientaBoton);
             
            
             cambioDeHerramientas.getChildren().add(vistaHerramienta);
+            
+        	VBox botonesRomper = new GolpearButtonContainers(mapa, this, cambiarHerramientaHandler);
+        	
+            Stage stageRomper = new Stage();
+            Scene romper = new Scene(botonesRomper);
+            stageRomper.setX(1400);
+            stageRomper.setY(200);
+            stageRomper.setScene(romper);
+            stageRomper.show();
             
             Scene escenaCambio = new Scene(cambioDeHerramientas);
             intercambiable.setX(320);

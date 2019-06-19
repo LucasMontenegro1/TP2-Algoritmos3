@@ -7,7 +7,7 @@ import mapa.Mapa;
 
 public class GolpearButtonContainers extends VBox {
 	
-	public GolpearButtonContainers(Mapa mapa,ImagenMapa imagen) {
+	public GolpearButtonContainers(Mapa mapa,ImagenMapa imagen, BotonCambiarHerramientaHandler herramientaHandler) {
 		
 		Button botonRomperIzquierda = new Button();
     	botonRomperIzquierda.setText("Romper Izquierda");
@@ -18,10 +18,10 @@ public class GolpearButtonContainers extends VBox {
     	Button botonRomperAbajo = new Button();
     	botonRomperAbajo.setText("Romper Abajo");
 		
-		BotonRomperIzquierdaHandler botonRomperIzquierdaHandler = new BotonRomperIzquierdaHandler((Jugador)mapa.getOcupante(7, 7), imagen);
-    	BotonRomperDerechaHandler botonRomperDerechaHandler = new BotonRomperDerechaHandler((Jugador)mapa.getOcupante(7, 7),imagen);
-    	BotonRomperArribaHandler botonRomperArribaHandler = new BotonRomperArribaHandler((Jugador)mapa.getOcupante(7, 7), imagen);
-    	BotonRomperAbajoHandler botonRomperAbajoHandler = new BotonRomperAbajoHandler((Jugador)mapa.getOcupante(7, 7), imagen);
+		BotonRomperIzquierdaHandler botonRomperIzquierdaHandler = new BotonRomperIzquierdaHandler((Jugador)mapa.getOcupante(7, 7), imagen, herramientaHandler);
+    	BotonRomperDerechaHandler botonRomperDerechaHandler = new BotonRomperDerechaHandler((Jugador)mapa.getOcupante(7, 7),imagen, herramientaHandler);
+    	BotonRomperArribaHandler botonRomperArribaHandler = new BotonRomperArribaHandler((Jugador)mapa.getOcupante(7, 7), imagen, herramientaHandler);
+    	BotonRomperAbajoHandler botonRomperAbajoHandler = new BotonRomperAbajoHandler((Jugador)mapa.getOcupante(7, 7), imagen, herramientaHandler);
     	
     	botonRomperIzquierda.setOnAction(botonRomperIzquierdaHandler);
     	botonRomperDerecha.setOnAction(botonRomperDerechaHandler);
