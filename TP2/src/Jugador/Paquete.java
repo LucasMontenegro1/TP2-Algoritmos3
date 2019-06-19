@@ -19,23 +19,27 @@ public class Paquete {
 	}
 	
 	public boolean esMismoTipo(Madera madera) {
-		return elementoGuardado[0].getClass() == madera.getClass()
-				 && cantidadActualElementos < capacidadStack - 1;
+		return elementoGuardado[0] != null 
+				&& elementoGuardado[0].getClass() == madera.getClass()
+				 && cantidadActualElementos < capacidadStack;
 	}
 	
 	public boolean esMismoTipo(Piedra piedra) {
-		return elementoGuardado[0].getClass() == piedra.getClass()
-				 && cantidadActualElementos < capacidadStack - 1;
+		return elementoGuardado[0] != null 
+				&& elementoGuardado[0].getClass() == piedra.getClass()
+				 && cantidadActualElementos < capacidadStack;
 	}
 	
 	public boolean esMismoTipo(Metal metal) {
-		return elementoGuardado[0].getClass() == metal.getClass()
-				 && cantidadActualElementos < capacidadStack - 1;
+		return elementoGuardado[0] != null 
+				&& elementoGuardado[0].getClass() == metal.getClass()
+				 && cantidadActualElementos < capacidadStack;
 	}
 	
 	public boolean esMismoTipo(Diamante diamante) {
-		return elementoGuardado[0].getClass() == diamante.getClass()
-				 && cantidadActualElementos < capacidadStack - 1;
+		return elementoGuardado[0] != null 
+				&& elementoGuardado[0].getClass() == diamante.getClass()
+				 && cantidadActualElementos < capacidadStack;
 	}
 	
 	

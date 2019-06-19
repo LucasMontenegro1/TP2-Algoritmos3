@@ -38,39 +38,100 @@ public class Inventario {
     
     
     public void agregarMaterial(Madera madera) {
+    	
+    	for(int i = 0; i < cantidadDePaquetes; i++) {
+    		if(elementosGuardados[i].esMismoTipo(madera)) {
+    			elementosGuardados[i].setElementoGuardado(madera);
+    			return;
+    		}
+    	}
+    	
+    	for(int i = 0; i < cantidadDePaquetes; i++) {
+    		if(elementosGuardados[i].lugarLibre()) {
+    			elementosGuardados[i].setElementoGuardado(madera);
+    			break;
+    		}
+    	}
+    	/*
     	for(int i = 0; i < cantidadDePaquetes; i++) {
     		if(elementosGuardados[i].lugarLibre() || elementosGuardados[i].esMismoTipo(madera)) {
     			elementosGuardados[i].setElementoGuardado(madera);
     			break;
     		}
     	}
+    	*/
     }
     
     public void agregarMaterial(Piedra piedra) {
+    	for(int i = 0; i < cantidadDePaquetes; i++) {
+    		if(elementosGuardados[i].esMismoTipo(piedra)) {
+    			elementosGuardados[i].setElementoGuardado(piedra);
+    			return;
+    		}
+    	}
+    	
+    	for(int i = 0; i < cantidadDePaquetes; i++) {
+    		if(elementosGuardados[i].lugarLibre()) {
+    			elementosGuardados[i].setElementoGuardado(piedra);
+    			break;
+    		}
+    	}
+    	/*
     	for(int i = 0; i < cantidadDePaquetes; i++) {
     		if(elementosGuardados[i].lugarLibre() || elementosGuardados[i].esMismoTipo(piedra)) {
     			elementosGuardados[i].setElementoGuardado(piedra);
     			break;
     		}
     	}
+    	*/
     }
     
     public void agregarMaterial(Metal metal) {
+    	for(int i = 0; i < cantidadDePaquetes; i++) {
+    		if(elementosGuardados[i].esMismoTipo(metal)) {
+    			elementosGuardados[i].setElementoGuardado(metal);
+    			return;
+    		}
+    	}
+    	
+    	for(int i = 0; i < cantidadDePaquetes; i++) {
+    		if(elementosGuardados[i].lugarLibre()) {
+    			elementosGuardados[i].setElementoGuardado(metal);
+    			break;
+    		}
+    	}
+    	/*
     	for(int i = 0; i < cantidadDePaquetes; i++) {
     		if(elementosGuardados[i].lugarLibre() || elementosGuardados[i].esMismoTipo(metal)) {
     			elementosGuardados[i].setElementoGuardado(metal);
     			break;
     		}
     	}
+    	*/
     }
     
     public void agregarMaterial(Diamante diamante) {
+    	for(int i = 0; i < cantidadDePaquetes; i++) {
+    		if(elementosGuardados[i].esMismoTipo(diamante)) {
+    			elementosGuardados[i].setElementoGuardado(diamante);
+    			return;
+    		}
+    	}
+    	
+    	for(int i = 0; i < cantidadDePaquetes; i++) {
+    		if(elementosGuardados[i].lugarLibre()) {
+    			elementosGuardados[i].setElementoGuardado(diamante);
+    			break;
+    		}
+    	}
+    	/*
     	for(int i = 0; i < cantidadDePaquetes; i++) {
     		if(elementosGuardados[i].lugarLibre() || elementosGuardados[i].esMismoTipo(diamante)) {
     			elementosGuardados[i].setElementoGuardado(diamante);
     			break;
     		}
     	}
+    	*/
     }
 
     public Herramienta getHerramientaSeleccionada() {
