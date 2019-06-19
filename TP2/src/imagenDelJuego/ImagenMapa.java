@@ -36,9 +36,11 @@ import Herramientas.*;
     	MediaPlayer mp;
     	public static double width;
     	public static double heigth;
+    	ContenedorPrincipal contenedor;
 
         @Override
         public void start(Stage primaryStage) {
+        
         	
         	width = Screen.getPrimary().getVisualBounds().getWidth() * 0.8;
         	heigth = Screen.getPrimary().getVisualBounds().getHeight() * 0.8;
@@ -86,12 +88,20 @@ import Herramientas.*;
             intercambiable.setScene(escenaCambio);
             intercambiable.show(); 
             
+        	
+            contenedor = new ContenedorPrincipal(mapa);
+            MoverPersonajeOnKeyPressHandler posicionamiento= new MoverPersonajeOnKeyPressHandler(contenedor,(Jugador)mapa.getOcupante(7, 7));
+           
+            Scene principal = new Scene(contenedor);
             
-            
+            principal.setOnKeyPressed(posicionamiento);
+            primaryStage.setScene(principal);
+            primaryStage.show();
+       
             
             ponerMusica();
             
-            imprimirMapa();
+            
             inventarioStage.setWidth(365);
             inventarioStage.setHeight(238);
             inventarioStage.setY(700);
@@ -104,53 +114,7 @@ import Herramientas.*;
         }    
         
         public void imprimirMapa() {
-            int length = 9;
-            int width = 13;
-            
-            
-            GridPane root = new GridPane();  
-            
-
-            for(int y = 0; y < length; y++){
-                for(int x = 0; x < width; x++){
-                	
-                    Image img = new Image("pasto.png");
-                	
-                	if(mapa.getOcupante(y, x).getClass() == Madera.class) {
-                        img = new Image("madera.png");
-                	} else if(mapa.getOcupante(y, x).getClass() == Piedra.class) {
-                        img = new Image("piedra.png");
-                	} else if(mapa.getOcupante(y, x).getClass() == Metal.class) {
-                        img = new Image("metal.png");
-                	} else if(mapa.getOcupante(y, x).getClass() == Diamante.class) {
-                        img = new Image("DiamanteBloque.png");
-                	} else if(mapa.getOcupante(y, x).getClass() == Jugador.class) {
-                        img = new Image("Steve.png");
-                	}
-                        
-                        
-                    ImageView imagen = new ImageView(img);
-                   
-                    
-                    imagen.setPreserveRatio(true);
-                    
-                    imagen.setFitHeight(50);
-                    imagen.setFitWidth(50);
-                    
-
-                    GridPane.setRowIndex(imagen,y);
-                    GridPane.setColumnIndex(imagen,x);   
-                    root.getChildren().add(imagen);   
-                }
-            }
-            
-  
-           
-            
-            Scene scene = new Scene(root, 650, 450); 
-            stage.setTitle("Maincraf");
-            stage.setScene(scene);
-            stage.show();
+        	contenedor.setMapa();
         }
         
         public void imprimirInventario() {
