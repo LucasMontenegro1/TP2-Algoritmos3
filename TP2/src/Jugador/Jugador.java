@@ -18,6 +18,19 @@ public class Jugador implements Alocable{
 	private MesaDeCrafteo mesaDeCrafteo = new MesaDeCrafteo();
 	
 	
+	//Recibe el indice del lugar del material en el inventario
+	//¿Rompe encapsulamiento por tener que saber que numero poner?
+	public void agregarMaterialASectorDeCrafteo(int indiceInventario, int posicionEnCodigo) {
+		
+		//VER QUE PASA SI SE BORRA EN UN PAQUETE VACIO
+		Desgastable elemento = inventario.eliminarElemento(indiceInventario);
+		
+		//VER QUE PASA SI SE RECIBE UNA HERRAMIENTA EN VEZ DE UN MATERIAL
+		//PREGUNTARLE A MARCOS COMO MANEJAR ESO, QUE YA LO PLANTEÓ EL
+		
+		sectorDeCrafteo.agregarMaterial(posicionEnCodigo, elemento);
+		
+	}
 	
 	
 	//TERMINAN COSAS QUE AGREGO AGUS

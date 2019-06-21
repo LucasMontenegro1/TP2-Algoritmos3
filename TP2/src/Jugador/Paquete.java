@@ -58,7 +58,7 @@ public class Paquete {
 		cantidadActualElementos++;
 	}
 	
-	public void elminarElemento() {
+	public void eliminarElemento() {
 		cantidadActualElementos--;
 		this.elementoGuardado[cantidadActualElementos] = null; //lo mismo que en el metodo del inventario, ver si funciona para materiales tmbn
 	}

@@ -161,12 +161,22 @@ public class Inventario {
 														//si no los reconoce hacer metodo a parte para material y herramienta	
 		for(int i = 0; i < cantidadDePaquetes; i++) {
     		if(elementosGuardados[i].getElementoGuardado() == elemento) {
-    			elementosGuardados[i].elminarElemento();
+    			elementosGuardados[i].eliminarElemento();
     		}
     	}	
 		herramientaSeleccionada = null;
 		cambiarHerramientaSeleccionada();
 	}
 
+	
+	//VER SI TRABAJAR CON POSICIONES EN EL INVENTARIO ROMPE
+	//EL ENCAPSULAMIENTO
+	public Desgastable eliminarElemento(int posicion) {
+		Desgastable elementoGuardado = elementosGuardados[posicion].getElementoGuardado();
+		elementosGuardados[posicion].eliminarElemento();
+		return elementoGuardado;
+	}
+	
+	
 
 }
