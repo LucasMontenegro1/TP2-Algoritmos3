@@ -43,6 +43,7 @@ public abstract class Material implements Desgastable, Alocable  {
 	}
 
 	public abstract void decimeQuienSos(Herramienta herramienta, Inventario inventario); //ESTO SIRVE PARA PASAR DE ALOCABLE AL MATERIAL QUE ALOCABLE SEA, SINO NO TENGO NI PUTA IDEA COMO HACER XDDDD
-	
+
+	public abstract void guardarEnInventario(Inventario inventario);
 	
 }

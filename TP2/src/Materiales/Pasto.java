@@ -15,4 +15,10 @@ public class Pasto extends Material{
 
 	}
 	
+	
+	@Override
+	public void guardarEnInventario(Inventario inventario) {
+		
+	}
+	
 }

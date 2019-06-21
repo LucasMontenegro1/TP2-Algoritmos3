@@ -1,6 +1,9 @@
 package Jugador;
 
 import mapa.*;
+
+import java.util.List;
+
 import Herramientas.*;
 import Materiales.*;
 import Modelo.*;
@@ -25,10 +28,34 @@ public class Jugador implements Alocable{
 		//VER QUE PASA SI SE BORRA EN UN PAQUETE VACIO
 		Desgastable elemento = inventario.eliminarElemento(indiceInventario);
 		
-		//VER QUE PASA SI SE RECIBE UNA HERRAMIENTA EN VEZ DE UN MATERIAL
-		//PREGUNTARLE A MARCOS COMO MANEJAR ESO, QUE YA LO PLANTEÓ EL
+		if (!(elemento instanceof Material)) {
+			inventario.agregarHerramienta((Herramienta)elemento);
+		}
+
+		sectorDeCrafteo.agregarMaterial(posicionEnCodigo, (Material)elemento);
+
+	}
+	
+	
+	public Herramienta craftear() {
 		
-		sectorDeCrafteo.agregarMaterial(posicionEnCodigo, elemento);
+		try {
+			
+			return mesaDeCrafteo.craftear(sectorDeCrafteo);
+			
+		} catch (CodigoDeCrafteoInexistenteException e) {
+
+			List<Material> materialesPosicionados = sectorDeCrafteo.obtenerMateriales();
+			
+			for (Material material : materialesPosicionados) {
+				material.guardarEnInventario(inventario);
+			}
+			
+			//Esta bien dejar null? o conviene tirar otra excepcion?
+			return null;
+			
+		}
+		
 		
 	}
 	

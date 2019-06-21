@@ -25,6 +25,11 @@ public class Madera extends Material {
 	
 	
 	@Override
+	public void guardarEnInventario(Inventario inventario) {
+		inventario.agregarMaterial(this);
+	}
+	
+	@Override
 	public void decimeQuienSos(Herramienta herramienta, Inventario inventario) {
 		herramienta.usar(this, inventario);
 		

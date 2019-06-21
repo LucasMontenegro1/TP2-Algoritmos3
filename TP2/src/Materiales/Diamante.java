@@ -30,4 +30,9 @@ public class Diamante extends Material {
 	}
 	
 	
+	@Override
+	public void guardarEnInventario(Inventario inventario) {
+		inventario.agregarMaterial(this);
+	}
+	
 }

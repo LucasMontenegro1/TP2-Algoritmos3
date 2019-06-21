@@ -28,4 +28,10 @@ public class Metal extends Material {
 		herramienta.usar(this, inventario);
 		
 	}
+	
+	@Override
+	public void guardarEnInventario(Inventario inventario) {
+		inventario.agregarMaterial(this);
+	}
+	
 }
