@@ -32,6 +32,7 @@ public class Inventario {
         agregarHerramienta(new PicoFino());
         agregarHerramienta(new HachaDePiedra());
         agregarHerramienta(new HachaDeMetal());
+        agregarHerramienta(new HachaDeMadera());
         herramientaSeleccionada = (Herramienta)elementosGuardados[0].getElementoGuardado();
     }
     

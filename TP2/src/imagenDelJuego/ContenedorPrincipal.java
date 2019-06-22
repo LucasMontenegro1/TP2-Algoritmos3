@@ -15,34 +15,65 @@ import Materiales.Metal;
 import Materiales.Piedra;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.stage.Stage;
+import javafx.util.Duration;
+import junit.framework.Test;
 import mapa.Mapa;
 
 public class ContenedorPrincipal extends BorderPane {
 	Mapa mapa;
 	Inventario inventario;
+	MediaPlayer mp;
 	
 	public ContenedorPrincipal(Mapa mapa) {
 		this.mapa= mapa;
 		this.inventario= ((Jugador) mapa.getOcupante(7, 7)).getInventario();
 		this.setMapa();
 		this.setInventario();
+		this.ponerMusica();
+		this.setCambiarHerramienta();
 	
 	}
 	
 	
-	public void setBotonesRomper(VBox botonesRomper) {
+	public void setCambiarHerramienta() {
 		
-		botonesRomper.setSpacing(10);
-		botonesRomper.setPadding(new Insets(10));
-		this.setRight(botonesRomper);
+		ImageView imagen = new ImageView();
 		
+		if(inventario.getHerramientaSeleccionada() != null) {
+			
+			if(inventario.getHerramientaSeleccionada().getClass()==HachaDeMadera.class) {
+				imagen.setImage(new Image("Hacha.png"));
+			}else if(inventario.getHerramientaSeleccionada().getClass()==HachaDeMetal.class) {
+				imagen.setImage(new Image("HachaDeMetal.png"));
+			}else if(inventario.getHerramientaSeleccionada().getClass()==HachaDePiedra.class) {
+				imagen.setImage(new Image("HachaDePiedra.png"));
+			}else if(inventario.getHerramientaSeleccionada().getClass()==PicoDeMadera.class) {
+				imagen.setImage(new Image("PicoDeMadera.png"));
+			}else if(inventario.getHerramientaSeleccionada().getClass()==PicoDeMetal.class) {
+				imagen.setImage(new Image("PicoDeMetal.png"));
+			}else if(inventario.getHerramientaSeleccionada().getClass()==PicoDePiedra.class) {
+				imagen.setImage(new Image("PicoDePiedra.png"));
+			}else if(inventario.getHerramientaSeleccionada().getClass()==PicoFino.class) {
+				imagen.setImage(new Image("PicoFino.png"));
+			}
+
+		} else {
+			imagen.setImage(new Image("defaultInventario.png"));
+		}
 		
+		this.setRight(imagen);
 	}
+	
 
 
 	public void setInventario() {
@@ -89,6 +120,7 @@ public class ContenedorPrincipal extends BorderPane {
                 ImageView imagen = new ImageView(img);
                 
                 imagen.setPreserveRatio(true);
+                
                 
                 imagen.setFitHeight(50);
                 imagen.setFitWidth(50);
@@ -152,5 +184,23 @@ public class ContenedorPrincipal extends BorderPane {
 
          this.setCenter(root);
 	}
+	
+    public void ponerMusica() {
+     	String path =Test.class.getResource("/minecraftSong.mp3").toString();
+    	Media cancion = new Media(path);
+    	mp= new MediaPlayer(cancion);
+    	mp.setStartTime(Duration.seconds(0));
+    	mp.setStopTime(Duration.seconds(1800));
+    	
+    	mp.setOnEndOfMedia(new Runnable() {
+            @Override
+            public void run() {
+                mp.seek(Duration.ZERO);
+            }
+        }); 
+    	mp.play();
+    	
+    	
+    }
 	
 }

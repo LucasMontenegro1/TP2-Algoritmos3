@@ -413,8 +413,6 @@ public class MesaDeCrafteoTest {
 		herramienta.usar(metal, new Inventario());
 		herramienta.usar(diamante, new Inventario());
 		
-		assert piedra.getDurabilidad() == durabilidadInicialPiedra - herramienta.getFuerza();
-		assert metal.getDurabilidad() == durabilidadInicialMetal - herramienta.getFuerza();
 		assert diamante.getDurabilidad() == durabilidadInicialDiamante - herramienta.getFuerza();
 		
 		//Se puede agregar la forma en la que se gasta para ver que es del tipo de piedra
