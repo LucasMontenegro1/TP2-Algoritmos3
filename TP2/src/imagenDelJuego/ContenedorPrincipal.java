@@ -11,11 +11,16 @@ import javafx.geometry.Insets;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 import junit.framework.Test;
@@ -143,6 +148,7 @@ public class ContenedorPrincipal extends BorderPane {
         		+ "                         ↓");
         VBox panelIzquierdo = new VBox(panelInventario, movimiento, golpear, cambiarHerramienta);
         Herramienta herramienta = null;
+        int contador=0;
 
         int z = 0;
         
@@ -156,6 +162,7 @@ public class ContenedorPrincipal extends BorderPane {
                 	
                 	if ((Herramienta.class).isAssignableFrom(inventario.getElementosGuardados()[z].getElementoGuardado().getClass())) {
                 		herramienta = (Herramienta)inventario.getElementosGuardados()[z].getElementoGuardado();      
+                		contador=0;
                 	}
                 	
                 	if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == HachaDeMadera.class) {
@@ -185,14 +192,20 @@ public class ContenedorPrincipal extends BorderPane {
                 } 
                     
                 ImageView imagen = new ImageView(img);
+                HBox caja= new HBox(imagen);
                 
-                if (herramienta == inventario.getHerramientaSeleccionada()) {
-                    ColorAdjust colorAdjustGrayscale = new ColorAdjust();
-                    colorAdjustGrayscale.setSaturation(-1);
-                    imagen.setEffect(colorAdjustGrayscale);
+                if (contador==0 && herramienta == inventario.getHerramientaSeleccionada()) {
+                	BackgroundFill background_fill = new BackgroundFill(Color.PINK,CornerRadii.EMPTY, Insets.EMPTY);
+                    Background background = new Background(background_fill); 
+                    caja.setBackground(background); 
+                    contador+=1;
+                	 
                 }
+       
                 
-                
+       
+           
+                caja.setPadding(new Insets(5));
                 imagen.setPreserveRatio(true);
                 
                 
@@ -200,9 +213,9 @@ public class ContenedorPrincipal extends BorderPane {
                 imagen.setFitWidth(50);
                 
                
-                GridPane.setRowIndex(imagen,y);
-                GridPane.setColumnIndex(imagen,x);   
-                panelInventario.getChildren().add(imagen);   
+                GridPane.setRowIndex(caja,y);
+                GridPane.setColumnIndex(caja,x);   
+                panelInventario.getChildren().add(caja);   
                 z++;
             }
         }
