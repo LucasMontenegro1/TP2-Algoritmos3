@@ -44,7 +44,11 @@ public class ContenedorPrincipal extends BorderPane {
 		ImageView imagen = new ImageView();
 		Text textoDurabilidad = new Text();
 		Text textoFuerza = new Text();
-		VBox herramientaSeleccionada = new VBox(imagen, textoDurabilidad, textoFuerza);
+		Text desgaste = new Text();
+		Text utilidadTexto = new Text();
+		Text usosTexto = new Text (); // solo lo usamos para el pico de metal
+		VBox herramientaSeleccionada = new VBox(imagen, utilidadTexto, textoDurabilidad, textoFuerza, desgaste, usosTexto);
+		herramientaSeleccionada.setPrefWidth(250);
 
 		if(inventario.getHerramientaSeleccionada() != null) {
 			
@@ -53,42 +57,58 @@ public class ContenedorPrincipal extends BorderPane {
 				imagen.setImage(new Image("Hacha.png"));
 				durabilidad = inventario.getHerramientaSeleccionada().getDurabilidad();
 				fuerza = inventario.getHerramientaSeleccionada().getFuerza();
+				desgaste.setText("\nDesgaste: durabilidad - fuerza");
+				utilidadTexto.setText("\nÚtil contra: madera");
 				
 			}else if(inventario.getHerramientaSeleccionada().getClass()==HachaDeMetal.class) {
 				
 				imagen.setImage(new Image("HachaDeMetal.png"));
 				durabilidad = inventario.getHerramientaSeleccionada().getDurabilidad();
 				fuerza = inventario.getHerramientaSeleccionada().getFuerza();
+				desgaste.setText("\nDesgaste: durabilidad - fuerza/2");
+				utilidadTexto.setText("\nÚtil contra: madera");
 				
 			}else if(inventario.getHerramientaSeleccionada().getClass()==HachaDePiedra.class) {
 				
 				imagen.setImage(new Image("HachaDePiedra.png"));
 				durabilidad = inventario.getHerramientaSeleccionada().getDurabilidad();
 				fuerza = inventario.getHerramientaSeleccionada().getFuerza();
+				desgaste.setText("\nDesgaste: durabilidad - fuerza");
+				utilidadTexto.setText("\nÚtil contra: madera");
 				
 			}else if(inventario.getHerramientaSeleccionada().getClass()==PicoDeMadera.class) {
 				
 				imagen.setImage(new Image("PicoDeMadera.png"));
 				durabilidad = inventario.getHerramientaSeleccionada().getDurabilidad();
 				fuerza = inventario.getHerramientaSeleccionada().getFuerza();
+				desgaste.setText("\nDesgaste: durabilidad - fuerza");
+				utilidadTexto.setText("\nÚtil contra: piedra");
 				
 			}else if(inventario.getHerramientaSeleccionada().getClass()==PicoDeMetal.class) {
 				
 				imagen.setImage(new Image("PicoDeMetal.png"));
 				durabilidad = inventario.getHerramientaSeleccionada().getDurabilidad();
+				int usos = ((PicoDeMetal)inventario.getHerramientaSeleccionada()).getUsos();
 				fuerza = inventario.getHerramientaSeleccionada().getFuerza();
+				desgaste.setText("\nDesgaste: se rompe al décimo uso");
+				usosTexto.setText("\nUsos: " + Integer.toString(usos));
+				utilidadTexto.setText("\nÚtil contra: piedra, metal");
 				
 			}else if(inventario.getHerramientaSeleccionada().getClass()==PicoDePiedra.class) {
 				
 				imagen.setImage(new Image("PicoDePiedra.png"));
 				durabilidad = inventario.getHerramientaSeleccionada().getDurabilidad();
 				fuerza = inventario.getHerramientaSeleccionada().getFuerza();
+				desgaste.setText("\nDesgaste: durabilidad - fuerza/1.5");
+				utilidadTexto.setText("\nÚtil contra: piedra, metal");
 				
 			}else if(inventario.getHerramientaSeleccionada().getClass()==PicoFino.class) {
 				
 				imagen.setImage(new Image("PicoFino.png"));
 				durabilidad = inventario.getHerramientaSeleccionada().getDurabilidad();
 				fuerza = inventario.getHerramientaSeleccionada().getFuerza();
+				desgaste.setText("\nDesgaste: se disminuye un 10% su durabilidad");
+				utilidadTexto.setText("\nÚtil contra: diamante");
 				
 			}
 

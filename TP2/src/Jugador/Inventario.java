@@ -24,8 +24,14 @@ public class Inventario {
     public Inventario(){
         for(int i = 0; i < cantidadDePaquetes; i++) {
         	elementosGuardados[i] = new Paquete();
-            agregarHerramienta(new HachaDeMadera());
         }
+        agregarHerramienta(new HachaDeMadera());
+        agregarHerramienta(new HachaDePiedra());
+        agregarHerramienta(new HachaDeMetal());
+        agregarHerramienta(new PicoDeMadera());
+        agregarHerramienta(new PicoDePiedra());
+        agregarHerramienta(new PicoDeMetal());
+        agregarHerramienta(new PicoFino());
         herramientaSeleccionada = (Herramienta)elementosGuardados[0].getElementoGuardado();
     }
     

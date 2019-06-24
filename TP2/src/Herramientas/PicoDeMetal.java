@@ -19,6 +19,10 @@ public class PicoDeMetal extends Pico {
 			durabilidad = 0;
 		}
 	}
+	
+	public int getUsos() {
+		return usos;
+	}
 
 	@Override
 	public void usar(Metal metal, Inventario inventario) {
