@@ -12,8 +12,8 @@ public class Mapa {
 	private int columnasMapa = 13;
 	
 	public Mapa(){
-		for(int i = 0; i < 9; i++) {
-			for(int j = 0; j < 13; j++) {
+		for(int i = 0; i < filasMapa; i++) {
+			for(int j = 0; j < columnasMapa; j++) {
 				casilleros[i][j] = new Casillero(); // vacio
 			}
 		}

@@ -63,7 +63,7 @@ public class ContenedorPrincipal extends BorderPane {
 				durabilidad = inventario.getHerramientaSeleccionada().getDurabilidad();
 				fuerza = inventario.getHerramientaSeleccionada().getFuerza();
 				desgaste.setText("\nDesgaste: durabilidad - fuerza");
-				utilidadTexto.setText("\nÚtil contra: madera");
+				utilidadTexto.setText("\n\nÚtil contra: madera");
 				
 			}else if(inventario.getHerramientaSeleccionada().getClass()==HachaDeMetal.class) {
 				
@@ -71,7 +71,7 @@ public class ContenedorPrincipal extends BorderPane {
 				durabilidad = inventario.getHerramientaSeleccionada().getDurabilidad();
 				fuerza = inventario.getHerramientaSeleccionada().getFuerza();
 				desgaste.setText("\nDesgaste: durabilidad - fuerza/2");
-				utilidadTexto.setText("\nÚtil contra: madera");
+				utilidadTexto.setText("\n\nÚtil contra: madera");
 				
 			}else if(inventario.getHerramientaSeleccionada().getClass()==HachaDePiedra.class) {
 				
@@ -79,7 +79,7 @@ public class ContenedorPrincipal extends BorderPane {
 				durabilidad = inventario.getHerramientaSeleccionada().getDurabilidad();
 				fuerza = inventario.getHerramientaSeleccionada().getFuerza();
 				desgaste.setText("\nDesgaste: durabilidad - fuerza");
-				utilidadTexto.setText("\nÚtil contra: madera");
+				utilidadTexto.setText("\n\nÚtil contra: madera");
 				
 			}else if(inventario.getHerramientaSeleccionada().getClass()==PicoDeMadera.class) {
 				
@@ -87,7 +87,7 @@ public class ContenedorPrincipal extends BorderPane {
 				durabilidad = inventario.getHerramientaSeleccionada().getDurabilidad();
 				fuerza = inventario.getHerramientaSeleccionada().getFuerza();
 				desgaste.setText("\nDesgaste: durabilidad - fuerza");
-				utilidadTexto.setText("\nÚtil contra: piedra");
+				utilidadTexto.setText("\n\nÚtil contra: piedra");
 				
 			}else if(inventario.getHerramientaSeleccionada().getClass()==PicoDeMetal.class) {
 				
@@ -97,7 +97,7 @@ public class ContenedorPrincipal extends BorderPane {
 				fuerza = inventario.getHerramientaSeleccionada().getFuerza();
 				desgaste.setText("\nDesgaste: se rompe al décimo uso");
 				usosTexto.setText("\nUsos: " + Integer.toString(usos));
-				utilidadTexto.setText("\nÚtil contra: piedra, metal");
+				utilidadTexto.setText("\n\nÚtil contra: piedra, metal");
 				
 			}else if(inventario.getHerramientaSeleccionada().getClass()==PicoDePiedra.class) {
 				
@@ -105,7 +105,7 @@ public class ContenedorPrincipal extends BorderPane {
 				durabilidad = inventario.getHerramientaSeleccionada().getDurabilidad();
 				fuerza = inventario.getHerramientaSeleccionada().getFuerza();
 				desgaste.setText("\nDesgaste: durabilidad - fuerza/1.5");
-				utilidadTexto.setText("\nÚtil contra: piedra, metal");
+				utilidadTexto.setText("\n\nÚtil contra: piedra, metal");
 				
 			}else if(inventario.getHerramientaSeleccionada().getClass()==PicoFino.class) {
 				
@@ -113,7 +113,7 @@ public class ContenedorPrincipal extends BorderPane {
 				durabilidad = inventario.getHerramientaSeleccionada().getDurabilidad();
 				fuerza = inventario.getHerramientaSeleccionada().getFuerza();
 				desgaste.setText("\nDesgaste: se disminuye un 10% su durabilidad");
-				utilidadTexto.setText("\nÚtil contra: diamante");
+				utilidadTexto.setText("\n\nÚtil contra: diamante");
 				
 			}
 

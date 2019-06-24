@@ -45,6 +45,7 @@ import Jugador.*;
             stage.setScene(principal);
         
             stage.show();
+            stage.setTitle("The Minecraft Project");
         }
 
         public static void main(String[] args) {    
