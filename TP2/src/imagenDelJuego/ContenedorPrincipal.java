@@ -8,19 +8,15 @@ import Materiales.Madera;
 import Materiales.Metal;
 import Materiales.Piedra;
 import javafx.geometry.Insets;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 import junit.framework.Test;
 import mapa.Mapa;
@@ -112,7 +108,20 @@ public class ContenedorPrincipal extends BorderPane {
         int width = 7;
         
         
-        GridPane root = new GridPane(); 
+        GridPane panelInventario = new GridPane(); 
+        Text movimiento = new Text();
+        Text golpear = new Text();
+        Text cambiarHerramienta = new Text();
+        cambiarHerramienta.setText("\nCambiar Herramienta:   P");
+        movimiento.setText("Movimiento:                 ↑\n "
+        		+ "                                   W\n"
+        		+ "			    ← A  S  D  →\n"
+        		+ "                                     ↓");
+        golpear.setText("\nGopear:            ↑\n "
+        		+ "                        I\n"
+        		+ "                 ← J  K  L  →\n"
+        		+ "                         ↓");
+        VBox panelIzquierdo = new VBox(panelInventario, movimiento, golpear, cambiarHerramienta);
         Herramienta herramienta = null;
 
         int z = 0;
@@ -173,13 +182,13 @@ public class ContenedorPrincipal extends BorderPane {
                
                 GridPane.setRowIndex(imagen,y);
                 GridPane.setColumnIndex(imagen,x);   
-                root.getChildren().add(imagen);   
+                panelInventario.getChildren().add(imagen);   
                 z++;
             }
         }
     	
-		root.setPadding(new Insets(15));
-        this.setLeft(root);
+        panelInventario.setPadding(new Insets(15));
+        this.setLeft(panelIzquierdo);
     }
 	
 	

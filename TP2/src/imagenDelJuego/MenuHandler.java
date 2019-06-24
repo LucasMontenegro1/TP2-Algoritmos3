@@ -1,10 +1,8 @@
 package imagenDelJuego;
 
-import Jugador.Jugador;
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import mapa.Mapa;
 
 public class MenuHandler implements EventHandler<KeyEvent> {
 	
