@@ -5,10 +5,10 @@ import Jugador.*;
 
 public class Mapa {
 
-	protected Casillero casilleros[][] = new Casillero[9][13];
+	protected Casillero casilleros[][] = new Casillero[10][13];
 	private int filaInicialJugador = 7;
 	private int columnaInicialJugador = 7;
-	private int filasMapa = 9;
+	private int filasMapa = 10;
 	private int columnasMapa = 13;
 	
 	public Mapa(){

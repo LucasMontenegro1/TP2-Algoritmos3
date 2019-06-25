@@ -8,6 +8,7 @@ import Materiales.Madera;
 import Materiales.Metal;
 import Materiales.Piedra;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
@@ -17,6 +18,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.TilePane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -238,7 +240,7 @@ public class ContenedorPrincipal extends BorderPane {
 	
 	
 	public void setMapa() {
-	     int length = 9;
+	     int length = 10;
          int width = 13;
          
          
@@ -282,6 +284,7 @@ public class ContenedorPrincipal extends BorderPane {
 
          this.setCenter(panelMapa);
 	}
+	
 	
 	
 }

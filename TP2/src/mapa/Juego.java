@@ -34,41 +34,15 @@ public class Juego {
 
 
 
-	public Posicion obtenerPosicionArriba(Posicion posicion) {
+	public Posicion obtenerPosicion(Posicion posicion, int movVertical, int movHorizontal) {
 		int fila = posicion.getFila();
 		int columna = posicion.getColumna();
 		
-		Posicion nuevaPosicion = new Posicion(fila-1, columna);
+		Posicion nuevaPosicion = new Posicion(fila-movVertical, columna+movHorizontal);
 		
 		return nuevaPosicion;		
 	} 
 	
-	public Posicion obtenerPosicionAbajo(Posicion posicion) {
-		int fila = posicion.getFila();
-		int columna = posicion.getColumna();
-		
-		Posicion nuevaPosicion = new Posicion(fila+1, columna);
-		
-		return nuevaPosicion;		
-	} 
-	
-	public Posicion obtenerPosicionDerecha(Posicion posicion) {
-		int fila = posicion.getFila();
-		int columna = posicion.getColumna();
-		
-		Posicion nuevaPosicion = new Posicion(fila, columna+1);
-		
-		return nuevaPosicion;		
-	} 
-	
-	public Posicion obtenerPosicionIzquierda(Posicion posicion) {
-		int fila = posicion.getFila();
-		int columna = posicion.getColumna();
-		
-		Posicion nuevaPosicion = new Posicion(fila, columna-1);
-		
-		return nuevaPosicion;		
-	} 
 }
 
 

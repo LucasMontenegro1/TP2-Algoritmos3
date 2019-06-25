@@ -26,7 +26,7 @@ public class AccionesJugadorHandler implements EventHandler<KeyEvent> {
 		if (event.getCode() == KeyCode.W) {
 			//jugador.moverArriba();
 			
-			Posicion nuevaPosicion = juego.obtenerPosicionArriba(jugador.getPosicion());
+			Posicion nuevaPosicion = juego.obtenerPosicion(jugador.getPosicion(),1,0);
 			juego.moverJugadorA(nuevaPosicion);
 		
 			
@@ -34,26 +34,26 @@ public class AccionesJugadorHandler implements EventHandler<KeyEvent> {
 		}
 		if (event.getCode() == KeyCode.S) {
 			//jugador.moverAbajo();
-			Posicion nuevaPosicion = juego.obtenerPosicionAbajo(jugador.getPosicion());
+			Posicion nuevaPosicion = juego.obtenerPosicion(jugador.getPosicion(),-1,0);
 			juego.moverJugadorA(nuevaPosicion);
 			
 		}
 		if (event.getCode() == KeyCode.D) {
 			//jugador.moverDerecha();
-			Posicion nuevaPosicion = juego.obtenerPosicionDerecha(jugador.getPosicion());
+			Posicion nuevaPosicion = juego.obtenerPosicion(jugador.getPosicion(),0,1);
 			juego.moverJugadorA(nuevaPosicion);
 			
 		}
 		if (event.getCode() == KeyCode.A) {
 			//jugador.moverIzquierda();
-			Posicion nuevaPosicion = juego.obtenerPosicionIzquierda(jugador.getPosicion());
+			Posicion nuevaPosicion = juego.obtenerPosicion(jugador.getPosicion(),0,-1);
 			juego.moverJugadorA(nuevaPosicion);
 			
 		}
 		if (event.getCode() == KeyCode.I) {
 			try {
 				//jugador.golpearArriba();
-				Posicion posicionAGolpear = juego.obtenerPosicionArriba(jugador.getPosicion());
+				Posicion posicionAGolpear = juego.obtenerPosicion(jugador.getPosicion(),1,0);
 				juego.golpearPosicion(posicionAGolpear);
 			}
 			catch(noHerramientaException ex) {
@@ -66,7 +66,7 @@ public class AccionesJugadorHandler implements EventHandler<KeyEvent> {
 		if (event.getCode() == KeyCode.K) {
 			try {
 				//jugador.golpearAbajo();
-				Posicion posicionAGolpear = juego.obtenerPosicionAbajo(jugador.getPosicion());
+				Posicion posicionAGolpear = juego.obtenerPosicion(jugador.getPosicion(),-1,0);
 				juego.golpearPosicion(posicionAGolpear);
 			}
 			catch(noHerramientaException ex) {
@@ -77,7 +77,7 @@ public class AccionesJugadorHandler implements EventHandler<KeyEvent> {
 		if (event.getCode() == KeyCode.J) {
 			try {
 				//jugador.golpearIzquierda();
-				Posicion posicionAGolpear = juego.obtenerPosicionIzquierda(jugador.getPosicion());
+				Posicion posicionAGolpear = juego.obtenerPosicion(jugador.getPosicion(),0,-1);
 				juego.golpearPosicion(posicionAGolpear);
 			}
 			catch(noHerramientaException ex) {
@@ -88,7 +88,7 @@ public class AccionesJugadorHandler implements EventHandler<KeyEvent> {
 		if (event.getCode() == KeyCode.L) {
 			try {
 				//jugador.golpearDerecha();
-				Posicion posicionAGolpear = juego.obtenerPosicionDerecha(jugador.getPosicion());
+				Posicion posicionAGolpear = juego.obtenerPosicion(jugador.getPosicion(),0,1);
 				juego.golpearPosicion(posicionAGolpear);
 			}
 			catch(noHerramientaException ex) {
