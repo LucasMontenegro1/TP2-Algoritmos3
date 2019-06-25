@@ -69,7 +69,7 @@ public class ContenedorPrincipal extends BorderPane {
 				durabilidad = inventario.getHerramientaSeleccionada().getDurabilidad();
 				fuerza = inventario.getHerramientaSeleccionada().getFuerza();
 				desgaste.setText("\nDesgaste: durabilidad - fuerza");
-				utilidadTexto.setText("\\n\\nÚtil contra: madera");
+				utilidadTexto.setText("\n\nÚtil contra: madera");
 				
 			}else if(inventario.getHerramientaSeleccionada().getClass()==HachaDeMetal.class) {
 				
@@ -119,7 +119,7 @@ public class ContenedorPrincipal extends BorderPane {
 				durabilidad = inventario.getHerramientaSeleccionada().getDurabilidad();
 				fuerza = inventario.getHerramientaSeleccionada().getFuerza();
 				desgaste.setText("\nDesgaste: se disminuye un 10% su durabilidad");
-				utilidadTexto.setText("\\n\\nÚtil contra: diamante");
+				utilidadTexto.setText("\n\nÚtil contra: diamante");
 				
 			}
 
