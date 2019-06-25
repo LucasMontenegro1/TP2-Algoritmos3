@@ -29,7 +29,7 @@ public class PicoDeMetal extends Pico {
 		this.desgastar();
 		metal.recibirDanio(fuerza, inventario);
 		if(this.getDurabilidad() <= 0) {
-			inventario.eliminarElemento(this);
+			inventario.eliminarHerramienta(this);
 		}
 	}
 
