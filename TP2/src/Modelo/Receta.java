@@ -50,7 +50,7 @@ public class Receta {
 			return herramientaRepresentada;
 		}
 		
-		return null;
+		throw new CodigoDeCrafteoIncorrectoException("El codigo de crafteo insertado es incorrecto");
 		
 	}
 	
