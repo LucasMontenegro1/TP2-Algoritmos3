@@ -13,6 +13,10 @@ public class Paquete {
 
 	Desgastable elementoGuardado[] = new Desgastable[64];
 	
+	public int getCantidadElementos() {
+		return cantidadActualElementos;
+		
+	}
 
 	public boolean lugarLibre() {
 		return elementoGuardado[0] == null;

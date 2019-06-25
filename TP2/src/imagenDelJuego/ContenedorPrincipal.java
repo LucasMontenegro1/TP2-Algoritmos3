@@ -8,6 +8,7 @@ import Materiales.Madera;
 import Materiales.Metal;
 import Materiales.Piedra;
 import javafx.geometry.Insets;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
@@ -176,7 +177,7 @@ public class ContenedorPrincipal extends BorderPane {
 
         for(int y = 0; y < length; y++){
             for(int x = 0; x < width; x++){
-            	
+            	Integer cantidad= new Integer(0);
                 Image img = new Image("defaultInventario.png");
                 
                 if((inventario.getElementosGuardados()[z]).getElementoGuardado() != null) {
@@ -209,11 +210,21 @@ public class ContenedorPrincipal extends BorderPane {
                 	}else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == PicoFino.class){
                 		img = new Image("PicoFino.png");
                 	}
-
+                	
+                    cantidad=(inventario.getElementosGuardados()[z]).getCantidadElementos();
                 } 
-                    
+                 
                 ImageView imagen = new ImageView(img);
                 HBox caja = new HBox(imagen);
+                Text textoInventario=new Text(cantidad.toString());
+                textoInventario.setFill(Color.WHITE);
+                //Label cantidadEnInventario= new Label(cantidad.toString());
+                //cantidadEnInventario.setFont(Font.font("Verdana"));
+                
+                
+                caja.getChildren().add(textoInventario);
+                
+                
                 
                 if (contador==0 && herramienta == inventario.getHerramientaSeleccionada()) {
                 	BackgroundFill background_fill = new BackgroundFill(Color.DARKGRAY,CornerRadii.EMPTY, Insets.EMPTY);
@@ -224,8 +235,7 @@ public class ContenedorPrincipal extends BorderPane {
                 }
        
                 
-       
-           
+                
                 caja.setPadding(new Insets(5));
                 imagen.setPreserveRatio(true);
                 
@@ -262,11 +272,11 @@ public class ContenedorPrincipal extends BorderPane {
                  Image img = new Image("pasto.png");
              	
              	if(mapa.getOcupante(y, x).getClass() == Madera.class) {
-                     img = new Image("madera.png");
+                     img = new Image("maderaBloque.png");
              	} else if(mapa.getOcupante(y, x).getClass() == Piedra.class) {
-                     img = new Image("piedra.png");
+                     img = new Image("piedraBloque.png");
              	} else if(mapa.getOcupante(y, x).getClass() == Metal.class) {
-                     img = new Image("metal.png");
+                     img = new Image("metalBloque.png");
              	} else if(mapa.getOcupante(y, x).getClass() == Diamante.class) {
                      img = new Image("DiamanteBloque.png");
              	} else if(mapa.getOcupante(y, x).getClass() == Jugador.class) {
