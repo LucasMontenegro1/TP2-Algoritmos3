@@ -6,9 +6,9 @@ import javafx.scene.input.KeyEvent;
 
 public class MenuHandler implements EventHandler<KeyEvent> {
 	
-	ImagenMapa imagen;
+	ImagenJuego imagen;
 	
-	public MenuHandler(ImagenMapa imagen) {
+	public MenuHandler(ImagenJuego imagen) {
 		this.imagen = imagen;
 	}
 

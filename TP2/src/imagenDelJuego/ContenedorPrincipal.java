@@ -8,7 +8,6 @@ import Materiales.Madera;
 import Materiales.Metal;
 import Materiales.Piedra;
 import javafx.geometry.Insets;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
@@ -19,26 +18,20 @@ import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-import javafx.util.Duration;
-import junit.framework.Test;
 import mapa.Mapa;
 
 public class ContenedorPrincipal extends BorderPane {
 	Mapa mapa;
 	Inventario inventario;
-	MediaPlayer mp;
 	
 	public ContenedorPrincipal(Mapa mapa) {
 		this.mapa= mapa;
 		this.inventario= ((Jugador) mapa.getOcupante(7, 7)).getInventario();
 		this.setMapa();
 		this.setInventario();
-		this.ponerMusica();
 		this.setCambiarHerramienta();
 	
 	}
@@ -66,7 +59,7 @@ public class ContenedorPrincipal extends BorderPane {
         usosTexto.setFont(Font.font("Verdana"));
 		usosTexto.setFill(Color.WHITE);
 		VBox herramientaSeleccionada = new VBox(new ImageView(herramientaEquipadaImage), imagen, utilidadTexto, textoDurabilidad, textoFuerza, desgaste, usosTexto);
-		herramientaSeleccionada.setPrefWidth(250);
+		herramientaSeleccionada.setPrefWidth(290);
 
 		if(inventario.getHerramientaSeleccionada() != null) {
 			
@@ -76,7 +69,7 @@ public class ContenedorPrincipal extends BorderPane {
 				durabilidad = inventario.getHerramientaSeleccionada().getDurabilidad();
 				fuerza = inventario.getHerramientaSeleccionada().getFuerza();
 				desgaste.setText("\nDesgaste: durabilidad - fuerza");
-				utilidadTexto.setText("\n\nÃštil contra: madera");
+				utilidadTexto.setText("\\n\\nÚtil contra: madera");
 				
 			}else if(inventario.getHerramientaSeleccionada().getClass()==HachaDeMetal.class) {
 				
@@ -84,7 +77,7 @@ public class ContenedorPrincipal extends BorderPane {
 				durabilidad = inventario.getHerramientaSeleccionada().getDurabilidad();
 				fuerza = inventario.getHerramientaSeleccionada().getFuerza();
 				desgaste.setText("\nDesgaste: durabilidad - fuerza/2");
-				utilidadTexto.setText("\n\nÃštil contra: madera");
+				utilidadTexto.setText("\n\nÚtil contra: madera");
 				
 			}else if(inventario.getHerramientaSeleccionada().getClass()==HachaDePiedra.class) {
 				
@@ -92,7 +85,7 @@ public class ContenedorPrincipal extends BorderPane {
 				durabilidad = inventario.getHerramientaSeleccionada().getDurabilidad();
 				fuerza = inventario.getHerramientaSeleccionada().getFuerza();
 				desgaste.setText("\nDesgaste: durabilidad - fuerza");
-				utilidadTexto.setText("\n\nÃštil contra: madera");
+				utilidadTexto.setText("\n\nÚtil contra: madera");
 				
 			}else if(inventario.getHerramientaSeleccionada().getClass()==PicoDeMadera.class) {
 				
@@ -100,7 +93,7 @@ public class ContenedorPrincipal extends BorderPane {
 				durabilidad = inventario.getHerramientaSeleccionada().getDurabilidad();
 				fuerza = inventario.getHerramientaSeleccionada().getFuerza();
 				desgaste.setText("\nDesgaste: durabilidad - fuerza");
-				utilidadTexto.setText("\n\nÃštil contra: piedra");
+				utilidadTexto.setText("\n\nÚtil contra: piedra");
 				
 			}else if(inventario.getHerramientaSeleccionada().getClass()==PicoDeMetal.class) {
 				
@@ -108,9 +101,9 @@ public class ContenedorPrincipal extends BorderPane {
 				durabilidad = inventario.getHerramientaSeleccionada().getDurabilidad();
 				int usos = ((PicoDeMetal)inventario.getHerramientaSeleccionada()).getUsos();
 				fuerza = inventario.getHerramientaSeleccionada().getFuerza();
-				desgaste.setText("\nDesgaste: se rompe al dÃ©cimo uso");
+				desgaste.setText("\nDesgaste: se rompe al décimo uso");
 				usosTexto.setText("\nUsos: " + Integer.toString(usos));
-				utilidadTexto.setText("\n\nÃštil contra: piedra, metal");
+				utilidadTexto.setText("\n\nÚtil contra: piedra, metal");
 				
 			}else if(inventario.getHerramientaSeleccionada().getClass()==PicoDePiedra.class) {
 				
@@ -118,7 +111,7 @@ public class ContenedorPrincipal extends BorderPane {
 				durabilidad = inventario.getHerramientaSeleccionada().getDurabilidad();
 				fuerza = inventario.getHerramientaSeleccionada().getFuerza();
 				desgaste.setText("\nDesgaste: durabilidad - fuerza/1.5");
-				utilidadTexto.setText("\n\nÃštil contra: piedra, metal");
+				utilidadTexto.setText("\n\nÚtil contra: piedra, metal");
 				
 			}else if(inventario.getHerramientaSeleccionada().getClass()==PicoFino.class) {
 				
@@ -126,7 +119,7 @@ public class ContenedorPrincipal extends BorderPane {
 				durabilidad = inventario.getHerramientaSeleccionada().getDurabilidad();
 				fuerza = inventario.getHerramientaSeleccionada().getFuerza();
 				desgaste.setText("\nDesgaste: se disminuye un 10% su durabilidad");
-				utilidadTexto.setText("\n\nÃštil contra: diamante");
+				utilidadTexto.setText("\\n\\nÚtil contra: diamante");
 				
 			}
 
@@ -290,22 +283,5 @@ public class ContenedorPrincipal extends BorderPane {
          this.setCenter(panelMapa);
 	}
 	
-    public void ponerMusica() {
-     	String path =Test.class.getResource("/minecraftSong.mp3").toString();
-    	Media cancion = new Media(path);
-    	mp= new MediaPlayer(cancion);
-    	mp.setStartTime(Duration.seconds(0));
-    	mp.setStopTime(Duration.seconds(1800));
-    	
-    	mp.setOnEndOfMedia(new Runnable() {
-            @Override
-            public void run() {
-                mp.seek(Duration.ZERO);
-            }
-        }); 
-    	mp.play();
-    	
-    	
-    }
 	
 }
