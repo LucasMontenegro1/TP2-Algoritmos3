@@ -12,7 +12,7 @@ public abstract class Pico extends Herramienta {
 	public void usar(Madera madera, Inventario inventario) {
 		this.desgastar();
 		if(this.getDurabilidad() <= 0) {
-			inventario.eliminarElemento(this);
+			inventario.eliminarHerramienta(this);
 		}
 	}
 
@@ -21,7 +21,7 @@ public abstract class Pico extends Herramienta {
 		this.desgastar();
 		piedra.recibirDanio(fuerza, inventario);
 		if(this.getDurabilidad() <= 0) {
-			inventario.eliminarElemento(this);
+			inventario.eliminarHerramienta(this);
 		}
 	}
 	
@@ -33,7 +33,7 @@ public abstract class Pico extends Herramienta {
 	public  void usar(Diamante diamante, Inventario inventario) {
 		this.desgastar();
 		if(this.getDurabilidad() <= 0) {
-			inventario.eliminarElemento(this);
+			inventario.eliminarHerramienta(this);
 		}
 	}
 	

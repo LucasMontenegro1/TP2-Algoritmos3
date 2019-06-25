@@ -157,13 +157,14 @@ public class Inventario {
     	}
     }
 
-	public void eliminarElemento(Desgastable elemento) { //No se si aca va a reconocer a los materiales tambien
+	public void eliminarHerramienta(Desgastable elemento) { //No se si aca va a reconocer a los materiales tambien
 														//si no los reconoce hacer metodo a parte para material y herramienta	
 		for(int i = 0; i < cantidadDePaquetes; i++) {
     		if(elementosGuardados[i].getElementoGuardado() == elemento) {
     			elementosGuardados[i].eliminarElemento();
     		}
-    	}	
+    	}
+		
 		herramientaSeleccionada = null;
 		cambiarHerramientaSeleccionada();
 	}

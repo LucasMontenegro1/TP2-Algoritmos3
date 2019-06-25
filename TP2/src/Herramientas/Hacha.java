@@ -13,7 +13,7 @@ public abstract class Hacha extends Herramienta{
 		madera.recibirDanio(fuerza, inventario);
 		this.desgastar();
 		if(this.getDurabilidad() <= 0) {
-			inventario.eliminarElemento(this);
+			inventario.eliminarHerramienta(this);
 		}
 	}
 	
@@ -21,7 +21,7 @@ public abstract class Hacha extends Herramienta{
 	public void usar(Metal metal, Inventario inventario) {
 		this.desgastar();
 		if(this.getDurabilidad() <= 0) {
-			inventario.eliminarElemento(this);
+			inventario.eliminarHerramienta(this);
 		}
 	}
 
@@ -29,7 +29,7 @@ public abstract class Hacha extends Herramienta{
 	public void usar(Piedra piedra, Inventario inventario) {
 		this.desgastar();
 		if(this.getDurabilidad() <= 0) {
-			inventario.eliminarElemento(this);
+			inventario.eliminarHerramienta(this);
 		}
 		
 	}
@@ -38,7 +38,7 @@ public abstract class Hacha extends Herramienta{
 	public void usar(Diamante diamante, Inventario inventario) {
 		this.desgastar();
 		if(this.getDurabilidad() <= 0) {
-			inventario.eliminarElemento(this);
+			inventario.eliminarHerramienta(this);
 		}
 		
 	}

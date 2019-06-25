@@ -71,6 +71,10 @@ public class Jugador implements Alocable{
 	public void setPosicion(Posicion posicion) {
 		posicionJugador = posicion;
 	}
+	
+	public Posicion getPosicion() {
+		return posicionJugador;
+	}
 		
 	public void moverArriba() {
 		mapa.desplazarJugadorArriba(posicionJugador);

@@ -49,6 +49,12 @@ public class Mapa {
 	public Alocable getOcupante(int i, int j) {
 		return casilleros[i][j].getOcupante();
 	}
+	
+	public Casillero getCasillero(Posicion posicion) {
+		int x = posicion.getFila();
+		int y = posicion.getColumna();
+		return this.casilleros[x][y];
+	}
 
 	public void eliminarMaterial(int fila, int columna) {
 		casilleros[fila][columna] = new Casillero();
@@ -113,6 +119,13 @@ public class Mapa {
 			casilleros[x][y-1] = new Casillero(jugador, nuevaPosicionJugador);
 		}
 
+	}
+	
+	public boolean existeCasillero(Posicion posicionCasillero) { //Hago un metodo publico xq lo tengo q usar en Juego
+		int fila = posicionCasillero.getFila();
+		int columna = posicionCasillero.getColumna();
+		
+		return casilleroExiste(fila, columna);
 	}
 	
 	
