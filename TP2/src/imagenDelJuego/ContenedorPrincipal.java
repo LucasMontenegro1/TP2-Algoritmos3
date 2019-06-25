@@ -8,11 +8,11 @@ import Materiales.Madera;
 import Materiales.Metal;
 import Materiales.Piedra;
 import javafx.geometry.Insets;
-import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
@@ -21,6 +21,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 import junit.framework.Test;
@@ -48,11 +49,22 @@ public class ContenedorPrincipal extends BorderPane {
 		int fuerza = 0;
 		ImageView imagen = new ImageView();
 		Text textoDurabilidad = new Text();
+        textoDurabilidad.setFont(Font.font("Verdana"));
+		textoDurabilidad.setFill(Color.WHITE);
+		Image herramientaEquipadaImage = new Image("HerramientaEquipada.png");
 		Text textoFuerza = new Text();
+        textoFuerza.setFont(Font.font("Verdana"));
+		textoFuerza.setFill(Color.WHITE);
 		Text desgaste = new Text();
+        desgaste.setFont(Font.font("Verdana"));
+		desgaste.setFill(Color.WHITE);
 		Text utilidadTexto = new Text();
+        utilidadTexto.setFont(Font.font("Verdana"));
+		utilidadTexto.setFill(Color.WHITE);
 		Text usosTexto = new Text (); // solo lo usamos para el pico de metal
-		VBox herramientaSeleccionada = new VBox(imagen, utilidadTexto, textoDurabilidad, textoFuerza, desgaste, usosTexto);
+        usosTexto.setFont(Font.font("Verdana"));
+		usosTexto.setFill(Color.WHITE);
+		VBox herramientaSeleccionada = new VBox(new ImageView(herramientaEquipadaImage), imagen, utilidadTexto, textoDurabilidad, textoFuerza, desgaste, usosTexto);
 		herramientaSeleccionada.setPrefWidth(250);
 
 		if(inventario.getHerramientaSeleccionada() != null) {
@@ -123,6 +135,7 @@ public class ContenedorPrincipal extends BorderPane {
 		
 		textoDurabilidad.setText("\nDurabilidad: " + Integer.toString(durabilidad));
 		textoFuerza.setText("\nFuerza: " + Integer.toString(fuerza));
+        herramientaSeleccionada.setBackground(new Background(new BackgroundImage(new Image("fondo.jpg"), null, null, null, null)));
 		this.setRight(herramientaSeleccionada);
 	}
 	
@@ -134,19 +147,27 @@ public class ContenedorPrincipal extends BorderPane {
         
         
         GridPane panelInventario = new GridPane(); 
+        Image tituloInventario = new Image("Inventario.png");
         Text movimiento = new Text();
+        movimiento.setFont(Font.font("Verdana"));
+        movimiento.setFill(Color.WHITE);
         Text golpear = new Text();
+        golpear.setFont(Font.font("Verdana"));
+        golpear.setFill(Color.WHITE);
         Text cambiarHerramienta = new Text();
+        cambiarHerramienta.setFont(Font.font("Verdana"));
+        cambiarHerramienta.setFill(Color.WHITE);
         cambiarHerramienta.setText("\nCambiar Herramienta:   P");
-        movimiento.setText("Movimiento:                 ↑\n "
-        		+ "                                   W\n"
+        movimiento.setText("Movimiento:                  ↑\n "
+        		+ "                                  W\n"
         		+ "			    ← A  S  D  →\n"
-        		+ "                                     ↓");
+        		+ "                                    ↓");
         golpear.setText("\nGopear:            ↑\n "
-        		+ "                        I\n"
+        		+ "                       I\n"
         		+ "                 ← J  K  L  →\n"
-        		+ "                         ↓");
-        VBox panelIzquierdo = new VBox(panelInventario, movimiento, golpear, cambiarHerramienta);
+        		+ "                        ↓");
+        VBox panelIzquierdo = new VBox(new ImageView(tituloInventario), panelInventario, movimiento, golpear, cambiarHerramienta);
+        panelIzquierdo.setBackground(new Background(new BackgroundImage(new Image("fondo.jpg"), null, null, null, null)));
         Herramienta herramienta = null;
         int contador=0;
 
@@ -192,10 +213,10 @@ public class ContenedorPrincipal extends BorderPane {
                 } 
                     
                 ImageView imagen = new ImageView(img);
-                HBox caja= new HBox(imagen);
+                HBox caja = new HBox(imagen);
                 
                 if (contador==0 && herramienta == inventario.getHerramientaSeleccionada()) {
-                	BackgroundFill background_fill = new BackgroundFill(Color.PINK,CornerRadii.EMPTY, Insets.EMPTY);
+                	BackgroundFill background_fill = new BackgroundFill(Color.DARKGRAY,CornerRadii.EMPTY, Insets.EMPTY);
                     Background background = new Background(background_fill); 
                     caja.setBackground(background); 
                     contador+=1;
@@ -232,7 +253,7 @@ public class ContenedorPrincipal extends BorderPane {
          int width = 13;
          
          
-         GridPane root = new GridPane();  
+         GridPane panelMapa = new GridPane();  
          
 
          for(int y = 0; y < length; y++){
@@ -264,12 +285,13 @@ public class ContenedorPrincipal extends BorderPane {
 
                  GridPane.setRowIndex(imagen,y);
                  GridPane.setColumnIndex(imagen,x);   
-                 root.getChildren().add(imagen);   
+                 panelMapa.getChildren().add(imagen);   
              }
          }
          
+         panelMapa.setBackground(new Background(new BackgroundImage(new Image("fondo.jpg"), null, null, null, null)));
 
-         this.setCenter(root);
+         this.setCenter(panelMapa);
 	}
 	
     public void ponerMusica() {
