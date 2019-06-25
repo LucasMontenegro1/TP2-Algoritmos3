@@ -80,7 +80,7 @@ public class MapaTest {
 	@Test
 	public void testSeCreaMapaYSeVerificaQueExistaExactamenteUnJugador() { 
 		Mapa mapa = new Mapa();
-		Jugador jugador = new Jugador(mapa);
+		Jugador jugador = new Jugador();
 		int cantidadJugadores = 0;
 		
 		for(int i = 0; i < 9; i++) {

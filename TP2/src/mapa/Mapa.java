@@ -43,7 +43,7 @@ public class Mapa {
 		}
 		
 		Posicion posicionInicialJugador = new Posicion(filaInicialJugador, columnaInicialJugador);
-		casilleros[filaInicialJugador][columnaInicialJugador] = new Casillero(new Jugador(this), posicionInicialJugador);// jugador
+		casilleros[filaInicialJugador][columnaInicialJugador] = new Casillero(new Jugador(), posicionInicialJugador);// jugador
 	}
 	
 	public Alocable getOcupante(int i, int j) {
@@ -68,7 +68,6 @@ public class Mapa {
 				return true;
 			}
 		}
-		
 		return false;
 	}
 	
@@ -126,6 +125,22 @@ public class Mapa {
 		int columna = posicionCasillero.getColumna();
 		
 		return casilleroExiste(fila, columna);
+	}
+
+	public void ocupar(Casillero destino, Posicion nuevaPosicion) {
+		int x = nuevaPosicion.getFila();
+		int y = nuevaPosicion.getColumna();
+		
+		casilleros[x][y] = destino;
+		
+	}
+
+	public void desocupar(Posicion posicion) {
+		int x = posicion.getFila();
+		int y = posicion.getColumna();
+		
+		casilleros[x][y] = new Casillero();
+		
 	}
 	
 	

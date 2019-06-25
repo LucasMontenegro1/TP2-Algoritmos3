@@ -10,6 +10,7 @@ import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import junit.framework.Test;
+import mapa.Juego;
 import mapa.Mapa;
 
 import Jugador.*;
@@ -18,6 +19,8 @@ import Jugador.*;
     public class ImagenJuego extends Application {  
     	
     	Mapa mapa = new Mapa();
+    	Jugador jugador = (Jugador)mapa.getOcupante(7, 7);
+    	Juego juego = new Juego(jugador, mapa);
     	MediaPlayer mp;
     	ContenedorPrincipal contenedor;
     	Stage stage;
@@ -41,7 +44,7 @@ import Jugador.*;
         
         public void comenzarJuego() {
             contenedor = new ContenedorPrincipal(mapa);
-            AccionesJugadorHandler moverHandler = new AccionesJugadorHandler(contenedor, (Jugador)mapa.getOcupante(7, 7));
+            AccionesJugadorHandler moverHandler = new AccionesJugadorHandler(contenedor,jugador,juego);
             Scene principal = new Scene(contenedor);
             
             

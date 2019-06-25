@@ -12,7 +12,7 @@ import Modelo.*;
 public class Jugador implements Alocable{
 	
 	private Inventario inventario = new Inventario();
-	private Mapa mapa;
+	//private Mapa mapa;
 	private Posicion posicionJugador;
 	
 	
@@ -64,9 +64,9 @@ public class Jugador implements Alocable{
 	
 	
 	
-	public Jugador(Mapa mapa) {
+	/*public Jugador(Mapa mapa) {
 		this.mapa = mapa;
-	}
+	}*/
 	
 	public void setPosicion(Posicion posicion) {
 		posicionJugador = posicion;
@@ -76,7 +76,7 @@ public class Jugador implements Alocable{
 		return posicionJugador;
 	}
 		
-	public void moverArriba() {
+	/*public void moverArriba() {
 		mapa.desplazarJugadorArriba(posicionJugador);
 	}
 	
@@ -90,10 +90,20 @@ public class Jugador implements Alocable{
 	
 	public void moverIzquierda() {
 		mapa.desplazarJugadorIzquierda(posicionJugador);
+	}*/
+	
+	public void golpearPosicion(Posicion posicionAGolpear, Material material) {
+		Herramienta herramienta = inventario.getHerramientaSeleccionada();
+		
+		if(herramienta == null) {
+			throw new noHerramientaException("No tenes Herramientas capo");
+		} else {
+			herramienta.usar(material, inventario);
+		}
 	}
 	
 	
-	public void golpearArriba() {
+	/*public void golpearArriba() {
 		int x = posicionJugador.getFila();
 		int y = posicionJugador.getColumna();
 		Material material = (Material) mapa.getOcupante(x-1, y);
@@ -149,7 +159,7 @@ public class Jugador implements Alocable{
 			herramienta.usar(material, inventario);
 		}
 		
-	}
+	}*/
 	
 	public void seleccionarSiguienteHerramienta() {
 		inventario.cambiarHerramientaSeleccionada();
