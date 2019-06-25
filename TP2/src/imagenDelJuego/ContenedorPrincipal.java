@@ -150,27 +150,6 @@ public class ContenedorPrincipal extends BorderPane {
         GridPane panelInventario = new GridPane(); 
         Image tituloInventario = new Image("Inventario.png");
        
-        /*
-        Text movimiento = new Text();
-        movimiento.setFont(Font.font("Verdana"));
-        movimiento.setFill(Color.WHITE);
-        Text golpear = new Text();
-        golpear.setFont(Font.font("Verdana"));
-        golpear.setFill(Color.WHITE);
-        Text cambiarHerramienta = new Text();
-        cambiarHerramienta.setFont(Font.font("Verdana"));
-        cambiarHerramienta.setFill(Color.WHITE);
-        cambiarHerramienta.setText("\nCambiar Herramienta:   P");
-        movimiento.setText("Movimiento:                  ↑\n "
-        		+ "                                  W\n"
-        		+ "			    ← A  S  D  →\n"
-        		+ "                                    ↓");
-        golpear.setText("\nGopear:            ↑\n "
-        		+ "                       I\n"
-        		+ "                 ← J  K  L  →\n"
-        		+ "                        ↓");
-        
-        */
         
         Image instrucciones = new Image("Instrucciones.png");
         
