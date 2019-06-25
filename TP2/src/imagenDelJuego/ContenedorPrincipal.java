@@ -149,6 +149,8 @@ public class ContenedorPrincipal extends BorderPane {
         
         GridPane panelInventario = new GridPane(); 
         Image tituloInventario = new Image("Inventario.png");
+       
+        /*
         Text movimiento = new Text();
         movimiento.setFont(Font.font("Verdana"));
         movimiento.setFill(Color.WHITE);
@@ -167,7 +169,12 @@ public class ContenedorPrincipal extends BorderPane {
         		+ "                       I\n"
         		+ "                 ← J  K  L  →\n"
         		+ "                        ↓");
-        VBox panelIzquierdo = new VBox(new ImageView(tituloInventario), panelInventario, movimiento, golpear, cambiarHerramienta);
+        
+        */
+        
+        Image instrucciones = new Image("Instrucciones.png");
+        
+        VBox panelIzquierdo = new VBox(new ImageView(tituloInventario), panelInventario,new ImageView(instrucciones));
         panelIzquierdo.setBackground(new Background(new BackgroundImage(new Image("fondo.jpg"), null, null, null, null)));
         Herramienta herramienta = null;
         int contador=0;
