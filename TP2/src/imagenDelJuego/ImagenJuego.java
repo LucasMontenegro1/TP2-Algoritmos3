@@ -32,7 +32,7 @@ import Jugador.*;
 
             ImageView menu = new ImageView();
             ponerMusica();
-            menu.setImage(new Image("AlgocraftLogo.jpg"));
+            menu.setImage(new Image("AlgocraftLogo.png"));
             VBox presentacion = new VBox(menu);
             Scene principal = new Scene(presentacion);
             principal.setOnKeyPressed(new MenuHandler(this));
