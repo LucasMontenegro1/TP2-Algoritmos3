@@ -17,8 +17,7 @@ public class JugadorTest {
 		Jugador jugador=(Jugador)mapa.getOcupante(7, 7);
 		Juego juego = new Juego(jugador, mapa);
 		
-		Posicion nuevaPosicion = juego.obtenerPosicionArriba(jugador.getPosicion());
-		juego.moverJugadorA(nuevaPosicion);
+		juego.moverJugador(1,0);
 		
 		//jugador.moverArriba();
 		
@@ -29,13 +28,12 @@ public class JugadorTest {
 
 	
 	@Test
-	public void testJugadorSeMueveHaciaAtrasYElCasilleroEstaLibre() {
+	public void testJugadorSeMueveHaciaAbajoYElCasilleroEstaLibre() {
 		Mapa mapa= new Mapa();
 		Jugador jugador=(Jugador)mapa.getOcupante(7, 7);
 		Juego juego = new Juego(jugador, mapa);
 		
-		Posicion nuevaPosicion = juego.obtenerPosicionAbajo(jugador.getPosicion());
-		juego.moverJugadorA(nuevaPosicion);
+		juego.moverJugador(-1,0);
 		
 		//jugador.moverAbajo();
 		
@@ -51,8 +49,7 @@ public class JugadorTest {
 		Jugador jugador=(Jugador)mapa.getOcupante(7, 7);
 		Juego juego = new Juego(jugador, mapa);
 		
-		Posicion nuevaPosicion = juego.obtenerPosicionDerecha(jugador.getPosicion());
-		juego.moverJugadorA(nuevaPosicion);
+		juego.moverJugador(0,1);
 		
 		//jugador.moverDerecha();
 		
@@ -67,8 +64,7 @@ public class JugadorTest {
 		Jugador jugador=(Jugador)mapa.getOcupante(7, 7);
 		Juego juego = new Juego(jugador, mapa);
 		
-		Posicion nuevaPosicion = juego.obtenerPosicionIzquierda(jugador.getPosicion());
-		juego.moverJugadorA(nuevaPosicion);
+		juego.moverJugador(0,-1);
 		
 		//jugador.moverIzquierda();
 		
@@ -84,14 +80,12 @@ public class JugadorTest {
 		Jugador jugador=(Jugador)mapa.getOcupante(7, 7);
 		Juego juego = new Juego(jugador, mapa);
 		
-		Posicion nuevaPosicion = juego.obtenerPosicionIzquierda(jugador.getPosicion());
-		juego.moverJugadorA(nuevaPosicion);
+		juego.moverJugador(0,-1);
 		
 		//jugador.moverIzquierda();
 		
 		assert mapa.getOcupante(7, 6) == jugador;
-		nuevaPosicion = juego.obtenerPosicionIzquierda(jugador.getPosicion());
-		juego.moverJugadorA(nuevaPosicion);
+		juego.moverJugador(0,-1);
 		//jugador.moverIzquierda();
 		assert mapa.getOcupante(7, 6) == jugador;
 		assert mapa.getOcupante(7, 5) != jugador;
@@ -104,16 +98,17 @@ public class JugadorTest {
 		Jugador jugador=(Jugador)mapa.getOcupante(7, 7);
 		Juego juego = new Juego(jugador, mapa);
 		
-		Posicion nuevaPosicion = juego.obtenerPosicionAbajo(jugador.getPosicion());
-		juego.moverJugadorA(nuevaPosicion);
+		juego.moverJugador(-1,0);
 		
 		
 		//jugador.moverAbajo();
 		assert mapa.getOcupante(8, 7) == jugador;
-		nuevaPosicion = juego.obtenerPosicionAbajo(jugador.getPosicion());
-		juego.moverJugadorA(nuevaPosicion);
+		juego.moverJugador(-1,0);
 		//jugador.moverAbajo();
-		assert mapa.getOcupante(8, 7) == jugador;
+		assert mapa.getOcupante(9, 7) == jugador;
+		juego.moverJugador(-1,0);
+		assert mapa.getOcupante(9, 7) == jugador;
+
 		
 	}
 	
@@ -131,23 +126,19 @@ public class JugadorTest {
 		jugador.moverIzquierda();
 		jugador.moverIzquierda();*/
 		
-		Posicion nuevaPosicion = juego.obtenerPosicion(jugador.getPosicion(),-1,0);
-		juego.moverJugadorA(nuevaPosicion);
+		juego.moverJugador(-1,0);
 		
-		nuevaPosicion = juego.obtenerPosicion(jugador.getPosicion(),0,-1);
-		juego.moverJugadorA(nuevaPosicion);
+		juego.moverJugador(0,-1);
 		
-		nuevaPosicion = juego.obtenerPosicion(jugador.getPosicion(),0,-1);
-		juego.moverJugadorA(nuevaPosicion);
+		juego.moverJugador(0,-1);
 		
 		//jugador.golpearArriba();
 		assert madera.getDurabilidad() == durabilidadMaterial;
-		Posicion posicionAGolpear = juego.obtenerPosicion(jugador.getPosicion(),1,0);
-		juego.golpearPosicion(posicionAGolpear);
+		juego.golpearPosicion(1,0);
  		
 		//jugador.golpearArriba();
 		assert madera.getDurabilidad() == (durabilidadMaterial - fuerzaHerramienta);
-		juego.golpearPosicion(posicionAGolpear); 		
+		juego.golpearPosicion(1,0); 		
 		assert madera.getDurabilidad() == (durabilidadMaterial - 2*fuerzaHerramienta);
 
 	}
@@ -166,22 +157,20 @@ public class JugadorTest {
 		Juego juego = new Juego(jugador, mapa);
 		
 		//jugador.moverIzquierda();
-		Posicion nuevaPosicion = juego.obtenerPosicionIzquierda(jugador.getPosicion());
-		juego.moverJugadorA(nuevaPosicion);
+		juego.moverJugador(0,-1);
 		//jugador.golpearIzquierda();
-		Posicion posicionAGolpear = juego.obtenerPosicionIzquierda(jugador.getPosicion());
-		juego.golpearPosicion(posicionAGolpear);
+		juego.golpearPosicion(0,-1);
 		
 		assert mapa.getOcupante(7, 5).getClass() == Madera.class;
 		/*jugador.golpearIzquierda();
 		jugador.golpearIzquierda();
 		jugador.golpearIzquierda();*/
-		juego.golpearPosicion(posicionAGolpear);
-		juego.golpearPosicion(posicionAGolpear);
-		juego.golpearPosicion(posicionAGolpear);
+		juego.golpearPosicion(0,-1);
+		juego.golpearPosicion(0,-1);
+		juego.golpearPosicion(0,-1);
 		assert mapa.getOcupante(7, 5).getClass() == Madera.class;
 		//jugador.golpearIzquierda();
-		juego.golpearPosicion(posicionAGolpear);
+		juego.golpearPosicion(0,-1);
 		assert mapa.getOcupante(7, 5).getClass() == Pasto.class;
 	}
 	
@@ -193,22 +182,20 @@ public class JugadorTest {
 		Juego juego = new Juego(jugador, mapa);
 		
 		//jugador.moverIzquierda();
-		Posicion nuevaPosicion = juego.obtenerPosicionIzquierda(jugador.getPosicion());
-		juego.moverJugadorA(nuevaPosicion);
+		juego.moverJugador(0,-1);
 		//jugador.golpearIzquierda();
-		Posicion posicionAGolpear = juego.obtenerPosicionIzquierda(jugador.getPosicion());
-		juego.golpearPosicion(posicionAGolpear);
+		juego.golpearPosicion(0,-1);
 		
 		assert mapa.getOcupante(7, 5).getClass() == Madera.class;
 		/*jugador.golpearIzquierda();
 		jugador.golpearIzquierda();
 		jugador.golpearIzquierda();*/
-		juego.golpearPosicion(posicionAGolpear);
-		juego.golpearPosicion(posicionAGolpear);
-		juego.golpearPosicion(posicionAGolpear);
+		juego.golpearPosicion(0,-1);
+		juego.golpearPosicion(0,-1);
+		juego.golpearPosicion(0,-1);
 		assert inventario.getElementosGuardados()[7].getElementoGuardado() == null;
 		//jugador.golpearIzquierda();
-		juego.golpearPosicion(posicionAGolpear);
+		juego.golpearPosicion(0,-1);
 		assert inventario.getElementosGuardados()[7].getElementoGuardado().getClass() == Madera.class;
 		
 	}
