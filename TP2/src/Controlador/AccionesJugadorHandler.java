@@ -1,5 +1,6 @@
-package imagenDelJuego;
+package Controlador;
 
+import Imagen.ContenedorPrincipal;
 import Jugador.Jugador;
 import Jugador.noHerramientaException;
 import javafx.event.EventHandler;

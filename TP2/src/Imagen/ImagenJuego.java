@@ -1,4 +1,4 @@
-package imagenDelJuego;
+package Imagen;
 
 import javafx.application.Application; 
 import javafx.scene.Scene;
@@ -12,7 +12,8 @@ import javafx.util.Duration;
 import junit.framework.Test;
 import mapa.Juego;
 import mapa.Mapa;
-
+import Controlador.AccionesJugadorHandler;
+import Controlador.MenuHandler;
 import Jugador.*;
 
 

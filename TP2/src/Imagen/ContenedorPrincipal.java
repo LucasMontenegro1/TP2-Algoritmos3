@@ -1,4 +1,4 @@
-package imagenDelJuego;
+package Imagen;
 
 import Herramientas.*;
 import Jugador.Inventario;
