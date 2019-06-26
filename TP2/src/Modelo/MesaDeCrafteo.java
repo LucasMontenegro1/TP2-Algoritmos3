@@ -33,7 +33,7 @@ public class MesaDeCrafteo {
 		}
 		
 		
-	}//comentario para agregar algo xq se me arruino el push
+	}
 	
 	
 	private void agregarMaterialesFormatoHacha(CodigoDeCrafteo CodigoHacha, Material materialSuperior) {

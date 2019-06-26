@@ -123,8 +123,6 @@ public class Jugador implements Alocable{
 	
 
 	
-	//aaaaaaaaaaaaaaaa
-	
 	public PicoFino craftearPicoFino() {
 		
 		try {
