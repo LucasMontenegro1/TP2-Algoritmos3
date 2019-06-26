@@ -34,6 +34,7 @@ public class CodigoDeCrafteo {
 
 	}
 	
+	//aaaaaaaaaaaaaaaaa
 	
 	//Borra los materiales del codigoDeCrafteo y devuelve una lista
 	//que los contiene
