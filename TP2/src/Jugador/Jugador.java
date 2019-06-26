@@ -37,36 +37,105 @@ public class Jugador implements Alocable{
 	}
 	
 	
-	public Herramienta craftear() {
-		
-		try {
-			
-			return mesaDeCrafteo.craftear(sectorDeCrafteo);
-			
-		} catch (CodigoDeCrafteoInexistenteException e) {
+	
+	private void organizarMateriales(List<Material> materiales) {
 
-			List<Material> materialesPosicionados = sectorDeCrafteo.obtenerMateriales();
-			
-			for (Material material : materialesPosicionados) {
-				material.guardarEnInventario(inventario);
-			}
-			
-			//Esta bien dejar null? o conviene tirar otra excepcion?
-			return null;
-			
+		for (Material material : materiales) {
+			material.guardarEnInventario(inventario);
 		}
-		
 		
 	}
 	
 	
-	//TERMINAN COSAS QUE AGREGO AGUS
+	
+	public HachaDeMadera craftearHachaDeMadera() {
+		
+		try {
+			return mesaDeCrafteo.craftearHachaDeMadera(sectorDeCrafteo);
+		} catch (CodigoDeCrafteoIncorrectoException e) {
+
+			organizarMateriales(sectorDeCrafteo.obtenerMateriales());
+			throw new CodigoDeCrafteoIncorrectoException("El codigo introducido es incorrecto");
+		
+		}
+
+	}
 	
 	
+	public HachaDePiedra craftearHachaDePiedra() {
+		
+		try {
+			return mesaDeCrafteo.craftearHachaDePiedra(sectorDeCrafteo);
+		} catch (CodigoDeCrafteoIncorrectoException e) {
+
+			organizarMateriales(sectorDeCrafteo.obtenerMateriales());
+			throw new CodigoDeCrafteoIncorrectoException("El codigo introducido es incorrecto");
+		
+		}
+
+	}
+
+
 	
-	/*public Jugador(Mapa mapa) {
-		this.mapa = mapa;
-	}*/
+	
+	public HachaDeMetal craftearHachaDeMetal() {
+		
+		try {
+			return mesaDeCrafteo.craftearHachaDeMetal(sectorDeCrafteo);
+		} catch (CodigoDeCrafteoIncorrectoException e) {
+
+			organizarMateriales(sectorDeCrafteo.obtenerMateriales());
+			throw new CodigoDeCrafteoIncorrectoException("El codigo introducido es incorrecto");
+		
+		}
+
+	}
+	
+
+	
+	public PicoDeMadera craftearPicoDeMadera() {
+		
+		try {
+			return mesaDeCrafteo.craftearPicoDeMadera(sectorDeCrafteo);
+		} catch (CodigoDeCrafteoIncorrectoException e) {
+
+			organizarMateriales(sectorDeCrafteo.obtenerMateriales());
+			throw new CodigoDeCrafteoIncorrectoException("El codigo introducido es incorrecto");
+		
+		}
+
+	}
+	
+
+	
+	public PicoDeMetal craftearPicoDeMetal() {
+		
+		try {
+			return mesaDeCrafteo.craftearPicoDeMetal(sectorDeCrafteo);
+		} catch (CodigoDeCrafteoIncorrectoException e) {
+
+			organizarMateriales(sectorDeCrafteo.obtenerMateriales());
+			throw new CodigoDeCrafteoIncorrectoException("El codigo introducido es incorrecto");
+		
+		}
+
+	}
+	
+
+	
+	public PicoFino craftearPicoFino() {
+		
+		try {
+			return mesaDeCrafteo.craftearPicoFino(sectorDeCrafteo);
+		} catch (CodigoDeCrafteoIncorrectoException e) {
+
+			organizarMateriales(sectorDeCrafteo.obtenerMateriales());
+			throw new CodigoDeCrafteoIncorrectoException("El codigo introducido es incorrecto");
+		
+		}
+
+	}
+	
 	
 	public void setPosicion(Posicion posicion) {
 		posicionJugador = posicion;

@@ -20,33 +20,30 @@ import Materiales.Piedra;
 
 public class MesaDeCrafteo {
 	
-	private List<Receta> crafteos = new ArrayList<Receta>();
+	private List<CodigoDeCrafteo> crafteos = new ArrayList<CodigoDeCrafteo>();
 	
-	private CreadorDeHerramientas creadorDeHerramientas= new CreadorDeHerramientas();
-	
-	
-	private void agregarMaterialesFormatoPico(Receta recetaPico, Material materialSuperior) {
+	private void agregarMaterialesFormatoPico(CodigoDeCrafteo codigoPico, Material materialSuperior) {
 		
 		for (int i = 1; i < 4; i++) {
-			recetaPico.agregarMaterial(i, materialSuperior);
+			codigoPico.agregarMaterial(i, materialSuperior);
 		}
 		
 		for (int i = 5; i < 9; i+=3) {
-			recetaPico.agregarMaterial(i, new Madera());
+			codigoPico.agregarMaterial(i, new Madera());
 		}
 		
 		
 	}
 	
 	
-	private void agregarMaterialesFormatoHacha(Receta recetaHacha, Material materialSuperior) {
+	private void agregarMaterialesFormatoHacha(CodigoDeCrafteo CodigoHacha, Material materialSuperior) {
 		
-		recetaHacha.agregarMaterial(1, materialSuperior);
-		recetaHacha.agregarMaterial(2, materialSuperior);
-		recetaHacha.agregarMaterial(4, materialSuperior);
+		CodigoHacha.agregarMaterial(1, materialSuperior);
+		CodigoHacha.agregarMaterial(2, materialSuperior);
+		CodigoHacha.agregarMaterial(4, materialSuperior);
 		
 		for (int i = 5; i < 9; i+=3) {
-			recetaHacha.agregarMaterial(i, new Madera());
+			CodigoHacha.agregarMaterial(i, new Madera());
 		}
 		
 	}
@@ -55,58 +52,58 @@ public class MesaDeCrafteo {
 	
 	private void agregarPicoDeMadera() {
 		
-		Receta recetaPicoDeMadera = new Receta(new PicoDeMadera());
-		agregarMaterialesFormatoPico(recetaPicoDeMadera, new Madera());
-		agregarReceta(recetaPicoDeMadera);
+		CodigoDeCrafteo codigoPicoDeMadera = new CodigoDeCrafteo();
+		agregarMaterialesFormatoPico(codigoPicoDeMadera, new Madera());
+		agregarCodigo(codigoPicoDeMadera);
 		
 	}
 	
 	private void agregarPicoDePiedra() {
 		
-		Receta recetaPicoDePiedra = new Receta(new PicoDePiedra());
-		agregarMaterialesFormatoPico(recetaPicoDePiedra, new Piedra());
-		agregarReceta(recetaPicoDePiedra);
+		CodigoDeCrafteo codigoPicoDePiedra = new CodigoDeCrafteo();
+		agregarMaterialesFormatoPico(codigoPicoDePiedra, new Piedra());
+		agregarCodigo(codigoPicoDePiedra);
 		
 	}	
 	
 	private void agregarPicoDeMetal() {
 		
-		Receta recetaPicoDeMetal= new Receta(new PicoDeMetal());
-		agregarMaterialesFormatoPico(recetaPicoDeMetal, new Metal());
-		agregarReceta(recetaPicoDeMetal);
+		CodigoDeCrafteo codigoPicoDeMetal= new CodigoDeCrafteo();
+		agregarMaterialesFormatoPico(codigoPicoDeMetal, new Metal());
+		agregarCodigo(codigoPicoDeMetal);
 		
 	}
 	
 	private void agregarPicoFino() {
 		
-		Receta recetaPicoFino= new Receta(new PicoFino());
-		agregarMaterialesFormatoPico(recetaPicoFino, new Metal());
-		recetaPicoFino.agregarMaterial(4, new Piedra());
-		agregarReceta(recetaPicoFino);
+		CodigoDeCrafteo codigoPicoFino= new CodigoDeCrafteo();
+		agregarMaterialesFormatoPico(codigoPicoFino, new Metal());
+		codigoPicoFino.agregarMaterial(4, new Piedra());
+		agregarCodigo(codigoPicoFino);
 		
 	}	
 	
 	private void agregarHachaDeMadera() {
 		
-		Receta recetaHachaDeMadera= new Receta(new HachaDeMadera());
-		agregarMaterialesFormatoHacha(recetaHachaDeMadera, new Madera());
-		agregarReceta(recetaHachaDeMadera);
+		CodigoDeCrafteo codigoHachaDeMadera= new CodigoDeCrafteo();
+		agregarMaterialesFormatoHacha(codigoHachaDeMadera, new Madera());
+		agregarCodigo(codigoHachaDeMadera);
 		
 	}	
 
 	private void agregarHachaDePiedra() {
 		
-		Receta recetaHachaDePiedra= new Receta(new HachaDePiedra());
-		agregarMaterialesFormatoHacha(recetaHachaDePiedra, new Piedra());
-		agregarReceta(recetaHachaDePiedra);
+		CodigoDeCrafteo codigoHachaDePiedra= new CodigoDeCrafteo();
+		agregarMaterialesFormatoHacha(codigoHachaDePiedra, new Piedra());
+		agregarCodigo(codigoHachaDePiedra);
 		
 	}
 	
 	private void agregarHachaDeMetal() {
 		
-		Receta recetaHachaDeMetal= new Receta(new HachaDeMetal());
-		agregarMaterialesFormatoHacha(recetaHachaDeMetal, new Metal());
-		agregarReceta(recetaHachaDeMetal);
+		CodigoDeCrafteo codigoHachaDeMetal= new CodigoDeCrafteo();
+		agregarMaterialesFormatoHacha(codigoHachaDeMetal, new Metal());
+		agregarCodigo(codigoHachaDeMetal);
 		
 	}	
 	
@@ -124,73 +121,80 @@ public class MesaDeCrafteo {
 	}
 	
 	
-	public void agregarReceta(Receta receta) {
-		crafteos.add(receta);
+	public void agregarCodigo(CodigoDeCrafteo codigoDeCrafteo) {
+		crafteos.add(codigoDeCrafteo);
 	}
 	
-	
-	public Herramienta craftear(CodigoDeCrafteo codigoDeCrafteo) {
-		
-		Herramienta herramienta = null;
-		
-		int i=0;
-		while ((herramienta==null)&&(i<crafteos.size())) {
-			herramienta = crafteos.get(i).obtenerHerramienta(codigoDeCrafteo);	
-			i++;
-		}
-		
-		
-		if (herramienta==null) {
-			throw new CodigoDeCrafteoIncorrectoException("El codigo de crafteo insertado no se encuentra en la mesa de crafteo");
-		}
-		
-		
-		//VER SI ESTA BIEN HACER ESTE LLAMADO PARA TENER UNA COPIA DE LA HERRAMIENTA
-		return herramienta.clonar();
-		
-	}
 
 	
-	public Herramienta craftearHachaDeMadera(CodigoDeCrafteo codigoDeCrafteo) {
+	public HachaDeMadera craftearHachaDeMadera(CodigoDeCrafteo codigoDeCrafteo) {
 		
-			return crafteos.get(0).obtenerHerramienta(codigoDeCrafteo);
+		if (crafteos.get(0).equals(codigoDeCrafteo)) {
+			return new HachaDeMadera();
+		}
+		
+		throw new CodigoDeCrafteoIncorrectoException("El codigo de crafteo insertado no se encuentra en la mesa de crafteo");
 					
 	}
 	
-	public Herramienta craftearHachaDePiedra(CodigoDeCrafteo codigoDeCrafteo) {
+	public HachaDePiedra craftearHachaDePiedra(CodigoDeCrafteo codigoDeCrafteo) {
 		
-		return crafteos.get(1).obtenerHerramienta(codigoDeCrafteo);
+		if (crafteos.get(1).equals(codigoDeCrafteo)) {
+			return new HachaDePiedra();
+		}
+		
+		throw new CodigoDeCrafteoIncorrectoException("El codigo de crafteo insertado no se encuentra en la mesa de crafteo");
 				
 	}
 	
 
-	public Herramienta craftearHachaDeMetal(CodigoDeCrafteo codigoDeCrafteo) {
+	public HachaDeMetal craftearHachaDeMetal(CodigoDeCrafteo codigoDeCrafteo) {
 		
-		return crafteos.get(2).obtenerHerramienta(codigoDeCrafteo);
+		if (crafteos.get(2).equals(codigoDeCrafteo)) {
+			return new HachaDeMetal();
+		}
+		
+		throw new CodigoDeCrafteoIncorrectoException("El codigo de crafteo insertado no se encuentra en la mesa de crafteo");
 				
 	}
 
-	public Herramienta craftearPicoDeMadera(CodigoDeCrafteo codigoDeCrafteo) {
+	public PicoDeMadera craftearPicoDeMadera(CodigoDeCrafteo codigoDeCrafteo) {
 		
-		return crafteos.get(3).obtenerHerramienta(codigoDeCrafteo);
+		if (crafteos.get(3).equals(codigoDeCrafteo)) {
+			return new PicoDeMadera();
+		}
+		
+		throw new CodigoDeCrafteoIncorrectoException("El codigo de crafteo insertado no se encuentra en la mesa de crafteo");
 				
 	}
 
-	public Herramienta craftearPicoDePiedra(CodigoDeCrafteo codigoDeCrafteo) {
+	public PicoDePiedra craftearPicoDePiedra(CodigoDeCrafteo codigoDeCrafteo) {
 		
-		return crafteos.get(4).obtenerHerramienta(codigoDeCrafteo);
+		if (crafteos.get(4).equals(codigoDeCrafteo)) {
+			return new PicoDePiedra();
+		}
+		
+		throw new CodigoDeCrafteoIncorrectoException("El codigo de crafteo insertado no se encuentra en la mesa de crafteo");
 				
 	}
 
-	public Herramienta craftearPicoDeMetal(CodigoDeCrafteo codigoDeCrafteo) {
+	public PicoDeMetal craftearPicoDeMetal(CodigoDeCrafteo codigoDeCrafteo) {
 		
-		return crafteos.get(5).obtenerHerramienta(codigoDeCrafteo);
+		if (crafteos.get(5).equals(codigoDeCrafteo)) {
+			return new PicoDeMetal();
+		}
+		
+		throw new CodigoDeCrafteoIncorrectoException("El codigo de crafteo insertado no se encuentra en la mesa de crafteo");
 				
 	}
 
-	public Herramienta craftearPicoFino(CodigoDeCrafteo codigoDeCrafteo) {
+	public PicoFino craftearPicoFino(CodigoDeCrafteo codigoDeCrafteo) {
 		
-		return crafteos.get(6).obtenerHerramienta(codigoDeCrafteo);
+		if (crafteos.get(6).equals(codigoDeCrafteo)) {
+			return new PicoFino();
+		}
+		
+		throw new CodigoDeCrafteoIncorrectoException("El codigo de crafteo insertado no se encuentra en la mesa de crafteo");
 				
 	}
 

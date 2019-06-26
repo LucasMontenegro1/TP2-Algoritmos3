@@ -9,6 +9,7 @@ import Materiales.Madera;
 import Materiales.Metal;
 import Materiales.Piedra;
 import Modelo.CodigoDeCrafteo;
+import Modelo.CodigoDeCrafteoIncorrectoException;
 import Modelo.MesaDeCrafteo;
 import mapa.Mapa;
 import mapa.Posicion;
@@ -30,7 +31,7 @@ public class MesaDeCrafteoTest {
 		codigoHachaDeMadera.agregarMaterial(5, madera);
 		codigoHachaDeMadera.agregarMaterial(8, madera);
 		
-		Herramienta herramienta= mesa.craftear(codigoHachaDeMadera);
+		Herramienta herramienta= mesa.craftearHachaDeMadera(codigoHachaDeMadera);
 		
 		herramienta.usar(madera, new Inventario());
 		
@@ -53,7 +54,7 @@ public class MesaDeCrafteoTest {
 		codigoHachaDeMadera.agregarMaterial(1, madera);
 		codigoHachaDeMadera.agregarMaterial(4, madera);
 		
-		Herramienta herramienta= mesa.craftear(codigoHachaDeMadera);
+		Herramienta herramienta= mesa.craftearHachaDeMadera(codigoHachaDeMadera);
 		
 		herramienta.usar(madera, new Inventario());
 		
@@ -62,6 +63,34 @@ public class MesaDeCrafteoTest {
 	}
 	
 	
+	
+	@Test
+	public void testSeCrafteaUnHachaDeMaderaPoniendoCodigoErroneo() {
+		MesaDeCrafteo mesa = new MesaDeCrafteo();
+		CodigoDeCrafteo codigoHachaDeMadera = new CodigoDeCrafteo();
+		Madera madera = new Madera();
+
+		int durabilidadInicial = madera.getDurabilidad();
+		
+		codigoHachaDeMadera.agregarMaterial(1, madera);
+		codigoHachaDeMadera.agregarMaterial(2, madera);
+		codigoHachaDeMadera.agregarMaterial(4, madera);
+		codigoHachaDeMadera.agregarMaterial(5, madera);
+		codigoHachaDeMadera.agregarMaterial(8, new Piedra());
+
+		try {
+		
+			Herramienta herramienta= mesa.craftearHachaDeMadera(codigoHachaDeMadera);
+			
+		} catch (CodigoDeCrafteoIncorrectoException e) {
+			assert true;
+			return;
+		}
+		
+		
+		assert false;
+		
+	}
 	
 	
 	@Test
@@ -79,7 +108,7 @@ public class MesaDeCrafteoTest {
 		codigoHachaDePiedra.agregarMaterial(5, madera);
 		codigoHachaDePiedra.agregarMaterial(8, madera);
 		
-		Herramienta herramienta= mesa.craftear(codigoHachaDePiedra);
+		Herramienta herramienta= mesa.craftearHachaDePiedra(codigoHachaDePiedra);
 		
 		herramienta.usar(madera, new Inventario());
 		
@@ -103,7 +132,7 @@ public class MesaDeCrafteoTest {
 		codigoHachaDePiedra.agregarMaterial(4, piedra);
 		codigoHachaDePiedra.agregarMaterial(2, piedra);
 		
-		Herramienta herramienta= mesa.craftear(codigoHachaDePiedra);
+		Herramienta herramienta= mesa.craftearHachaDePiedra(codigoHachaDePiedra);
 		
 		herramienta.usar(madera, new Inventario());
 		
@@ -127,7 +156,7 @@ public class MesaDeCrafteoTest {
 		codigoHachaDeMetal.agregarMaterial(5, madera);
 		codigoHachaDeMetal.agregarMaterial(8, madera);
 		
-		Herramienta herramienta= mesa.craftear(codigoHachaDeMetal);
+		Herramienta herramienta= mesa.craftearHachaDeMetal(codigoHachaDeMetal);
 		//int durabilidadInicialHacha = herramienta.getDurabilidad();
 		
 		herramienta.usar(madera, new Inventario());
@@ -155,7 +184,7 @@ public class MesaDeCrafteoTest {
 		codigoHachaDeMetal.agregarMaterial(8, madera);
 		codigoHachaDeMetal.agregarMaterial(5, madera);
 		
-		Herramienta herramienta= mesa.craftear(codigoHachaDeMetal);
+		Herramienta herramienta= mesa.craftearHachaDeMetal(codigoHachaDeMetal);
 		//int durabilidadInicialHacha = herramienta.getDurabilidad();
 		
 		herramienta.usar(madera, new Inventario());
@@ -188,7 +217,7 @@ public class MesaDeCrafteoTest {
 		codigoPicoDeMadera.agregarMaterial(5, madera);
 		codigoPicoDeMadera.agregarMaterial(8, madera);
 		
-		Herramienta herramienta= mesa.craftear(codigoPicoDeMadera);
+		Herramienta herramienta= mesa.craftearPicoDeMadera(codigoPicoDeMadera);
 		
 		herramienta.usar(piedra, new Inventario());
 		herramienta.usar(metal, new Inventario());
@@ -219,7 +248,7 @@ public class MesaDeCrafteoTest {
 		codigoPicoDeMadera.agregarMaterial(5, madera);
 		
 		
-		Herramienta herramienta= mesa.craftear(codigoPicoDeMadera);
+		Herramienta herramienta= mesa.craftearPicoDeMadera(codigoPicoDeMadera);
 		
 		herramienta.usar(piedra, new Inventario());
 		herramienta.usar(metal, new Inventario());
@@ -251,7 +280,7 @@ public class MesaDeCrafteoTest {
 		codigoPicoDePiedra.agregarMaterial(5, madera);
 		codigoPicoDePiedra.agregarMaterial(8, madera);
 		
-		Herramienta herramienta= mesa.craftear(codigoPicoDePiedra);
+		Herramienta herramienta= mesa.craftearPicoDePiedra(codigoPicoDePiedra);
 		
 		herramienta.usar(piedra, new Inventario());
 		herramienta.usar(metal, new Inventario());
@@ -289,7 +318,7 @@ public class MesaDeCrafteoTest {
 		codigoPicoDePiedra.agregarMaterial(5, madera);
 		
 		
-		Herramienta herramienta= mesa.craftear(codigoPicoDePiedra);
+		Herramienta herramienta= mesa.craftearPicoDePiedra(codigoPicoDePiedra);
 		
 		herramienta.usar(piedra, new Inventario());
 		herramienta.usar(metal, new Inventario());
@@ -331,7 +360,7 @@ public class MesaDeCrafteoTest {
 		codigoPicoDeMetal.agregarMaterial(5, madera);
 		codigoPicoDeMetal.agregarMaterial(8, madera);
 		
-		Herramienta herramienta= mesa.craftear(codigoPicoDeMetal);
+		Herramienta herramienta= mesa.craftearPicoDeMetal(codigoPicoDeMetal);
 		
 		herramienta.usar(piedra, new Inventario());
 		herramienta.usar(metal, new Inventario());
@@ -369,7 +398,7 @@ public class MesaDeCrafteoTest {
 		codigoPicoDeMetal.agregarMaterial(8, madera);
 		codigoPicoDeMetal.agregarMaterial(5, madera);
 		
-		Herramienta herramienta= mesa.craftear(codigoPicoDeMetal);
+		Herramienta herramienta= mesa.craftearPicoDeMetal(codigoPicoDeMetal);
 		
 		herramienta.usar(piedra, new Inventario());
 		herramienta.usar(metal, new Inventario());
@@ -407,7 +436,7 @@ public class MesaDeCrafteoTest {
 		codigoPicoFino.agregarMaterial(5, madera);
 		codigoPicoFino.agregarMaterial(8, madera);
 		
-		Herramienta herramienta= mesa.craftear(codigoPicoFino);
+		Herramienta herramienta= mesa.craftearPicoFino(codigoPicoFino);
 		
 		herramienta.usar(piedra, new Inventario());
 		herramienta.usar(metal, new Inventario());
@@ -443,14 +472,14 @@ public class MesaDeCrafteoTest {
 		codigoPicoFino.agregarMaterial(4, piedra);
 		codigoPicoFino.agregarMaterial(8, madera);
 		
-		Herramienta herramienta= mesa.craftear(codigoPicoFino);
+		Herramienta herramienta= mesa.craftearPicoFino(codigoPicoFino);
 		
 		herramienta.usar(piedra, new Inventario());
 		herramienta.usar(metal, new Inventario());
 		herramienta.usar(diamante, new Inventario());
 		
-		assert piedra.getDurabilidad() == durabilidadInicialPiedra - herramienta.getFuerza();
-		assert metal.getDurabilidad() == durabilidadInicialMetal - herramienta.getFuerza();
+		assert piedra.getDurabilidad() == durabilidadInicialPiedra;
+		assert metal.getDurabilidad() == durabilidadInicialMetal;
 		assert diamante.getDurabilidad() == durabilidadInicialDiamante - herramienta.getFuerza();
 		
 		//Se puede agregar la forma en la que se gasta para ver que es del tipo de piedra
