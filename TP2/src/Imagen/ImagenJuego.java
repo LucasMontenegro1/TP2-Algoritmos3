@@ -33,7 +33,7 @@ import junit.framework.Test;
 
             ImageView menu = new ImageView();
             ponerMusica();
-            menu.setImage(new Image("AlgocraftLogo.png"));
+            menu.setImage(new Image("ArchivosDelJuego/AlgocraftLogo.png"));
             VBox presentacion = new VBox(menu);
             Scene principal = new Scene(presentacion);
             principal.setOnKeyPressed(new MenuHandler(this));
@@ -57,7 +57,7 @@ import junit.framework.Test;
         }
         
         public void ponerMusica() {
-         	String path =Test.class.getResource("/minecraftSong.mp3").toString();
+         	String path =Test.class.getResource("/ArchivosDelJuego/minecraftSong.mp3").toString();
         	Media cancion = new Media(path);
         	mp= new MediaPlayer(cancion);
         	mp.setStartTime(Duration.seconds(0));

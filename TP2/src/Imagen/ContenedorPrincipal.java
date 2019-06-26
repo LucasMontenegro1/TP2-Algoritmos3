@@ -52,7 +52,7 @@ public class ContenedorPrincipal extends BorderPane {
 		Text textoDurabilidad = new Text();
         textoDurabilidad.setFont(Font.font("Verdana"));
 		textoDurabilidad.setFill(Color.WHITE);
-		Image herramientaEquipadaImage = new Image("HerramientaEquipada.png");
+		Image herramientaEquipadaImage = new Image("/ArchivosDelJuego/HerramientaEquipada.png");
 		Text textoFuerza = new Text();
         textoFuerza.setFont(Font.font("Verdana"));
 		textoFuerza.setFill(Color.WHITE);
@@ -72,7 +72,7 @@ public class ContenedorPrincipal extends BorderPane {
 			
 			if(inventario.getHerramientaSeleccionada().getClass()==HachaDeMadera.class) {
 				
-				imagen.setImage(new Image("Hacha.png"));
+				imagen.setImage(new Image("/ArchivosDelJuego/Hacha.png"));
 				durabilidad = inventario.getHerramientaSeleccionada().getDurabilidad();
 				fuerza = inventario.getHerramientaSeleccionada().getFuerza();
 				desgaste.setText("\nDesgaste: durabilidad - fuerza");
@@ -80,7 +80,7 @@ public class ContenedorPrincipal extends BorderPane {
 				
 			}else if(inventario.getHerramientaSeleccionada().getClass()==HachaDeMetal.class) {
 				
-				imagen.setImage(new Image("HachaDeMetal.png"));
+				imagen.setImage(new Image("/ArchivosDelJuego/HachaDeMetal.png"));
 				durabilidad = inventario.getHerramientaSeleccionada().getDurabilidad();
 				fuerza = inventario.getHerramientaSeleccionada().getFuerza();
 				desgaste.setText("\nDesgaste: durabilidad - fuerza/2");
@@ -88,7 +88,7 @@ public class ContenedorPrincipal extends BorderPane {
 				
 			}else if(inventario.getHerramientaSeleccionada().getClass()==HachaDePiedra.class) {
 				
-				imagen.setImage(new Image("HachaDePiedra.png"));
+				imagen.setImage(new Image("/ArchivosDelJuego/HachaDePiedra.png"));
 				durabilidad = inventario.getHerramientaSeleccionada().getDurabilidad();
 				fuerza = inventario.getHerramientaSeleccionada().getFuerza();
 				desgaste.setText("\nDesgaste: durabilidad - fuerza");
@@ -96,7 +96,7 @@ public class ContenedorPrincipal extends BorderPane {
 				
 			}else if(inventario.getHerramientaSeleccionada().getClass()==PicoDeMadera.class) {
 				
-				imagen.setImage(new Image("PicoDeMadera.png"));
+				imagen.setImage(new Image("/ArchivosDelJuego/PicoDeMadera.png"));
 				durabilidad = inventario.getHerramientaSeleccionada().getDurabilidad();
 				fuerza = inventario.getHerramientaSeleccionada().getFuerza();
 				desgaste.setText("\nDesgaste: durabilidad - fuerza");
@@ -104,7 +104,7 @@ public class ContenedorPrincipal extends BorderPane {
 				
 			}else if(inventario.getHerramientaSeleccionada().getClass()==PicoDeMetal.class) {
 				
-				imagen.setImage(new Image("PicoDeMetal.png"));
+				imagen.setImage(new Image("/ArchivosDelJuego/PicoDeMetal.png"));
 				durabilidad = inventario.getHerramientaSeleccionada().getDurabilidad();
 				int usos = ((PicoDeMetal)inventario.getHerramientaSeleccionada()).getUsos();
 				fuerza = inventario.getHerramientaSeleccionada().getFuerza();
@@ -114,7 +114,7 @@ public class ContenedorPrincipal extends BorderPane {
 				
 			}else if(inventario.getHerramientaSeleccionada().getClass()==PicoDePiedra.class) {
 				
-				imagen.setImage(new Image("PicoDePiedra.png"));
+				imagen.setImage(new Image("/ArchivosDelJuego/PicoDePiedra.png"));
 				durabilidad = inventario.getHerramientaSeleccionada().getDurabilidad();
 				fuerza = inventario.getHerramientaSeleccionada().getFuerza();
 				desgaste.setText("\nDesgaste: durabilidad - fuerza/1.5");
@@ -122,7 +122,7 @@ public class ContenedorPrincipal extends BorderPane {
 				
 			}else if(inventario.getHerramientaSeleccionada().getClass()==PicoFino.class) {
 				
-				imagen.setImage(new Image("PicoFino.png"));
+				imagen.setImage(new Image("/ArchivosDelJuego/PicoFino.png"));
 				durabilidad = inventario.getHerramientaSeleccionada().getDurabilidad();
 				fuerza = inventario.getHerramientaSeleccionada().getFuerza();
 				desgaste.setText("\nDesgaste: se disminuye un 10% su durabilidad");
@@ -131,12 +131,12 @@ public class ContenedorPrincipal extends BorderPane {
 			}
 
 		} else {
-			imagen.setImage(new Image("defaultInventario.png"));
+			imagen.setImage(new Image("/ArchivosDelJuego/defaultInventario.png"));
 		}
 		
 		textoDurabilidad.setText("\nDurabilidad: " + Integer.toString(durabilidad));
 		textoFuerza.setText("\nFuerza: " + Integer.toString(fuerza));
-        herramientaSeleccionada.setBackground(new Background(new BackgroundImage(new Image("fondo.jpg"), null, null, null, null)));
+        herramientaSeleccionada.setBackground(new Background(new BackgroundImage(new Image("/ArchivosDelJuego/fondo.jpg"), null, null, null, null)));
 		this.setRight(herramientaSeleccionada);
 	}
 	
@@ -148,13 +148,13 @@ public class ContenedorPrincipal extends BorderPane {
         
         
         GridPane panelInventario = new GridPane(); 
-        Image tituloInventario = new Image("Inventario.png");
+        Image tituloInventario = new Image("/ArchivosDelJuego/Inventario.png");
        
         
-        Image instrucciones = new Image("Instrucciones.png");
+        Image instrucciones = new Image("/ArchivosDelJuego/Instrucciones.png");
         
         VBox panelIzquierdo = new VBox(new ImageView(tituloInventario), panelInventario,new ImageView(instrucciones));
-        panelIzquierdo.setBackground(new Background(new BackgroundImage(new Image("fondo.jpg"), null, null, null, null)));
+        panelIzquierdo.setBackground(new Background(new BackgroundImage(new Image("/ArchivosDelJuego/fondo.jpg"), null, null, null, null)));
         Herramienta herramienta = null;
         int contador=0;
 
@@ -164,7 +164,7 @@ public class ContenedorPrincipal extends BorderPane {
         for(int y = 0; y < length; y++){
             for(int x = 0; x < width; x++){
             	Integer cantidad= new Integer(0);
-                Image img = new Image("defaultInventario.png");
+                Image img = new Image("/ArchivosDelJuego/defaultInventario.png");
                 
                 if((inventario.getElementosGuardados()[z]).getElementoGuardado() != null) {
                 	
@@ -174,27 +174,27 @@ public class ContenedorPrincipal extends BorderPane {
                 	}
                 	
                 	if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == HachaDeMadera.class) {
-                		img = new Image("Hacha.png");
+                		img = new Image("/ArchivosDelJuego/Hacha.png");
                 	} else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == HachaDeMetal.class) {
-                		img = new Image("HachaDeMetal.png");
+                		img = new Image("/ArchivosDelJuego/HachaDeMetal.png");
                 	} else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == HachaDePiedra.class) {
-                		img = new Image("HachaDePiedra.png");
+                		img = new Image("/ArchivosDelJuego/HachaDePiedra.png");
                 	}else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == Piedra.class) {
-            			img = new Image("piedra.png");
+            			img = new Image("/ArchivosDelJuego/piedra.png");
                 	}else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == Madera.class) {
-                		img = new Image("madera.png");
+                		img = new Image("/ArchivosDelJuego/madera.png");
                 	} else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == Diamante.class){
-                		img = new Image("diamante.png");
+                		img = new Image("/ArchivosDelJuego/diamante.png");
                 	}else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == Metal.class){
-                		img = new Image("Metal.png");
+                		img = new Image("/ArchivosDelJuego/Metal.png");
                 	}else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == PicoDePiedra.class){
-                		img = new Image("PicoDePiedra.png");
+                		img = new Image("/ArchivosDelJuego/PicoDePiedra.png");
                 	}else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == PicoDeMetal.class){
-                		img = new Image("PicoDeMetal.png");
+                		img = new Image("/ArchivosDelJuego/PicoDeMetal.png");
                 	}else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == PicoDeMadera.class){
-                		img = new Image("PicoDeMadera.png");
+                		img = new Image("/ArchivosDelJuego/PicoDeMadera.png");
                 	}else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == PicoFino.class){
-                		img = new Image("PicoFino.png");
+                		img = new Image("/ArchivosDelJuego/PicoFino.png");
                 	}
                 	
                     cantidad=(inventario.getElementosGuardados()[z]).getCantidadElementos();
@@ -255,18 +255,18 @@ public class ContenedorPrincipal extends BorderPane {
          for(int y = 0; y < length; y++){
              for(int x = 0; x < width; x++){
              	
-                 Image img = new Image("pasto.png");
+                 Image img = new Image("/ArchivosDelJuego/pasto.png");
              	
              	if(mapa.getOcupante(y, x).getClass() == Madera.class) {
-                     img = new Image("maderaBloque.png");
+                     img = new Image("/ArchivosDelJuego/maderaBloque.png");
              	} else if(mapa.getOcupante(y, x).getClass() == Piedra.class) {
-                     img = new Image("piedraBloque.png");
+                     img = new Image("/ArchivosDelJuego/piedraBloque.png");
              	} else if(mapa.getOcupante(y, x).getClass() == Metal.class) {
-                     img = new Image("metalBloque.png");
+                     img = new Image("/ArchivosDelJuego/metalBloque.png");
              	} else if(mapa.getOcupante(y, x).getClass() == Diamante.class) {
-                     img = new Image("DiamanteBloque.png");
+                     img = new Image("/ArchivosDelJuego/DiamanteBloque.png");
              	} else if(mapa.getOcupante(y, x).getClass() == Jugador.class) {
-                     img = new Image("Steve.png");
+                     img = new Image("/ArchivosDelJuego/Steve.png");
              	}
                      
                      
@@ -285,7 +285,7 @@ public class ContenedorPrincipal extends BorderPane {
              }
          }
          
-         panelMapa.setBackground(new Background(new BackgroundImage(new Image("fondo.jpg"), null, null, null, null)));
+         panelMapa.setBackground(new Background(new BackgroundImage(new Image("/ArchivosDelJuego/fondo.jpg"), null, null, null, null)));
 
          this.setCenter(panelMapa);
 	}
