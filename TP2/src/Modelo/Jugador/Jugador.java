@@ -1,12 +1,19 @@
-package Jugador;
-
-import mapa.*; 
+package Modelo.Jugador;
 
 import java.util.List;
 
-import Crafteo.*;
-import Herramientas.*;
-
+import Modelo.Crafteo.CodigoDeCrafteo;
+import Modelo.Crafteo.CodigoDeCrafteoIncorrectoException;
+import Modelo.Crafteo.MesaDeCrafteo;
+import Modelo.Herramientas.HachaDeMadera;
+import Modelo.Herramientas.HachaDeMetal;
+import Modelo.Herramientas.HachaDePiedra;
+import Modelo.Herramientas.Herramienta;
+import Modelo.Herramientas.PicoDeMadera;
+import Modelo.Herramientas.PicoDeMetal;
+import Modelo.Herramientas.PicoFino;
+import Modelo.Mapa.Alocable;
+import Modelo.Mapa.Posicion;
 import Modelo.Materiales.Material;
 
 

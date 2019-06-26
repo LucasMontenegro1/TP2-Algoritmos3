@@ -1,7 +1,7 @@
-package Jugador;
+package Modelo.Jugador;
 
-import Herramientas.*; 
-import Modelo.Materiales.*;
+import Modelo.Herramientas.Desgastable;
+import Modelo.Herramientas.Herramienta;
 import Modelo.Materiales.Diamante;
 import Modelo.Materiales.Madera;
 import Modelo.Materiales.Metal;

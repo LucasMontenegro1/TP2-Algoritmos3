@@ -1,8 +1,9 @@
 package Modelo.Materiales;
 
-import Herramientas.Herramienta;
-import Jugador.Inventario;
-import mapa.*;
+import Modelo.Herramientas.Herramienta;
+import Modelo.Jugador.Inventario;
+import Modelo.Mapa.Mapa;
+import Modelo.Mapa.Posicion;
 
 public class Madera extends Material {
 	

@@ -1,6 +1,6 @@
-package Herramientas;
+package Modelo.Herramientas;
 
-import Jugador.Inventario; 
+import Modelo.Jugador.Inventario;
 import Modelo.Materiales.Diamante;
 import Modelo.Materiales.Madera;
 import Modelo.Materiales.Metal;

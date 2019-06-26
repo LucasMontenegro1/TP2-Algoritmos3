@@ -1,6 +1,6 @@
-package mapa;
+package Modelo.Mapa;
 
-import Jugador.*;
+import Modelo.Jugador.Jugador;
 import Modelo.Materiales.Diamante;
 import Modelo.Materiales.Madera;
 import Modelo.Materiales.Metal;

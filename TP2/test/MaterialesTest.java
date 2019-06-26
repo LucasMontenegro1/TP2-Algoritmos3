@@ -1,7 +1,12 @@
-import org.junit.Test; 
+import org.junit.Test;
 
-import Herramientas.*;
-import Jugador.Inventario;
+import Modelo.Herramientas.Hacha;
+import Modelo.Herramientas.HachaDeMadera;
+import Modelo.Herramientas.HachaDeMetal;
+import Modelo.Herramientas.HachaDePiedra;
+import Modelo.Herramientas.Pico;
+import Modelo.Herramientas.PicoDeMadera;
+import Modelo.Jugador.Inventario;
 import Modelo.Materiales.Madera;
 import Modelo.Materiales.Material;
 import Modelo.Materiales.Metal;

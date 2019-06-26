@@ -1,9 +1,15 @@
 
-import org.junit.Test;  
+import org.junit.Test;
 
-import Herramientas.*;
-import mapa.*;
-import Jugador.*;
+import Modelo.Herramientas.Herramienta;
+import Modelo.Herramientas.Pico;
+import Modelo.Herramientas.PicoDeMadera;
+import Modelo.Herramientas.PicoDeMetal;
+import Modelo.Herramientas.PicoDePiedra;
+import Modelo.Herramientas.PicoFino;
+import Modelo.Jugador.Inventario;
+import Modelo.Mapa.Mapa;
+import Modelo.Mapa.Posicion;
 import Modelo.Materiales.Diamante;
 import Modelo.Materiales.Madera;
 import Modelo.Materiales.Metal;

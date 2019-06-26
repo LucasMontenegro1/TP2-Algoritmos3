@@ -1,14 +1,14 @@
 package Controlador;
 
 import Imagen.ContenedorPrincipal;
-import Jugador.Jugador;
-import Jugador.noHerramientaException;
+import Modelo.Jugador.Jugador;
+import Modelo.Jugador.noHerramientaException;
+import Modelo.Mapa.Juego;
+import Modelo.Mapa.Posicion;
 import javafx.event.EventHandler;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import mapa.Juego;
-import mapa.Posicion;
 
 public class AccionesJugadorHandler implements EventHandler<KeyEvent> {
 	

@@ -1,14 +1,21 @@
 package Imagen;
 
-import Herramientas.*;
-import Jugador.Inventario;
-import Jugador.Jugador;
+import Modelo.Herramientas.HachaDeMadera;
+import Modelo.Herramientas.HachaDeMetal;
+import Modelo.Herramientas.HachaDePiedra;
+import Modelo.Herramientas.Herramienta;
+import Modelo.Herramientas.PicoDeMadera;
+import Modelo.Herramientas.PicoDeMetal;
+import Modelo.Herramientas.PicoDePiedra;
+import Modelo.Herramientas.PicoFino;
+import Modelo.Jugador.Inventario;
+import Modelo.Jugador.Jugador;
+import Modelo.Mapa.Mapa;
 import Modelo.Materiales.Diamante;
 import Modelo.Materiales.Madera;
 import Modelo.Materiales.Metal;
 import Modelo.Materiales.Piedra;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
@@ -18,12 +25,10 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.TilePane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-import mapa.Mapa;
 
 public class ContenedorPrincipal extends BorderPane {
 	Mapa mapa;

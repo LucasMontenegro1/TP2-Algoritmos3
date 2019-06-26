@@ -1,17 +1,17 @@
-package Crafteo;
+package Modelo.Crafteo;
 
 
 import java.util.ArrayList;
 import java.util.List;
 
-import Herramientas.HachaDeMadera;
-import Herramientas.HachaDeMetal;
-import Herramientas.HachaDePiedra;
-import Herramientas.Herramienta;
-import Herramientas.PicoDeMadera;
-import Herramientas.PicoDeMetal;
-import Herramientas.PicoDePiedra;
-import Herramientas.PicoFino;
+import Modelo.Herramientas.HachaDeMadera;
+import Modelo.Herramientas.HachaDeMetal;
+import Modelo.Herramientas.HachaDePiedra;
+import Modelo.Herramientas.Herramienta;
+import Modelo.Herramientas.PicoDeMadera;
+import Modelo.Herramientas.PicoDeMetal;
+import Modelo.Herramientas.PicoDePiedra;
+import Modelo.Herramientas.PicoFino;
 import Modelo.Materiales.Madera;
 import Modelo.Materiales.Material;
 import Modelo.Materiales.Metal;

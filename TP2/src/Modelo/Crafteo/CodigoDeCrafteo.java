@@ -1,4 +1,4 @@
-package Crafteo;
+package Modelo.Crafteo;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,7 +1,7 @@
 package Modelo.Materiales;
 
-import Herramientas.Herramienta;
-import Jugador.Inventario;
+import Modelo.Herramientas.Herramienta;
+import Modelo.Jugador.Inventario;
 
 public class Pasto extends Material{
 	

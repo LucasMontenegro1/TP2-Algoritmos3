@@ -1,7 +1,14 @@
-package Jugador;
+package Modelo.Jugador;
 
-import Herramientas.*;  
-import Modelo.Materiales.*;
+import Modelo.Herramientas.Desgastable;
+import Modelo.Herramientas.HachaDeMadera;
+import Modelo.Herramientas.HachaDeMetal;
+import Modelo.Herramientas.HachaDePiedra;
+import Modelo.Herramientas.Herramienta;
+import Modelo.Herramientas.PicoDeMadera;
+import Modelo.Herramientas.PicoDeMetal;
+import Modelo.Herramientas.PicoDePiedra;
+import Modelo.Herramientas.PicoFino;
 import Modelo.Materiales.Diamante;
 import Modelo.Materiales.Madera;
 import Modelo.Materiales.Metal;

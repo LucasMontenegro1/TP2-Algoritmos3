@@ -1,6 +1,11 @@
 package Imagen;
 
-import javafx.application.Application; 
+import Controlador.AccionesJugadorHandler;
+import Controlador.MenuHandler;
+import Modelo.Jugador.Jugador;
+import Modelo.Mapa.Juego;
+import Modelo.Mapa.Mapa;
+import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -10,11 +15,6 @@ import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import junit.framework.Test;
-import mapa.Juego;
-import mapa.Mapa;
-import Controlador.AccionesJugadorHandler;
-import Controlador.MenuHandler;
-import Jugador.*;
 
 
     public class ImagenJuego extends Application {  

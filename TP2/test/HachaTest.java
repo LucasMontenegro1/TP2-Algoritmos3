@@ -1,14 +1,19 @@
 
 
-import org.junit.Test;  
+import org.junit.Test;
 
-import Herramientas.*;
-import Jugador.Inventario;
+import Modelo.Herramientas.Hacha;
+import Modelo.Herramientas.HachaDeMadera;
+import Modelo.Herramientas.HachaDeMetal;
+import Modelo.Herramientas.HachaDePiedra;
+import Modelo.Herramientas.Herramienta;
+import Modelo.Jugador.Inventario;
+import Modelo.Mapa.Mapa;
+import Modelo.Mapa.Posicion;
 import Modelo.Materiales.Diamante;
 import Modelo.Materiales.Madera;
 import Modelo.Materiales.Metal;
 import Modelo.Materiales.Piedra;
-import mapa.*;
 
 public class HachaTest {
 

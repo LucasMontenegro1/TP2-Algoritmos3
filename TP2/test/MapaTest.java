@@ -1,9 +1,7 @@
-import static org.junit.Assert.*; 
-
 import org.junit.Test;
 
-import mapa.Mapa;
-import Jugador.*;
+import Modelo.Jugador.Jugador;
+import Modelo.Mapa.Mapa;
 import Modelo.Materiales.Diamante;
 import Modelo.Materiales.Madera;
 import Modelo.Materiales.Metal;

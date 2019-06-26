@@ -19,8 +19,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="Herramientas.PicoDeMadera" project="TP2" 
-    file="/TP2/src/Herramientas/PicoDeMadera.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="3" language="java" name="Modelo.Herramientas.PicoDeMadera" project="TP2" 
+    file="/TP2/src/Modelo/Herramientas/PicoDeMadera.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="132" width="151" x="1982" y="345"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -37,8 +37,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="Herramientas.Herramienta" project="TP2" 
-    file="/TP2/src/Herramientas/Herramienta.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="5" language="java" name="Modelo.Herramientas.Herramienta" project="TP2" 
+    file="/TP2/src/Modelo/Herramientas/Herramienta.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="294" width="172" x="1872" y="-233"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -46,8 +46,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="Herramientas.Hacha" project="TP2" file="/TP2/src/Herramientas/Hacha.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
+  <class id="6" language="java" name="Modelo.Herramientas.Hacha" project="TP2" 
+    file="/TP2/src/Modelo/Herramientas/Hacha.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="186" width="170" x="1753" y="101"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -55,8 +55,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="7" language="java" name="Herramientas.HachaDeMadera" project="TP2" 
-    file="/TP2/src/Herramientas/HachaDeMadera.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="7" language="java" name="Modelo.Herramientas.HachaDeMadera" project="TP2" 
+    file="/TP2/src/Modelo/Herramientas/HachaDeMadera.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="114" width="122" x="1496" y="345"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -64,8 +64,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="Herramientas.PicoDeMetal" project="TP2" 
-    file="/TP2/src/Herramientas/PicoDeMetal.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="8" language="java" name="Modelo.Herramientas.PicoDeMetal" project="TP2" 
+    file="/TP2/src/Modelo/Herramientas/PicoDeMetal.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="150" width="151" x="2173" y="345"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -73,8 +73,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="Herramientas.PicoFino" project="TP2" file="/TP2/src/Herramientas/PicoFino.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
+  <class id="9" language="java" name="Modelo.Herramientas.PicoFino" project="TP2" 
+    file="/TP2/src/Modelo/Herramientas/PicoFino.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="204" width="170" x="1963" y="101"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -82,8 +82,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="10" language="java" name="Herramientas.Desgastable" project="TP2" 
-    file="/TP2/src/Herramientas/Desgastable.java" binary="false" corner="BOTTOM_RIGHT">    
+  <interface id="10" language="java" name="Modelo.Herramientas.Desgastable" project="TP2" 
+    file="/TP2/src/Modelo/Herramientas/Desgastable.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="78" width="114" x="1599" y="101"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -100,8 +100,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="12" language="java" name="Herramientas.Pico" project="TP2" file="/TP2/src/Herramientas/Pico.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
+  <class id="12" language="java" name="Modelo.Herramientas.Pico" project="TP2" 
+    file="/TP2/src/Modelo/Herramientas/Pico.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="186" width="170" x="2173" y="101"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -109,8 +109,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="13" language="java" name="Herramientas.HachaDeMetal" project="TP2" 
-    file="/TP2/src/Herramientas/HachaDeMetal.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="13" language="java" name="Modelo.Herramientas.HachaDeMetal" project="TP2" 
+    file="/TP2/src/Modelo/Herramientas/HachaDeMetal.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="114" width="122" x="1658" y="345"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -118,8 +118,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="14" language="java" name="Herramientas.HachaDePiedra" project="TP2" 
-    file="/TP2/src/Herramientas/HachaDePiedra.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="14" language="java" name="Modelo.Herramientas.HachaDePiedra" project="TP2" 
+    file="/TP2/src/Modelo/Herramientas/HachaDePiedra.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="114" width="122" x="1820" y="345"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -127,8 +127,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="15" language="java" name="Herramientas.PicoDePiedra" project="TP2" 
-    file="/TP2/src/Herramientas/PicoDePiedra.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="15" language="java" name="Modelo.Herramientas.PicoDePiedra" project="TP2" 
+    file="/TP2/src/Modelo/Herramientas/PicoDePiedra.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="132" width="151" x="2364" y="345"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      

@@ -1,8 +1,11 @@
 package Modelo.Materiales;
 
-import Herramientas.*;
-import Jugador.Inventario;
-import mapa.*;
+import Modelo.Herramientas.Desgastable;
+import Modelo.Herramientas.Herramienta;
+import Modelo.Jugador.Inventario;
+import Modelo.Mapa.Alocable;
+import Modelo.Mapa.Mapa;
+import Modelo.Mapa.Posicion;
 
 public abstract class Material implements Desgastable, Alocable  {
 	protected int durabilidad;

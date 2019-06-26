@@ -1,22 +1,22 @@
 
 import org.junit.Test;
 
-import Crafteo.CodigoDeCrafteo;
-import Crafteo.CodigoDeCrafteoIncorrectoException;
-import Crafteo.MesaDeCrafteo;
-import Herramientas.HachaDeMadera;
-import Herramientas.HachaDeMetal;
-import Herramientas.HachaDePiedra;
-import Herramientas.Herramienta;
-import Herramientas.PicoDeMetal;
-import Herramientas.PicoDePiedra;
-import Jugador.Inventario;
+import Modelo.Crafteo.CodigoDeCrafteo;
+import Modelo.Crafteo.CodigoDeCrafteoIncorrectoException;
+import Modelo.Crafteo.MesaDeCrafteo;
+import Modelo.Herramientas.HachaDeMadera;
+import Modelo.Herramientas.HachaDeMetal;
+import Modelo.Herramientas.HachaDePiedra;
+import Modelo.Herramientas.Herramienta;
+import Modelo.Herramientas.PicoDeMetal;
+import Modelo.Herramientas.PicoDePiedra;
+import Modelo.Jugador.Inventario;
+import Modelo.Mapa.Mapa;
+import Modelo.Mapa.Posicion;
 import Modelo.Materiales.Diamante;
 import Modelo.Materiales.Madera;
 import Modelo.Materiales.Metal;
 import Modelo.Materiales.Piedra;
-import mapa.Mapa;
-import mapa.Posicion;
 
 
 public class MesaDeCrafteoTest {

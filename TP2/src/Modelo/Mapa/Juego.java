@@ -1,6 +1,6 @@
-package mapa;
+package Modelo.Mapa;
 
-import Jugador.Jugador;
+import Modelo.Jugador.Jugador;
 import Modelo.Materiales.Material;
 
 public class Juego {

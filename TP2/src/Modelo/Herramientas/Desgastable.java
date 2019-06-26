@@ -1,4 +1,4 @@
-package Herramientas;
+package Modelo.Herramientas;
 
 
 public interface Desgastable {

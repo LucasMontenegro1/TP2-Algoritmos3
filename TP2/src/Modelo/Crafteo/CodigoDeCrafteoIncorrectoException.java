@@ -1,4 +1,4 @@
-package Crafteo;
+package Modelo.Crafteo;
 
 public class CodigoDeCrafteoIncorrectoException extends RuntimeException{
 
