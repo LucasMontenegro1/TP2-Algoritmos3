@@ -4,9 +4,9 @@ import mapa.*;
 
 import java.util.List;
 
+import Crafteo.*;
 import Herramientas.*;
 import Materiales.*;
-import Modelo.*;
 
 
 public class Jugador implements Alocable{

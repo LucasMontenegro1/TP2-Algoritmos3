@@ -1,6 +1,9 @@
 
 import org.junit.Test;
 
+import Crafteo.CodigoDeCrafteo;
+import Crafteo.CodigoDeCrafteoIncorrectoException;
+import Crafteo.MesaDeCrafteo;
 import Herramientas.HachaDeMadera;
 import Herramientas.HachaDeMetal;
 import Herramientas.HachaDePiedra;
@@ -12,9 +15,6 @@ import Materiales.Diamante;
 import Materiales.Madera;
 import Materiales.Metal;
 import Materiales.Piedra;
-import Modelo.CodigoDeCrafteo;
-import Modelo.CodigoDeCrafteoIncorrectoException;
-import Modelo.MesaDeCrafteo;
 import mapa.Mapa;
 import mapa.Posicion;
 
