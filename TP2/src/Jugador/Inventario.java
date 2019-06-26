@@ -52,14 +52,7 @@ public class Inventario {
     			break;
     		}
     	}
-    	/*
-    	for(int i = 0; i < cantidadDePaquetes; i++) {
-    		if(elementosGuardados[i].lugarLibre() || elementosGuardados[i].esMismoTipo(madera)) {
-    			elementosGuardados[i].setElementoGuardado(madera);
-    			break;
-    		}
-    	}
-    	*/
+    	
     }
     
     public void agregarMaterial(Piedra piedra) {
@@ -76,14 +69,7 @@ public class Inventario {
     			break;
     		}
     	}
-    	/*
-    	for(int i = 0; i < cantidadDePaquetes; i++) {
-    		if(elementosGuardados[i].lugarLibre() || elementosGuardados[i].esMismoTipo(piedra)) {
-    			elementosGuardados[i].setElementoGuardado(piedra);
-    			break;
-    		}
-    	}
-    	*/
+    	
     }
     
     public void agregarMaterial(Metal metal) {
@@ -100,14 +86,7 @@ public class Inventario {
     			break;
     		}
     	}
-    	/*
-    	for(int i = 0; i < cantidadDePaquetes; i++) {
-    		if(elementosGuardados[i].lugarLibre() || elementosGuardados[i].esMismoTipo(metal)) {
-    			elementosGuardados[i].setElementoGuardado(metal);
-    			break;
-    		}
-    	}
-    	*/
+    	
     }
     
     public void agregarMaterial(Diamante diamante) {
@@ -124,14 +103,7 @@ public class Inventario {
     			break;
     		}
     	}
-    	/*
-    	for(int i = 0; i < cantidadDePaquetes; i++) {
-    		if(elementosGuardados[i].lugarLibre() || elementosGuardados[i].esMismoTipo(diamante)) {
-    			elementosGuardados[i].setElementoGuardado(diamante);
-    			break;
-    		}
-    	}
-    	*/
+    	
     }
 
     public Herramienta getHerramientaSeleccionada() {
