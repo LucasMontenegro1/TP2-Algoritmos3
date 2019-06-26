@@ -26,35 +26,30 @@ public class AccionesJugadorHandler implements EventHandler<KeyEvent> {
 		if (event.getCode() == KeyCode.W) {
 			//jugador.moverArriba();
 			
-			Posicion nuevaPosicion = juego.obtenerPosicion(jugador.getPosicion(),1,0);
-			juego.moverJugadorA(nuevaPosicion);
+			juego.moverJugador(1,0);
 		
 			
 			
 		}
 		if (event.getCode() == KeyCode.S) {
 			//jugador.moverAbajo();
-			Posicion nuevaPosicion = juego.obtenerPosicion(jugador.getPosicion(),-1,0);
-			juego.moverJugadorA(nuevaPosicion);
+			juego.moverJugador(-1,0);
 			
 		}
 		if (event.getCode() == KeyCode.D) {
 			//jugador.moverDerecha();
-			Posicion nuevaPosicion = juego.obtenerPosicion(jugador.getPosicion(),0,1);
-			juego.moverJugadorA(nuevaPosicion);
+			juego.moverJugador(0,1);
 			
 		}
 		if (event.getCode() == KeyCode.A) {
 			//jugador.moverIzquierda();
-			Posicion nuevaPosicion = juego.obtenerPosicion(jugador.getPosicion(),0,-1);
-			juego.moverJugadorA(nuevaPosicion);
+			juego.moverJugador(0,-1);
 			
 		}
 		if (event.getCode() == KeyCode.I) {
 			try {
 				//jugador.golpearArriba();
-				Posicion posicionAGolpear = juego.obtenerPosicion(jugador.getPosicion(),1,0);
-				juego.golpearPosicion(posicionAGolpear);
+				juego.golpearPosicion(1,0);
 			}
 			catch(noHerramientaException ex) {
 				System.out.println("No tenes Herramienta capooo");
@@ -66,8 +61,7 @@ public class AccionesJugadorHandler implements EventHandler<KeyEvent> {
 		if (event.getCode() == KeyCode.K) {
 			try {
 				//jugador.golpearAbajo();
-				Posicion posicionAGolpear = juego.obtenerPosicion(jugador.getPosicion(),-1,0);
-				juego.golpearPosicion(posicionAGolpear);
+				juego.golpearPosicion(-1,0);
 			}
 			catch(noHerramientaException ex) {
 				System.out.println("No tenes Herramienta capooo");
@@ -77,8 +71,7 @@ public class AccionesJugadorHandler implements EventHandler<KeyEvent> {
 		if (event.getCode() == KeyCode.J) {
 			try {
 				//jugador.golpearIzquierda();
-				Posicion posicionAGolpear = juego.obtenerPosicion(jugador.getPosicion(),0,-1);
-				juego.golpearPosicion(posicionAGolpear);
+				juego.golpearPosicion(0,-1);
 			}
 			catch(noHerramientaException ex) {
 				System.out.println("No tenes Herramienta capooo");
@@ -88,8 +81,7 @@ public class AccionesJugadorHandler implements EventHandler<KeyEvent> {
 		if (event.getCode() == KeyCode.L) {
 			try {
 				//jugador.golpearDerecha();
-				Posicion posicionAGolpear = juego.obtenerPosicion(jugador.getPosicion(),0,1);
-				juego.golpearPosicion(posicionAGolpear);
+				juego.golpearPosicion(0,1);
 			}
 			catch(noHerramientaException ex) {
 				System.out.println("No tenes Herramienta capooo");

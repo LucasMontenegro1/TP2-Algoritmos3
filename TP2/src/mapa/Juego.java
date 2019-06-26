@@ -14,7 +14,9 @@ public class Juego {
 
 	
 	
-	public void moverJugadorA(Posicion nuevaPosicion){
+	public void moverJugador(int movVertical, int movHorizontal){ //positivo en movVertical es hacia arriba, positivo en movHorizontal es hacia la derecha
+		
+		Posicion nuevaPosicion = obtenerPosicion(movVertical, movHorizontal);
 		
 		if((mapa.existeCasillero(nuevaPosicion)) && (mapa.getCasillero(nuevaPosicion).estaLibre())) {
 			Posicion origen = jugador.getPosicion();
@@ -25,7 +27,10 @@ public class Juego {
 		}		
 	}
 	
-	public void golpearPosicion(Posicion posicionAGolpear) {
+	public void golpearPosicion(int golpeVertical, int golpeHorizontal) {
+		
+		Posicion posicionAGolpear = obtenerPosicion(golpeVertical, golpeHorizontal);
+		
 		if(mapa.existeCasillero(posicionAGolpear)){
 			Material material = (Material)mapa.getCasillero(posicionAGolpear).getOcupante();		
 			jugador.golpearPosicion(posicionAGolpear, material);
@@ -34,13 +39,13 @@ public class Juego {
 
 
 
-	public Posicion obtenerPosicion(Posicion posicion, int movVertical, int movHorizontal) {
-		int fila = posicion.getFila();
-		int columna = posicion.getColumna();
+	public Posicion obtenerPosicion(int vertical, int horizontal) {
 		
-		Posicion nuevaPosicion = new Posicion(fila-movVertical, columna+movHorizontal);
+		Posicion posicion = jugador.getPosicion();
 		
-		return nuevaPosicion;		
+		posicion = new Posicion(posicion.getFila()-vertical, posicion.getColumna()+horizontal);
+		
+		return posicion;		
 	} 
 	
 }

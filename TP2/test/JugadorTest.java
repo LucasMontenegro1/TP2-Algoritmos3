@@ -131,18 +131,18 @@ public class JugadorTest {
 		jugador.moverIzquierda();
 		jugador.moverIzquierda();*/
 		
-		Posicion nuevaPosicion = juego.obtenerPosicionAbajo(jugador.getPosicion());
+		Posicion nuevaPosicion = juego.obtenerPosicion(jugador.getPosicion(),-1,0);
 		juego.moverJugadorA(nuevaPosicion);
 		
-		nuevaPosicion = juego.obtenerPosicionIzquierda(jugador.getPosicion());
+		nuevaPosicion = juego.obtenerPosicion(jugador.getPosicion(),0,-1);
 		juego.moverJugadorA(nuevaPosicion);
 		
-		nuevaPosicion = juego.obtenerPosicionIzquierda(jugador.getPosicion());
+		nuevaPosicion = juego.obtenerPosicion(jugador.getPosicion(),0,-1);
 		juego.moverJugadorA(nuevaPosicion);
 		
 		//jugador.golpearArriba();
 		assert madera.getDurabilidad() == durabilidadMaterial;
-		Posicion posicionAGolpear = juego.obtenerPosicionArriba(jugador.getPosicion());
+		Posicion posicionAGolpear = juego.obtenerPosicion(jugador.getPosicion(),1,0);
 		juego.golpearPosicion(posicionAGolpear);
  		
 		//jugador.golpearArriba();
