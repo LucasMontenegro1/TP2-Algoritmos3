@@ -1,4 +1,4 @@
-package Materiales;
+package Modelo.Materiales;
 
 import Herramientas.*;
 import Jugador.Inventario;

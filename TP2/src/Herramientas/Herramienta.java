@@ -1,7 +1,12 @@
 package Herramientas;
 
-import Materiales.*;
-import Jugador.*;
+import Jugador.*; 
+import Modelo.Materiales.Diamante;
+import Modelo.Materiales.Madera;
+import Modelo.Materiales.Material;
+import Modelo.Materiales.Metal;
+import Modelo.Materiales.Pasto;
+import Modelo.Materiales.Piedra;
 
 public abstract class Herramienta implements Desgastable {
 	int durabilidad;

@@ -1,8 +1,11 @@
-import org.junit.Test;
+import org.junit.Test; 
 
 import Herramientas.*;
 import Jugador.Inventario;
-import Materiales.*;
+import Modelo.Materiales.Madera;
+import Modelo.Materiales.Material;
+import Modelo.Materiales.Metal;
+import Modelo.Materiales.Piedra;
 
 
 

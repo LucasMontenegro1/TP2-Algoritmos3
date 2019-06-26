@@ -1,7 +1,7 @@
 package Herramientas;
 
 import Jugador.Inventario;
-import Materiales.Metal;
+import Modelo.Materiales.Metal;
 
 public class PicoDeMadera extends Pico {
 

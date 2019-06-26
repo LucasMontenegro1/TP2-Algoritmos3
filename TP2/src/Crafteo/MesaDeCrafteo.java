@@ -12,10 +12,10 @@ import Herramientas.PicoDeMadera;
 import Herramientas.PicoDeMetal;
 import Herramientas.PicoDePiedra;
 import Herramientas.PicoFino;
-import Materiales.Madera;
-import Materiales.Material;
-import Materiales.Metal;
-import Materiales.Piedra;
+import Modelo.Materiales.Madera;
+import Modelo.Materiales.Material;
+import Modelo.Materiales.Metal;
+import Modelo.Materiales.Piedra;
 
 
 public class MesaDeCrafteo {

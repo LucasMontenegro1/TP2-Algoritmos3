@@ -1,10 +1,13 @@
 
-import org.junit.Test; 
+import org.junit.Test;  
 
 import Herramientas.*;
-import Materiales.*;
 import mapa.*;
 import Jugador.*;
+import Modelo.Materiales.Diamante;
+import Modelo.Materiales.Madera;
+import Modelo.Materiales.Metal;
+import Modelo.Materiales.Piedra;
 
 public class PicoTest {
 

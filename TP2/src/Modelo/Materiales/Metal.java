@@ -1,17 +1,17 @@
-package Materiales;
+package Modelo.Materiales;
 
 import Herramientas.*;
 import Jugador.Inventario;
 import mapa.*;
 
-public class Piedra extends Material {
-	
-	public Piedra(){
-		this.durabilidad=30;
+public class Metal extends Material {
+
+	public Metal(){
+		this.durabilidad=50;
 	}
 	
-	public Piedra(Mapa mapa, Posicion posicion) {
-		this.durabilidad=30;
+	public Metal(Mapa mapa, Posicion posicion){
+		this.durabilidad=50;
 		this.mapa = mapa;
 		posicionMaterial = posicion;
 	}
@@ -28,7 +28,6 @@ public class Piedra extends Material {
 		herramienta.usar(this, inventario);
 		
 	}
-	
 	
 	@Override
 	public void guardarEnInventario(Inventario inventario) {

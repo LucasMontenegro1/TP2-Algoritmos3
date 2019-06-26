@@ -1,7 +1,7 @@
 package mapa;
 
 import Jugador.Jugador;
-import Materiales.Material;
+import Modelo.Materiales.Material;
 
 public class Juego {
 	private Jugador jugador;

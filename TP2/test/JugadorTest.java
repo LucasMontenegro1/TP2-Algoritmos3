@@ -1,10 +1,12 @@
 import org.junit.Test;
 
 import Jugador.*;
+import Modelo.Materiales.Madera;
+import Modelo.Materiales.Material;
+import Modelo.Materiales.Pasto;
 import mapa.Juego;
 import mapa.Mapa;
 import mapa.Posicion;
-import Materiales.*;
 import Herramientas.*;
 
 public class JugadorTest {

@@ -1,17 +1,17 @@
-package Materiales;
+package Modelo.Materiales;
 
 import Herramientas.*;
 import Jugador.Inventario;
 import mapa.*;
 
-public class Diamante extends Material {
+public class Piedra extends Material {
 	
-	public Diamante(){
-		this.durabilidad=100;
+	public Piedra(){
+		this.durabilidad=30;
 	}
 	
-	public Diamante(Mapa mapa, Posicion posicion){
-		this.durabilidad=100;
+	public Piedra(Mapa mapa, Posicion posicion) {
+		this.durabilidad=30;
 		this.mapa = mapa;
 		posicionMaterial = posicion;
 	}
@@ -22,7 +22,7 @@ public class Diamante extends Material {
 			mapa.eliminarMaterial(posicionMaterial.getFila(), posicionMaterial.getColumna());
 		}
 	}
-
+	
 	@Override
 	public void decimeQuienSos(Herramienta herramienta, Inventario inventario) {
 		herramienta.usar(this, inventario);

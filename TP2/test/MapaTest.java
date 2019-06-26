@@ -1,10 +1,14 @@
-import static org.junit.Assert.*;
+import static org.junit.Assert.*; 
 
 import org.junit.Test;
 
-import Materiales.*;
 import mapa.Mapa;
 import Jugador.*;
+import Modelo.Materiales.Diamante;
+import Modelo.Materiales.Madera;
+import Modelo.Materiales.Metal;
+import Modelo.Materiales.Pasto;
+import Modelo.Materiales.Piedra;
 
 public class MapaTest {
 	

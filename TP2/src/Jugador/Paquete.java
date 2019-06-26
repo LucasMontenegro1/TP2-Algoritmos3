@@ -1,7 +1,11 @@
 package Jugador;
 
-import Herramientas.*;
-import Materiales.*;
+import Herramientas.*; 
+import Modelo.Materiales.*;
+import Modelo.Materiales.Diamante;
+import Modelo.Materiales.Madera;
+import Modelo.Materiales.Metal;
+import Modelo.Materiales.Piedra;
 
 
 public class Paquete {

@@ -11,10 +11,10 @@ import Herramientas.Herramienta;
 import Herramientas.PicoDeMetal;
 import Herramientas.PicoDePiedra;
 import Jugador.Inventario;
-import Materiales.Diamante;
-import Materiales.Madera;
-import Materiales.Metal;
-import Materiales.Piedra;
+import Modelo.Materiales.Diamante;
+import Modelo.Materiales.Madera;
+import Modelo.Materiales.Metal;
+import Modelo.Materiales.Piedra;
 import mapa.Mapa;
 import mapa.Posicion;
 

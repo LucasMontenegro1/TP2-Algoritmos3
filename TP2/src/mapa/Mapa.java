@@ -1,7 +1,10 @@
 package mapa;
 
-import Materiales.*; 
 import Jugador.*;
+import Modelo.Materiales.Diamante;
+import Modelo.Materiales.Madera;
+import Modelo.Materiales.Metal;
+import Modelo.Materiales.Piedra;
 
 public class Mapa {
 

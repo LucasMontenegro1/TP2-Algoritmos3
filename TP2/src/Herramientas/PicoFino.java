@@ -1,7 +1,11 @@
 package Herramientas;
 
-import Jugador.Inventario;
-import Materiales.*;
+import Jugador.Inventario; 
+import Modelo.Materiales.Diamante;
+import Modelo.Materiales.Madera;
+import Modelo.Materiales.Metal;
+import Modelo.Materiales.Pasto;
+import Modelo.Materiales.Piedra;
 
 public class PicoFino extends Herramienta {
 	

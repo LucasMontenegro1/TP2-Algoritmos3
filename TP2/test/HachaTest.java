@@ -1,11 +1,13 @@
 
 
-import org.junit.Test; 
+import org.junit.Test;  
 
 import Herramientas.*;
 import Jugador.Inventario;
-import Materiales.*;
-
+import Modelo.Materiales.Diamante;
+import Modelo.Materiales.Madera;
+import Modelo.Materiales.Metal;
+import Modelo.Materiales.Piedra;
 import mapa.*;
 
 public class HachaTest {
