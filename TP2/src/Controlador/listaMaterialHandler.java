@@ -1,7 +1,8 @@
 package Controlador;
 
 
-import Modelo.Crafteo.CodigoDeCrafteo;
+import Imagen.ContenedorPrincipal;
+import Modelo.Jugador.Jugador;
 import Modelo.Materiales.*;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
@@ -17,14 +18,16 @@ public class listaMaterialHandler implements EventHandler<MouseEvent> {
 	Button botonAgregarMaterial;
 	Stage stageLista;
 	int posicion;
-	CodigoDeCrafteo codigoCrafteo;
+	Jugador jugador;
+	ContenedorPrincipal contenedor;
 	
-	listaMaterialHandler(ListView<String> materiales, Stage stageLista, Button botonAgregarMaterial, int posicion, CodigoDeCrafteo codigoCrafteo) {
+	listaMaterialHandler(ListView<String> materiales, Stage stageLista, Button botonAgregarMaterial, int posicion, Jugador jugador, ContenedorPrincipal contenedor) {
 		this.materiales = materiales;
 		this.botonAgregarMaterial = botonAgregarMaterial;
 		this.stageLista = stageLista;
 		this.posicion = posicion;
-		this.codigoCrafteo = codigoCrafteo;
+		this.jugador = jugador;
+		this.contenedor = contenedor;
 	}
 	
 	@Override
@@ -38,21 +41,22 @@ public class listaMaterialHandler implements EventHandler<MouseEvent> {
 			if (material == "Madera") {
 				imagen.setImage(new Image("/ArchivosDelJuego/madera.png"));
 				botonAgregarMaterial.setGraphic(imagen);
-				codigoCrafteo.agregarMaterial(posicion, new Madera());
+				jugador.agregarMaterialASectorDeCrafteo(posicion, new Madera());
 			} else if (material == "Piedra") {
 				imagen.setImage(new Image("/ArchivosDelJuego/piedra.png"));
 				botonAgregarMaterial.setGraphic(imagen);
-				codigoCrafteo.agregarMaterial(posicion, new Piedra());
+				jugador.agregarMaterialASectorDeCrafteo(posicion, new Piedra());
 			} else if (material == "Metal") {
 				imagen.setImage(new Image("/ArchivosDelJuego/metal.png"));
 				botonAgregarMaterial.setGraphic(imagen);
-				codigoCrafteo.agregarMaterial(posicion, new Metal());
+				jugador.agregarMaterialASectorDeCrafteo(posicion, new Metal());
 			} else if (material == "Diamante") {
 				imagen.setImage(new Image("/ArchivosDelJuego/diamante.png"));
 				botonAgregarMaterial.setGraphic(imagen);
-				codigoCrafteo.agregarMaterial(posicion, new Diamante());
+				jugador.agregarMaterialASectorDeCrafteo(posicion, new Diamante());
 			}
 			stageLista.close();
+			contenedor.setInventario();
 		}
 	}
 	

@@ -11,6 +11,7 @@ import Modelo.Herramientas.PicoDePiedra;
 import Modelo.Herramientas.PicoFino;
 import Modelo.Materiales.Diamante;
 import Modelo.Materiales.Madera;
+import Modelo.Materiales.Material;
 import Modelo.Materiales.Metal;
 import Modelo.Materiales.Piedra;
 
@@ -155,10 +156,24 @@ public class Inventario {
 	
 	//VER SI TRABAJAR CON POSICIONES EN EL INVENTARIO ROMPE
 	//EL ENCAPSULAMIENTO
+	/*
 	public Desgastable eliminarElemento(int posicion) {
 		Desgastable elementoGuardado = elementosGuardados[posicion].getElementoGuardado();
 		elementosGuardados[posicion].eliminarElemento();
 		return elementoGuardado;
+	}
+	*/
+	
+	public void eliminarMaterial(Material material) {
+		for (int i = 0; i < 28; i++) {
+			if (elementosGuardados[i].getElementoGuardado() != null) {
+				if (elementosGuardados[i].getElementoGuardado().getClass() == Madera.class) {
+					elementosGuardados[i].eliminarElemento();
+					break;
+				}
+			}
+
+		}
 	}
 	
 	

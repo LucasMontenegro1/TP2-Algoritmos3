@@ -28,9 +28,18 @@ public class Jugador implements Alocable{
 	private MesaDeCrafteo mesaDeCrafteo = new MesaDeCrafteo();
 	
 	
+	/*
 	public void agregarMaterialASectorDeCrafteo(int indiceInventario, int posicionEnCodigo) {
 		
 		sectorDeCrafteo.agregarMaterial(posicionEnCodigo, (Material)inventario.eliminarElemento(indiceInventario));
+
+	}
+	*/
+	
+	public void agregarMaterialASectorDeCrafteo(int posicionEnCodigo, Material material) {
+		
+		inventario.eliminarMaterial(material);
+		sectorDeCrafteo.agregarMaterial(posicionEnCodigo, material);
 
 	}
 	
@@ -46,10 +55,11 @@ public class Jugador implements Alocable{
 	
 	
 	
-	public HachaDeMadera craftearHachaDeMadera() {
+	public void craftearHachaDeMadera() {
 		
 		try {
-			return mesaDeCrafteo.craftearHachaDeMadera(sectorDeCrafteo);
+			inventario.agregarHerramienta(mesaDeCrafteo.craftearHachaDeMadera(sectorDeCrafteo));
+			sectorDeCrafteo = new CodigoDeCrafteo();
 		} catch (CodigoDeCrafteoIncorrectoException e) {
 
 			organizarMateriales(sectorDeCrafteo.obtenerMateriales());
@@ -60,10 +70,11 @@ public class Jugador implements Alocable{
 	}
 	
 	
-	public HachaDePiedra craftearHachaDePiedra() {
+	public void craftearHachaDePiedra() {
 		
 		try {
-			return mesaDeCrafteo.craftearHachaDePiedra(sectorDeCrafteo);
+			inventario.agregarHerramienta(mesaDeCrafteo.craftearHachaDePiedra(sectorDeCrafteo));
+			sectorDeCrafteo = new CodigoDeCrafteo();
 		} catch (CodigoDeCrafteoIncorrectoException e) {
 
 			organizarMateriales(sectorDeCrafteo.obtenerMateriales());
@@ -76,25 +87,11 @@ public class Jugador implements Alocable{
 
 	
 	
-	public HachaDeMetal craftearHachaDeMetal() {
+	public void craftearHachaDeMetal() {
 		
 		try {
-			return mesaDeCrafteo.craftearHachaDeMetal(sectorDeCrafteo);
-		} catch (CodigoDeCrafteoIncorrectoException e) {
-
-			organizarMateriales(sectorDeCrafteo.obtenerMateriales());
-			throw new CodigoDeCrafteoIncorrectoException("El codigo introducido es incorrecto");
-		
-		}
-
-	}
-	
-
-	
-	public PicoDeMadera craftearPicoDeMadera() {
-		
-		try {
-			return mesaDeCrafteo.craftearPicoDeMadera(sectorDeCrafteo);
+			inventario.agregarHerramienta(mesaDeCrafteo.craftearHachaDeMetal(sectorDeCrafteo));
+			sectorDeCrafteo = new CodigoDeCrafteo();
 		} catch (CodigoDeCrafteoIncorrectoException e) {
 
 			organizarMateriales(sectorDeCrafteo.obtenerMateriales());
@@ -106,10 +103,11 @@ public class Jugador implements Alocable{
 	
 
 	
-	public PicoDeMetal craftearPicoDeMetal() {
+	public void craftearPicoDeMadera() {
 		
 		try {
-			return mesaDeCrafteo.craftearPicoDeMetal(sectorDeCrafteo);
+			inventario.agregarHerramienta(mesaDeCrafteo.craftearPicoDeMadera(sectorDeCrafteo));
+			sectorDeCrafteo = new CodigoDeCrafteo();
 		} catch (CodigoDeCrafteoIncorrectoException e) {
 
 			organizarMateriales(sectorDeCrafteo.obtenerMateriales());
@@ -121,10 +119,27 @@ public class Jugador implements Alocable{
 	
 
 	
-	public PicoFino craftearPicoFino() {
+	public void craftearPicoDeMetal() {
 		
 		try {
-			return mesaDeCrafteo.craftearPicoFino(sectorDeCrafteo);
+			inventario.agregarHerramienta(mesaDeCrafteo.craftearPicoDeMetal(sectorDeCrafteo));
+			sectorDeCrafteo = new CodigoDeCrafteo();
+		} catch (CodigoDeCrafteoIncorrectoException e) {
+
+			organizarMateriales(sectorDeCrafteo.obtenerMateriales());
+			throw new CodigoDeCrafteoIncorrectoException("El codigo introducido es incorrecto");
+		
+		}
+
+	}
+	
+
+	
+	public void craftearPicoFino() {
+		
+		try {
+			inventario.agregarHerramienta(mesaDeCrafteo.craftearPicoFino(sectorDeCrafteo));
+			sectorDeCrafteo = new CodigoDeCrafteo();
 		} catch (CodigoDeCrafteoIncorrectoException e) {
 
 			organizarMateriales(sectorDeCrafteo.obtenerMateriales());

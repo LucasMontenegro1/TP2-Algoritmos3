@@ -1,22 +1,25 @@
 package Controlador;
 
-import Modelo.Crafteo.CodigoDeCrafteo;
-import Modelo.Crafteo.MesaDeCrafteo;
+import Imagen.ContenedorPrincipal;
+import Modelo.Jugador.Jugador;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
 public class CrafteadorRecetaHandler implements EventHandler<ActionEvent> {
 
-	MesaDeCrafteo mesa = new MesaDeCrafteo();
-	CodigoDeCrafteo codigoCrafteo;
+	Jugador jugador;
+	ContenedorPrincipal contenedor;
 	
-	public CrafteadorRecetaHandler(CodigoDeCrafteo codigoCrafteo) {
-		this.codigoCrafteo = codigoCrafteo;
+	public CrafteadorRecetaHandler(Jugador jugador, ContenedorPrincipal contenedor) {
+		this.jugador = jugador;
+		this.contenedor = contenedor;
 	}
 	
 	@Override
 	public void handle(ActionEvent event) {
-		mesa.craftearHachaDeMadera(codigoCrafteo);
+		jugador.craftearHachaDeMadera();
+		contenedor.setInventario();
+		contenedor.setMesaCrafteo();
 	}
 	
 }

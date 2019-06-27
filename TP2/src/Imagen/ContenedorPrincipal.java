@@ -45,10 +45,12 @@ import javafx.scene.text.Text;
 public class ContenedorPrincipal extends BorderPane {
 	Mapa mapa;
 	Inventario inventario;
+	Jugador jugador;
 	
 	public ContenedorPrincipal(Mapa mapa) {
 		this.mapa= mapa;
 		this.inventario= ((Jugador) mapa.getOcupante(7, 7)).getInventario();
+		jugador = (Jugador) mapa.getOcupante(7, 7);
 		this.setMapa();
 		this.setInventario();
 		this.setCambiarHerramienta();
@@ -308,12 +310,11 @@ public class ContenedorPrincipal extends BorderPane {
 	
 	public void setMesaCrafteo() {
          
-		CodigoDeCrafteo codigoCrafteo = new CodigoDeCrafteo();
         GridPane mesa = new GridPane();  
         mesa.setAlignment(Pos.CENTER);
         Button botonCraftear = new Button();
         botonCraftear.setText("CRAFTEAR");
-        botonCraftear.setOnAction(new CrafteadorRecetaHandler(codigoCrafteo));
+        botonCraftear.setOnAction(new CrafteadorRecetaHandler(jugador, this));
         VBox mesaDeCrafteo = new VBox(mesa, botonCraftear);
          
         List<String> materiales = new ArrayList<>();
@@ -345,7 +346,7 @@ public class ContenedorPrincipal extends BorderPane {
                 Button agregarMaterial = new Button();
                 agregarMaterial.setText("Material");
                 agregarMaterial.setPrefSize(80,50);
-                agregarMaterial.setOnAction(new MesaCrafteoHandler(listaMateriales, agregarMaterial, contadorPosicionMesa, codigoCrafteo));
+                agregarMaterial.setOnAction(new MesaCrafteoHandler(listaMateriales, agregarMaterial, contadorPosicionMesa, jugador, this));
                 
                 contadorPosicionMesa++;
                  
