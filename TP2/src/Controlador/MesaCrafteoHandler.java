@@ -14,6 +14,7 @@ public class MesaCrafteoHandler implements EventHandler<ActionEvent> {
 	public MesaCrafteoHandler(Scene listaMateriales, ListView<String> materiales) {
 		this.listaMateriales = listaMateriales;
 		this.materiales = materiales;
+		materiales.setOnMouseClicked(new listaMaterialHandler(materiales));
 	}
 
 	@Override

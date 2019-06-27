@@ -1,22 +1,26 @@
 package Controlador;
 
-import java.util.List;
 
-import Modelo.Jugador.Inventario;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.Scene;
 import javafx.scene.control.ListView;
-import javafx.scene.input.ContextMenuEvent;
-import javafx.stage.Stage;
+import javafx.scene.input.MouseEvent;
 
-public class listaMaterialHandler implements EventHandler<ContextMenuEvent> {
+public class listaMaterialHandler implements EventHandler<MouseEvent> {
+	
+	ListView<String> materiales;
+	
+	listaMaterialHandler(ListView<String> materiales) {
+		this.materiales = materiales;
+	}
 	
 	@Override
-	public void handle(ContextMenuEvent event) {
-		System.out.print("hola");
+	public void handle(MouseEvent click) {
+		if (click.getClickCount() == 2) {
+			String material = materiales.getSelectionModel().getSelectedItem();
+			if (material == "Madera") {
+				System.out.print("hola");
+			}
+		}
 	}
 	
 }
