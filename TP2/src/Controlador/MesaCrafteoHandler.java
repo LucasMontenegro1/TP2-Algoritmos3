@@ -27,6 +27,7 @@ public class MesaCrafteoHandler implements EventHandler<ActionEvent> {
 		Scene scene = new Scene(materiales);
 		Stage stage = new Stage();
 		stage.setScene(scene);
+		stage.setHeight(135);
 		stage.show();
 	}
 	
