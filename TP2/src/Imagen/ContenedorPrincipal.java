@@ -319,16 +319,12 @@ public class ContenedorPrincipal extends BorderPane {
              	
              	if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == Madera.class) {
              		materiales.add("Madera");
-             		z++;
              	} else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == Piedra.class) {
              		materiales.add("Piedra");
-             		z++;
              	} else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == Metal.class) {
              		materiales.add("Metal");
-             		z++;
              	}else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == Diamante.class) {
              		materiales.add("Diamante");
-             		z++;
              	}
         	 } 
             
