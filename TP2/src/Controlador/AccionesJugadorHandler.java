@@ -24,12 +24,19 @@ public class AccionesJugadorHandler implements EventHandler<KeyEvent> {
 
 	@Override
 	public void handle(KeyEvent event) {
+
+		movimiento(event);
+		golpear(event);
+		cambiarHerramienta(event);
+		contenedor.setMapa();
+		
+	}
+	
+	private void movimiento(KeyEvent event) {
 		if (event.getCode() == KeyCode.W) {
 			//jugador.moverArriba();
 			
-			juego.moverJugador(1,0);
-		
-			
+			juego.moverJugador(1,0);	
 			
 		}
 		if (event.getCode() == KeyCode.S) {
@@ -47,6 +54,9 @@ public class AccionesJugadorHandler implements EventHandler<KeyEvent> {
 			juego.moverJugador(0,-1);
 			
 		}
+	}
+	
+	private void golpear(KeyEvent event) {
 		if (event.getCode() == KeyCode.I) {
 			try {
 				//jugador.golpearArriba();
@@ -57,6 +67,7 @@ public class AccionesJugadorHandler implements EventHandler<KeyEvent> {
 			}
 			contenedor.setMesaCrafteo();
 			contenedor.setInventario();
+			contenedor.setCambiarHerramienta();
 		}
 		if (event.getCode() == KeyCode.K) {
 			try {
@@ -68,7 +79,7 @@ public class AccionesJugadorHandler implements EventHandler<KeyEvent> {
 			}
 			contenedor.setMesaCrafteo();
 			contenedor.setInventario();
-			
+			contenedor.setCambiarHerramienta();
 		}
 		if (event.getCode() == KeyCode.J) {
 			try {
@@ -80,6 +91,7 @@ public class AccionesJugadorHandler implements EventHandler<KeyEvent> {
 			}
 			contenedor.setMesaCrafteo();
 			contenedor.setInventario();
+			contenedor.setCambiarHerramienta();
 			
 		}
 		if (event.getCode() == KeyCode.L) {
@@ -92,17 +104,18 @@ public class AccionesJugadorHandler implements EventHandler<KeyEvent> {
 			}
 			contenedor.setMesaCrafteo();
 			contenedor.setInventario();
+			contenedor.setCambiarHerramienta();
 			
 		}
+	}
+	
+	private void cambiarHerramienta(KeyEvent event) {
 		if (event.getCode() == KeyCode.P) {
 			jugador.seleccionarSiguienteHerramienta();
 			contenedor.setInventario();
+			contenedor.setCambiarHerramienta();
 			
 		}
-		contenedor.setMapa();
-		contenedor.setCambiarHerramienta();
-		event.consume();
-		
 	}
 	
 }
