@@ -29,7 +29,7 @@ public class CrafteadorRecetaHandler implements EventHandler<ActionEvent> {
 		}  else if (herramienta == "Hacha de Metal") {
 			jugador.craftearHachaDeMetal();
 		}  else if (herramienta == "Pico de Madera") {
-			jugador.craftearHachaDePiedra();
+			jugador.craftearPicoDeMadera();
 		}  else if (herramienta == "Pico de Piedra") {
 			jugador.craftearPicoDePiedra();
 		}  else if (herramienta == "Pico de Metal") {
