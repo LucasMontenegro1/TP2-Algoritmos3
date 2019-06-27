@@ -63,7 +63,7 @@ public class AccionesJugadorHandler implements EventHandler<KeyEvent> {
 			catch(noHerramientaException ex) {
 				System.out.println("No tenes Herramienta capooo");
 			}
-			contenedor.setMesaCrafteo();
+			contenedor.actualizarListaMaterialesDisponibles();
 			contenedor.setInventario();
 			contenedor.setCambiarHerramienta();
 		}
@@ -75,7 +75,7 @@ public class AccionesJugadorHandler implements EventHandler<KeyEvent> {
 			catch(noHerramientaException ex) {
 				System.out.println("No tenes Herramienta capooo");
 			}
-			contenedor.setMesaCrafteo();
+			contenedor.actualizarListaMaterialesDisponibles();
 			contenedor.setInventario();
 			contenedor.setCambiarHerramienta();
 		}
@@ -87,7 +87,7 @@ public class AccionesJugadorHandler implements EventHandler<KeyEvent> {
 			catch(noHerramientaException ex) {
 				System.out.println("No tenes Herramienta capooo");
 			}
-			contenedor.setMesaCrafteo();
+			contenedor.actualizarListaMaterialesDisponibles();
 			contenedor.setInventario();
 			contenedor.setCambiarHerramienta();
 			
@@ -100,7 +100,7 @@ public class AccionesJugadorHandler implements EventHandler<KeyEvent> {
 			catch(noHerramientaException ex) {
 				System.out.println("No tenes Herramienta capooo");
 			}
-			contenedor.setMesaCrafteo();
+			contenedor.actualizarListaMaterialesDisponibles();
 			contenedor.setInventario();
 			contenedor.setCambiarHerramienta();
 			
