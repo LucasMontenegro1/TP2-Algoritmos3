@@ -167,7 +167,7 @@ public class Inventario {
 	public void eliminarMaterial(Material material) {
 		for (int i = 0; i < 28; i++) {
 			if (elementosGuardados[i].getElementoGuardado() != null) {
-				if (elementosGuardados[i].getElementoGuardado().getClass() == Madera.class) {
+				if (elementosGuardados[i].getElementoGuardado().getClass() == material.getClass()) {
 					elementosGuardados[i].eliminarElemento();
 					break;
 				}
