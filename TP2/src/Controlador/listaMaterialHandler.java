@@ -68,6 +68,7 @@ public class listaMaterialHandler implements EventHandler<MouseEvent> {
 			}
 			stageLista.close();
 			contenedor.setInventario();
+			contenedor.actualizarListaMaterialesDisponibles();
 		}
 	}
 	

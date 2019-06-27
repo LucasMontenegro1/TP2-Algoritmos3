@@ -29,4 +29,8 @@ public class MesaCrafteoHandler implements EventHandler<ActionEvent> {
 		stage.show();
 	}
 	
+	public void actualizarListaMateriales(ObservableList<String> materiales) {
+		this.materiales.setItems(materiales);
+	}
+	
 }

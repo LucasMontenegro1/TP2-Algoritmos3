@@ -25,6 +25,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
@@ -46,6 +47,7 @@ public class ContenedorPrincipal extends BorderPane {
 	Mapa mapa;
 	Inventario inventario;
 	Jugador jugador;
+	GridPane mesaDeCrafteo;
 	
 	public ContenedorPrincipal(Mapa mapa) {
 		this.mapa= mapa;
@@ -308,7 +310,7 @@ public class ContenedorPrincipal extends BorderPane {
          this.setCenter(panelMapa);
 	}
 	
-	public ObservableList<String> actualizarListaMaterialesDisponibles() {
+	public ObservableList<String> getListaMaterialesDisponibles() {
         List<String> materiales = new ArrayList<>();
         
         for (int z = 0; z < 28; z++) {
@@ -333,16 +335,42 @@ public class ContenedorPrincipal extends BorderPane {
 		return listaMateriales;
 	}
 	
+	public void actualizarListaMaterialesDisponibles() {
+ 		ObservableList<String> listaMateriales = getListaMaterialesDisponibles();
+ 		
+         for(int y = 0; y < 3; y++){
+             for(int x = 0; x < 3; x++){
+                Button boton = (Button)getNodeByRowColumnIndex(y,x,mesaDeCrafteo);
+                ((MesaCrafteoHandler)boton.getOnAction()).actualizarListaMateriales(listaMateriales);
+             }
+         }
+	}
+	
+	public Node getNodeByRowColumnIndex (final int row, final int column, GridPane gridPane) {
+	    Node result = null;
+	    ObservableList<Node> childrens = gridPane.getChildren();
+
+	    for (Node node : childrens) {
+	        if(GridPane.getRowIndex(node) == row && GridPane.getColumnIndex(node) == column) {
+	            result = node;
+	            break;
+	        }
+	    }
+
+	    return result;
+	}
+	
 	public void setMesaCrafteo() {
          
         GridPane mesa = new GridPane();  
+        this.mesaDeCrafteo = mesa;
         mesa.setAlignment(Pos.CENTER);
         Button botonCraftear = new Button();
         botonCraftear.setText("CRAFTEAR");
         botonCraftear.setOnAction(new CrafteadorRecetaHandler(jugador, this));
         VBox mesaDeCrafteo = new VBox(mesa, botonCraftear);
          
- 		ObservableList<String> listaMateriales = actualizarListaMaterialesDisponibles();
+ 		ObservableList<String> listaMateriales = getListaMaterialesDisponibles();
          
  		int contadorPosicionMesa = 1;
  		
