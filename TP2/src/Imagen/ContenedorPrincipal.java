@@ -3,7 +3,9 @@ package Imagen;
 import java.util.List;
 import java.util.ArrayList;
 
+import Controlador.CrafteadorRecetaHandler;
 import Controlador.MesaCrafteoHandler;
+import Modelo.Crafteo.CodigoDeCrafteo;
 import Modelo.Herramientas.HachaDeMadera;
 import Modelo.Herramientas.HachaDeMetal;
 import Modelo.Herramientas.HachaDePiedra;
@@ -306,14 +308,19 @@ public class ContenedorPrincipal extends BorderPane {
 	
 	public void setMesaCrafteo() {
          
-         GridPane mesa = new GridPane();  
-         mesa.setAlignment(Pos.CENTER);
+		CodigoDeCrafteo codigoCrafteo = new CodigoDeCrafteo();
+        GridPane mesa = new GridPane();  
+        mesa.setAlignment(Pos.CENTER);
+        Button botonCraftear = new Button();
+        botonCraftear.setText("CRAFTEAR");
+        botonCraftear.setOnAction(new CrafteadorRecetaHandler(codigoCrafteo));
+        VBox mesaDeCrafteo = new VBox(mesa, botonCraftear);
          
-         List<String> materiales = new ArrayList<>();
+        List<String> materiales = new ArrayList<>();
          
-         for (int z = 0; z < 28; z++) {
+        for (int z = 0; z < 28; z++) {
         	
-        	 if((inventario.getElementosGuardados()[z]).getElementoGuardado() != null) {
+        	if((inventario.getElementosGuardados()[z]).getElementoGuardado() != null) {
              	
              	if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == Madera.class) {
              		materiales.add("Madera");
@@ -324,20 +331,23 @@ public class ContenedorPrincipal extends BorderPane {
              	}else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == Diamante.class) {
              		materiales.add("Diamante");
              	}
-        	 } 
+        	} 
             
-         }
+        }
          
  		ObservableList<String> listaMateriales = FXCollections.observableList(materiales);
          
-      
+ 		int contadorPosicionMesa = 1;
+ 		
          for(int y = 0; y < 3; y++){
              for(int x = 0; x < 3; x++){
              	
                 Button agregarMaterial = new Button();
                 agregarMaterial.setText("Material");
                 agregarMaterial.setPrefSize(80,50);
-                agregarMaterial.setOnAction(new MesaCrafteoHandler(listaMateriales, agregarMaterial));
+                agregarMaterial.setOnAction(new MesaCrafteoHandler(listaMateriales, agregarMaterial, contadorPosicionMesa, codigoCrafteo));
+                
+                contadorPosicionMesa++;
                  
 
                 GridPane.setRowIndex(agregarMaterial,y);
@@ -346,9 +356,9 @@ public class ContenedorPrincipal extends BorderPane {
              }
          }
          
-         mesa.setBackground(new Background(new BackgroundImage(new Image("/ArchivosDelJuego/fondo.jpg"), null, null, null, null)));
+         mesaDeCrafteo.setBackground(new Background(new BackgroundImage(new Image("/ArchivosDelJuego/fondo.jpg"), null, null, null, null)));
 
-         this.setBottom(mesa);
+         this.setBottom(mesaDeCrafteo);
 	
 	}
 	

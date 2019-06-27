@@ -1,5 +1,6 @@
 package Controlador;
 
+import Modelo.Crafteo.CodigoDeCrafteo;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -14,9 +15,9 @@ public class MesaCrafteoHandler implements EventHandler<ActionEvent> {
 	ListView<String> materiales = new ListView<String>();
 	Stage stage = new Stage();
 	
-	public MesaCrafteoHandler(ObservableList<String> materiales, Button botonAgregarMaterial) {
+	public MesaCrafteoHandler(ObservableList<String> materiales, Button botonAgregarMaterial, int posicion, CodigoDeCrafteo codigoCrafteo) {
 		this.materiales.setItems(materiales);
-		this.materiales.setOnMouseClicked(new listaMaterialHandler(this.materiales, stage, botonAgregarMaterial));
+		this.materiales.setOnMouseClicked(new listaMaterialHandler(this.materiales, stage, botonAgregarMaterial, posicion, codigoCrafteo));
 		listaMateriales = new Scene(this.materiales);
 	}
 
