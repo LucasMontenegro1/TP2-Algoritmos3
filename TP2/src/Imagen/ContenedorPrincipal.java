@@ -19,9 +19,11 @@ import Modelo.Materiales.Diamante;
 import Modelo.Materiales.Madera;
 import Modelo.Materiales.Metal;
 import Modelo.Materiales.Piedra;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TreeItem;
@@ -41,6 +43,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 public class ContenedorPrincipal extends BorderPane {
 	Mapa mapa;
@@ -330,6 +333,11 @@ public class ContenedorPrincipal extends BorderPane {
             
          }
          
+ 		ObservableList<String> listaMateriales = FXCollections.observableList(materiales);
+ 		ListView<String> listViewMateriales = new ListView<String>();
+ 		listViewMateriales.setItems(listaMateriales);
+		Scene scene = new Scene(listViewMateriales);
+         
          
          for(int y = 0; y < 3; y++){
              for(int x = 0; x < 3; x++){
@@ -337,7 +345,7 @@ public class ContenedorPrincipal extends BorderPane {
                 Button agregarMaterial = new Button();
                 agregarMaterial.setText("Material");
                 agregarMaterial.setPrefSize(80,50);
-                agregarMaterial.setOnAction(new MesaCrafteoHandler(inventario, materiales));
+                agregarMaterial.setOnAction(new MesaCrafteoHandler(scene, listViewMateriales));
                  
 
                  GridPane.setRowIndex(agregarMaterial,y);
@@ -350,6 +358,11 @@ public class ContenedorPrincipal extends BorderPane {
 
          this.setBottom(mesa);
 	
+	}
+	
+	public void mostrarListaMateriales(ListView<String> materiales) {
+		Scene scene = new Scene(materiales);
+
 	}
 	
 	
