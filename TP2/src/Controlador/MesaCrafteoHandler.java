@@ -12,16 +12,16 @@ public class MesaCrafteoHandler implements EventHandler<ActionEvent> {
 	
 	Scene listaMateriales;
 	ListView<String> materiales = new ListView<String>();
+	Stage stage = new Stage();
 	
 	public MesaCrafteoHandler(ObservableList<String> materiales, Button botonAgregarMaterial) {
 		this.materiales.setItems(materiales);
-		this.materiales.setOnMouseClicked(new listaMaterialHandler(this.materiales, botonAgregarMaterial));
+		this.materiales.setOnMouseClicked(new listaMaterialHandler(this.materiales, stage, botonAgregarMaterial));
 		listaMateriales = new Scene(this.materiales);
 	}
 
 	@Override
 	public void handle(ActionEvent event) {
-		Stage stage = new Stage();
 		stage.setScene(listaMateriales);
 		stage.setHeight(135);
 		stage.show();
