@@ -41,7 +41,7 @@ public class listaMaterialHandler implements EventHandler<MouseEvent> {
 			botonAgregarMaterial.setText(null);
 			
 			if(yaGuardaMaterial) {
-				jugador.organizarMateriales();
+				//jugador.organizarMateriales();
 			}
 			
 			if (material == "Madera") {

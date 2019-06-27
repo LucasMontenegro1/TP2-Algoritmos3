@@ -4,9 +4,7 @@ import Imagen.ContenedorPrincipal;
 import Modelo.Jugador.Jugador;
 import Modelo.Jugador.noHerramientaException;
 import Modelo.Mapa.Juego;
-import Modelo.Mapa.Posicion;
 import javafx.event.EventHandler;
-import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 

@@ -1,7 +1,6 @@
 package Controlador;
 
 import Imagen.ContenedorPrincipal;
-import Modelo.Crafteo.CodigoDeCrafteo;
 import Modelo.Jugador.Jugador;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

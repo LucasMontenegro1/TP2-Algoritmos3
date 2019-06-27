@@ -47,8 +47,8 @@ public class Jugador implements Alocable{
 	
 	public void organizarMateriales() {
 
-		List<Material> materiales = sectorDeCrafteo.obtenerMateriales()
-;		for (Material material : materiales) {
+		List<Material> materiales = sectorDeCrafteo.obtenerMateriales(); //ESTA LINEA TIRA EL CONCURRENT METHOD MODIFICATION
+		for (Material material : materiales) {
 			material.guardarEnInventario(inventario);
 		}
 		

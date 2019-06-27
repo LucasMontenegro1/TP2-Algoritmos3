@@ -308,17 +308,9 @@ public class ContenedorPrincipal extends BorderPane {
          this.setCenter(panelMapa);
 	}
 	
-	public void setMesaCrafteo() {
-         
-        GridPane mesa = new GridPane();  
-        mesa.setAlignment(Pos.CENTER);
-        Button botonCraftear = new Button();
-        botonCraftear.setText("CRAFTEAR");
-        botonCraftear.setOnAction(new CrafteadorRecetaHandler(jugador, this));
-        VBox mesaDeCrafteo = new VBox(mesa, botonCraftear);
-         
+	public ObservableList<String> actualizarListaMaterialesDisponibles() {
         List<String> materiales = new ArrayList<>();
-         
+        
         for (int z = 0; z < 28; z++) {
         	
         	if((inventario.getElementosGuardados()[z]).getElementoGuardado() != null) {
@@ -335,8 +327,22 @@ public class ContenedorPrincipal extends BorderPane {
         	} 
             
         }
+        
+		ObservableList<String> listaMateriales = FXCollections.observableList(materiales);
+		
+		return listaMateriales;
+	}
+	
+	public void setMesaCrafteo() {
          
- 		ObservableList<String> listaMateriales = FXCollections.observableList(materiales);
+        GridPane mesa = new GridPane();  
+        mesa.setAlignment(Pos.CENTER);
+        Button botonCraftear = new Button();
+        botonCraftear.setText("CRAFTEAR");
+        botonCraftear.setOnAction(new CrafteadorRecetaHandler(jugador, this));
+        VBox mesaDeCrafteo = new VBox(mesa, botonCraftear);
+         
+ 		ObservableList<String> listaMateriales = actualizarListaMaterialesDisponibles();
          
  		int contadorPosicionMesa = 1;
  		
