@@ -340,7 +340,7 @@ public class ContenedorPrincipal extends BorderPane {
                 Button agregarMaterial = new Button();
                 agregarMaterial.setText("Material");
                 agregarMaterial.setPrefSize(80,50);
-                agregarMaterial.setOnAction(new MesaCrafteoHandler(scene, listViewMateriales));
+                agregarMaterial.setOnAction(new MesaCrafteoHandler(scene, listViewMateriales, agregarMaterial));
                  
 
                  GridPane.setRowIndex(agregarMaterial,y);
@@ -355,10 +355,7 @@ public class ContenedorPrincipal extends BorderPane {
 	
 	}
 	
-	public void mostrarListaMateriales(ListView<String> materiales) {
-		Scene scene = new Scene(materiales);
 
-	}
 	
 	
 	
