@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 import Controlador.CrafteadorRecetaHandler;
+import Controlador.ListaHerramientasHandler;
 import Controlador.MesaCrafteoHandler;
 import Modelo.Crafteo.CodigoDeCrafteo;
 import Modelo.Herramientas.HachaDeMadera;
@@ -340,24 +341,24 @@ public class ContenedorPrincipal extends BorderPane {
  		
          for(int y = 0; y < 3; y++){
              for(int x = 0; x < 3; x++){
-                Button boton = (Button)getNodeByRowColumnIndex(y,x,mesaDeCrafteo);
+                Button boton = (Button)getNodo(y,x,mesaDeCrafteo);
                 ((MesaCrafteoHandler)boton.getOnAction()).actualizarListaMateriales(listaMateriales);
              }
          }
 	}
 	
-	public Node getNodeByRowColumnIndex (final int row, final int column, GridPane gridPane) {
-	    Node result = null;
+	public Node getNodo (final int fila, final int columna, GridPane gridPane) {
+	    Node resultado = null;
 	    ObservableList<Node> childrens = gridPane.getChildren();
 
 	    for (Node node : childrens) {
-	        if(GridPane.getRowIndex(node) == row && GridPane.getColumnIndex(node) == column) {
-	            result = node;
+	        if(GridPane.getRowIndex(node) == fila && GridPane.getColumnIndex(node) == columna) {
+	            resultado = node;
 	            break;
 	        }
 	    }
 
-	    return result;
+	    return resultado;
 	}
 	
 	public void setMesaCrafteo() {
@@ -367,8 +368,11 @@ public class ContenedorPrincipal extends BorderPane {
         mesa.setAlignment(Pos.CENTER);
         Button botonCraftear = new Button();
         botonCraftear.setText("CRAFTEAR");
-        botonCraftear.setOnAction(new CrafteadorRecetaHandler(jugador, this));
-        VBox mesaDeCrafteo = new VBox(mesa, botonCraftear);
+        Button listaHerramientas = new Button();
+        listaHerramientas.setText("Elija Herramienta");
+        listaHerramientas.setOnAction(new ListaHerramientasHandler(listaHerramientas));
+        VBox mesaDeCrafteo = new VBox(mesa, botonCraftear, listaHerramientas);
+        botonCraftear.setOnAction(new CrafteadorRecetaHandler(jugador, this, listaHerramientas));
          
  		ObservableList<String> listaMateriales = getListaMaterialesDisponibles();
          

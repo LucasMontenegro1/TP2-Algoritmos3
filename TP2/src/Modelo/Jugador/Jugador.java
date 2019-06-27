@@ -118,6 +118,20 @@ public class Jugador implements Alocable{
 
 	}
 	
+	public void craftearPicoDePiedra() {
+		
+		try {
+			inventario.agregarHerramienta(mesaDeCrafteo.craftearPicoDePiedra(sectorDeCrafteo));
+			sectorDeCrafteo = new CodigoDeCrafteo();
+		} catch (CodigoDeCrafteoIncorrectoException e) {
+
+			organizarMateriales();
+			throw new CodigoDeCrafteoIncorrectoException("El codigo introducido es incorrecto");
+		
+		}
+
+	}
+	
 
 	
 	public void craftearPicoDeMetal() {

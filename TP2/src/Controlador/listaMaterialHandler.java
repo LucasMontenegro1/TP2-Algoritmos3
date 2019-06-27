@@ -22,7 +22,7 @@ public class listaMaterialHandler implements EventHandler<MouseEvent> {
 	ContenedorPrincipal contenedor;
 	Boolean yaGuardaMaterial = false;
 	
-	listaMaterialHandler(ListView<String> materiales, Stage stageLista, Button botonAgregarMaterial, int posicion, Jugador jugador, ContenedorPrincipal contenedor) {
+	public listaMaterialHandler(ListView<String> materiales, Stage stageLista, Button botonAgregarMaterial, int posicion, Jugador jugador, ContenedorPrincipal contenedor) {
 		this.materiales = materiales;
 		this.botonAgregarMaterial = botonAgregarMaterial;
 		this.stageLista = stageLista;
