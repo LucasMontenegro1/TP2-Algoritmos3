@@ -1,5 +1,9 @@
 package Imagen;
 
+import java.util.List;
+import java.util.ArrayList;
+
+import Controlador.MesaCrafteoHandler;
 import Modelo.Herramientas.HachaDeMadera;
 import Modelo.Herramientas.HachaDeMetal;
 import Modelo.Herramientas.HachaDePiedra;
@@ -15,9 +19,13 @@ import Modelo.Materiales.Diamante;
 import Modelo.Materiales.Madera;
 import Modelo.Materiales.Metal;
 import Modelo.Materiales.Piedra;
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TreeItem;
+import javafx.scene.control.TreeTableView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
@@ -303,13 +311,37 @@ public class ContenedorPrincipal extends BorderPane {
          GridPane mesa = new GridPane();  
          mesa.setAlignment(Pos.CENTER);
          
-
+         List<String> materiales = new ArrayList<>();
+         
+         for (int z = 0; z < 28; z++) {
+        	
+        	 if((inventario.getElementosGuardados()[z]).getElementoGuardado() != null) {
+             	
+             	if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == Madera.class) {
+             		materiales.add("Madera");
+             		z++;
+             	} else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == Piedra.class) {
+             		materiales.add("Piedra");
+             		z++;
+             	} else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == Metal.class) {
+             		materiales.add("Metal");
+             		z++;
+             	}else if((inventario.getElementosGuardados()[z]).getElementoGuardado().getClass() == Diamante.class) {
+             		materiales.add("Diamante");
+             		z++;
+             	}
+        	 } 
+            
+         }
+         
+         
          for(int y = 0; y < 3; y++){
              for(int x = 0; x < 3; x++){
              	
                 Button agregarMaterial = new Button();
                 agregarMaterial.setText("Material");
                 agregarMaterial.setPrefSize(80,50);
+                agregarMaterial.setOnAction(new MesaCrafteoHandler(inventario, materiales));
                  
 
                  GridPane.setRowIndex(agregarMaterial,y);

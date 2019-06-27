@@ -55,9 +55,8 @@ public class AccionesJugadorHandler implements EventHandler<KeyEvent> {
 			catch(noHerramientaException ex) {
 				System.out.println("No tenes Herramienta capooo");
 			}
-			
-			
-			
+			contenedor.setMesaCrafteo();
+			contenedor.setInventario();
 		}
 		if (event.getCode() == KeyCode.K) {
 			try {
@@ -67,6 +66,8 @@ public class AccionesJugadorHandler implements EventHandler<KeyEvent> {
 			catch(noHerramientaException ex) {
 				System.out.println("No tenes Herramienta capooo");
 			}
+			contenedor.setMesaCrafteo();
+			contenedor.setInventario();
 			
 		}
 		if (event.getCode() == KeyCode.J) {
@@ -77,6 +78,8 @@ public class AccionesJugadorHandler implements EventHandler<KeyEvent> {
 			catch(noHerramientaException ex) {
 				System.out.println("No tenes Herramienta capooo");
 			}
+			contenedor.setMesaCrafteo();
+			contenedor.setInventario();
 			
 		}
 		if (event.getCode() == KeyCode.L) {
@@ -87,14 +90,16 @@ public class AccionesJugadorHandler implements EventHandler<KeyEvent> {
 			catch(noHerramientaException ex) {
 				System.out.println("No tenes Herramienta capooo");
 			}
+			contenedor.setMesaCrafteo();
+			contenedor.setInventario();
 			
 		}
 		if (event.getCode() == KeyCode.P) {
 			jugador.seleccionarSiguienteHerramienta();
+			contenedor.setInventario();
 			
 		}
 		contenedor.setMapa();
-		contenedor.setInventario();
 		contenedor.setCambiarHerramienta();
 		event.consume();
 		
