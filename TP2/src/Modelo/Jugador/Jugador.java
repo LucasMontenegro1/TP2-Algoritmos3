@@ -45,9 +45,10 @@ public class Jugador implements Alocable{
 	
 	
 	
-	private void organizarMateriales(List<Material> materiales) {
+	public void organizarMateriales() {
 
-		for (Material material : materiales) {
+		List<Material> materiales = sectorDeCrafteo.obtenerMateriales()
+;		for (Material material : materiales) {
 			material.guardarEnInventario(inventario);
 		}
 		
@@ -62,7 +63,7 @@ public class Jugador implements Alocable{
 			sectorDeCrafteo = new CodigoDeCrafteo();
 		} catch (CodigoDeCrafteoIncorrectoException e) {
 
-			organizarMateriales(sectorDeCrafteo.obtenerMateriales());
+			organizarMateriales();
 			throw new CodigoDeCrafteoIncorrectoException("El codigo introducido es incorrecto");
 		
 		}
@@ -77,7 +78,7 @@ public class Jugador implements Alocable{
 			sectorDeCrafteo = new CodigoDeCrafteo();
 		} catch (CodigoDeCrafteoIncorrectoException e) {
 
-			organizarMateriales(sectorDeCrafteo.obtenerMateriales());
+			organizarMateriales();
 			throw new CodigoDeCrafteoIncorrectoException("El codigo introducido es incorrecto");
 		
 		}
@@ -94,7 +95,7 @@ public class Jugador implements Alocable{
 			sectorDeCrafteo = new CodigoDeCrafteo();
 		} catch (CodigoDeCrafteoIncorrectoException e) {
 
-			organizarMateriales(sectorDeCrafteo.obtenerMateriales());
+			organizarMateriales();
 			throw new CodigoDeCrafteoIncorrectoException("El codigo introducido es incorrecto");
 		
 		}
@@ -110,7 +111,7 @@ public class Jugador implements Alocable{
 			sectorDeCrafteo = new CodigoDeCrafteo();
 		} catch (CodigoDeCrafteoIncorrectoException e) {
 
-			organizarMateriales(sectorDeCrafteo.obtenerMateriales());
+			organizarMateriales();
 			throw new CodigoDeCrafteoIncorrectoException("El codigo introducido es incorrecto");
 		
 		}
@@ -126,7 +127,7 @@ public class Jugador implements Alocable{
 			sectorDeCrafteo = new CodigoDeCrafteo();
 		} catch (CodigoDeCrafteoIncorrectoException e) {
 
-			organizarMateriales(sectorDeCrafteo.obtenerMateriales());
+			organizarMateriales();
 			throw new CodigoDeCrafteoIncorrectoException("El codigo introducido es incorrecto");
 		
 		}
@@ -142,7 +143,7 @@ public class Jugador implements Alocable{
 			sectorDeCrafteo = new CodigoDeCrafteo();
 		} catch (CodigoDeCrafteoIncorrectoException e) {
 
-			organizarMateriales(sectorDeCrafteo.obtenerMateriales());
+			organizarMateriales();
 			throw new CodigoDeCrafteoIncorrectoException("El codigo introducido es incorrecto");
 		
 		}

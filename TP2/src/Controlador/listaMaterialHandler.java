@@ -20,6 +20,7 @@ public class listaMaterialHandler implements EventHandler<MouseEvent> {
 	int posicion;
 	Jugador jugador;
 	ContenedorPrincipal contenedor;
+	Boolean yaGuardaMaterial = false;
 	
 	listaMaterialHandler(ListView<String> materiales, Stage stageLista, Button botonAgregarMaterial, int posicion, Jugador jugador, ContenedorPrincipal contenedor) {
 		this.materiales = materiales;
@@ -38,22 +39,31 @@ public class listaMaterialHandler implements EventHandler<MouseEvent> {
 			imagen.setFitHeight(30);
 			imagen.setFitWidth(30);
 			botonAgregarMaterial.setText(null);
+			
+			if(yaGuardaMaterial) {
+				jugador.organizarMateriales();
+			}
+			
 			if (material == "Madera") {
 				imagen.setImage(new Image("/ArchivosDelJuego/madera.png"));
 				botonAgregarMaterial.setGraphic(imagen);
 				jugador.agregarMaterialASectorDeCrafteo(posicion, new Madera());
+				yaGuardaMaterial = true;
 			} else if (material == "Piedra") {
 				imagen.setImage(new Image("/ArchivosDelJuego/piedra.png"));
 				botonAgregarMaterial.setGraphic(imagen);
 				jugador.agregarMaterialASectorDeCrafteo(posicion, new Piedra());
+				yaGuardaMaterial = true;
 			} else if (material == "Metal") {
 				imagen.setImage(new Image("/ArchivosDelJuego/metal.png"));
 				botonAgregarMaterial.setGraphic(imagen);
 				jugador.agregarMaterialASectorDeCrafteo(posicion, new Metal());
+				yaGuardaMaterial = true;
 			} else if (material == "Diamante") {
 				imagen.setImage(new Image("/ArchivosDelJuego/diamante.png"));
 				botonAgregarMaterial.setGraphic(imagen);
 				jugador.agregarMaterialASectorDeCrafteo(posicion, new Diamante());
+				yaGuardaMaterial = true;
 			}
 			stageLista.close();
 			contenedor.setInventario();
