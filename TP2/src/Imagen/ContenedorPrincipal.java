@@ -329,23 +329,20 @@ public class ContenedorPrincipal extends BorderPane {
          }
          
  		ObservableList<String> listaMateriales = FXCollections.observableList(materiales);
- 		ListView<String> listViewMateriales = new ListView<String>();
- 		listViewMateriales.setItems(listaMateriales);
-		Scene scene = new Scene(listViewMateriales);
          
-         
+      
          for(int y = 0; y < 3; y++){
              for(int x = 0; x < 3; x++){
              	
                 Button agregarMaterial = new Button();
                 agregarMaterial.setText("Material");
                 agregarMaterial.setPrefSize(80,50);
-                agregarMaterial.setOnAction(new MesaCrafteoHandler(scene, listViewMateriales, agregarMaterial));
+                agregarMaterial.setOnAction(new MesaCrafteoHandler(listaMateriales, agregarMaterial));
                  
 
-                 GridPane.setRowIndex(agregarMaterial,y);
-                 GridPane.setColumnIndex(agregarMaterial,x);   
-                 mesa.getChildren().add(agregarMaterial);   
+                GridPane.setRowIndex(agregarMaterial,y);
+                GridPane.setColumnIndex(agregarMaterial,x);   
+                mesa.getChildren().add(agregarMaterial);   
              }
          }
          
