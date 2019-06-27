@@ -16,6 +16,8 @@ import Modelo.Materiales.Madera;
 import Modelo.Materiales.Metal;
 import Modelo.Materiales.Piedra;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
@@ -23,8 +25,10 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.CornerRadii;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.TilePane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -40,6 +44,7 @@ public class ContenedorPrincipal extends BorderPane {
 		this.setMapa();
 		this.setInventario();
 		this.setCambiarHerramienta();
+		this.setMesaCrafteo();
 	
 	}
 	
@@ -53,6 +58,9 @@ public class ContenedorPrincipal extends BorderPane {
         textoDurabilidad.setFont(Font.font("Verdana"));
 		textoDurabilidad.setFill(Color.WHITE);
 		Image herramientaEquipadaImage = new Image("/ArchivosDelJuego/HerramientaEquipada.png");
+		ImageView herramientaEquipada = new ImageView(herramientaEquipadaImage);
+		VBox imagenCentrada = new VBox(herramientaEquipada, imagen);
+		imagenCentrada.setAlignment(Pos.CENTER);
 		Text textoFuerza = new Text();
         textoFuerza.setFont(Font.font("Verdana"));
 		textoFuerza.setFill(Color.WHITE);
@@ -65,7 +73,7 @@ public class ContenedorPrincipal extends BorderPane {
 		Text usosTexto = new Text (); // solo lo usamos para el pico de metal
         usosTexto.setFont(Font.font("Verdana"));
 		usosTexto.setFill(Color.WHITE);
-		VBox herramientaSeleccionada = new VBox(new ImageView(herramientaEquipadaImage), imagen, utilidadTexto, textoDurabilidad, textoFuerza, desgaste, usosTexto);
+		VBox herramientaSeleccionada = new VBox(imagenCentrada, utilidadTexto, textoDurabilidad, textoFuerza, desgaste, usosTexto);
 		herramientaSeleccionada.setPrefWidth(290);
 
 		if(inventario.getHerramientaSeleccionada() != null) {
@@ -288,6 +296,32 @@ public class ContenedorPrincipal extends BorderPane {
          panelMapa.setBackground(new Background(new BackgroundImage(new Image("/ArchivosDelJuego/fondo.jpg"), null, null, null, null)));
 
          this.setCenter(panelMapa);
+	}
+	
+	public void setMesaCrafteo() {
+         
+         GridPane mesa = new GridPane();  
+         mesa.setAlignment(Pos.CENTER);
+         
+
+         for(int y = 0; y < 3; y++){
+             for(int x = 0; x < 3; x++){
+             	
+                Button agregarMaterial = new Button();
+                agregarMaterial.setText("Material");
+                agregarMaterial.setPrefSize(80,50);
+                 
+
+                 GridPane.setRowIndex(agregarMaterial,y);
+                 GridPane.setColumnIndex(agregarMaterial,x);   
+                 mesa.getChildren().add(agregarMaterial);   
+             }
+         }
+         
+         mesa.setBackground(new Background(new BackgroundImage(new Image("/ArchivosDelJuego/fondo.jpg"), null, null, null, null)));
+
+         this.setBottom(mesa);
+	
 	}
 	
 	
