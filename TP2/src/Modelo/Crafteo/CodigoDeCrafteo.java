@@ -44,9 +44,9 @@ public class CodigoDeCrafteo {
 		
 		for(Entry<Integer, Material> materialPosicionado : codigo.entrySet()) {
 			int posicion = materialPosicionado.getKey();
-			materialesGuardados.add(codigo.remove(posicion));
+			materialesGuardados.add(codigo.get(posicion));
 		}
-		
+		codigo.clear();
 		return materialesGuardados;
 
 	}

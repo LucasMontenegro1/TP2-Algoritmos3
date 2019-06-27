@@ -41,10 +41,11 @@ public class listaMaterialHandler implements EventHandler<MouseEvent> {
 			botonAgregarMaterial.setText(null);
 			
 			if(yaGuardaMaterial) {
-				//jugador.organizarMateriales();
-			}
-			
-			if (material == "Madera") {
+				jugador.organizarMateriales();
+				contenedor.setInventario();
+				contenedor.setMesaCrafteo();
+				
+			} else if (material == "Madera") {
 				imagen.setImage(new Image("/ArchivosDelJuego/madera.png"));
 				botonAgregarMaterial.setGraphic(imagen);
 				jugador.agregarMaterialASectorDeCrafteo(posicion, new Madera());
