@@ -53,6 +53,7 @@ public class ContenedorPrincipal extends BorderPane {
 	GridPane panelMapa;
 	
 	public ContenedorPrincipal(Mapa mapa) {
+		this.setBackground(new Background(new BackgroundImage(new Image("/ArchivosDelJuego/fondo.jpg"), null, null, null, null)));
 		this.mapa= mapa;
 		this.inventario= ((Jugador) mapa.getOcupante(7, 7)).getInventario();
 		jugador = (Jugador) mapa.getOcupante(7, 7);
@@ -190,7 +191,6 @@ public class ContenedorPrincipal extends BorderPane {
 		
 		textoDurabilidad.setText("\nDurabilidad: " + Integer.toString(durabilidad));
 		textoFuerza.setText("\nFuerza: " + Integer.toString(fuerza));
-        herramientaSeleccionada.setBackground(new Background(new BackgroundImage(new Image("/ArchivosDelJuego/fondo.jpg"), null, null, null, null)));
 		this.setRight(herramientaSeleccionada);
 	}
 	
@@ -208,7 +208,6 @@ public class ContenedorPrincipal extends BorderPane {
         Image instrucciones = new Image("/ArchivosDelJuego/Instrucciones.png");
         
         VBox panelIzquierdo = new VBox(new ImageView(tituloInventario), panelInventario,new ImageView(instrucciones));
-        panelIzquierdo.setBackground(new Background(new BackgroundImage(new Image("/ArchivosDelJuego/fondo.jpg"), null, null, null, null)));
         Herramienta herramienta = null;
         int contador=0;
 
@@ -305,6 +304,7 @@ public class ContenedorPrincipal extends BorderPane {
          
          panelMapa = new GridPane();  
          
+         
 
          for(int y = 0; y < length; y++){
              for(int x = 0; x < width; x++){
@@ -339,7 +339,6 @@ public class ContenedorPrincipal extends BorderPane {
              }
          }
          
-         panelMapa.setBackground(new Background(new BackgroundImage(new Image("/ArchivosDelJuego/fondo.jpg"), null, null, null, null)));
 
          this.setCenter(panelMapa);
 	}
@@ -436,8 +435,7 @@ public class ContenedorPrincipal extends BorderPane {
              }
          }
          
-         mesaDeCrafteo.setBackground(new Background(new BackgroundImage(new Image("/ArchivosDelJuego/fondo.jpg"), null, null, null, null)));
-
+        
          this.setBottom(mesaDeCrafteo);
 	
 	}
