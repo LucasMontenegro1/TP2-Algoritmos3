@@ -50,7 +50,7 @@ public class ContenedorPrincipal extends BorderPane {
 	Inventario inventario;
 	Jugador jugador;
 	GridPane mesaDeCrafteo;
-	 GridPane panelMapa;
+	GridPane panelMapa;
 	
 	public ContenedorPrincipal(Mapa mapa) {
 		this.mapa= mapa;
@@ -71,6 +71,9 @@ public class ContenedorPrincipal extends BorderPane {
 		for(int y = length-2; y < length+2; y++){
             for(int x = width-2; x < width+2; x++){
             	if(x>=0 &&  x<13 && y>=0 && y<10) {
+            		
+            	ImageView imagen = (ImageView)getNodo(y,x,panelMapa);	
+            		
                 Image img = new Image("/ArchivosDelJuego/pasto.png");
             	
             	if(mapa.getOcupante(y, x).getClass() == Madera.class) {
@@ -85,27 +88,11 @@ public class ContenedorPrincipal extends BorderPane {
                     img = new Image("/ArchivosDelJuego/Steve.png");
             	}
                     
-                    
-                ImageView imagen = new ImageView(img);
-               
-                
-                imagen.setPreserveRatio(true);
-                
-                imagen.setFitHeight(50);
-                imagen.setFitWidth(50);
-                
-
-                GridPane.setRowIndex(imagen,y);
-                GridPane.setColumnIndex(imagen,x);   
-                panelMapa.getChildren().add(imagen);  
+            	imagen.setImage(img); 
                 
             	}
             }
         }
-        
-        panelMapa.setBackground(new Background(new BackgroundImage(new Image("/ArchivosDelJuego/fondo.jpg"), null, null, null, null)));
-
-        this.setCenter(panelMapa);
 	}
 	
 	public void setCambiarHerramienta() {
