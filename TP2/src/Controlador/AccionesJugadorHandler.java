@@ -26,7 +26,7 @@ public class AccionesJugadorHandler implements EventHandler<KeyEvent> {
 		movimiento(event);
 		golpear(event);
 		cambiarHerramienta(event);
-		contenedor.setMapa();
+		contenedor.actualizarMapa();
 		
 	}
 	

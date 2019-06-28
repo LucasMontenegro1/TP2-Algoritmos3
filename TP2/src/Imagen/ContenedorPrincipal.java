@@ -18,6 +18,7 @@ import Modelo.Herramientas.PicoFino;
 import Modelo.Jugador.Inventario;
 import Modelo.Jugador.Jugador;
 import Modelo.Mapa.Mapa;
+import Modelo.Mapa.Posicion;
 import Modelo.Materiales.Diamante;
 import Modelo.Materiales.Madera;
 import Modelo.Materiales.Metal;
@@ -49,6 +50,7 @@ public class ContenedorPrincipal extends BorderPane {
 	Inventario inventario;
 	Jugador jugador;
 	GridPane mesaDeCrafteo;
+	 GridPane panelMapa;
 	
 	public ContenedorPrincipal(Mapa mapa) {
 		this.mapa= mapa;
@@ -61,6 +63,50 @@ public class ContenedorPrincipal extends BorderPane {
 	
 	}
 	
+	public void actualizarMapa() {
+		Posicion actual=jugador.getPosicion();
+		int length=actual.getFila();
+		int width= actual.getColumna();
+		
+		for(int y = length-2; y < length+2; y++){
+            for(int x = width-2; x < width+2; x++){
+            	if(x>=0 &&  x<13 && y>=0 && y<10) {
+                Image img = new Image("/ArchivosDelJuego/pasto.png");
+            	
+            	if(mapa.getOcupante(y, x).getClass() == Madera.class) {
+                    img = new Image("/ArchivosDelJuego/maderaBloque.png");
+            	} else if(mapa.getOcupante(y, x).getClass() == Piedra.class) {
+                    img = new Image("/ArchivosDelJuego/piedraBloque.png");
+            	} else if(mapa.getOcupante(y, x).getClass() == Metal.class) {
+                    img = new Image("/ArchivosDelJuego/metalBloque.png");
+            	} else if(mapa.getOcupante(y, x).getClass() == Diamante.class) {
+                    img = new Image("/ArchivosDelJuego/DiamanteBloque.png");
+            	} else if(mapa.getOcupante(y, x).getClass() == Jugador.class) {
+                    img = new Image("/ArchivosDelJuego/Steve.png");
+            	}
+                    
+                    
+                ImageView imagen = new ImageView(img);
+               
+                
+                imagen.setPreserveRatio(true);
+                
+                imagen.setFitHeight(50);
+                imagen.setFitWidth(50);
+                
+
+                GridPane.setRowIndex(imagen,y);
+                GridPane.setColumnIndex(imagen,x);   
+                panelMapa.getChildren().add(imagen);  
+                
+            	}
+            }
+        }
+        
+        panelMapa.setBackground(new Background(new BackgroundImage(new Image("/ArchivosDelJuego/fondo.jpg"), null, null, null, null)));
+
+        this.setCenter(panelMapa);
+	}
 	
 	public void setCambiarHerramienta() {
 		
@@ -270,7 +316,7 @@ public class ContenedorPrincipal extends BorderPane {
          int width = 13;
          
          
-         GridPane panelMapa = new GridPane();  
+         panelMapa = new GridPane();  
          
 
          for(int y = 0; y < length; y++){
