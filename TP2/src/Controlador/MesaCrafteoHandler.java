@@ -18,7 +18,7 @@ public class MesaCrafteoHandler implements EventHandler<ActionEvent> {
 	
 	public MesaCrafteoHandler(ObservableList<String> materiales, Button botonAgregarMaterial, int posicion, Jugador jugador, ContenedorPrincipal contenedor) {
 		this.materiales.setItems(materiales);
-		this.materiales.setOnMouseClicked(new listaMaterialHandler(this.materiales, stage, botonAgregarMaterial, posicion, jugador, contenedor));
+		this.materiales.setOnMouseClicked(new ListaMaterialHandler(this.materiales, stage, botonAgregarMaterial, posicion, jugador, contenedor));
 		listaMateriales = new Scene(this.materiales);
 	}
 

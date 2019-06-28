@@ -408,7 +408,7 @@ public class ContenedorPrincipal extends BorderPane {
         botonesCraftear.setSpacing(10);
         HBox mesaDeCrafteo = new HBox(mesa,botonesCraftear);
         mesaDeCrafteo.setSpacing(5);
-        mesaDeCrafteo.setAlignment(Pos.BOTTOM_CENTER);
+        mesaDeCrafteo.setAlignment(Pos.CENTER);
         botonCraftear.setOnAction(new CrafteadorRecetaHandler(jugador, this, listaHerramientas));
          
  		ObservableList<String> listaMateriales = getListaMaterialesDisponibles();
