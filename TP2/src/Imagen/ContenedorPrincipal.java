@@ -400,23 +400,31 @@ public class ContenedorPrincipal extends BorderPane {
         this.mesaDeCrafteo = mesa;
         mesa.setAlignment(Pos.CENTER);
         Button botonCraftear = new Button();
-        botonCraftear.setText("CRAFTEAR");
+        botonCraftear.setText("Craftear");
         Button listaHerramientas = new Button();
         listaHerramientas.setText("Elija Herramienta");
         listaHerramientas.setOnAction(new ListaHerramientasHandler(listaHerramientas));
-        VBox mesaDeCrafteo = new VBox(mesa, botonCraftear, listaHerramientas);
+        VBox botonesCraftear = new VBox(botonCraftear,listaHerramientas);
+        botonesCraftear.setSpacing(10);
+        HBox mesaDeCrafteo = new HBox(mesa,botonesCraftear);
+        mesaDeCrafteo.setSpacing(5);
+        mesaDeCrafteo.setAlignment(Pos.BOTTOM_CENTER);
         botonCraftear.setOnAction(new CrafteadorRecetaHandler(jugador, this, listaHerramientas));
          
  		ObservableList<String> listaMateriales = getListaMaterialesDisponibles();
          
  		int contadorPosicionMesa = 1;
  		
+ 	
+ 		
          for(int y = 0; y < 3; y++){
              for(int x = 0; x < 3; x++){
              	
                 Button agregarMaterial = new Button();
-                agregarMaterial.setText("Material");
-                agregarMaterial.setPrefSize(80,50);
+                agregarMaterial.setBackground(new Background(new BackgroundImage(new Image("/ArchivosDelJuego/BotonMateriales.png"), null, null, null, null)));
+                
+                
+                agregarMaterial.setPrefSize(60,60);
                 agregarMaterial.setOnAction(new MesaCrafteoHandler(listaMateriales, agregarMaterial, contadorPosicionMesa, jugador, this));
                 
                 contadorPosicionMesa++;
