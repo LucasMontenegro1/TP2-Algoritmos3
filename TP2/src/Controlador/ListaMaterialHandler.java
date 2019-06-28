@@ -12,7 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class listaMaterialHandler implements EventHandler<MouseEvent> {
+public class ListaMaterialHandler implements EventHandler<MouseEvent> {
 	
 	ListView<String> materiales;
 	Button botonAgregarMaterial;
@@ -22,7 +22,7 @@ public class listaMaterialHandler implements EventHandler<MouseEvent> {
 	ContenedorPrincipal contenedor;
 	Boolean yaGuardaMaterial = false;
 	
-	public listaMaterialHandler(ListView<String> materiales, Stage stageLista, Button botonAgregarMaterial, int posicion, Jugador jugador, ContenedorPrincipal contenedor) {
+	public ListaMaterialHandler(ListView<String> materiales, Stage stageLista, Button botonAgregarMaterial, int posicion, Jugador jugador, ContenedorPrincipal contenedor) {
 		this.materiales = materiales;
 		this.botonAgregarMaterial = botonAgregarMaterial;
 		this.stageLista = stageLista;
@@ -36,8 +36,8 @@ public class listaMaterialHandler implements EventHandler<MouseEvent> {
 		if (click.getClickCount() == 2) {
 			String material = materiales.getSelectionModel().getSelectedItem();
 			ImageView imagen = new ImageView();
-			imagen.setFitHeight(30);
-			imagen.setFitWidth(30);
+			imagen.setFitHeight(45);
+			imagen.setFitWidth(40);
 			botonAgregarMaterial.setText(null);
 			
 			if(yaGuardaMaterial) {

@@ -18,6 +18,7 @@ public class HerramientasListaHandler implements EventHandler<MouseEvent> {
 		this.listaHerramientas = listaHerramientas;
 		this.boton = boton;
 		this.stage = stage;
+		stage.setHeight(203);
 	}
 	
 	@Override
