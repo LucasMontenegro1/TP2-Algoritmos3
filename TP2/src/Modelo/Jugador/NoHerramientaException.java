@@ -1,10 +1,10 @@
 package Modelo.Jugador;
 
-public class noHerramientaException extends RuntimeException {
+public class NoHerramientaException extends RuntimeException {
 	
 	private static final long serialVersionUID = 1L;
 
-	public noHerramientaException(String errorMessage) {
+	public NoHerramientaException(String errorMessage) {
         super(errorMessage);
     }
 

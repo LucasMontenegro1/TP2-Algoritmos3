@@ -162,7 +162,7 @@ public class Jugador implements Alocable{
 		Herramienta herramienta = inventario.getHerramientaSeleccionada();
 		
 		if(herramienta == null) {
-			throw new noHerramientaException("No tenes Herramientas capo");
+			throw new NoHerramientaException("No tenes Herramientas capo");
 		} else {
 			herramienta.usar(material, inventario);
 		}

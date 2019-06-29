@@ -2,7 +2,7 @@ package Controlador;
 
 import Imagen.ContenedorPrincipal;
 import Modelo.Jugador.Jugador;
-import Modelo.Jugador.noHerramientaException;
+import Modelo.Jugador.NoHerramientaException;
 import Modelo.Mapa.Juego;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -57,7 +57,7 @@ public class AccionesJugadorHandler implements EventHandler<KeyEvent> {
 			try {
 				juego.golpearPosicion(1,0);
 			}
-			catch(noHerramientaException ex) {
+			catch(NoHerramientaException ex) {
 				noTenesHerramientaMessage();
 			}
 			actualizarImagen();
@@ -66,7 +66,7 @@ public class AccionesJugadorHandler implements EventHandler<KeyEvent> {
 			try {
 				juego.golpearPosicion(-1,0);
 			}
-			catch(noHerramientaException ex) {
+			catch(NoHerramientaException ex) {
 				noTenesHerramientaMessage();
 			}
 			actualizarImagen();
@@ -75,7 +75,7 @@ public class AccionesJugadorHandler implements EventHandler<KeyEvent> {
 			try {
 				juego.golpearPosicion(0,-1);
 			}
-			catch(noHerramientaException ex) {
+			catch(NoHerramientaException ex) {
 				noTenesHerramientaMessage();
 			}
 			actualizarImagen();
@@ -85,7 +85,7 @@ public class AccionesJugadorHandler implements EventHandler<KeyEvent> {
 			try {
 				juego.golpearPosicion(0,1);
 			}
-			catch(noHerramientaException ex) {
+			catch(NoHerramientaException ex) {
 				noTenesHerramientaMessage();
 			}
 			actualizarImagen();
