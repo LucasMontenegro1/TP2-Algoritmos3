@@ -75,8 +75,6 @@ public class MesaDeCrafteoTest {
 		MesaDeCrafteo mesa = new MesaDeCrafteo();
 		CodigoDeCrafteo codigoHachaDeMadera = new CodigoDeCrafteo();
 		Madera madera = new Madera();
-
-		int durabilidadInicial = madera.getDurabilidad();
 		
 		codigoHachaDeMadera.agregarMaterial(1, madera);
 		codigoHachaDeMadera.agregarMaterial(2, madera);
@@ -156,8 +154,6 @@ public class MesaDeCrafteoTest {
 		CodigoDeCrafteo codigoHachaDePiedra = new CodigoDeCrafteo();
 		Madera madera = new Madera();
 		Piedra piedra = new Piedra();
-
-		int durabilidadInicial = madera.getDurabilidad();
 		
 		codigoHachaDePiedra.agregarMaterial(1, piedra);
 		codigoHachaDePiedra.agregarMaterial(2, piedra);
@@ -241,8 +237,6 @@ public class MesaDeCrafteoTest {
 		CodigoDeCrafteo codigoHachaDeMetal = new CodigoDeCrafteo();
 		Madera madera = new Madera(new Mapa(), new Posicion(0,0));
 		Metal metal = new Metal();
-
-		int durabilidadInicialMadera = madera.getDurabilidad();
 		
 		codigoHachaDeMetal.agregarMaterial(1, metal);
 		codigoHachaDeMetal.agregarMaterial(2, metal);
@@ -333,11 +327,6 @@ public class MesaDeCrafteoTest {
 		CodigoDeCrafteo codigoPicoDeMadera = new CodigoDeCrafteo();
 		Madera madera = new Madera();
 		Piedra piedra = new Piedra();
-		Metal metal = new Metal();
-		
-		int durabilidadInicialPiedra = piedra.getDurabilidad();
-		int durabilidadInicialMetal = metal.getDurabilidad();
-		
 		
 		for (int i = 1; i < 4; i++) {
 			codigoPicoDeMadera.agregarMaterial(i, madera);
@@ -441,12 +430,6 @@ public class MesaDeCrafteoTest {
 		Madera madera = new Madera();
 		Piedra piedra = new Piedra();
 		Metal metal = new Metal();
-		Diamante diamante = new Diamante();
-		
-		int durabilidadInicialPiedra = piedra.getDurabilidad();
-		int durabilidadInicialMetal = metal.getDurabilidad();
-		int durabilidadInicialDiamante = diamante.getDurabilidad();
-		
 		
 		for (int i = 1; i < 4; i++) {
 			codigoPicoDePiedra.agregarMaterial(i, piedra);
@@ -553,12 +536,6 @@ public class MesaDeCrafteoTest {
 		Madera madera = new Madera();
 		Piedra piedra = new Piedra();
 		Metal metal = new Metal();
-		Diamante diamante = new Diamante();
-		
-		int durabilidadInicialPiedra = piedra.getDurabilidad();
-		int durabilidadInicialMetal = metal.getDurabilidad();
-		int durabilidadInicialDiamante= diamante.getDurabilidad();
-		
 		
 		for (int i = 1; i < 4; i++) {
 			codigoPicoDeMetal.agregarMaterial(i, metal);
@@ -662,14 +639,8 @@ public class MesaDeCrafteoTest {
 		MesaDeCrafteo mesa = new MesaDeCrafteo();
 		CodigoDeCrafteo codigoPicoFino = new CodigoDeCrafteo();
 		Madera madera = new Madera();
-		Piedra piedra = new Piedra();
 		Metal metal = new Metal();
-		Diamante diamante = new Diamante();
-		
-		int durabilidadInicialPiedra = piedra.getDurabilidad();
-		int durabilidadInicialMetal = metal.getDurabilidad();
-		int durabilidadInicialDiamante= diamante.getDurabilidad();
-		
+
 		
 		for (int i = 1; i < 4; i++) {
 			codigoPicoFino.agregarMaterial(i, metal);
