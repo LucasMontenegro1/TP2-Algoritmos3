@@ -60,6 +60,7 @@ public class CrafteadorRecetaHandler implements EventHandler<ActionEvent> {
 		}
 		contenedor.setInventario();
 		contenedor.setMesaCrafteo();
+		contenedor.setCambiarHerramienta();
 	}
 	
 	

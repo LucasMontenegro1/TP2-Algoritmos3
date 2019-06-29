@@ -31,6 +31,8 @@ public class Inventario {
     			break;
     		}
     	}
+    	if(herramientaSeleccionada==null)herramientaSeleccionada=herramienta;
+    	
     }
     
     public Inventario(){
@@ -38,12 +40,11 @@ public class Inventario {
         	elementosGuardados[i] = new Paquete();
         }
         agregarHerramienta(new HachaDeMadera());
-        agregarHerramienta(new HachaDePiedra());
-        agregarHerramienta(new HachaDeMetal());
-        agregarHerramienta(new PicoDeMadera());
-        agregarHerramienta(new PicoDePiedra());
-        agregarHerramienta(new PicoDeMetal());
-        agregarHerramienta(new PicoFino());
+        //agregarHerramienta(new HachaDeMetal());
+        //agregarHerramienta(new PicoDeMadera());
+        //agregarHerramienta(new PicoDePiedra());
+        //agregarHerramienta(new PicoDeMetal());
+        //agregarHerramienta(new PicoFino());
         herramientaSeleccionada = (Herramienta)elementosGuardados[0].getElementoGuardado();
     }
     
