@@ -7,7 +7,6 @@ import java.util.List;
 import Modelo.Herramientas.HachaDeMadera;
 import Modelo.Herramientas.HachaDeMetal;
 import Modelo.Herramientas.HachaDePiedra;
-import Modelo.Herramientas.Herramienta;
 import Modelo.Herramientas.PicoDeMadera;
 import Modelo.Herramientas.PicoDeMetal;
 import Modelo.Herramientas.PicoDePiedra;

@@ -14,7 +14,7 @@ public class Juego {
 
 	
 	
-	public void moverJugador(int movVertical, int movHorizontal){ //positivo en movVertical es hacia arriba, positivo en movHorizontal es hacia la derecha
+	public void moverJugador(int movVertical, int movHorizontal){ 
 		
 		Posicion nuevaPosicion = obtenerPosicion(movVertical, movHorizontal);
 		
@@ -22,7 +22,7 @@ public class Juego {
 			Posicion origen = jugador.getPosicion();
 			Casillero destino = mapa.getCasillero(nuevaPosicion);
 			destino = new Casillero(jugador, nuevaPosicion);
-			mapa.ocupar(destino, nuevaPosicion); //tengo que hacer esto xq sino no cambia en el mapa entonces no se imprime
+			mapa.ocupar(destino, nuevaPosicion); 
 			mapa.desocupar(origen);
 		}		
 	}

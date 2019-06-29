@@ -5,8 +5,11 @@ import Modelo.Jugador.Jugador;
 import Modelo.Jugador.noHerramientaException;
 import Modelo.Mapa.Juego;
 import javafx.event.EventHandler;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.stage.Stage;
 
 public class AccionesJugadorHandler implements EventHandler<KeyEvent> {
 	
@@ -31,24 +34,19 @@ public class AccionesJugadorHandler implements EventHandler<KeyEvent> {
 	}
 	
 	private void movimiento(KeyEvent event) {
-		if (event.getCode() == KeyCode.W) {
-			//jugador.moverArriba();
-			
+		if (event.getCode() == KeyCode.W) {		
 			juego.moverJugador(1,0);	
 			
 		}
 		if (event.getCode() == KeyCode.S) {
-			//jugador.moverAbajo();
 			juego.moverJugador(-1,0);
 			
 		}
 		if (event.getCode() == KeyCode.D) {
-			//jugador.moverDerecha();
 			juego.moverJugador(0,1);
 			
 		}
 		if (event.getCode() == KeyCode.A) {
-			//jugador.moverIzquierda();
 			juego.moverJugador(0,-1);
 			
 		}
@@ -57,54 +55,56 @@ public class AccionesJugadorHandler implements EventHandler<KeyEvent> {
 	private void golpear(KeyEvent event) {
 		if (event.getCode() == KeyCode.I) {
 			try {
-				//jugador.golpearArriba();
 				juego.golpearPosicion(1,0);
 			}
 			catch(noHerramientaException ex) {
-				System.out.println("No tenes Herramienta capooo");
+				noTenesHerramientaMessage();
 			}
-			contenedor.actualizarListaMaterialesDisponibles();
-			contenedor.setInventario();
-			contenedor.setCambiarHerramienta();
+			actualizarImagen();
 		}
 		if (event.getCode() == KeyCode.K) {
 			try {
-				//jugador.golpearAbajo();
 				juego.golpearPosicion(-1,0);
 			}
 			catch(noHerramientaException ex) {
-				System.out.println("No tenes Herramienta capooo");
+				noTenesHerramientaMessage();
 			}
-			contenedor.actualizarListaMaterialesDisponibles();
-			contenedor.setInventario();
-			contenedor.setCambiarHerramienta();
+			actualizarImagen();
 		}
 		if (event.getCode() == KeyCode.J) {
 			try {
-				//jugador.golpearIzquierda();
 				juego.golpearPosicion(0,-1);
 			}
 			catch(noHerramientaException ex) {
-				System.out.println("No tenes Herramienta capooo");
+				noTenesHerramientaMessage();
 			}
-			contenedor.actualizarListaMaterialesDisponibles();
-			contenedor.setInventario();
-			contenedor.setCambiarHerramienta();
+			actualizarImagen();
 			
 		}
 		if (event.getCode() == KeyCode.L) {
 			try {
-				//jugador.golpearDerecha();
 				juego.golpearPosicion(0,1);
 			}
 			catch(noHerramientaException ex) {
-				System.out.println("No tenes Herramienta capooo");
+				noTenesHerramientaMessage();
 			}
-			contenedor.actualizarListaMaterialesDisponibles();
-			contenedor.setInventario();
-			contenedor.setCambiarHerramienta();
+			actualizarImagen();
 			
 		}
+	}
+	
+	private void actualizarImagen() {
+		contenedor.actualizarListaMaterialesDisponibles();
+		contenedor.setInventario();
+		contenedor.setCambiarHerramienta();
+	}
+	
+	private void noTenesHerramientaMessage() {
+		Label noTenesHerramienta = new Label("No tienes una herramienta equipada!");
+		Scene scene = new Scene(noTenesHerramienta);
+		Stage stage = new Stage();
+		stage.setScene(scene);
+		stage.show();
 	}
 	
 	private void cambiarHerramienta(KeyEvent event) {

@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import Controlador.CrafteadorRecetaHandler;
 import Controlador.ListaHerramientasHandler;
 import Controlador.MesaCrafteoHandler;
-import Modelo.Crafteo.CodigoDeCrafteo;
 import Modelo.Herramientas.HachaDeMadera;
 import Modelo.Herramientas.HachaDeMetal;
 import Modelo.Herramientas.HachaDePiedra;
@@ -28,9 +27,7 @@ import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
@@ -257,8 +254,6 @@ public class ContenedorPrincipal extends BorderPane {
                 HBox caja = new HBox(imagen);
                 Text textoInventario=new Text(cantidad.toString());
                 textoInventario.setFill(Color.WHITE);
-                //Label cantidadEnInventario= new Label(cantidad.toString());
-                //cantidadEnInventario.setFont(Font.font("Verdana"));
                 
                 
                 caja.getChildren().add(textoInventario);

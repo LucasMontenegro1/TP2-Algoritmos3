@@ -2,13 +2,7 @@ package Modelo.Jugador;
 
 import Modelo.Herramientas.Desgastable;
 import Modelo.Herramientas.HachaDeMadera;
-import Modelo.Herramientas.HachaDeMetal;
-import Modelo.Herramientas.HachaDePiedra;
 import Modelo.Herramientas.Herramienta;
-import Modelo.Herramientas.PicoDeMadera;
-import Modelo.Herramientas.PicoDeMetal;
-import Modelo.Herramientas.PicoDePiedra;
-import Modelo.Herramientas.PicoFino;
 import Modelo.Materiales.Diamante;
 import Modelo.Materiales.Madera;
 import Modelo.Materiales.Material;
@@ -27,7 +21,7 @@ public class Inventario {
     public void agregarHerramienta(Herramienta herramienta) {
     	for(int i = 0; i < cantidadDePaquetes; i++) {
     		if(elementosGuardados[i].lugarLibre()) {
-    			elementosGuardados[i].setElementoGuardado(herramienta);   //Lo declaro aca arriba asi en el constructor ya tiene el hacha de madera
+    			elementosGuardados[i].setElementoGuardado(herramienta);  
     			break;
     		}
     	}
@@ -40,11 +34,6 @@ public class Inventario {
         	elementosGuardados[i] = new Paquete();
         }
         agregarHerramienta(new HachaDeMadera());
-        //agregarHerramienta(new HachaDeMetal());
-        //agregarHerramienta(new PicoDeMadera());
-        //agregarHerramienta(new PicoDePiedra());
-        //agregarHerramienta(new PicoDeMetal());
-        //agregarHerramienta(new PicoFino());
         herramientaSeleccionada = (Herramienta)elementosGuardados[0].getElementoGuardado();
     }
     
@@ -142,8 +131,7 @@ public class Inventario {
     	}
     }
 
-	public void eliminarHerramienta(Desgastable elemento) { //No se si aca va a reconocer a los materiales tambien
-														//si no los reconoce hacer metodo a parte para material y herramienta	
+	public void eliminarHerramienta(Desgastable elemento) { 
 		for(int i = 0; i < cantidadDePaquetes; i++) {
     		if(elementosGuardados[i].getElementoGuardado() == elemento) {
     			elementosGuardados[i].eliminarElemento();
@@ -154,16 +142,6 @@ public class Inventario {
 		cambiarHerramientaSeleccionada();
 	}
 
-	
-	//VER SI TRABAJAR CON POSICIONES EN EL INVENTARIO ROMPE
-	//EL ENCAPSULAMIENTO
-	/*
-	public Desgastable eliminarElemento(int posicion) {
-		Desgastable elementoGuardado = elementosGuardados[posicion].getElementoGuardado();
-		elementosGuardados[posicion].eliminarElemento();
-		return elementoGuardado;
-	}
-	*/
 	
 	public void eliminarMaterial(Material material) {
 		for (int i = 0; i < 28; i++) {

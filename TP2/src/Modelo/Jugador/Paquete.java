@@ -68,7 +68,7 @@ public class Paquete {
 	
 	public void eliminarElemento() {
 		cantidadActualElementos--;
-		this.elementoGuardado[cantidadActualElementos] = null; //lo mismo que en el metodo del inventario, ver si funciona para materiales tmbn
+		this.elementoGuardado[cantidadActualElementos] = null; 
 	}
 	
 }
