@@ -64,7 +64,6 @@ public class Mapa {
 	}
 
 	
-	
 	private boolean casilleroExiste(int x, int y) {
 		if (x > -1 && x < filasMapa) {
 			if (y > -1 && y < columnasMapa) {
@@ -72,55 +71,6 @@ public class Mapa {
 			}
 		}
 		return false;
-	}
-	
-	public void desplazarJugadorArriba(Posicion posicionJugador) {
-		int x = posicionJugador.getFila();
-		int y = posicionJugador.getColumna();
-		Jugador jugador = (Jugador)casilleros[x][y].getOcupante();
-		
-		if (casilleroExiste(x-1, y) && casilleros[x-1][y].estaLibre()) {
-			Posicion nuevaPosicionJugador = new Posicion(x-1,y);
-			casilleros[x][y] = new Casillero();
-			casilleros[x-1][y] = new Casillero(jugador, nuevaPosicionJugador);
-		}
-	}
-	
-	public void desplazarJugadorAbajo(Posicion posicionJugador) {
-		int x = posicionJugador.getFila();
-		int y = posicionJugador.getColumna();
-		Jugador jugador = (Jugador)casilleros[x][y].getOcupante();
-		
-		if (casilleroExiste(x+1, y) && casilleros[x+1][y].estaLibre()) {
-			Posicion nuevaPosicionJugador = new Posicion(x+1,y);
-			casilleros[x][y] = new Casillero();
-			casilleros[x+1][y] = new Casillero(jugador, nuevaPosicionJugador);
-		}
-	}
-	
-	public void desplazarJugadorDerecha(Posicion posicionJugador) {
-		int x = posicionJugador.getFila();
-		int y = posicionJugador.getColumna();
-		Jugador jugador = (Jugador)casilleros[x][y].getOcupante();
-		
-		if (casilleroExiste(x, y+1) && casilleros[x][y+1].estaLibre()) {
-			Posicion nuevaPosicionJugador = new Posicion(x,y+1);
-			casilleros[x][y] = new Casillero();
-			casilleros[x][y+1] = new Casillero(jugador, nuevaPosicionJugador);
-		}
-	}
-	
-	public void desplazarJugadorIzquierda(Posicion posicionJugador) {
-		int x = posicionJugador.getFila();
-		int y = posicionJugador.getColumna();
-		Jugador jugador = (Jugador)casilleros[x][y].getOcupante();
-		
-		if (casilleroExiste(x, y-1) && casilleros[x][y-1].estaLibre()) {
-			Posicion nuevaPosicionJugador = new Posicion(x,y-1);
-			casilleros[x][y] = new Casillero();
-			casilleros[x][y-1] = new Casillero(jugador, nuevaPosicionJugador);
-		}
-
 	}
 	
 	public boolean existeCasillero(Posicion posicionCasillero) { //Hago un metodo publico xq lo tengo q usar en Juego
