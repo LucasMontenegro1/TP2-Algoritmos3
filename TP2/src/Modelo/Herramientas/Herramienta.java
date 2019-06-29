@@ -29,8 +29,6 @@ public abstract class Herramienta implements Desgastable {
 		material.decimeQuienSos(this, inventario);
 	}
 	
-	public abstract Herramienta clonar();
-	
 	
 	public int getFuerza() {
 		return fuerza;

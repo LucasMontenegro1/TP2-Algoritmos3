@@ -33,10 +33,5 @@ public class PicoDeMetal extends Pico {
 		}
 	}
 
-	
-	@Override
-	public Herramienta clonar() {
-		return new PicoDeMetal();
-	}
 
 }

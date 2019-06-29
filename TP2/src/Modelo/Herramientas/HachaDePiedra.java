@@ -13,9 +13,4 @@ public class HachaDePiedra extends Hacha {
 			durabilidad -= fuerza;		
 		}
 
-	@Override
-	public Herramienta clonar() {
-		return new HachaDePiedra();
-	}
-	
 }

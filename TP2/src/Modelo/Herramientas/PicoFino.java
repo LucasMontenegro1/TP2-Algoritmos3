@@ -48,10 +48,4 @@ public class PicoFino extends Herramienta {
 		
 	}
 
-	
-	@Override
-	public Herramienta clonar() {
-		return new PicoFino();
-	}
-	
 }

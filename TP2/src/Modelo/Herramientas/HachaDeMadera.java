@@ -14,9 +14,4 @@ public class HachaDeMadera extends Hacha {
 	}
 
 	
-	@Override
-	public Herramienta clonar() {
-		return new HachaDeMadera();
-	}
-	
 }

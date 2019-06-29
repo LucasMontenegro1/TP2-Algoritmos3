@@ -14,10 +14,5 @@ public class HachaDeMetal extends Hacha {
 		durabilidad -= (int)(fuerza/2);
 	}
 
-
-	@Override
-	public Herramienta clonar() {
-		return new HachaDeMetal();
-	}
 	
 }
